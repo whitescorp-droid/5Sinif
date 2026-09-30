@@ -80,15 +80,15 @@ export const Dashboard = ({ onSelectSubject, onSelectDailyMission }) => {
     {
       id: 'mission_6',
       subjectId: 'sosyal',
-      unitId: 'sos_u1',
-      topicId: 'sos_u1_t1',
+      unitId: 'sos_u2',
+      topicId: 'sos_u2_t1',
       activityType: 'interactiveLab',
-      title: 'Sosyal Bilgiler: Resfebe Zeka Sandığı & Roller',
+      title: 'Sosyal Bilgiler: Türkiye Harita & Coğrafya Kaşifi',
       subjectName: 'Sosyal Bilgiler',
-      icon: '🌍',
-      color: '#D97706',
-      xpReward: 55,
-      isDone: !!completedActivities['sos_u1_t1_interactiveLab']
+      icon: '🗺️',
+      color: '#0284C7',
+      xpReward: 60,
+      isDone: !!completedActivities['sos_u2_t1_interactiveLab']
     }
   ];
 

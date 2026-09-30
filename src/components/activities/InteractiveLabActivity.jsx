@@ -15,6 +15,10 @@ export const InteractiveLabActivity = ({ topic, subjectId, onFinish }) => {
   const labType = topic.interactiveLab?.type;
 
   switch (labType) {
+    case 'sosyal-harita-lab':
+      return <SosyalResfebeLab topic={topic} initialTab="map" onFinish={onFinish} />;
+    case 'sosyal-arkeoloji-lab':
+      return <SosyalResfebeLab topic={topic} initialTab="detective" onFinish={onFinish} />;
     case 'sosyal-resfebe-lab':
     case 'sosyal-medeni-lab':
       return <SosyalResfebeLab topic={topic} onFinish={onFinish} />;

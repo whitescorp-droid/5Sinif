@@ -5505,10 +5505,6 @@ Yukarıdaki devreler karşılaştırıldığında hangisi doğrudur?
           "title": "Gruplar ve Rollerimiz",
           "kazanimCode": "SB.5.1.1",
           "kazanimDesc": "Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümler, hak ve sorumluluklarını fark eder.",
-          "interactiveLab": {
-            "type": "sosyal-resfebe-lab",
-            "title": "Resfebe & Sosyal Zeka Sandığı 🧩"
-          },
           "summary": "\n• **Grup Nedir?:** Ortak bir amaç için bir araya gelen, aralarında iş bölümü ve düzenli iletişim olan en az iki kişiden oluşan topluluktur (Aile, okul kulübü, futbol takımı).\n• **Rol:** Bir kimsenin içinde bulunduğu grupta üstlendiği görev, konum ve beklentilerdir.\n  - Bir birey aynı anda **birden fazla role** sahip olabilir: Evde evlat/abla, okulda öğrenci/sınıf başkanı, müzik korosunda solist.\n  - Roller zamanla değişebilir (İlkokul öğrencisiyken ortaokul öğrencisi olmak).\n• **Hak:** Kanunların ve ahlaki değerlerin bireylere tanıdığı meşru yetki ve korumalardır (Yaşama hakkı, eğitim hakkı, oyun oynama hakkı).\n• **Sorumluluk:** Bireyin üstlendiği rollerin gerektirdiği görevleri zamanında ve eksiksiz yerine getirmesidir.\n• **Önemli Kural:** Haklarımızı kullanırken başkalarının haklarına ve özgürlüklerine saygı duymak temel sorumluluğumuzdur!\n          ",
           "keyConcepts": [
             "Grup",
@@ -6292,6 +6288,11 @@ Yukarıdaki devreler karşılaştırıldığında hangisi doğrudur?
           "title": "Yaşadığım İlin Göreceli Konumu ve Harita Bilgisi",
           "kazanimCode": "SB.5.2.1",
           "kazanimDesc": "Yaşadığı ilin göreceli konum özelliklerini algılar, fiziki haritaları okur ve lejantı yorumlar.",
+          "interactiveLab": {
+            "type": "sosyal-harita-lab",
+            "title": "🗺️ Gerçek Türkiye Harita & Coğrafya Kaşifi",
+            "initialTab": "map"
+          },
           "summary": "\n• **Göreceli (Özel) Konum:** Bir yerin denizlere, komşu ülkelere, boğazlara, dağlara, ticaret yollarına ve önemli şehirlere göre bulunduğu konumdur.\n  - Örneğin: İstanbul iki kıtayı birbirine bağlayan boğazlara sahiptir. Rize Karadeniz kıyısındadır ve bol yağış alır.\n• **Harita Nedir?:** Yeryüzünün tamamının veya bir bölümünün kuş bakışı görünüşünün belli bir oranda küçültülerek (ölçek) düzleme aktarılmasıdır.\n• **Haritanın Unsurları:**\n  1. **Başlık:** Haritanın konusunu ve amacını belirtir.\n  2. **Kuş Bakışı Görünüş:** Tepeden dik açıyla bakıştır.\n  3. **Ölçek:** Küçültme oranıdır (Örn: 1/500.000).\n  4. **Yön Oku / Pusula:** Kuzeyi gösterir.\n  5. **Lejant (Harita Anahtarı):** Haritada kullanılan renk ve sembollerin ne anlama geldiğini gösteren tablodur.\n• **Fiziki Haritalarda Renklerin Anlamı (Yükselti Basamakları):**\n  - **Mavi:** Deniz, göl ve akarsular (Koyulaştıkça derinlik artar).\n  - **Yeşil:** 0 - 500 metre arası alçak ovalar ve kıyı düzlükleri (Orman demek DEĞİLDİR!).\n  - **Sarı:** 500 - 1000 metre arası platolar ve orta yükseltiler.\n  - **Kahverengi:** 1000 metre ve üzeri yüksek dağlar (Koyulaştıkça yükselti artar).\n          ",
           "keyConcepts": [
             "Göreceli Konum",
@@ -7857,8 +7858,9 @@ Yukarıdaki devreler karşılaştırıldığında hangisi doğrudur?
           "kazanimCode": "SB.5.3.3",
           "kazanimDesc": "Mezopotamya ve Anadolu medeniyetlerinin ortak mirasa katkılarını karşılaştırır, icat ve kanunlarını kavrar.",
           "interactiveLab": {
-            "type": "sosyal-medeni-lab",
-            "title": "Medeniyetler & İcatlar Atlası 🏛️"
+            "type": "sosyal-arkeoloji-lab",
+            "title": "🏺 Arkeoloji Dedektifi: Medeniyet Sandığı",
+            "initialTab": "detective"
           },
           "summary": "\n• **Mezopotamya Medeniyetleri (Fırat ile Dicle Arası):**\n  1. **Sümerler:**\n     - **Çivi yazısını** icat ettiler (Tarih çağları başladı).\n     - **Tekerleği** ve **ay yılı esaslı takvimi** buldular.\n     - **Ziggurat** adı verilen 7 katlı tapınaklar yaptılar (alt kat depo, orta kat okul/ibadet, en üst kat gözlemevi/rasathane).\n  2. **Babiller:**\n     - Başkentleri Babil'dir. Kral **Hammurabi** kendi adıyla anılan sert ceza kanunlarını (kısasa kısas) yaptı.\n     - Dünyanın Yedi Harikası'ndan biri olan **Babil'in Asma Bahçeleri**ni ve Babil Kulesi'ni inşa ettiler.\n  3. **Asurlar:**\n     - Başkentleri Ninova'dır. Dünyanın **ilk kütüphanesini** kurdular.\n     - Ticaretle uğraştılar; Kayseri Kültepe'ye (Kaniş Karumu) gelerek **çivi yazısını Anadolu'ya öğrettiler**.\n• **Anadolu Medeniyetleri:**\n  1. **Hititler (Çorum/Hattuşa):**\n     - Mısırlılarla tarihin ilk yazılı barış antlaşması olan **Kadeş Antlaşması**nı imzaladılar.\n     - **Pankuş** adı verilen danışma meclisleri ve yetkili kraliçeleri (**Tavananna**) vardı.\n     - Tanrılarına hesap vermek için **Anal (yıllık)** yazarak tarafsız tarih yazıcılığını başlattılar.\n  2. **Frigler (Ankara/Gordion):**\n     - Tarıma büyük önem verdiler; saban kıran veya öküz öldürene ölüm cezası verdiler.\n     - **Fibula** (tarihin ilk çengelli iğnesi) ve **Tapates** (halı/kilim) ürettiler. Efsanevi kralları Midas'tır.\n  3. **Lidyalılar (Manisa/Sardes):**\n     - Takas usulüne son verip **parayı icat ettiler**.\n     - Mezopotamya'ya kadar uzanan **Kral Yolu** üzerinde ticaret yaparak zenginleştiler.\n  4. **Urartular (Van/Tuşpa):**\n     - Taş işçiliği ve madencilikte ustalaştılar.\n     - Günümüzde hâlâ kullanılan **Şamran (Menua) su kanalını** ve Van Kalesi'ni yaptılar.\n          ",
           "keyConcepts": [

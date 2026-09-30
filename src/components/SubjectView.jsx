@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGame } from '../context/GameContext';
-import { ArrowLeft, BookOpen, CheckCircle, ChevronRight, Sparkles, Star } from 'lucide-react';
+import { ArrowLeft, BookOpen, CheckCircle, ChevronRight, Sparkles, Star, Compass, Landmark } from 'lucide-react';
 import { playSound } from '../utils/soundEffects';
 
 export const SubjectView = ({ subject, onSelectTopic, onBack }) => {
@@ -65,6 +65,84 @@ export const SubjectView = ({ subject, onSelectTopic, onBack }) => {
         </div>
       </div>
 
+      {/* Sosyal Bilgiler Özel İnteraktif Atölyeleri Başlığı */}
+      {subject.id === 'sosyal' && (
+        <div className="special-workshops-container animate-fadeIn">
+          <div className="special-workshops-header">
+            <div className="workshops-badge">
+              <Sparkles size={16} />
+              <span>Etkileşimli Deneyim Alanı</span>
+            </div>
+            <h2 className="workshops-title">Sosyal Bilgiler Özel Keşif Atölyeleri 🧭</h2>
+            <p className="workshops-desc">
+              Aşağıdaki özel interaktif atölyelerle Türkiye haritası üzerinde coğrafyamızı keşfedebilir veya medeniyet sandıklarında kayıp tarihi eserleri arayabilirsiniz!
+            </p>
+          </div>
+
+          <div className="special-workshops-grid">
+            {/* Atölye 1: Harita Kaşifi */}
+            <div 
+              className="workshop-feature-card card-map"
+              onClick={() => {
+                const u2 = subject.units.find(u => u.id === 'sos_u2');
+                const t1 = u2?.topics.find(t => t.id === 'sos_u2_t1');
+                if (u2 && t1) {
+                  playSound('click', soundEnabled);
+                  onSelectTopic(u2, t1);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              <div className="workshop-card-icon-box bg-blue">
+                <Compass size={28} />
+              </div>
+              <div className="workshop-card-content">
+                <span className="workshop-tag tag-blue">2. Ünite (Evimiz Dünya) Bağlantılı</span>
+                <h3 className="workshop-name">1. Gerçek Türkiye Harita & Coğrafya Kaşifi</h3>
+                <p className="workshop-detail">
+                  7 Coğrafi Bölge, 81 il sınırları, iklim özellikleri, yeryüzü şekilleri ve kültürel mirasımızı interaktif harita üzerinde keşfet!
+                </p>
+                <div className="workshop-action-btn btn-blue">
+                  <span>Harita Atölyesini Aç</span>
+                  <ChevronRight size={16} />
+                </div>
+              </div>
+            </div>
+
+            {/* Atölye 2: Arkeoloji Dedektifi */}
+            <div 
+              className="workshop-feature-card card-archaeology"
+              onClick={() => {
+                const u3 = subject.units.find(u => u.id === 'sos_u3');
+                const t3 = u3?.topics.find(t => t.id === 'sos_u3_t3');
+                if (u3 && t3) {
+                  playSound('click', soundEnabled);
+                  onSelectTopic(u3, t3);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              <div className="workshop-card-icon-box bg-amber">
+                <Landmark size={28} />
+              </div>
+              <div className="workshop-card-content">
+                <span className="workshop-tag tag-amber">3. Ünite (Ortak Mirasımız) Bağlantılı</span>
+                <h3 className="workshop-name">2. Arkeoloji Dedektifi: Medeniyet Sandığı</h3>
+                <p className="workshop-detail">
+                  Sümerler, Hititler, Lidyalılar, Frigler, Babiller, Asurlar ve Urartuların tarihi eserlerini incele ve ait olduğu medeniyete ulaştır!
+                </p>
+                <div className="workshop-action-btn btn-amber">
+                  <span>Arkeoloji Atölyesini Aç</span>
+                  <ChevronRight size={16} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Units & Topics List */}
       <div className="units-container">
         {subject.units.map((unit) => (
@@ -128,6 +206,14 @@ export const SubjectView = ({ subject, onSelectTopic, onBack }) => {
                         <span className={`mini-act-badge ${completedActivities[`${topic.id}_quiz`] ? 'done' : ''}`} title="Test">
                           🏆
                         </span>
+                        {topic.interactiveLab && (
+                          <span 
+                            className={`mini-act-badge ${completedActivities[`${topic.id}_interactiveLab`] ? 'done' : ''}`} 
+                            title={topic.interactiveLab.title || 'Etkileşimli Atölye'}
+                          >
+                            {topic.interactiveLab.type === 'sosyal-harita-lab' ? '🗺️' : (topic.interactiveLab.type === 'sosyal-arkeoloji-lab' ? '🏺' : '🔬')}
+                          </span>
+                        )}
                       </div>
 
                       <div className="topic-start-action">

@@ -140,11 +140,11 @@ const ARTIFACTS_DATA = [
   }
 ];
 
-export const SosyalResfebeLab = ({ topic, onFinish }) => {
+export const SosyalResfebeLab = ({ topic, initialTab = 'map', onFinish }) => {
   const { soundEnabled, completeActivity } = useGame();
 
   // 2 Ana Sekme: 'map' ve 'detective'
-  const [activeTab, setActiveTab] = useState('map'); // 'map' | 'detective'
+  const [activeTab, setActiveTab] = useState(topic?.interactiveLab?.initialTab || initialTab);
 
   // Harita Görev Durumu
   const [mapIndex, setMapIndex] = useState(0);

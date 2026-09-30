@@ -6497,6 +6497,177 @@
   }
 }
 
+/* =========================================================================
+   SPECIAL WORKSHOPS SECTION (SubjectView)
+   ========================================================================= */
+.special-workshops-container {
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #fdf4ff 100%);
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.special-workshops-header {
+  margin-bottom: 20px;
+}
+
+.workshops-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.08);
+}
+
+.workshops-title {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.workshops-desc {
+  margin: 0;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.special-workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.workshop-feature-card {
+  display: flex;
+  gap: 16px;
+  background: white;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.workshop-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
+}
+
+.workshop-feature-card.card-map:hover {
+  border-color: #0284c7;
+}
+
+.workshop-feature-card.card-archaeology:hover {
+  border-color: #d97706;
+}
+
+.workshop-card-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.workshop-card-icon-box.bg-blue {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: white;
+}
+
+.workshop-card-icon-box.bg-amber {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.workshop-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.workshop-tag {
+  font-size: 11px;
+  font-weight: 800;
+  width: fit-content;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+.workshop-tag.tag-blue {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.workshop-tag.tag-amber {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.workshop-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.workshop-detail {
+  margin: 0;
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.workshop-action-btn {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  width: fit-content;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s;
+}
+
+.workshop-action-btn.btn-blue {
+  background: #0284c7;
+  color: white;
+}
+
+.workshop-action-btn.btn-amber {
+  background: #d97706;
+  color: white;
+}
+
+.workshop-feature-card:hover .workshop-action-btn {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .special-workshops-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
