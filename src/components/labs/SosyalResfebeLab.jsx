@@ -4,8 +4,10 @@ import { playSound } from '../../utils/soundEffects';
 import confetti from 'canvas-confetti';
 import { 
   Compass, Landmark, MapPin, CheckCircle2, 
-  HelpCircle, RefreshCw, ArrowRight, Sparkles, Trophy, Lightbulb
+  HelpCircle, RefreshCw, ArrowRight, Sparkles, Trophy, Lightbulb,
+  Sun, Trees, Mountain, ShoppingBag, Eye
 } from 'lucide-react';
+import { TURKEY_MAP_VIEWBOX, REGIONS_DATA, PROVINCES_DATA } from '../../data/turkeyRealMapData';
 
 // =========================================================================
 // 1. TÜRKİYE HARİTA & KÜLTÜR KAŞİFİ SORULARI (7 COĞRAFİ BÖLGE)
@@ -29,7 +31,7 @@ const MAP_QUESTIONS = [
   },
   {
     id: 'mq_3',
-    targetRegion: 'guneydogu',
+    targetRegion: 'guneydogu_anadolu',
     targetTitle: 'Güneydoğu Anadolu (Şanlıurfa)',
     question: '12.000 yıllık geçmişiyle "Tarihin Sıfır Noktası" kabul edilen ve dünyanın en eski tapınağı olan "Göbeklitepe" nerededir?',
     hint: 'Fırat ve Dicle nehirlerinin hayat verdiği güneydeki kadim Mezopotamya komşusu bölgemiz.',
@@ -45,7 +47,7 @@ const MAP_QUESTIONS = [
   },
   {
     id: 'mq_5',
-    targetRegion: 'icanadolu',
+    targetRegion: 'ic_anadolu',
     targetTitle: 'İç Anadolu (Nevşehir / Kapadokya)',
     question: 'Rüzgâr ve sel sularının volkanik tüfleri aşındırmasıyla oluşan masalsı "Peri Bacaları" doğal anıtı hangi bölgemizdedir?',
     hint: 'Tuz Gölü’nün ve başkentimiz Ankara’nın bulunduğu orta bölgemiz.',
@@ -53,7 +55,7 @@ const MAP_QUESTIONS = [
   },
   {
     id: 'mq_6',
-    targetRegion: 'doguanadolu',
+    targetRegion: 'dogu_anadolu',
     targetTitle: 'Doğu Anadolu Bölgesi (Van)',
     question: 'Urartuların 2800 yıl önce kayaları oyup yaptığı ve günümüzde hâlâ çalışan meşhur "Şamran Su Kanalı" hangi bölgemizdedir?',
     hint: 'Van Gölü’nün ve Ağrı Dağı’nın yer aldığı en yüksek dağlık bölgemiz.',
@@ -62,8 +64,8 @@ const MAP_QUESTIONS = [
   {
     id: 'mq_7',
     targetRegion: 'akdeniz',
-    targetTitle: 'Akdeniz Bölgesi (Denizli)',
-    question: 'Kalsiyumlu termal suların bıraktığı bembeyaz tortularla oluşan dünyaca ünlü "Pamukkale Travertenleri" hangi bölgemizdedir?',
+    targetTitle: 'Akdeniz Bölgesi (Denizli/Antalya Kuşağı)',
+    question: 'Kalsiyumlu suların bıraktığı bembeyaz tortularla oluşan "Pamukkale Travertenleri" ve görkemli Toros Dağları hangi bölgemizdedir?',
     hint: 'Toros Dağları’nın ve narenciye bahçelerinin bulunduğu güney kıyı kuşağımız.',
     fact: 'Pamukkale Travertenleri hem şifalı suları hem de bembeyaz teraslarıyla UNESCO Dünya Mirası koruması altındadır.'
   }
@@ -138,117 +140,41 @@ const ARTIFACTS_DATA = [
   }
 ];
 
-// Real Turkey Regional SVG Map Data (800x380 viewport)
-const TURKEY_REGIONS = [
-  {
-    id: 'marmara',
-    name: 'Marmara Bölgesi',
-    shortName: 'Marmara',
-    badge: '🌉 Boğazlar & Kapıkule',
-    color: '#38bdf8',
-    hoverColor: '#0ea5e9',
-    center: { x: 130, y: 100 },
-    // Realistic regional polygon for Marmara (Trakya, Boğazlar, Bursa, Çanakkale)
-    d: 'M 45,55 C 65,40 100,35 130,45 C 145,50 160,45 175,60 C 190,65 210,65 220,80 C 225,95 215,115 195,125 C 175,135 150,140 135,135 C 115,145 95,150 80,140 C 65,130 55,105 50,90 Z'
-  },
-  {
-    id: 'ege',
-    name: 'Ege Bölgesi',
-    shortName: 'Ege',
-    badge: '🌿 Zeybek & Efeler',
-    color: '#34d399',
-    hoverColor: '#10b981',
-    center: { x: 110, y: 200 },
-    // Ege coastline and hinterland (İzmir, Muğla, Afyon)
-    d: 'M 75,145 C 95,145 130,140 150,145 C 165,155 175,175 175,200 C 175,235 160,265 140,275 C 115,280 85,270 70,250 C 60,225 65,195 65,170 C 65,155 70,150 75,145 Z'
-  },
-  {
-    id: 'karadeniz',
-    name: 'Karadeniz Bölgesi',
-    shortName: 'Karadeniz',
-    badge: '🌊 Horon & Yaylalar',
-    color: '#10b981',
-    hoverColor: '#059669',
-    center: { x: 420, y: 75 },
-    // Long arching northern coastal belt from Bolu/Sinop to Artvin/Sarp
-    d: 'M 220,80 C 270,70 330,65 375,45 C 410,50 460,65 520,60 C 580,60 635,70 670,85 C 660,115 625,120 570,120 C 510,120 450,115 390,115 C 330,115 270,115 235,115 C 220,105 215,90 220,80 Z'
-  },
-  {
-    id: 'icanadolu',
-    name: 'İç Anadolu Bölgesi',
-    shortName: 'İç Anadolu',
-    badge: '🏛️ Peri Bacaları & Başkent',
-    color: '#fbbf24',
-    hoverColor: '#f59e0b',
-    center: { x: 300, y: 165 },
-    // Central high plateau (Ankara, Konya, Kapadokya, Sivas)
-    d: 'M 195,125 C 240,120 310,120 390,120 C 420,125 450,135 455,160 C 460,195 440,225 410,230 C 370,235 320,235 270,230 C 230,225 190,215 180,185 C 175,160 185,135 195,125 Z'
-  },
-  {
-    id: 'akdeniz',
-    name: 'Akdeniz Bölgesi',
-    shortName: 'Akdeniz',
-    badge: '☀️ Pamukkale & Toroslar',
-    color: '#f59e0b',
-    hoverColor: '#d97706',
-    center: { x: 280, y: 275 },
-    // Southern Mediterranean crescent (Antalya Bay, Mersin, Adana, Hatay)
-    d: 'M 140,275 C 165,260 180,240 215,235 C 260,235 310,240 370,240 C 410,245 450,250 475,265 C 500,285 520,325 500,345 C 475,340 450,305 410,295 C 350,285 290,290 240,300 C 190,305 160,295 140,275 Z'
-  },
-  {
-    id: 'doguanadolu',
-    name: 'Doğu Anadolu Bölgesi',
-    shortName: 'Doğu Anadolu',
-    badge: '🏔️ Van Kalesi & Ağrı Dağı',
-    color: '#f97316',
-    hoverColor: '#ea580c',
-    center: { x: 590, y: 170 },
-    // High eastern highlands surrounding Lake Van
-    d: 'M 455,140 C 510,125 570,125 670,90 C 720,110 755,140 760,185 C 760,220 735,250 690,255 C 640,260 590,255 540,245 C 490,235 465,200 455,160 Z'
-  },
-  {
-    id: 'guneydogu',
-    name: 'Güneydoğu Anadolu Bölgesi',
-    shortName: 'Güneydoğu',
-    badge: '🏺 Göbeklitepe & Kadim Kentler',
-    color: '#ec4899',
-    hoverColor: '#db2777',
-    center: { x: 510, y: 280 },
-    // Southeastern Fertile Crescent (Şanlıurfa, Gaziantep, Diyarbakır, Mardin)
-    d: 'M 475,255 C 520,245 580,250 640,255 C 670,265 670,295 640,315 C 600,325 550,325 500,320 C 470,310 465,285 475,255 Z'
-  }
-];
-
 export const SosyalResfebeLab = ({ topic, onFinish }) => {
   const { soundEnabled, completeActivity } = useGame();
 
-  // 2 Pure, clear tabs: 'map' and 'detective'
+  // 2 Ana Sekme: 'map' ve 'detective'
   const [activeTab, setActiveTab] = useState('map'); // 'map' | 'detective'
 
-  // Map Game State
+  // Harita Görev Durumu
   const [mapIndex, setMapIndex] = useState(0);
   const [selectedRegionId, setSelectedRegionId] = useState(null);
   const [hoveredRegionId, setHoveredRegionId] = useState(null);
+  const [hoveredProvinceName, setHoveredProvinceName] = useState(null);
   const [mapFeedback, setMapFeedback] = useState(null);
   const [showMapHint, setShowMapHint] = useState(false);
   const [solvedMapCount, setSolvedMapCount] = useState(0);
 
-  // Detective Game State
+  // Arkeoloji Görev Durumu
   const [artIndex, setArtIndex] = useState(0);
   const [artFeedback, setArtFeedback] = useState(null);
   const [solvedArtCount, setSolvedArtCount] = useState(0);
 
   const currentMapQ = MAP_QUESTIONS[mapIndex];
   const currentArt = ARTIFACTS_DATA[artIndex];
+  const selectedRegion = selectedRegionId ? REGIONS_DATA[selectedRegionId] : null;
 
-  // Map Click Handler
+  // Bölge Tıklama
   const handleRegionClick = (regionId) => {
     setSelectedRegionId(regionId);
 
     if (regionId === currentMapQ.targetRegion) {
-      setMapFeedback({ isCorrect: true, text: `Doğru Bölge: ${currentMapQ.targetTitle}! Harikasın! 🎉` });
+      setMapFeedback({ 
+        isCorrect: true, 
+        text: `Doğru Bölge: ${currentMapQ.targetTitle}! Harikasın! 🎉` 
+      });
       playSound('correct', soundEnabled);
-      confetti({ particleCount: 40, spread: 60, origin: { y: 0.7 } });
+      confetti({ particleCount: 45, spread: 65, origin: { y: 0.7 } });
       setSolvedMapCount(prev => prev + 1);
     } else {
       setMapFeedback({ 
@@ -273,15 +199,21 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
     }
   };
 
-  // Detective Click Handler
+  // Arkeoloji Cevap
   const handleArtifactAnswer = (choice) => {
     if (choice === currentArt.correctCivilization) {
-      setArtFeedback({ isCorrect: true, text: `Tebrikler! Eser ait olduğu medeniyete ulaştı: ${currentArt.correctCivilization} 🏛️` });
+      setArtFeedback({ 
+        isCorrect: true, 
+        text: `Tebrikler! Eser ait olduğu medeniyete ulaştı: ${currentArt.correctCivilization} 🏛️` 
+      });
       playSound('correct', soundEnabled);
       confetti({ particleCount: 45, spread: 65, origin: { y: 0.7 } });
       setSolvedArtCount(prev => prev + 1);
     } else {
-      setArtFeedback({ isCorrect: false, text: 'Yanlış sandık! Arkeolog ipucunu dikkatlice oku ve tekrar dene.' });
+      setArtFeedback({ 
+        isCorrect: false, 
+        text: 'Yanlış sandık! Arkeolog ipucunu dikkatlice oku ve tekrar dene.' 
+      });
       playSound('wrong', soundEnabled);
     }
   };
@@ -300,7 +232,7 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
 
   return (
     <div className="sosyal-lab-container animate-fadeIn">
-      {/* Lab Header */}
+      {/* Lab Başlığı */}
       <div className="lab-header-banner">
         <div className="lab-badge-row">
           <span className="lab-pill-tag">🌍 5. Sınıf Sosyal Bilgiler</span>
@@ -308,10 +240,10 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
         </div>
         <h2 className="lab-main-title">Sosyal Kaşif & Tarih-Coğrafya Laboratuvarı 🧭</h2>
         <p className="lab-subtitle-desc">
-          Türkiye haritası üzerinde kültürümüzü ve coğrafyamızı keşfet, kadim medeniyetlerin kayıp eserlerini doğru sandığa yerleştir!
+          Gerçek Türkiye haritası üzerinde 7 coğrafi bölgemizi keşfet, kültürel zenginliklerimizi ve kadim medeniyetlerimizin eserlerini tanı!
         </p>
 
-        {/* Clean, perfectly balanced 2-Tab Navigation Bar */}
+        {/* 2 Temiz, Düzenli Sekme */}
         <div className="clean-dual-tab-bar">
           <button
             type="button"
@@ -320,7 +252,7 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
           >
             <Compass size={20} className="tab-btn-icon" />
             <div className="tab-btn-text">
-              <span className="tab-title">1. Türkiye Harita & Kültür Kaşifi</span>
+              <span className="tab-title">1. Gerçek Türkiye Haritası & Coğrafya Kaşifi</span>
               <span className="tab-count-badge">{solvedMapCount}/{MAP_QUESTIONS.length} Tamamlandı</span>
             </div>
           </button>
@@ -340,15 +272,15 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
       </div>
 
       {/* =========================================================================
-          TAB 1: TÜRKİYE HARİTA & KÜLTÜR KAŞİFİ
+          SEKME 1: GERÇEK TÜRKİYE COĞRAFİ BÖLGELER HARİTASI
           ========================================================================= */}
       {activeTab === 'map' && (
         <div className="map-explorer-card animate-fadeIn">
-          {/* Progress row */}
+          {/* İlerleme Çubuğu */}
           <div className="resfebe-progress-bar-wrap">
             <div className="progress-info-row">
-              <span className="progress-label">Görev {mapIndex + 1} / {MAP_QUESTIONS.length}</span>
-              <span className="progress-percent">Hedef Bölge: <strong>{currentMapQ.targetTitle}</strong></span>
+              <span className="progress-label">Keşif Görevi {mapIndex + 1} / {MAP_QUESTIONS.length}</span>
+              <span className="progress-percent">Hedef: <strong>{currentMapQ.targetTitle}</strong></span>
             </div>
             <div className="progress-track">
               <div 
@@ -358,7 +290,7 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
             </div>
           </div>
 
-          {/* Question Box */}
+          {/* Soru / Görev Kutusu */}
           <div className="map-question-box">
             <div className="q-badge">📍 Keşif Görevi</div>
             <h3 className="q-text">{currentMapQ.question}</h3>
@@ -372,7 +304,15 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
                 <Lightbulb size={16} />
                 <span>{showMapHint ? 'İpucunu Kapat' : 'Coğrafi İpucu Al'}</span>
               </button>
-              <span className="q-instruction">👉 Aşağıdaki Türkiye haritasında veya butonlarda doğru bölgeye dokun:</span>
+              
+              {/* Canlı İl ve Bölge Göstergesi */}
+              <div className="map-hover-indicator">
+                {hoveredProvinceName ? (
+                  <span>📍 <strong>{hoveredProvinceName}</strong> • {REGIONS_DATA[hoveredRegionId]?.name}</span>
+                ) : (
+                  <span>👉 Haritada veya butonlarda ilgili bölgeye dokun:</span>
+                )}
+              </div>
             </div>
 
             {showMapHint && (
@@ -382,89 +322,145 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
             )}
           </div>
 
-          {/* Realistic Turkey Regional Map Stage */}
+          {/* GERÇEK TÜRKİYE VE BÖLGELER HARİTASI (100% Gerçek SVG Sınırları) */}
           <div className="turkey-map-container-box">
             <div className="map-sea-backdrop">
-              <span className="sea-label sea-black">Karadeniz</span>
+              {/* Deniz Etiketleri */}
+              <span className="sea-label sea-black">🌊 Karadeniz</span>
               <span className="sea-label sea-aegean">Ege Denizi</span>
-              <span className="sea-label sea-med">Akdeniz</span>
+              <span className="sea-label sea-marmara">Marmara D.</span>
+              <span className="sea-label sea-med">Akdeniz ☀️</span>
               
-              <svg viewBox="0 0 800 380" className="turkey-accurate-svg">
+              <svg 
+                viewBox={TURKEY_MAP_VIEWBOX} 
+                className="turkey-accurate-svg"
+                aria-label="Gerçek Türkiye Coğrafi Bölgeler Haritası"
+              >
                 <defs>
-                  <filter id="mapShadow" x="-5%" y="-5%" width="110%" height="110%">
-                    <feDropShadow dx="0" dy="4" stdDeviation="6" floodOpacity="0.15" />
+                  <filter id="realMapShadow" x="-2%" y="-2%" width="104%" height="106%">
+                    <feDropShadow dx="0" dy="3" stdDeviation="4" floodOpacity="0.18" />
+                  </filter>
+                  <filter id="regionGlow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#38bdf8" floodOpacity="0.6" />
                   </filter>
                 </defs>
 
-                {/* 7 Regions */}
-                {TURKEY_REGIONS.map((region) => {
-                  const isSelected = selectedRegionId === region.id;
-                  const isTarget = currentMapQ.targetRegion === region.id;
-                  const isHovered = hoveredRegionId === region.id;
+                {/* 81 İl ve 7 Coğrafi Bölgenin Gerçek Sınırları */}
+                <g filter="url(#realMapShadow)">
+                  {PROVINCES_DATA.map((prov) => {
+                    const reg = REGIONS_DATA[prov.regionId];
+                    const isSelected = selectedRegionId === prov.regionId;
+                    const isTarget = currentMapQ.targetRegion === prov.regionId;
+                    const isHovered = hoveredRegionId === prov.regionId;
 
-                  let fillColor = region.color;
-                  if (isSelected && isTarget) fillColor = '#10b981'; // Green on success
-                  if (isSelected && !isTarget) fillColor = '#ef4444'; // Red on mistake
-                  else if (isHovered) fillColor = region.hoverColor;
+                    let fillColor = reg ? reg.color : '#94a3b8';
+                    if (isSelected && isTarget) fillColor = '#10b981'; // Doğru bölge seçimi: Canlı Yeşil
+                    else if (isSelected && !isTarget) fillColor = '#ef4444'; // Yanlış seçim: Kırmızı
+                    else if (isHovered && reg) fillColor = reg.accentColor; // Hover vurgusu
+
+                    return (
+                      <g 
+                        key={prov.id}
+                        id={prov.id}
+                        className={`province-group ${isHovered ? 'hovered' : ''} ${isSelected ? 'selected' : ''}`}
+                        onClick={() => handleRegionClick(prov.regionId)}
+                        onMouseEnter={() => {
+                          setHoveredRegionId(prov.regionId);
+                          setHoveredProvinceName(prov.name);
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredRegionId(null);
+                          setHoveredProvinceName(null);
+                        }}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        {prov.paths.map((dPath, pIdx) => (
+                          <path
+                            key={pIdx}
+                            d={dPath}
+                            fill={fillColor}
+                            stroke="#ffffff"
+                            strokeWidth={isHovered || isSelected ? '1.4' : '0.75'}
+                            strokeLinejoin="round"
+                            className="turkey-real-province-path"
+                          />
+                        ))}
+                      </g>
+                    );
+                  })}
+                </g>
+
+                {/* Tuz Gölü ve Van Gölü Belirteçleri */}
+                <g className="lake-markers" pointerEvents="none">
+                  <ellipse cx="430" cy="225" rx="16" ry="12" fill="#bae6fd" stroke="#ffffff" strokeWidth="1" />
+                  <text x="430" y="228" textAnchor="middle" fill="#0284c7" fontSize="8" fontWeight="800">Tuz G.</text>
+
+                  <ellipse cx="885" cy="225" rx="18" ry="14" fill="#38bdf8" stroke="#ffffff" strokeWidth="1" />
+                  <text x="885" y="228" textAnchor="middle" fill="#0369a1" fontSize="8" fontWeight="800">Van G.</text>
+                </g>
+
+                {/* 7 Coğrafi Bölgenin Merkez Etiket Butonları */}
+                {Object.values(REGIONS_DATA).map(reg => {
+                  const isSelected = selectedRegionId === reg.id;
+                  const isHovered = hoveredRegionId === reg.id;
+                  const isTarget = currentMapQ.targetRegion === reg.id;
+
+                  let pinBg = 'rgba(15, 23, 42, 0.85)';
+                  let pinBorder = '#ffffff';
+
+                  if (isSelected && isTarget) {
+                    pinBg = '#10b981';
+                    pinBorder = '#ffffff';
+                  } else if (isSelected && !isTarget) {
+                    pinBg = '#ef4444';
+                    pinBorder = '#ffffff';
+                  } else if (isHovered) {
+                    pinBg = reg.accentColor;
+                    pinBorder = '#fef08a';
+                  }
 
                   return (
                     <g 
-                      key={region.id} 
-                      onClick={() => handleRegionClick(region.id)}
-                      onMouseEnter={() => setHoveredRegionId(region.id)}
+                      key={`label-${reg.id}`} 
+                      className="region-label-pin"
+                      onClick={() => handleRegionClick(reg.id)}
+                      onMouseEnter={() => {
+                        setHoveredRegionId(reg.id);
+                        setHoveredProvinceName(null);
+                      }}
                       onMouseLeave={() => setHoveredRegionId(null)}
-                      className="region-clickable-group"
-                      filter="url(#mapShadow)"
+                      style={{ cursor: 'pointer' }}
                     >
-                      <path
-                        d={region.d}
-                        fill={fillColor}
-                        stroke="#ffffff"
-                        strokeWidth={isSelected ? '3.5' : '2'}
-                        className={`turkey-region-polygon ${isSelected ? 'active-target' : ''}`}
+                      <rect
+                        x={reg.center.x - 52}
+                        y={reg.center.y - 13}
+                        width="104"
+                        height="26"
+                        rx="13"
+                        fill={pinBg}
+                        stroke={pinBorder}
+                        strokeWidth={isSelected ? '2.4' : '1.5'}
                       />
-
-                      {/* Region Label Badge Pin */}
-                      <g className="region-pin-marker" pointerEvents="none">
-                        <rect
-                          x={region.center.x - 48}
-                          y={region.center.y - 12}
-                          width="96"
-                          height="24"
-                          rx="12"
-                          fill="rgba(15, 23, 42, 0.75)"
-                          stroke="#ffffff"
-                          strokeWidth="1.2"
-                        />
-                        <text
-                          x={region.center.x}
-                          y={region.center.y + 4}
-                          textAnchor="middle"
-                          fill="#ffffff"
-                          fontSize="11"
-                          fontWeight="800"
-                        >
-                          {region.shortName}
-                        </text>
-                      </g>
+                      <text
+                        x={reg.center.x}
+                        y={reg.center.y + 4.5}
+                        textAnchor="middle"
+                        fill="#ffffff"
+                        fontSize="11.5"
+                        fontWeight="800"
+                      >
+                        {reg.shortName}
+                      </text>
                     </g>
                   );
                 })}
-
-                {/* Van Gölü */}
-                <ellipse cx="680" cy="180" rx="20" ry="12" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.5" pointerEvents="none" />
-                <text x="680" y="183" textAnchor="middle" fill="#0369a1" fontSize="8" fontWeight="800" pointerEvents="none">Van G.</text>
-
-                {/* Tuz Gölü */}
-                <ellipse cx="305" cy="190" rx="18" ry="10" fill="#e0f2fe" stroke="#ffffff" strokeWidth="1.5" pointerEvents="none" />
-                <text x="305" y="193" textAnchor="middle" fill="#0284c7" fontSize="8" fontWeight="800" pointerEvents="none">Tuz G.</text>
               </svg>
             </div>
           </div>
 
-          {/* Region Quick Interactive Cards Grid */}
+          {/* 7 Coğrafi Bölge Hızlı Seçim Butonları (Tablet/Telefonda Rahat Dokunma) */}
           <div className="regions-interactive-grid">
-            {TURKEY_REGIONS.map(reg => {
+            {Object.values(REGIONS_DATA).map(reg => {
               const isSelected = selectedRegionId === reg.id;
               const isTarget = currentMapQ.targetRegion === reg.id;
               let cardStateClass = '';
@@ -476,6 +472,8 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
                   key={reg.id}
                   type="button"
                   onClick={() => handleRegionClick(reg.id)}
+                  onMouseEnter={() => setHoveredRegionId(reg.id)}
+                  onMouseLeave={() => setHoveredRegionId(null)}
                   className={`region-select-card ${cardStateClass}`}
                 >
                   <div className="card-top-indicator" style={{ backgroundColor: reg.color }}></div>
@@ -488,7 +486,64 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
             })}
           </div>
 
-          {/* Feedback Card */}
+          {/* Seçili Bölge Eğitim & Coğrafya Bilgi Kartı (5. Sınıf MEB Kazanımları) */}
+          {selectedRegion && (
+            <div className="region-detailed-intel-card animate-fadeIn">
+              <div className="intel-card-header" style={{ borderLeftColor: selectedRegion.color }}>
+                <div className="intel-title-group">
+                  <span className="intel-badge" style={{ backgroundColor: selectedRegion.bgLight, color: selectedRegion.accentColor }}>
+                    {selectedRegion.badge}
+                  </span>
+                  <h4>{selectedRegion.name} Coğrafi Özellikleri</h4>
+                </div>
+                <p className="intel-summary">{selectedRegion.description}</p>
+              </div>
+
+              <div className="intel-grid-details">
+                <div className="intel-item">
+                  <div className="intel-item-head">
+                    <Sun size={16} className="text-amber-500" />
+                    <strong>İklim Tipi:</strong>
+                  </div>
+                  <span>{selectedRegion.iklim}</span>
+                </div>
+
+                <div className="intel-item">
+                  <div className="intel-item-head">
+                    <Trees size={16} className="text-emerald-500" />
+                    <strong>Bitki Örtüsü:</strong>
+                  </div>
+                  <span>{selectedRegion.bitkiOrtusu}</span>
+                </div>
+
+                <div className="intel-item">
+                  <div className="intel-item-head">
+                    <Mountain size={16} className="text-indigo-500" />
+                    <strong>Yeryüzü Şekilleri & Göller:</strong>
+                  </div>
+                  <span>{selectedRegion.yeryuzu}</span>
+                </div>
+
+                <div className="intel-item">
+                  <div className="intel-item-head">
+                    <ShoppingBag size={16} className="text-purple-500" />
+                    <strong>Ekonomik Faaliyetler:</strong>
+                  </div>
+                  <span>{selectedRegion.ekonomi}</span>
+                </div>
+
+                <div className="intel-item full-width">
+                  <div className="intel-item-head">
+                    <Landmark size={16} className="text-rose-500" />
+                    <strong>Tarihi & Kültürel Miras:</strong>
+                  </div>
+                  <span>{selectedRegion.tarihi}</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Soru Bildirim Bannerı */}
           {mapFeedback && (
             <div className={`map-feedback-banner ${mapFeedback.isCorrect ? 'correct' : 'wrong'} animate-fadeIn`}>
               <div className="feedback-content">
@@ -514,7 +569,7 @@ export const SosyalResfebeLab = ({ topic, onFinish }) => {
       )}
 
       {/* =========================================================================
-          TAB 2: ARKEOLOJİ DEDEKTİFİ: MEDENİYET SANDIĞI
+          SEKME 2: ARKEOLOJİ DEDEKTİFİ: MEDENİYET SANDIĞI
           ========================================================================= */}
       {activeTab === 'detective' && (
         <div className="detective-game-card animate-fadeIn">
