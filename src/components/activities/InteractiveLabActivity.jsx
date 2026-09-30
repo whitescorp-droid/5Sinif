@@ -8,11 +8,16 @@ import { MoonPhasesOrbitLab } from '../labs/MoonPhasesOrbitLab';
 import { ForceDynamometerLab } from '../labs/ForceDynamometerLab';
 import { LightShadowLab } from '../labs/LightShadowLab';
 import { ElectricCircuitLab } from '../labs/ElectricCircuitLab';
+import { EnglishDialogueLab } from '../labs/EnglishDialogueLab';
 
 export const InteractiveLabActivity = ({ topic, subjectId, onFinish }) => {
   const labType = topic.interactiveLab?.type;
 
   switch (labType) {
+    case 'english-dialogue-lab':
+    case 'english-school-lab':
+    case 'english-classroom-lab':
+      return <EnglishDialogueLab topic={topic} onFinish={onFinish} />;
     case 'angle-protractor':
       return <AngleProtractorLab topic={topic} onFinish={onFinish} />;
     case 'triangle-polygons':

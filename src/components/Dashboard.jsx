@@ -53,6 +53,19 @@ export const Dashboard = ({ onSelectSubject, onSelectDailyMission }) => {
     },
     {
       id: 'mission_4',
+      subjectId: 'ingilizce',
+      unitId: 'eng_u1',
+      topicId: 'eng_u1_t1',
+      activityType: 'pronunciation',
+      title: 'İngilizce: School Life Sesli Telaffuz & Tekrar',
+      subjectName: 'İngilizce (English)',
+      icon: '🇬🇧',
+      color: '#2563EB',
+      xpReward: 50,
+      isDone: !!completedActivities['eng_u1_t1_pronunciation']
+    },
+    {
+      id: 'mission_5',
       subjectId: 'almanca',
       unitId: 'de_u1',
       topicId: 'de_u1_t1',
@@ -97,7 +110,7 @@ export const Dashboard = ({ onSelectSubject, onSelectDailyMission }) => {
         <div className="welcome-right-art">
           <div className="floating-bubble bubble-1">📐 Matematik</div>
           <div className="floating-bubble bubble-2">🔬 Fen Bilimleri</div>
-          <div className="floating-bubble bubble-3">📖 Türkçe</div>
+          <div className="floating-bubble bubble-3">🇬🇧 İngilizce</div>
           <div className="banner-mascot">🎯</div>
         </div>
       </div>

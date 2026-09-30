@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useGame } from '../../context/GameContext';
 import { RotateCw, CheckCircle2, RefreshCw, Sparkles, ChevronRight, ChevronLeft, Award, Volume2 } from 'lucide-react';
 import { playSound } from '../../utils/soundEffects';
-import { speakGerman } from '../../utils/speechUtils';
+import { speakGerman, speakEnglish } from '../../utils/speechUtils';
 import confetti from 'canvas-confetti';
 
 export const FlashcardActivity = ({ topic, subjectId, onFinish }) => {
@@ -124,14 +124,15 @@ export const FlashcardActivity = ({ topic, subjectId, onFinish }) => {
           <div className="flip-card-face flip-card-front">
             <div className="card-top-tags">
               <span className="card-tag">Soru & Kavram</span>
-              {subjectId === 'almanca' && (
+              {(subjectId === 'almanca' || subjectId === 'ingilizce') && (
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    speakGerman(currentCard.front);
+                    if (subjectId === 'ingilizce') speakEnglish(currentCard.front);
+                    else speakGerman(currentCard.front);
                   }}
                   className="btn-card-audio"
-                  title="Almanca Telaffuzu Dinle"
+                  title="Telaffuzu Dinle"
                 >
                   <Volume2 size={18} />
                   <span>Dinle</span>
@@ -151,11 +152,12 @@ export const FlashcardActivity = ({ topic, subjectId, onFinish }) => {
           <div className="flip-card-face flip-card-back">
             <div className="card-top-tags">
               <span className="card-tag card-tag-answer">Açıklama & Çözüm</span>
-              {subjectId === 'almanca' && currentCard.example && (
+              {(subjectId === 'almanca' || subjectId === 'ingilizce') && currentCard.example && (
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    speakGerman(currentCard.example);
+                    if (subjectId === 'ingilizce') speakEnglish(currentCard.example);
+                    else speakGerman(currentCard.example);
                   }}
                   className="btn-card-audio"
                   title="Örnek Cümlenin Telaffuzunu Dinle"

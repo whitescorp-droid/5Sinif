@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useGame } from '../../context/GameContext';
 import { Volume2, Play, CheckCircle2, Award, ChevronRight, RefreshCw, Sparkles, Mic } from 'lucide-react';
-import { speakGerman, stopGermanSpeech } from '../../utils/speechUtils';
+import { speakGerman, speakEnglish, stopAllSpeech } from '../../utils/speechUtils';
 import { playSound } from '../../utils/soundEffects';
 import confetti from 'canvas-confetti';
 
 export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
   const { soundEnabled, completeActivity } = useGame();
   const phrases = topic.pronunciationPhrases || [];
+  const isEnglish = subjectId === 'ingilizce';
 
   const [playingIndex, setPlayingIndex] = useState(null);
   const [practicedIndices, setPracticedIndices] = useState([]);
@@ -21,11 +22,15 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
     );
   }
 
-  const handlePlay = (index, text, rate = 0.92) => {
+  const handlePlay = (index, text, rate = 0.90) => {
     setPlayingIndex(index);
-    speakGerman(text, rate, () => {
-      setPlayingIndex(null);
-    });
+    const onEndCallback = () => setPlayingIndex(null);
+
+    if (isEnglish) {
+      speakEnglish(text, rate, onEndCallback);
+    } else {
+      speakGerman(text, rate, onEndCallback);
+    }
 
     if (!practicedIndices.includes(index)) {
       const nextPracticed = [...practicedIndices, index];
@@ -46,6 +51,7 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
   };
 
   const handleRestart = () => {
+    stopAllSpeech();
     setPracticedIndices([]);
     setIsFinished(false);
   };
@@ -56,9 +62,11 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
         <div className="finish-icon-wrapper bg-blue">
           <Award size={48} className="finish-award-icon" />
         </div>
-        <h3 className="finish-title">Ausgezeichnet! Harika Telaffuz! 🇩🇪</h3>
+        <h3 className="finish-title">
+          {isEnglish ? 'Awesome Job! Harika Telaffuz! 🇬🇧' : 'Ausgezeichnet! Harika Telaffuz! 🇩🇪'}
+        </h3>
         <p className="finish-desc">
-          "{topic.title}" ünitesindeki tüm Almanca kalıpları dinledin ve sesli tekrarlarını tamamladın.
+          "{topic.title}" ünitesindeki tüm {isEnglish ? 'İngilizce' : 'Almanca'} kalıpları dinledin ve sesli tekrarlarını tamamladın.
         </p>
         <div className="finish-stat-box">
           <div className="stat-item">
@@ -88,12 +96,17 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
     <div className="pronunciation-container">
       {/* Top Banner */}
       <div className="pronunciation-intro-box">
-        <div className="intro-icon-box">🗣️</div>
+        <div className="intro-icon-box">{isEnglish ? '🇬🇧' : '🇩🇪'}</div>
         <div>
-          <h4 className="intro-title">Sesli Telaffuz & Tekrar Stüdyosu (Aussprache-Labor)</h4>
+          <h4 className="intro-title">
+            {isEnglish 
+              ? 'Sesli Telaffuz & Tekrar Stüdyosu (English Pronunciation Lab)' 
+              : 'Sesli Telaffuz & Tekrar Stüdyosu (Aussprache-Labor)'}
+          </h4>
           <p className="intro-desc">
-            Almanca kelimelerin ve kalıpların üzerine tıklayarak doğal telaffuzunu dinle, 
-            yavaş modda inceliklerini yakala ve yüksek sesle tekrar et!
+            {isEnglish
+              ? 'İngilizce kelimelerin ve kalıpların üzerine tıklayarak doğal telaffuzunu dinle, yavaş modda inceliklerini ve vurgusunu yakala, ardından yüksek sesle tekrar et!'
+              : 'Almanca kelimelerin ve kalıpların üzerine tıklayarak doğal telaffuzunu dinle, yavaş modda inceliklerini yakala ve yüksek sesle tekrar et!'}
           </p>
         </div>
       </div>
@@ -114,6 +127,7 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
       {/* Phrases List */}
       <div className="phrases-grid">
         {phrases.map((item, idx) => {
+          const phraseText = item.english || item.german || item.phrase || '';
           const isPlaying = playingIndex === idx;
           const isPracticed = practicedIndices.includes(idx);
 
@@ -124,7 +138,7 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
             >
               <div className="phrase-card-content">
                 <div className="phrase-de-row">
-                  <span className="phrase-de-text">{item.german}</span>
+                  <span className="phrase-de-text">{phraseText}</span>
                   {item.category && (
                     <span className="phrase-cat-pill">{item.category}</span>
                   )}
@@ -141,7 +155,7 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
 
               <div className="phrase-audio-actions">
                 <button
-                  onClick={() => handlePlay(idx, item.german, 0.92)}
+                  onClick={() => handlePlay(idx, phraseText, isEnglish ? 0.90 : 0.92)}
                   className={`btn-audio-play ${isPlaying ? 'pulse' : ''}`}
                   title="Doğal Hızda Dinle"
                 >
@@ -150,7 +164,7 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
                 </button>
 
                 <button
-                  onClick={() => handlePlay(idx, item.german, 0.70)}
+                  onClick={() => handlePlay(idx, phraseText, isEnglish ? 0.70 : 0.70)}
                   className="btn-audio-slow"
                   title="Yavaş Hızda Dinle (Heceleme & Vurgu)"
                 >
@@ -172,3 +186,4 @@ export const PronunciationActivity = ({ topic, subjectId, onFinish }) => {
     </div>
   );
 };
+

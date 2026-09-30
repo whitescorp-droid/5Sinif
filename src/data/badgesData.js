@@ -82,6 +82,15 @@ export const BADGES = [
     checkUnlocked: (stats) => (stats.subjectActivities?.['almanca'] || 0) >= 2
   },
   {
+    id: 'english_star',
+    title: 'English Star 🇬🇧',
+    description: 'İngilizce dersinde en az 2 etkinlik tamamladın. Splendid!',
+    icon: '🇬🇧',
+    color: '#2563EB',
+    xpReward: 100,
+    checkUnlocked: (stats) => (stats.subjectActivities?.['ingilizce'] || 0) >= 2
+  },
+  {
     id: 'xp_500',
     title: 'Maarif Yıldızı 🌟',
     description: 'Toplam 500 XP deneyim puanına ulaştın!',
