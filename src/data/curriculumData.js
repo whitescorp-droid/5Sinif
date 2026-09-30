@@ -5485,97 +5485,2643 @@ Yukarıdaki devreler karşılaştırıldığında hangisi doğrudur?
       ]
     },
     {
-      id: 'sosyal',
-      name: 'Sosyal Bilgiler',
-      shortName: 'Sosyal Bilgiler',
-      icon: '🌍',
-      color: '#F59E0B',
-      gradient: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
-      lightBg: '#FFFBEB',
-      description: 'Tarihimiz, kültürümüz, haklarımız ve coğrafyamız',
-      units: [
+  "id": "sosyal",
+  "name": "Sosyal Bilgiler",
+  "shortName": "Sosyal Bilgiler",
+  "icon": "🌍",
+  "color": "#F59E0B",
+  "gradient": "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+  "lightBg": "#FFFBEB",
+  "description": "Birlikte yaşama kültürü, evimiz dünya, afet bilinci ve tarihimizin ortak mirası",
+  "units": [
+    {
+      "id": "sos_u1",
+      "unitNumber": 1,
+      "title": "1. Öğrenme Alanı: Birlikte Yaşamak",
+      "description": "Gruplar, rollerimiz, hak ve sorumluluklarımız, kültürel saygı ve toplumsal dayanışma",
+      "topics": [
         {
-          id: 'sos_u1',
-          unitNumber: 1,
-          title: 'Birlikte Yaşıyoruz',
-          description: 'Toplumda rollerimiz, haklarımız, sorumluluklarımız ve kurallar',
-          topics: [
+          "id": "sos_u1_t1",
+          "title": "Gruplar ve Rollerimiz",
+          "kazanimCode": "SB.5.1.1",
+          "kazanimDesc": "Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümler, hak ve sorumluluklarını fark eder.",
+          "interactiveLab": {
+            "type": "sosyal-resfebe-lab",
+            "title": "Resfebe & Sosyal Zeka Sandığı 🧩"
+          },
+          "summary": "\n• **Grup Nedir?:** Ortak bir amaç için bir araya gelen, aralarında iş bölümü ve düzenli iletişim olan en az iki kişiden oluşan topluluktur (Aile, okul kulübü, futbol takımı).\n• **Rol:** Bir kimsenin içinde bulunduğu grupta üstlendiği görev, konum ve beklentilerdir.\n  - Bir birey aynı anda **birden fazla role** sahip olabilir: Evde evlat/abla, okulda öğrenci/sınıf başkanı, müzik korosunda solist.\n  - Roller zamanla değişebilir (İlkokul öğrencisiyken ortaokul öğrencisi olmak).\n• **Hak:** Kanunların ve ahlaki değerlerin bireylere tanıdığı meşru yetki ve korumalardır (Yaşama hakkı, eğitim hakkı, oyun oynama hakkı).\n• **Sorumluluk:** Bireyin üstlendiği rollerin gerektirdiği görevleri zamanında ve eksiksiz yerine getirmesidir.\n• **Önemli Kural:** Haklarımızı kullanırken başkalarının haklarına ve özgürlüklerine saygı duymak temel sorumluluğumuzdur!\n          ",
+          "keyConcepts": [
+            "Grup",
+            "Rol",
+            "Hak",
+            "Sorumluluk",
+            "İş Bölümü",
+            "Sosyal Kulüp"
+          ],
+          "flashcards": [
             {
-              id: 'sos_u1_t1',
-              title: 'Haklarım, Sorumluluklarım ve Rollerim',
-              kazanimCode: 'SOS.5.1.1',
-              kazanimDesc: 'İçinde bulunduğu gruplar ve roller ile hak ve sorumlulukları arasındaki ilişkiyi açıklar.',
-              summary: `
-• **Rol:** Bir kimsenin içinde bulunduğu grup veya toplulukta üstlendiği görev ve konumdur (Örn: Ailede evlat, okulda öğrenci, takımda kaleci).
-• Kişiler gün içinde aynı anda birden fazla role sahip olabilirler.
-• **Hak:** Kanunların ve ahlaki değerlerin bize tanıdığı yetkilerdir (Eğitim hakkı, oyun oynama hakkı, sağlık hakkı).
-• **Sorumluluk:** Üstlendiğimiz rollerin gerektirdiği ödevleri ve davranışları yerine getirmektir.
-              `,
-              keyConcepts: ['Rol', 'Hak', 'Sorumluluk', 'Grup', 'Sosyal Kulüpler'],
-              flashcards: [
-                {
-                  id: 'fc_sos_1',
-                  front: 'Rol nedir?',
-                  back: 'Bireyin dahil olduğu grup ya da kurumlarda üstlendiği konum ve görevdir.',
-                  tip: 'Aynı gün içinde hem kardeş, hem öğrenci, hem de müzik kulübü üyesi olabilirsin!',
-                  example: 'Sınıfta "öğrenci", evde "çocuk" rolündeyiz.'
-                },
-                {
-                  id: 'fc_sos_2',
-                  front: 'Hak ile Sorumluluk arasındaki fark nedir?',
-                  back: 'Hak bize tanınan koruma ve yetkidir; sorumluluk ise yapmamız gereken görevlerdir.',
-                  tip: 'Okula gitmek hakkımız, dersi dinleyip ödevimizi yapmak sorumluluğumuzdur.',
-                  example: 'Oyun oynamak bir çocuk hakkıdır, oyuncakları toplamak ise sorumluluktur.'
-                }
+              "id": "fc_sos_u1_1",
+              "front": "Grup nedir?",
+              "back": "Ortak bir amaç doğrultusunda bir araya gelen, aralarında düzenli iletişim ve iş birliği olan en az iki kişilik topluluktur.",
+              "tip": "Aile, futbol takımı veya izci kulübü birer gruptur.",
+              "example": "5-A sınıfı koro ekibi bir gruptur."
+            },
+            {
+              "id": "fc_sos_u1_2",
+              "front": "Rol nedir?",
+              "back": "Bir bireyin dâhil olduğu grupta üstlendiği görev, konum ve sergilediği davranışlardır.",
+              "tip": "Bir kişi gün içinde hem abi, hem öğrenci, hem de kaleci olabilir.",
+              "example": "Sınıfta \"öğrenci\", evde \"çocuk\" rolündeyiz."
+            },
+            {
+              "id": "fc_sos_u1_3",
+              "front": "Hak ile Sorumluluk arasındaki fark nedir?",
+              "back": "Hak, bize yasalarla tanınan meşru yetkilerdir; sorumluluk ise üstlendiğimiz rollerin gerektirdiği ödev ve görevlerdir.",
+              "tip": "Okula gitmek hakkımız; dersi dinleyip ödevimizi yapmak sorumluluğumuzdur.",
+              "example": "Oyun oynamak bir çocuk hakkıdır; oyuncakları toplamak sorumluluktur."
+            },
+            {
+              "id": "fc_sos_u1_4",
+              "front": "Bir insan aynı anda birden fazla role sahip olabilir mi?",
+              "back": "Evet! İnsanlar dâhil oldukları farklı gruplarda eş zamanlı olarak farklı roller üstlenebilirler.",
+              "tip": "Örn: Zeynep ailesinde çocuk, okulunda sınıf başkanı, satranç kulübünde üyedir.",
+              "example": "Farklı ortamlarda farklı roller üstlenmek sosyal becerilerimizi geliştirir."
+            },
+            {
+              "id": "fc_sos_u1_5",
+              "front": "Çocuk Hakları Sözleşmesi neyi güvenceye alır?",
+              "back": "18 yaşına kadar her çocuğun yaşama, eğitim, sağlık, korunma ve oyun oynama haklarını uluslararası düzeyde güvence altına alır.",
+              "tip": "20 Kasım Dünya Çocuk Hakları Günü olarak kutlanır.",
+              "example": "Hiçbir çocuk ağır işlerde çalıştırılamaz."
+            },
+            {
+              "id": "fc_sos_u1_6",
+              "front": "Sosyal kulüplerin öğrencilere katkısı nedir?",
+              "back": "Öğrencilerin liderlik, iş birliği, sorumluluk alma, empati ve iletişim becerilerini güçlendirir.",
+              "tip": "Kızılay kulübü, Yeşilay kulübü, Gezi kulübü.",
+              "example": "Kütüphanecilik kulübü ile kitap sevgisi ve paylaşım gelişir."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_1_1",
+              "left": "Eğitim Görmek",
+              "right": "Temel bir Çocuk Hakkı"
+            },
+            {
+              "id": "m_sos_1_2",
+              "left": "Odasını Toplamak",
+              "right": "Evdeki Temel Sorumluluk"
+            },
+            {
+              "id": "m_sos_1_3",
+              "left": "Sınıf Nöbetçisi Olmak",
+              "right": "Okulda Üstlenilen bir Rol"
+            },
+            {
+              "id": "m_sos_1_4",
+              "left": "Ders Ziline Uymak",
+              "right": "Okul Kuralı ve Görev"
+            },
+            {
+              "id": "m_sos_1_5",
+              "left": "Kızılay Kulübü",
+              "right": "Okul Sosyal Kulübü"
+            },
+            {
+              "id": "m_sos_1_6",
+              "left": "20 Kasım",
+              "right": "Dünya Çocuk Hakları Günü"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_1_1",
+              "text": "Bir birey hayatı boyunca ve gün içinde yalnızca tek bir role sahip olabilir.",
+              "isTrue": false,
+              "explanation": "Yanlış! İnsanlar aynı gün içinde evlat, kardeş, öğrenci, sporcu gibi birçok farklı role sahip olabilir."
+            },
+            {
+              "id": "tf_sos_1_2",
+              "text": "Haklarımız sınırsız değildir; başkalarının haklarının başladığı yerde bizim haklarımız sınır bulur.",
+              "isTrue": true,
+              "explanation": "Doğru! Toplumda barış içinde yaşamak için başkalarının hak ve özgürlüklerine saygı duymalıyız."
+            },
+            {
+              "id": "tf_sos_1_3",
+              "text": "18 yaşına kadar her birey çocuk olarak kabul edilir ve uluslararası Çocuk Hakları Sözleşmesi ile korunur.",
+              "isTrue": true,
+              "explanation": "Doğru! BM Çocuk Hakları Sözleşmesi her çocuğun haklarını koruma altına alır."
+            },
+            {
+              "id": "tf_sos_1_4",
+              "text": "Okulda ödev yapmak öğretmenimizin sorumluluğudur, bizim sorumluluğumuz değildir.",
+              "isTrue": false,
+              "explanation": "Yanlış! Ödevleri zamanında ve düzenli yapmak öğrencinin kendi sorumluluğudur."
+            },
+            {
+              "id": "tf_sos_1_5",
+              "text": "Gruptaki her üyenin kendi rolünün gerektirdiği görevi yapması grup başarısını artırır.",
+              "isTrue": true,
+              "explanation": "Doğru! İş bölümü ve görev bilinci grubun hedefine ulaşmasını sağlar."
+            },
+            {
+              "id": "tf_sos_1_6",
+              "text": "Otobüs durağında sıraya girmeden öne geçmek temel bir insan hakkıdır.",
+              "isTrue": false,
+              "explanation": "Yanlış! Sıraya girmek bir nezaket ve toplum kuralıdır; sırayı bozmak başkalarının hakkını çiğnemektir."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_1_1",
+              "sentence": "Bir kimsenin içinde bulunduğu grupta üstlendiği görev ve konuma ___ denir.",
+              "options": [
+                "rol",
+                "hak",
+                "afet",
+                "ölçek"
               ],
-              matching: [
-                { id: 'm_sos_1', left: 'Eğitim Görmek', right: 'Temel bir Hak' },
-                { id: 'm_sos_2', left: 'Odası Düzenli Tutmak', right: 'Bir Sorumluluk' },
-                { id: 'm_sos_3', left: 'Basketbol Takımında Kaptan Olmak', right: 'Bir Rol' }
+              "correctWord": "rol",
+              "hint": "Öğrenci, evlat, kaptan birer..."
+            },
+            {
+              "id": "fb_sos_1_2",
+              "sentence": "Kanunların bize tanıdığı yetki ve korumalara ___ denir.",
+              "options": [
+                "hak",
+                "sorumluluk",
+                "görev",
+                "ceza"
               ],
-              trueFalse: [
-                {
-                  id: 'tf_sos_1',
-                  text: 'Bir insan hayatı boyunca sadece tek bir role sahip olabilir.',
-                  isTrue: false,
-                  explanation: 'Yanlış! İnsanlar aynı anda evlat, abi, öğrenci, sporcu gibi birçok role sahip olabilir.'
-                },
-                {
-                  id: 'tf_sos_2',
-                  text: 'Haklarımız sınırsızdır, başkalarını rahatsız etse bile istediğimizi yapabiliriz.',
-                  isTrue: false,
-                  explanation: 'Yanlış! Haklarımız başkalarının haklarının başladığı yerde sınır bulur.'
-                }
+              "correctWord": "hak",
+              "hint": "Eğitim almak, sağlık hizmeti görmek temel bir..."
+            },
+            {
+              "id": "fb_sos_1_3",
+              "sentence": "Bireyin kendi davranışlarının sonuçlarını üstlenmesine ve ödevlerini yapmasına ___ denir.",
+              "options": [
+                "sorumluluk",
+                "özgürlük",
+                "hak",
+                "grup"
               ],
-              fillBlank: [
-                {
-                  id: 'fb_sos_1',
-                  sentence: 'Bir kişinin üstlendiği rolün gerektirdiği görevleri yerine getirmesine ___ denir.',
-                  options: ['sorumluluk', 'hak', 'özgürlük', 'meslek'],
-                  correctWord: 'sorumluluk',
-                  hint: 'Ödevimizi yapmak bir...'
-                }
+              "correctWord": "sorumluluk",
+              "hint": "Odasını toplamak bir..."
+            },
+            {
+              "id": "fb_sos_1_4",
+              "sentence": "Çocuk Hakları Sözleşmesi’ne göre her insan ___ yaşına kadar çocuk sayılır.",
+              "options": [
+                "18",
+                "15",
+                "12",
+                "20"
               ],
-              quiz: [
-                {
-                  id: 'q_sos_1',
-                  question: 'Aşağıdakilerden hangisi 5. sınıf öğrencisi olan bir çocuğun evdeki sorumluluklarından biridir?',
-                  options: [
-                    'Odasını ve çalışma masasını düzenli tutmak',
-                    'Ailesinin tüm faturalarını ödemek',
-                    'Evin kira sözleşmesini imzalamak',
-                    'İşe gidip para kazanmak'
-                  ],
-                  correctAnswerIndex: 0,
-                  hint: 'Çocuğun kendi yaşına uygun görevini düşün.',
-                  explanation: 'Odasını toplamak çocuğun aile içindeki yaş grubuna uygun temel sorumluluğudur.'
-                }
-              ]
+              "correctWord": "18",
+              "hint": "Reşit olma yaşıdır."
+            },
+            {
+              "id": "fb_sos_1_5",
+              "sentence": "Ortak bir hedef için bir araya gelen ve düzenli iletişim kuran insan topluluğuna ___ denir.",
+              "options": [
+                "grup",
+                "kalabalık",
+                "seyirci",
+                "ziyaretçi"
+              ],
+              "correctWord": "grup",
+              "hint": "Aile, sınıf ve takım birer..."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_1_1",
+              "question": "Aşağıdakilerden hangisi 5. sınıf öğrencisi olan Kerem’in evdeki sorumluluklarından biridir?",
+              "options": [
+                "Kendi çalışma masasını ve odasını düzenli tutmak",
+                "Evin elektrik ve su faturalarını maaşıyla ödemek",
+                "Evin kira sözleşmesini imzalamak",
+                "Haftalık mutfak alışverişinin tüm bütçesini karşılamak"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Çocuğun kendi yaşına ve rolüne uygun görevini düşün.",
+              "explanation": "Odasını ve eşyalarını düzenli tutmak bir çocuğun yaşına uygun temel ev sorumluluğudur."
+            },
+            {
+              "id": "q_sos_1_2",
+              "question": "Aşağıdaki durumların hangisinde bir \"rol değişimi\" gerçekleşmiştir?",
+              "options": [
+                "Ayşe’nin ilkokulu bitirip ortaokul 5. sınıf öğrencisi olması",
+                "Ali’nin her sabah aynı saatte uyanması",
+                "Mehmet’in kırmızı kazağını giymesi",
+                "Zeynep’in kitap okumayı çok sevmesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Bireyin üstlendiği konum veya kademe değişikliğine bak.",
+              "explanation": "İlkokul öğrenciliğinden ortaokul öğrenciliğine geçmek rol ve sorumluluklarda bir değişimdir."
+            },
+            {
+              "id": "q_sos_1_3",
+              "question": "Bir kişinin dahil olduğu grupta diğer üyelerle uyumlu çalışması, iş bölümüne sadık kalması hangi değerle doğrudan ilişkilidir?",
+              "options": [
+                "İş birliği ve Sorumluluk",
+                "Bencillik ve İçe Kapanıklık",
+                "Sabırsızlık ve Kayıtsızlık",
+                "Tembellik ve Dikkatsizlik"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Birlikte başarıya ulaşmayı sağlayan temel erdem.",
+              "explanation": "İş birliği ve sorumluluk bilinci grubun başarıya ulaşmasını ve bireylerin sosyalleşmesini sağlar."
+            },
+            {
+              "id": "q_sos_1_4",
+              "question": "Aşağıdakilerden hangisi Çocuk Hakları Sözleşmesi’nde yer alan haklardan biri DEĞİLDİR?",
+              "options": [
+                "Ağır ve tehlikeli sanayi kollarında tam gün çalıştırılma hakkı",
+                "Temiz bir çevrede sağlıklı yaşama hakkı",
+                "Düşüncelerini özgürce ifade etme hakkı",
+                "Ücretsiz ve nitelikli temel eğitim alma hakkı"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Çocukların korunmasını engelleyen duruma bak.",
+              "explanation": "Çocukların ağır işlerde çalıştırılması yasaktır; bu bir hak değil çocuk hakkı ihlalidir."
+            },
+            {
+              "id": "q_sos_1_5",
+              "question": "Kütüphanede ders çalışan Melis’in yan masadaki arkadaşlarıyla yüksek sesle konuşması hangi duruma aykırıdır?",
+              "options": [
+                "Başkalarının haklarına saygı gösterme sorumluluğuna",
+                "Beslenme ve sağlık hakkına",
+                "Seyahat etme özgürlüğüne",
+                "Barınma ve konut hakkına"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Sessizlik kuralı başkalarının rahat çalışma hakkını korur.",
+              "explanation": "Kütüphanede sessiz olmak, başkalarının sessiz ortamda çalışma hakkına saygının bir gereğidir."
+            }
+          ]
+        },
+        {
+          "id": "sos_u1_t2",
+          "title": "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü",
+          "kazanimCode": "SB.5.1.2",
+          "kazanimDesc": "Kültürel özelliklere saygı duymanın birlikte yaşamaya etkisini yorumlar; KKTC ve farklı kültürlerle ortak bağlarımızı kavrar.",
+          "summary": "\n• **Milli Kültür:** Bir milleti diğer milletlerden ayıran, geçmişten günümüze aktarılan maddi ve manevi değerlerin bütünüdür.\n  - Dilimiz (Türkçe), halk oyunlarımız (Halay, Horon, Zeybek), geleneksel el sanatlarımız (Ebru, Çini, Halıcılık).\n  - Dini ve milli bayramlarımız, düğünlerimiz, misafirperverliğimiz ve Türk kahvesi geleneğimiz.\n• **Kültürel Çeşitlilik Bir Zenginliktir:**\n  - Farklı yörelerimizin yemekleri, türküleri ve giyim kuşamları ülkemizin kültürel mozaiğini oluşturur.\n  - Ege'de zeybek, Karadeniz'de horon, Doğu'da halay aynı vatanın zengin renkleridir.\n• **KKTC (Kuzey Kıbrıs Türk Cumhuriyeti):**\n  - Tarihi, kültürü, dili ve milli değerleriyle gönül bağımızın olduğu yavru vatanımızdır.\n• **Farklı Kültürlere Saygı:**\n  - İnsanların farklı geleneklere, inançlara ve yaşam tarzlarına sahip olması doğaldır. Saygı, barışın ve birlikte yaşamanın anahtarıdır.\n          ",
+          "keyConcepts": [
+            "Kültür",
+            "Gelenek ve Görenek",
+            "Kültürel Saygı",
+            "KKTC",
+            "Empati",
+            "Hoşgörü"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u1_7",
+              "front": "Milli kültür nedir?",
+              "back": "Bir millete özgü olan, tarih boyunca kuşaktan kuşağa aktarılan maddi ve manevi değerlerin tamamıdır.",
+              "tip": "Dil, bayramlar, yemekler, giysiler ve mimari.",
+              "example": "Türk kahvesi ve lokum ikramı milli kültürümüzün bir parçasıdır."
+            },
+            {
+              "id": "fc_sos_u1_8",
+              "front": "Bölgelerimize ait halk oyunları nelerdir?",
+              "back": "Ege Bölgesi: Zeybek, Karadeniz Bölgesi: Horon, Doğu ve Güneydoğu: Halay, Trakya: Karşılama, İç Anadolu: Kaşık Oyunu.",
+              "tip": "Her oyun o yörenin coğrafi ve duygusal ritmini yansıtır.",
+              "example": "Horon, Karadeniz’in hırçın dalgalarını ve hamsinin hareketliliğini simgeler."
+            },
+            {
+              "id": "fc_sos_u1_9",
+              "front": "KKTC ile kültürel bağlarımız nasıldır?",
+              "back": "Kuzey Kıbrıs Türk Cumhuriyeti; aynı dili (Türkçe), tarihi, dini ve ortak milli değerleri paylaştığımız kardeş vatanımızdır.",
+              "tip": "Gönül coğrafyamızın ayrılmaz bir parçasıdır.",
+              "example": "Kıbrıs Türkleri de aynı bayramları ve gelenekleri coşkuyla kutlar."
+            },
+            {
+              "id": "fc_sos_u1_10",
+              "front": "Kültürel farklılıklara saygı duymak neden önemlidir?",
+              "back": "Toplumsal barışı, huzuru, kardeşliği güçlendirir; ön yargıları yıkar ve birlikte yaşama kültürünü geliştirir.",
+              "tip": "Farklılıklar ayrışma sebebi değil, birer zenginliktir.",
+              "example": "Farklı mutfaklara veya geleneklere önyargısız yaklaşmak."
+            },
+            {
+              "id": "fc_sos_u1_11",
+              "front": "Milli bayramlarımız hangileridir?",
+              "back": "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı, 19 Mayıs Atatürk’ü Anma Gençlik ve Spor Bayramı, 30 Ağustos Zafer Bayramı, 29 Ekim Cumhuriyet Bayramı, 15 Temmuz Demokrasi ve Milli Birlik Günü.",
+              "tip": "Milletçe birlik ve beraberliğimizi pekiştirir.",
+              "example": "29 Ekim’de tüm sokaklar Türk bayraklarıyla donatılır."
+            },
+            {
+              "id": "fc_sos_u1_12",
+              "front": "Somut Olmayan Kültürel Miras nedir?",
+              "back": "Gözle görülen bir yapı olmayıp; kuşaktan kuşağa sözlü, sanatsal veya uygulamalı olarak aktarılan gelenek ve göreneklerdir.",
+              "tip": "UNESCO listesinde yer alır.",
+              "example": "Ebru sanatı, Kırkpınar yağlı güreşleri, Karagöz ve Hacivat gölge oyunu."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_1_7",
+              "left": "Karadeniz Bölgesi",
+              "right": "Horon ve Kemençe"
+            },
+            {
+              "id": "m_sos_1_8",
+              "left": "Ege Bölgesi",
+              "right": "Zeybek ve Efeler"
+            },
+            {
+              "id": "m_sos_1_9",
+              "left": "Doğu ve Güneydoğu",
+              "right": "Halay ve Davul-Zurna"
+            },
+            {
+              "id": "m_sos_1_10",
+              "left": "Konya / İç Anadolu",
+              "right": "Mevlevi Sema Töreni"
+            },
+            {
+              "id": "m_sos_1_11",
+              "left": "Yavru Vatan",
+              "right": "Kuzey Kıbrıs Türk Cumhuriyeti"
+            },
+            {
+              "id": "m_sos_1_12",
+              "left": "29 Ekim",
+              "right": "Cumhuriyet Bayramı"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_1_7",
+              "text": "Ülkemizin farklı bölgelerindeki halk oyunlarının farklı olması bir ayrışma değil, kültürel zenginliktir.",
+              "isTrue": true,
+              "explanation": "Doğru! Kültürel çeşitlilik ülkemizin tarihi ve coğrafi derinliğini gösterir."
+            },
+            {
+              "id": "tf_sos_1_8",
+              "text": "Bizden farklı kültür ve inançlara sahip insanlara saygı göstermek zorunda değiliz.",
+              "isTrue": false,
+              "explanation": "Yanlış! İnsan hakları ve toplumsal huzur gereği herkes birbirinin kültürüne saygı duymalıdır."
+            },
+            {
+              "id": "tf_sos_1_9",
+              "text": "Kuzey Kıbrıs Türk Cumhuriyeti ile dilimiz, tarihimiz ve geleneklerimiz ortaktır.",
+              "isTrue": true,
+              "explanation": "Doğru! KKTC ile Türkiye arasında köklü kardeşlik ve ortak kültürel bağlar vardır."
+            },
+            {
+              "id": "tf_sos_1_10",
+              "text": "Bayram ziyaretlerinde büyüklere el öpmek ve ikramda bulunmak geleneksel kültürümüzün bir parçasıdır.",
+              "isTrue": true,
+              "explanation": "Doğru! Saygı ve sevgi bağlarını güçlendiren en köklü geleneklerimizdendir."
+            },
+            {
+              "id": "tf_sos_1_11",
+              "text": "Gelenek ve görenekler hiçbir zaman değişmez ve toplumları birleştirmeye fayda sağlamaz.",
+              "isTrue": false,
+              "explanation": "Yanlış! Gelenekler toplumun birlik harcıdır ve çağın şartlarına göre yaşatılarak devam eder."
+            },
+            {
+              "id": "tf_sos_1_12",
+              "text": "UNESCO, tüm insanlığa ait tarihi ve kültürel mirasları koruyan uluslararası kuruluştur.",
+              "isTrue": true,
+              "explanation": "Doğru! UNESCO Dünya Mirası Listesi ile ortak değerleri korur."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_1_6",
+              "sentence": "Karadeniz yöresinde kemençe eşliğinde hareketli adımlarla oynanan halk oyununa ___ denir.",
+              "options": [
+                "horon",
+                "zeybek",
+                "halay",
+                "vals"
+              ],
+              "correctWord": "horon",
+              "hint": "Hızlı ayak hareketleri ve kemençe."
+            },
+            {
+              "id": "fb_sos_1_7",
+              "sentence": "Bir milleti bir arada tutan maddi ve manevi değerler bütününe ___ denir.",
+              "options": [
+                "kültür",
+                "konum",
+                "ölçek",
+                "iklim"
+              ],
+              "correctWord": "kültür",
+              "hint": "Dil, gelenek, sanat ve tarih."
+            },
+            {
+              "id": "fb_sos_1_8",
+              "sentence": "Ege Bölgesi’nin cesareti ve yiğitliği simgeleyen ünlü halk oyununa ___ denir.",
+              "options": [
+                "zeybek",
+                "horon",
+                "kaşık oyunu",
+                "bar"
+              ],
+              "correctWord": "zeybek",
+              "hint": "Efeler diyarı."
+            },
+            {
+              "id": "fb_sos_1_9",
+              "sentence": "Türkiye ile aynı dili ve tarihi paylaşan \"Yavru Vatan\" olarak bilinen devlet ___ dir.",
+              "options": [
+                "KKTC",
+                "Almanya",
+                "Fransa",
+                "Yunanistan"
+              ],
+              "correctWord": "KKTC",
+              "hint": "Kuzey Kıbrıs Türk Cumhuriyeti."
+            },
+            {
+              "id": "fb_sos_1_10",
+              "sentence": "Su üzerine özel boyalar damlatılarak kağıda geçirilen geleneksel Türk süsleme sanatına ___ denir.",
+              "options": [
+                "ebru",
+                "heykel",
+                "mozaik",
+                "çini"
+              ],
+              "correctWord": "ebru",
+              "hint": "Kitre ve fırça ile su üzerinde sanat."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_1_6",
+              "question": "Aşağıdakilerden hangisi milli kültürümüzü yansıtan unsurlardan biri DEĞİLDİR?",
+              "options": [
+                "Cadılar Bayramı kutlaması",
+                "Kırkpınar yağlı güreşleri",
+                "Misafire Türk kahvesi ve lokum ikramı",
+                "Düğünlerde halay çekilmesi ve kına gecesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Bizim tarihimizden ve geleneklerimizden gelmeyen unsuru bul.",
+              "explanation": "Cadılar Bayramı Batı kültürüne aittir; Türk milli kültürünün parçası değildir."
+            },
+            {
+              "id": "q_sos_1_7",
+              "question": "Kuzey Kıbrıs Türk Cumhuriyeti (KKTC) ile Türkiye arasındaki bağlar aşağıdakilerden hangisiyle en iyi açıklanır?",
+              "options": [
+                "Ortak dil, tarih, kültür ve kardeşlik bağları",
+                "Sadece ticari ortaklık",
+                "Coğrafi olarak aynı kıtada yer almamaları",
+                "Aralarında hiçbir tarihi bağ bulunmaması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Yavru vatan ile ana vatan ilişkisi.",
+              "explanation": "KKTC ile Türkiye tek milletin fertleri olarak ortak dil, tarih ve kültürü paylaşır."
+            },
+            {
+              "id": "q_sos_1_8",
+              "question": "Farklı bir ilden veya ülkeden okulumuza yeni gelen bir öğrenciye karşı sergilememiz gereken en doğru tutum nedir?",
+              "options": [
+                "Kültürel farklılıklarına saygı gösterip okula uyumuna yardımcı olmak",
+                "Farklı şivesiyle veya alışkanlıklarıyla alay etmek",
+                "Onunla hiç konuşmayıp yalnız bırakmak",
+                "Ondan uzak durmaları için diğer arkadaşları uyarmak"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Misafirperverlik ve empati erdemini düşün.",
+              "explanation": "Farklılıklara saygı duymak ve yeni gelen arkadaşımıza sıcak davranmak milli değerlerimize uygundur."
+            },
+            {
+              "id": "q_sos_1_9",
+              "question": "Aşağıdaki halk oyunu ve bölge eşleştirmelerinden hangisi YANLIŞTIR?",
+              "options": [
+                "Horon — Akdeniz Bölgesi",
+                "Zeybek — Ege Bölgesi",
+                "Halay — Güneydoğu Anadolu Bölgesi",
+                "Karşılama — Trakya Bölgesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Horon kemençe ile Karadeniz kıyılarında oynanır.",
+              "explanation": "Horon Akdeniz’e değil, Karadeniz Bölgesi’ne özgü bir halk oyunudur."
+            },
+            {
+              "id": "q_sos_1_10",
+              "question": "Milli bayramların milletimiz açısından en önemli işlevi aşağıdakilerden hangisidir?",
+              "options": [
+                "Birlik, beraberlik ve vatan sevgisi duygularını pekiştirmesi",
+                "Okulların tatil olması sebebiyle dersleri unutturması",
+                "Sadece törenlerde şiir okunmasını sağlaması",
+                "İnsanların sadece televizyon izlemesine vesile olması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Milletçe bir araya gelmenin ruhunu düşün.",
+              "explanation": "Milli bayramlar ortak zaferlerimizi ve egemenliğimizi hatırlatarak birlik duygumuzu pekiştirir."
+            }
+          ]
+        },
+        {
+          "id": "sos_u1_t3",
+          "title": "Yardımlaşma, Dayanışma ve Sosyal Sorumluluk",
+          "kazanimCode": "SB.5.1.3",
+          "kazanimDesc": "Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlar, STK’lerin rolünü kavrar.",
+          "summary": "\n• **Yardımlaşma ve Dayanışma:** Toplumu oluşturan bireylerin zor zamanlarda veya günlük hayatta birbirlerine destek olmasıdır.\n• **İmece Kültürü:** Köylerde ve mahallelerde tarlayı hasat etmek, ev yapmak veya kışlık hazırlığı için köylülerin el birliğiyle karşılıksız çalışmasıdır.\n• **Sadaka Taşı Geleneği:** Osmanlı döneminde cami avlularına konulan, varlıklı insanların gizlice para bıraktığı, ihtiyaç sahiplerinin de sadece ihtiyacı kadar aldığı onurlu yardımlaşma modelidir.\n• **Sivil Toplum Kuruluşları (STK):**\n  - Toplumsal sorunları çözmek için gönüllü insanların kurduğu resmi olmayan dernek ve vakıflardır.\n  - **Türk Kızılayı:** Afetlerde çadır, sıcak yemek, kan bağışı ve insani yardım sağlar.\n  - **Yeşilay:** Zararlı alışkanlıklarla (sigara, alkol, teknoloji bağımlılığı) mücadele eder.\n  - **AFAD:** Afet ve acil durumlarda arama-kurtarma ve kriz yönetimini yürütür (Devlet kurumu).\n  - **TEMA:** Toprak erozyonunu önlemek, ağaçlandırma yapmak ve doğayı korumak için çalışır.\n  - **Darüşşafaka:** Annesi veya babası vefat etmiş çocuklara kaliteli eğitim imkanı sunar.\n          ",
+          "keyConcepts": [
+            "Yardımlaşma",
+            "Dayanışma",
+            "İmece",
+            "Sadaka Taşı",
+            "STK",
+            "Kızılay",
+            "TEMA"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u1_13",
+              "front": "İmece nedir?",
+              "back": "Kırsal alanlarda ve mahallelerde köylülerin bir işi el birliğiyle, gönüllü ve karşılıksız olarak yapması geleneğidir.",
+              "tip": "Tarlayı sürmek, fındık toplamak, yol yapmak.",
+              "example": "Hasat zamanı komşuların birbirine yardım etmesi imecedir."
+            },
+            {
+              "id": "fc_sos_u1_14",
+              "front": "Sadaka Taşı nedir?",
+              "back": "Osmanlı’da cami avlularında bulunan; zenginin gizlice para bıraktığı, fakirin rencide olmadan ihtiyacı kadar aldığı yardımlaşma taşıdır.",
+              "tip": "Veren el ile alan el birbirini görmez.",
+              "example": "İnsan onurunu koruyan eşsiz bir sosyal dayanışma örneğidir."
+            },
+            {
+              "id": "fc_sos_u1_15",
+              "front": "Türk Kızılayı ne iş yapar?",
+              "back": "Deprem, sel gibi afetlerde barınma ve sıcak yemek temin eder; kan bağışı toplar ve yoksullara insani yardım ulaştırır.",
+              "tip": "Kırmızı hilal simgesidir; 1868 yılında kurulmuştur.",
+              "example": "Afet bölgesine ilk sıcak çorba ve çadırı Kızılay götürür."
+            },
+            {
+              "id": "fc_sos_u1_16",
+              "front": "TEMA Vakfı’nın amacı nedir?",
+              "back": "Türkiye Erozyonla Mücadele, Ağaçlandırma ve Doğal Varlıkları Koruma Vakfı; erozyonu engellemek ve ormanları korumak için çalışır.",
+              "tip": "Meşe palamudu ve fidan dikme kampanyaları düzenler.",
+              "example": "\"Türkiye Çöl Olmasın\" sloganıyla bilinir."
+            },
+            {
+              "id": "fc_sos_u1_17",
+              "front": "Sivil Toplum Kuruluşları (STK) nasıl çalışır?",
+              "back": "Devletten bağımsız olarak, gönüllü insanların bağış ve emekleriyle toplumsal sorunları çözmek için çalışırlar.",
+              "tip": "Çalışanlar gönüllülük esasıyla destek verir.",
+              "example": "Kızılay, TEMA, LÖSEV, Yeşilay birer STK örneğidir."
+            },
+            {
+              "id": "fc_sos_u1_18",
+              "front": "Toplumsal dayanışma bir ülkeye ne kazandırır?",
+              "back": "Milli birliği pekiştirir, zor zamanlarda yaraların hızla sarılmasını sağlar ve insanlar arasındaki sevgi bağını güçlendirir.",
+              "tip": "Deprem günlerinde tüm ülkenin tek yürek olması gibi.",
+              "example": "Yardım kampanyalarıyla ihtiyaç sahiplerine umut olunur."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_1_13",
+              "left": "Türk Kızılayı",
+              "right": "Kan Bağışı, Sıcak Aş ve Çadır"
+            },
+            {
+              "id": "m_sos_1_14",
+              "left": "TEMA Vakfı",
+              "right": "Erozyonla Mücadele ve Ağaçlandırma"
+            },
+            {
+              "id": "m_sos_1_15",
+              "left": "Yeşilay",
+              "right": "Bağımlılıklarla Mücadele"
+            },
+            {
+              "id": "m_sos_1_16",
+              "left": "LÖSEV",
+              "right": "Lösemili Çocuklara Sağlık ve Eğitim"
+            },
+            {
+              "id": "m_sos_1_17",
+              "left": "İmece",
+              "right": "El Birliğiyle Karşılıksız Çalışma"
+            },
+            {
+              "id": "m_sos_1_18",
+              "left": "Sadaka Taşı",
+              "right": "Osmanlı’da İncitmeden Yardımlaşma"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_1_13",
+              "text": "Sivil toplum kuruluşlarında (STK) görev alan kişiler zorunlu olarak ve para karşılığı çalışırlar.",
+              "isTrue": false,
+              "explanation": "Yanlış! STK’lerde temel ilke gönüllülüktür; insanlar topluma fayda sağlamak için karşılıksız destek olur."
+            },
+            {
+              "id": "tf_sos_1_14",
+              "text": "İmece, atalarımızdan bize miras kalan çok değerli bir dayanışma ve yardımlaşma geleneğidir.",
+              "isTrue": true,
+              "explanation": "Doğru! İmece sayesinde en zor işler bile kolayca ve birlik içinde tamamlanır."
+            },
+            {
+              "id": "tf_sos_1_15",
+              "text": "Sadaka taşlarında amaç yardım alan insanı mahcup etmeden, gizlice desteklemektir.",
+              "isTrue": true,
+              "explanation": "Doğru! \"Sağ elin verdiğini sol el görmesin\" anlayışının zarif bir uygulamasıdır."
+            },
+            {
+              "id": "tf_sos_1_16",
+              "text": "Türk Kızılayı sadece Türkiye sınırları içinde yardım yapar, dünyadaki mazlumlara yardım götürmez.",
+              "isTrue": false,
+              "explanation": "Yanlış! Kızılay tüm dünyada afet ve savaş mağduru insanlara yardım ulaştıran küresel bir kuruluştur."
+            },
+            {
+              "id": "tf_sos_1_17",
+              "text": "Okulda ihtiyaç sahibi bir köy okulu için kitap toplama kampanyası düzenlemek sosyal sorumluluk örneğidir.",
+              "isTrue": true,
+              "explanation": "Doğru! Bu tür kampanyalar öğrencilerin paylaşma ve empati duygularını pekiştirir."
+            },
+            {
+              "id": "tf_sos_1_18",
+              "text": "Toplumda yardımlaşma azaldıkça insanlar arasındaki güven ve huzur artar.",
+              "isTrue": false,
+              "explanation": "Yanlış! Yardımlaşma azaldığında bencillik artar; dayanışma arttıkça huzur ve güven çoğalır."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_1_11",
+              "sentence": "Kırsal bölgelerde işlerin köylüler tarafından el birliğiyle yapılmasına ___ usulü denir.",
+              "options": [
+                "imece",
+                "ihale",
+                "ticaret",
+                "pazar"
+              ],
+              "correctWord": "imece",
+              "hint": "Gönüllü dayanışma yöntemi."
+            },
+            {
+              "id": "fb_sos_1_12",
+              "sentence": "Kan bağışı, çadır ve afetlerde sıcak aş sağlayan en köklü yardım kuruluşumuz ___ dir.",
+              "options": [
+                "Türk Kızılayı",
+                "TEMA",
+                "Yeşilay",
+                "TÜBİTAK"
+              ],
+              "correctWord": "Türk Kızılayı",
+              "hint": "Kırmızı hilal sembolü."
+            },
+            {
+              "id": "fb_sos_1_13",
+              "sentence": "Erozyonla mücadele etmek ve ormanları korumak amacıyla kurulan vakıf ___ dır.",
+              "options": [
+                "TEMA",
+                "Kızılay",
+                "Yeşilay",
+                "LÖSEV"
+              ],
+              "correctWord": "TEMA",
+              "hint": "Meşe palamudu ve ağaçlandırma."
+            },
+            {
+              "id": "fb_sos_1_14",
+              "sentence": "Gönüllü insanların toplumsal fayda için bir araya gelerek oluşturduğu kurumlara ___ denir.",
+              "options": [
+                "STK",
+                "şirket",
+                "fabrika",
+                "holding"
+              ],
+              "correctWord": "STK",
+              "hint": "Sivil Toplum Kuruluşu kısaltması."
+            },
+            {
+              "id": "fb_sos_1_15",
+              "sentence": "Zararlı alışkanlıklarla ve bağımlılıkla mücadele eden cemiyet ___ dır.",
+              "options": [
+                "Yeşilay",
+                "Kızılay",
+                "TEMA",
+                "AFAD"
+              ],
+              "correctWord": "Yeşilay",
+              "hint": "Yeşil hilal sembolü."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_1_11",
+              "question": "Osmanlı Devleti’nde cami avlularına yerleştirilen \"Sadaka Taşları\" uygulamasının en temel amacı nedir?",
+              "options": [
+                "İhtiyaç sahibini rencide etmeden ve gösteriş yapmadan gizlice yardım ulaştırmak",
+                "Cami avlularını estetik heykellerle süslemek",
+                "Camilerin güvenlik görevlilerini denetlemek",
+                "Şehrin sınırlarını ve yönlerini belirlemek"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "İnsan onurunu korumayı amaçlayan inceliği düşün.",
+              "explanation": "Sadaka taşları, yardım edenin gururlanmasını ve yardım alanın utanmasını önleyen zarif bir ahlaki mirastır."
+            },
+            {
+              "id": "q_sos_1_12",
+              "question": "Aşağıdakilerden hangisi bir sivil toplum kuruluşunun (STK) özelliklerinden biri DEĞİLDİR?",
+              "options": [
+                "Yüksek kâr elde etmek amacıyla ürün ve hizmet satması",
+                "Toplumsal sorunlara duyarlı gönüllü insanlardan oluşması",
+                "Bağışlar ve üye aidatlarıyla faaliyetlerini yürütmesi",
+                "Toplum yararını ve dayanışmayı gözetmesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "STK’lerin ticari bir şirket olmadığını hatırla.",
+              "explanation": "Sivil toplum kuruluşları kâr amacı gütmezler; amaçları topluma ve çevreye karşılıksız fayda sağlamaktır."
+            },
+            {
+              "id": "q_sos_1_13",
+              "question": "Büyük bir sel felaketinin ardından afetzedelere giyecek, battaniye ve konserve toplayan 5-A sınıfı hangi alanda katkı sağlamıştır?",
+              "options": [
+                "Toplumsal yardımlaşma ve dayanışma",
+                "Ticari pazarlama faaliyeti",
+                "Bireysel kazanç sağlama",
+                "Turistik gezi organizasyonu"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Afetzedelerin yaralarını sarmak için yapılan eylem.",
+              "explanation": "Zor durumda olan insanlara yardım eli uzatmak toplumsal dayanışmanın en güzel örneğidir."
+            },
+            {
+              "id": "q_sos_1_14",
+              "question": "\"Ormanlarımızın yok olmasını engellemek, erozyon tehlikesine karşı milyonlarca fidan dikmek\" hangi vakfımızın temel görevidir?",
+              "options": [
+                "TEMA Vakfı",
+                "Yeşilay",
+                "Kızılay",
+                "Darüşşafaka"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Toprak ve fidan dostu vakıf.",
+              "explanation": "TEMA Vakfı erozyonla mücadele ve ağaçlandırma alanında öncü sivil toplum kuruluşudur."
+            },
+            {
+              "id": "q_sos_1_15",
+              "question": "Aşağıdakilerden hangisi \"imece\" usulüne uygun bir örnek oluşturur?",
+              "options": [
+                "Köy halkının fırtınada çatısı uçan okulun tamiratını hep birlikte el birliğiyle yapması",
+                "Bir market sahibinin müşterisine fiş kesmesi",
+                "Bir şirketin çalışanlarına maaş ödemesi",
+                "Bir kişinin evinde tek başına televizyon izlemesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "El birliğiyle, para almadan ortak bir işi bitirme.",
+              "explanation": "Ortaklaşa ve gönüllü olarak okulun çatısını tamir etmek tam bir imece örneğidir."
             }
           ]
         }
       ]
     },
+    {
+      "id": "sos_u2",
+      "unitNumber": 2,
+      "title": "2. Öğrenme Alanı: Evimiz Dünya",
+      "description": "Konum, haritalar, doğal ve beşerî çevre, afet bilinci ve komşu devletlerimiz",
+      "topics": [
+        {
+          "id": "sos_u2_t1",
+          "title": "Yaşadığım İlin Göreceli Konumu ve Harita Bilgisi",
+          "kazanimCode": "SB.5.2.1",
+          "kazanimDesc": "Yaşadığı ilin göreceli konum özelliklerini algılar, fiziki haritaları okur ve lejantı yorumlar.",
+          "summary": "\n• **Göreceli (Özel) Konum:** Bir yerin denizlere, komşu ülkelere, boğazlara, dağlara, ticaret yollarına ve önemli şehirlere göre bulunduğu konumdur.\n  - Örneğin: İstanbul iki kıtayı birbirine bağlayan boğazlara sahiptir. Rize Karadeniz kıyısındadır ve bol yağış alır.\n• **Harita Nedir?:** Yeryüzünün tamamının veya bir bölümünün kuş bakışı görünüşünün belli bir oranda küçültülerek (ölçek) düzleme aktarılmasıdır.\n• **Haritanın Unsurları:**\n  1. **Başlık:** Haritanın konusunu ve amacını belirtir.\n  2. **Kuş Bakışı Görünüş:** Tepeden dik açıyla bakıştır.\n  3. **Ölçek:** Küçültme oranıdır (Örn: 1/500.000).\n  4. **Yön Oku / Pusula:** Kuzeyi gösterir.\n  5. **Lejant (Harita Anahtarı):** Haritada kullanılan renk ve sembollerin ne anlama geldiğini gösteren tablodur.\n• **Fiziki Haritalarda Renklerin Anlamı (Yükselti Basamakları):**\n  - **Mavi:** Deniz, göl ve akarsular (Koyulaştıkça derinlik artar).\n  - **Yeşil:** 0 - 500 metre arası alçak ovalar ve kıyı düzlükleri (Orman demek DEĞİLDİR!).\n  - **Sarı:** 500 - 1000 metre arası platolar ve orta yükseltiler.\n  - **Kahverengi:** 1000 metre ve üzeri yüksek dağlar (Koyulaştıkça yükselti artar).\n          ",
+          "keyConcepts": [
+            "Göreceli Konum",
+            "Harita",
+            "Ölçek",
+            "Lejant",
+            "Kuş Bakışı",
+            "Fiziki Harita",
+            "Yükselti"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u2_1",
+              "front": "Fiziki haritalarda renkler neyi gösterir?",
+              "back": "Deniz seviyesine göre yükselti basamaklarını gösterir. Orman veya bitki örtüsünü göstermez!",
+              "tip": "Yeşil = 0-500 m, Sarı = 500-1000 m, Kahverengi = 1000+ m.",
+              "example": "Çukurova yeşil renkle, Ağrı Dağı koyu kahverengi ile gösterilir."
+            },
+            {
+              "id": "fc_sos_u2_2",
+              "front": "Lejant (Harita Anahtarı) nedir?",
+              "back": "Haritanın köşesinde bulunan, harita üzerindeki işaretlerin, renklerin ve sembollerin ne anlama geldiğini açıklayan tablodur.",
+              "tip": "Haritanın kullanım kılavuzudur.",
+              "example": "Küçük bir uçak simgesinin havaalanını gösterdiğini lejanttan anlarız."
+            },
+            {
+              "id": "fc_sos_u2_3",
+              "front": "Göreceli konum nedir?",
+              "back": "Bir yerin kıtalara, denizlere, boğazlara, komşulara ve ulaşım yollarına göre belirlenen özel konumudur.",
+              "tip": "Türkiye’nin Asya ile Avrupa arasında köprü olması göreceli konumudur.",
+              "example": "Antalya’nın Akdeniz kıyısında olması bir göreceli konum özelliğidir."
+            },
+            {
+              "id": "fc_sos_u2_4",
+              "front": "Ölçek nedir?",
+              "back": "Yeryüzündeki gerçek uzunlukların haritaya aktarılırken kaç kat küçültüldüğünü gösteren orandır.",
+              "tip": "Örn: 1/1.000.000 (Gerçekte 1 milyon kat daha büyüktür).",
+              "example": "Ölçek olmasa haritalar devasa boyutlarda çizilmek zorunda kalırdı."
+            },
+            {
+              "id": "fc_sos_u2_5",
+              "front": "Kuş bakışı görünüş ne demektir?",
+              "back": "Bir yere tam tepeden, dik bir açıyla (90 derece) bakılması durumudur.",
+              "tip": "Uçaktan veya uydudan doğrudan aşağıya bakmak gibi.",
+              "example": "Harita çizerken kuş bakışı bakış açısı zorunludur."
+            },
+            {
+              "id": "fc_sos_u2_6",
+              "front": "Plato ile Ova arasındaki fark nedir?",
+              "back": "Ova çevresine göre alçakta kalan düzlüklerdir; plato ise akarsular tarafından derin vadilerle yarılmış yüksek düzlüklerdir.",
+              "tip": "Konya Ovası vs Haymana Platosu.",
+              "example": "Ovalar genellikle tarım için çok verimlidir."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_2_1",
+              "left": "0 - 500 Metre",
+              "right": "Yeşil Renk (Alçak Düzlükler)"
+            },
+            {
+              "id": "m_sos_2_2",
+              "left": "500 - 1000 Metre",
+              "right": "Sarı Renk (Orta Yükselti)"
+            },
+            {
+              "id": "m_sos_2_3",
+              "left": "1000 Metre ve Üzeri",
+              "right": "Kahverengi Renk (Yüksek Dağlar)"
+            },
+            {
+              "id": "m_sos_2_4",
+              "left": "Lejant",
+              "right": "Harita İşaretler Tablosu"
+            },
+            {
+              "id": "m_sos_2_5",
+              "left": "Ölçek",
+              "right": "Küçültme Oranı"
+            },
+            {
+              "id": "m_sos_2_6",
+              "left": "Kuş Bakışı",
+              "right": "Tepeden Dik Açıyla Bakış"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_2_1",
+              "text": "Fiziki haritalarda yeşil renkle gösterilen yerler gür ormanlık alanları ifade eder.",
+              "isTrue": false,
+              "explanation": "Yanlış! Yeşil renk bitki örtüsünü değil, deniz seviyesine yakın alçak yerleri (0-500 metre) gösterir."
+            },
+            {
+              "id": "tf_sos_2_2",
+              "text": "Haritaların bir köşesinde yer alan lejant, sembollerin ne anlama geldiğini açıklar.",
+              "isTrue": true,
+              "explanation": "Doğru! Lejant haritanın dilini ve işaretlerini çözmemizi sağlar."
+            },
+            {
+              "id": "tf_sos_2_3",
+              "text": "Bir çizimin harita olabilmesi için kuş bakışı çizilmesi ve bir ölçeğe sahip olması gerekir.",
+              "isTrue": true,
+              "explanation": "Doğru! Ölçek ve kuş bakışı görünüş haritanın vazgeçilmez iki şartıdır."
+            },
+            {
+              "id": "tf_sos_2_4",
+              "text": "Türkiye’de batıdan doğuya doğru gidildikçe yükselti artar ve kahverengi tonları yoğunlaşır.",
+              "isTrue": true,
+              "explanation": "Doğru! Ülkemizin en yüksek bölgesi Doğu Anadolu’dur ve haritada koyu kahverengidir."
+            },
+            {
+              "id": "tf_sos_2_5",
+              "text": "Denizler fiziki haritalarda daima sarı renkle çizilir.",
+              "isTrue": false,
+              "explanation": "Yanlış! Su kütleleri (deniz, göl, akarsu) mavi renkle gösterilir."
+            },
+            {
+              "id": "tf_sos_2_6",
+              "text": "İstanbul ve Çanakkale boğazlarına sahip olmak Türkiye’nin göreceli konum özelliğidir.",
+              "isTrue": true,
+              "explanation": "Doğru! Boğazlar jeopolitik ve ticari açıdan ülkemize büyük stratejik üstünlük sağlar."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_2_1",
+              "sentence": "Haritada kullanılan işaretlerin ne anlama geldiğini gösteren tabloya ___ denir.",
+              "options": [
+                "lejant",
+                "ölçek",
+                "kroki",
+                "koordinat"
+              ],
+              "correctWord": "lejant",
+              "hint": "Harita anahtarı da denir."
+            },
+            {
+              "id": "fb_sos_2_2",
+              "sentence": "Fiziki haritalarda deniz seviyesine yakın yerler (0-500 m) ___ renkle gösterilir.",
+              "options": [
+                "yeşil",
+                "kahverengi",
+                "mor",
+                "kırmızı"
+              ],
+              "correctWord": "yeşil",
+              "hint": "Kıyı ovalarının rengidir."
+            },
+            {
+              "id": "fb_sos_2_3",
+              "sentence": "Yeryüzündeki uzunlukların küçültülme oranına ___ denir.",
+              "options": [
+                "ölçek",
+                "pusula",
+                "lejant",
+                "enlem"
+              ],
+              "correctWord": "ölçek",
+              "hint": "1/100.000 gibi pay ve paydalı oran."
+            },
+            {
+              "id": "fb_sos_2_4",
+              "sentence": "Fiziki haritada dağlar ve yüksek alanlar ___ renk tonlarıyla çizilir.",
+              "options": [
+                "kahverengi",
+                "mavi",
+                "yeşil",
+                "pembe"
+              ],
+              "correctWord": "kahverengi",
+              "hint": "Ağrı Dağı ve Toroslar bu renktedir."
+            },
+            {
+              "id": "fb_sos_2_5",
+              "sentence": "Bir yere tam tepeden dik bir açıyla bakılmasına ___ görünüş denir.",
+              "options": [
+                "kuş bakışı",
+                "ufuk",
+                "profil",
+                "yan"
+              ],
+              "correctWord": "kuş bakışı",
+              "hint": "Uçar gibi yukarıdan bakış."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_2_1",
+              "question": "Fiziki haritayı inceleyen Ali, Çukurova’nın yeşil renkle, Erzurum-Kars Platosu’nun ise koyu kahverengi ile boyandığını görmüştür. Bu durumun temel sebebi nedir?",
+              "options": [
+                "Çukurova’nın deniz seviyesine yakın olması, Erzurum-Kars’ın ise çok yüksek olması",
+                "Çukurova’da çok sık orman olması, Erzurum’da hiç ağaç olmaması",
+                "Erzurum’da sadece kahve tarımı yapılması",
+                "Çukurova’da yağmurun hiç yağmaması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Fiziki haritalardaki renklerin yükseltiyi gösterdiğini hatırla.",
+              "explanation": "Yeşil alçak yükseltileri (0-500m), kahverengi ise yüksek alanları (1000m+) temsil eder."
+            },
+            {
+              "id": "q_sos_2_2",
+              "question": "Bir çizimin \"harita\" olarak kabul edilebilmesi için aşağıdakilerden hangisi ZORUNLUDUR?",
+              "options": [
+                "Belirli bir ölçek dahilinde kuş bakışı olarak düzleme çizilmiş olması",
+                "Sadece sulu boya ile çizilmiş olması",
+                "İçinde mutlaka resimlerin ve fotoğrafların yer alması",
+                "Sadece dağlık alanları göstermesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Kuş bakışı ve ölçek kuralını düşün.",
+              "explanation": "Harita olmanın iki temel bilimsel şartı kuş bakışı çizim ve ölçek küçültmesidir."
+            },
+            {
+              "id": "q_sos_2_3",
+              "question": "Harita üzerindeki sembolleri (hastane, demir yolu, göl sınırı vb.) doğru anlamak isteyen bir turist haritanın hangi bölümüne bakmalıdır?",
+              "options": [
+                "Lejant (Harita Anahtarı)",
+                "Yalnızca pusula ibresine",
+                "Haritanın boş kenarlıklarına",
+                "Haritanın arka kapağına"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Semboller ve işaretler tablosudur.",
+              "explanation": "Lejant haritadaki sembol ve renklerin ne ifade ettiğini gösterir."
+            },
+            {
+              "id": "q_sos_2_4",
+              "question": "Aşağıdakilerden hangisi Türkiye’nin göreceli (özel) konumunun sağladığı faydalardan biridir?",
+              "options": [
+                "Asya ve Avrupa kıtalarını birbirine bağlayan önemli enerji ve ticaret yolları üzerinde olması",
+                "Kış mevsiminde kar yağması",
+                "Dünya’nın Güneş etrafında dönmesi",
+                "Dört mevsimin birbirini takip etmesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Ülkemizin bulunduğu özel coğrafi ve stratejik avantaja bak.",
+              "explanation": "Kıtalar arası köprü konumu ve boğazlar Türkiye’nin dünya çapındaki özel konum zenginliğidir."
+            },
+            {
+              "id": "q_sos_2_5",
+              "question": "Akarsular tarafından derin yarılmış, çevresine göre yüksekte bulunan geniş düzlüklere ne ad verilir?",
+              "options": [
+                "Plato",
+                "Ova",
+                "Vadi",
+                "Göl"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Haymana, Bozok, Cihanbeyli birer...",
+              "explanation": "Yüksekteki geniş düzlüklere plato denir; ovalar ise alçaktaki düzlüklerdir."
+            }
+          ]
+        },
+        {
+          "id": "sos_u2_t2",
+          "title": "Doğal ve Beşerî Çevredeki Değişim",
+          "kazanimCode": "SB.5.2.2",
+          "kazanimDesc": "Yaşadığı ilde doğal ve beşerî çevredeki değişimi neden ve sonuçlarıyla yorumlar, çevre bilinci kazanır.",
+          "summary": "\n• **Doğal Çevre:** İnsan eli değmeden, doğada kendiliğinden oluşmuş unsurlardır.\n  - Dağlar (Ağrı Dağı), göller (Van Gölü), akarsular (Kızılırmak), denizler, ormanlar ve mağaralar.\n• **Beşerî Çevre:** İnsanların ihtiyaçlarını karşılamak (barınma, ulaşım, enerji) amacıyla doğayı değiştirerek yaptığı unsurlardır.\n  - Binalar, köprüler (Çanakkale 1915 Köprüsü), barajlar (Atatürk Barajı), yollar, tüneller, fabrikalar ve parklar.\n• **İnsanın Doğaya Etkisi:**\n  - Nüfus artışı ve sanayileşme ile ormanlar azalmakta, betonlaşma artmaktadır.\n  - Hava, su ve toprak kirliliği canlıların yaşamını tehdit eder.\n• **Sürdürülebilirlik:** Doğal kaynakları tüketmeden, gelecek nesillerin de hakkını gözeterek doğayı koruyarak kalkınmaktır.\n          ",
+          "keyConcepts": [
+            "Doğal Çevre",
+            "Beşerî Çevre",
+            "Baraj",
+            "Köprü",
+            "Çevre Kirliliği",
+            "Geri Dönüşüm",
+            "Sürdürülebilirlik"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u2_7",
+              "front": "Doğal unsur ile Beşerî unsur arasındaki fark nedir?",
+              "back": "Doğal unsurlar doğada kendiliğinden var olan varlıklardır (dağ, nehir); beşerî unsurlar ise insan emeğiyle yapılan eserlerdir (köprü, baraj).",
+              "tip": "\"Beşer\" Arapça insan demektir; beşerî = insana ait.",
+              "example": "Manyas Gölü doğal; üzerindeki baraj beşerî unsurdur."
+            },
+            {
+              "id": "fc_sos_u2_8",
+              "front": "İnsanlar beşerî çevreyi neden inşa eder?",
+              "back": "Barınma, beslenme, ulaşım, elektrik enerjisi üretme ve eğitim gibi temel ihtiyaçlarını karşılamak için inşa ederler.",
+              "tip": "Evler barınmak, köprüler ulaşım sağlamak içindir.",
+              "example": "Keban Barajı elektrik üretmek ve sulama yapmak için yapılmıştır."
+            },
+            {
+              "id": "fc_sos_u2_9",
+              "front": "Hızlı şehirleşmenin doğal çevreye olumsuz etkileri nelerdir?",
+              "back": "Ormanlık ve tarım arazilerinin betonlaşması, hava kirliliği, su kaynaklarının kirlenmesi ve biyoçeşitliliğin azalmasıdır.",
+              "tip": "Yeşil alanların korunması hayati önemdedir.",
+              "example": "Sanayi atıklarının akarsulara dökülmesi balıkların ölümüne yol açar."
+            },
+            {
+              "id": "fc_sos_u2_10",
+              "front": "Geri dönüşüm çevreye nasıl katkı sağlar?",
+              "back": "Ağaçların kesilmesini önler, enerji tasarrufu sağlar, çöp miktarını azaltır ve doğal kaynakları korur.",
+              "tip": "1 ton kağıt geri dönüştürüldüğünde 17 ağaç kurtulur.",
+              "example": "Plastik, cam ve pilleri ayrı kutulara atmak."
+            },
+            {
+              "id": "fc_sos_u2_11",
+              "front": "Doğal anıt nedir?",
+              "back": "Doğa olayları sonucu kendiliğinden oluşmuş, büyüleyici güzellikteki eşsiz doğa harikalarıdır.",
+              "tip": "İnsan eli değmemiştir.",
+              "example": "Nevşehir Peri Bacaları, Denizli Pamukkale Travertenleri, Damlataş Mağarası."
+            },
+            {
+              "id": "fc_sos_u2_12",
+              "front": "Tarihi eser nedir?",
+              "back": "Geçmişte yaşamış uygarlıkların yaptığı kale, cami, saray, köprü ve antik kent gibi insan yapımı eserlerdir.",
+              "tip": "İnsan yapımıdır ve geçmişten günümüze kalmıştır.",
+              "example": "Sümela Manastırı, Topkapı Sarayı, Efes Antik Kenti."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_2_7",
+              "left": "Peri Bacaları (Nevşehir)",
+              "right": "Doğal Anıt"
+            },
+            {
+              "id": "m_sos_2_8",
+              "left": "Pamukkale Travertenleri",
+              "right": "Doğal Güzellik"
+            },
+            {
+              "id": "m_sos_2_9",
+              "left": "Topkapı Sarayı",
+              "right": "Tarihi Eser (Beşerî Miras)"
+            },
+            {
+              "id": "m_sos_2_10",
+              "left": "Atatürk Barajı",
+              "right": "Beşerî Unsur (Elektrik/Sulama)"
+            },
+            {
+              "id": "m_sos_2_11",
+              "left": "Van Gölü",
+              "right": "Doğal Göl"
+            },
+            {
+              "id": "m_sos_2_12",
+              "left": "Çanakkale 1915 Köprüsü",
+              "right": "Beşerî Ulaşım Yapısı"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_2_7",
+              "text": "Barajlar, köprüler ve fabrikalar doğal unsurlara örnektir.",
+              "isTrue": false,
+              "explanation": "Yanlış! İnsanların kendi elleriyle inşa ettiği tüm yapılar beşerî unsurdur."
+            },
+            {
+              "id": "tf_sos_2_8",
+              "text": "Nevşehir’deki Peri Bacaları rüzgar ve sel sularının tüfleri aşındırmasıyla oluşmuş doğal anıtlardır.",
+              "isTrue": true,
+              "explanation": "Doğru! Doğa olaylarının milyonlarca yılda oluşturduğu eşsiz güzelliktir."
+            },
+            {
+              "id": "tf_sos_2_9",
+              "text": "İnsanların doğayı değiştirirken çevreye ve ormanlara zarar vermemesi gerekir.",
+              "isTrue": true,
+              "explanation": "Doğru! Doğayı korumak ve sürdürülebilir kalkınmayı gözetmek geleceğimiz için şarttır."
+            },
+            {
+              "id": "tf_sos_2_10",
+              "text": "Geri dönüşüm kutularına atılan plastikler ve kağıtlar doğal kaynakların tükenmesini hızlandırır.",
+              "isTrue": false,
+              "explanation": "Yanlış! Geri dönüşüm doğal kaynakları korur, enerji tasarrufu sağlar."
+            },
+            {
+              "id": "tf_sos_2_11",
+              "text": "Pamukkale Travertenleri kalsiyumlu termal suların bıraktığı tortularla oluşan doğal bir zenginliktir.",
+              "isTrue": true,
+              "explanation": "Doğru! UNESCO koruması altındaki benzersiz doğal mirasımızdır."
+            },
+            {
+              "id": "tf_sos_2_12",
+              "text": "Bir şehirde fabrika bacalarına filtre takılması hava kirliliğini artırır.",
+              "isTrue": false,
+              "explanation": "Yanlış! Filtreler zararlı duman ve gazları tutarak hava kirliliğini önler."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_2_6",
+              "sentence": "İnsan etkisi olmadan doğada kendiliğinden oluşan dağ ve göllere ___ unsur denir.",
+              "options": [
+                "doğal",
+                "beşerî",
+                "tarihi",
+                "teknolojik"
+              ],
+              "correctWord": "doğal",
+              "hint": "İnsan eli değmemiştir."
+            },
+            {
+              "id": "fb_sos_2_7",
+              "sentence": "İnsanların elektrik üretmek ve tarlaları sulamak amacıyla nehirler üzerine kurduğu göletlere ___ denir.",
+              "options": [
+                "baraj",
+                "vadi",
+                "şelale",
+                "kaynak"
+              ],
+              "correctWord": "baraj",
+              "hint": "Atatürk, Keban gibi devasa su setleri."
+            },
+            {
+              "id": "fb_sos_2_8",
+              "sentence": "Rüzgâr ve su aşındırmasıyla oluşmuş Peri Bacaları bir ___ anıt örneğidir.",
+              "options": [
+                "doğal",
+                "tarihi",
+                "beşerî",
+                "askeri"
+              ],
+              "correctWord": "doğal",
+              "hint": "Doğanın kendi heykelleridir."
+            },
+            {
+              "id": "fb_sos_2_9",
+              "sentence": "Geçmiş uygarlıklardan günümüze ulaşan kale, cami ve saraylara ___ eser denir.",
+              "options": [
+                "tarihi",
+                "doğal",
+                "jeolojik",
+                "modern"
+              ],
+              "correctWord": "tarihi",
+              "hint": "İnsan eliyle yapılmış ortak miras."
+            },
+            {
+              "id": "fb_sos_2_10",
+              "sentence": "Atık kağıt, cam ve metallerin yeniden fabrikalarda işlenip kullanılmasına ___ denir.",
+              "options": [
+                "geri dönüşüm",
+                "erozyon",
+                "tüketim",
+                "tasfiye"
+              ],
+              "correctWord": "geri dönüşüm",
+              "hint": "Ağaçları kurtaran yeşil döngü."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_2_6",
+              "question": "Aşağıda verilenlerden hangisi \"beşerî bir unsur\" örneğidir?",
+              "options": [
+                "Çanakkale Boğazı üzerindeki 1915 Çanakkale Köprüsü",
+                "Antalya’daki Düden Şelalesi",
+                "Bursa’daki Uludağ",
+                "Denizli’deki Pamukkale Travertenleri"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "İnsanların mühendislik ve emekle inşa ettiği eseri bul.",
+              "explanation": "Köprüler insan yapımıdır ve beşerî unsurdur. Şelale, dağ ve travertenler ise doğaldır."
+            },
+            {
+              "id": "q_sos_2_7",
+              "question": "Doğal çevre ile ilgili aşağıda verilen bilgilerden hangisi DOĞRUDUR?",
+              "options": [
+                "Oluşumunda insanların hiçbir müdahalesi ve emeği yoktur",
+                "Sadece tuğla ve çimentoyla inşa edilirler",
+                "Hepsi geçmiş padişahlar tarafından yaptırılmıştır",
+                "Sadece şehir merkezlerinde bulunurlar"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Doğallığın temel tanımını hatırla.",
+              "explanation": "Doğal unsurlar doğa olayları ve zaman içerisinde kendiliğinden meydana gelir."
+            },
+            {
+              "id": "q_sos_2_8",
+              "question": "Bir bölgedeki ağaçların kesilerek yerine sanayi tesislerinin yapılması durumunda aşağıdakilerden hangisinin gerçekleşmesi BEKLENMEZ?",
+              "options": [
+                "Havadaki oksijen oranının ve temiz havanın artması",
+                "Toprak erozyonu tehlikesinin büyümesi",
+                "O bölgede yaşayan kuş ve canlı türlerinin azalması",
+                "Hava ve su kirliliğinin artması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Ağaçlar kesilirse temiz hava artmaz, tam tersine azalır.",
+              "explanation": "Ağaçlar oksijen üretir; ağaçlar kesildiğinde hava kirlenir, temiz hava asla artmaz."
+            },
+            {
+              "id": "q_sos_2_9",
+              "question": "Nevşehir Peri Bacaları ile Selimiye Camii arasındaki en temel fark aşağıdakilerden hangisidir?",
+              "options": [
+                "Peri Bacaları doğal anıt iken Selimiye Camii tarihi ve beşerî bir eserdir",
+                "Her ikisi de insanlar tarafından aynı yılda yapılmıştır",
+                "Her ikisi de su altında yer almaktadır",
+                "İkisi de sadece kışın ortaya çıkmaktadır"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Biri doğa aşındırması, diğeri Mimar Sinan şaheseridir.",
+              "explanation": "Peri Bacaları doğa eseridir; Selimiye Camii ise Mimar Sinan’ın inşa ettiği beşerî tarihi mirastır."
+            },
+            {
+              "id": "q_sos_2_10",
+              "question": "Aşağıdaki davranışlardan hangisi doğal çevreyi korumaya yönelik duyarlı bir harekettir?",
+              "options": [
+                "Pilleri ve plastik atıkları toprağa veya suya atmayıp geri dönüşüm kutusuna atmak",
+                "Piknik yaptıktan sonra çöpleri ormanda bırakmak",
+                "Evsel yağları lavaboya dökerek kanalizasyona karıştırmak",
+                "Ağaç dallarını kırıp yakmak"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Toprağı ve suyu koruyan doğru alışkanlık.",
+              "explanation": "Atık piller ve plastikler geri dönüştürülmeli; toprağa ve suya asla karışmamalıdır."
+            }
+          ]
+        },
+        {
+          "id": "sos_u2_t3",
+          "title": "Çevremizdeki Afetler ve Afet Bilinci",
+          "kazanimCode": "SB.5.2.3",
+          "kazanimDesc": "Meydana gelebilecek afetlerin etkilerini azaltmaya yönelik farkındalık kazanır, afet çantası ve önlemleri öğrenir.",
+          "summary": "\n• **Doğal Afet:** Can ve mal kaybına neden olan, büyük ölçüde insanların kontrolü dışında gerçekleşen doğa olaylarıdır.\n  - **Deprem:** Yer kabuğundaki fay hatlarının kırılmasıyla oluşan yer sarsıntılarıdır. Türkiye aktif deprem kuşağındadır.\n  - **Heyelan (Toprak Kayması):** Eğimli yamaçlarda, aşırı yağış ve killi toprak nedeniyle toprağın aşağıya kaymasıdır. En çok **Karadeniz Bölgesi**nde görülür.\n  - **Sel ve Su Baskını:** Aşırı yağışlar ve eriyen karlar sonucu akarsuların taşmasıdır. Dere yataklarına ev yapılmamalıdır!\n  - **Erozyon:** Bitki örtüsünün tahrip olmasıyla verimli üst toprağın rüzgar ve sularla süpürülmesidir. Çözüm: **Ağaçlandırma (TEMA)**.\n  - **Çığ:** Dik dağ yamaçlarında biriken kar kütlesinin aşağı doğru kaymasıdır. En çok **Doğu Anadolu**da görülür.\n• **Deprem Öncesi, Anı ve Sonrası:**\n  - **Öncesi:** Evdeki ağır dolap ve eşyalar duvara sabitlenmeli, **Afet ve Acil Durum Çantası** hazırlanmalıdır.\n  - **Anı:** Asansör veya merdivenlere koşulmaz! **Çök - Kapan - Tutun** pozisyonu alınır.\n  - **Sonrası:** Gaz ve elektrik vanaları kapatılır, acil toplanma alanına gidilir.\n• **AFAD:** Afet ve Acil Durum Yönetimi Başkanlığı.\n          ",
+          "keyConcepts": [
+            "Doğal Afet",
+            "Deprem",
+            "Heyelan",
+            "Sel",
+            "Erozyon",
+            "Çığ",
+            "Afet Çantası",
+            "Çök-Kapan-Tutun",
+            "AFAD"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u2_13",
+              "front": "Deprem anında ne yapılmalıdır?",
+              "back": "Paniğe kapılmadan sağlam bir eşyanın (koltuk, baza) yanında ÇÖK - KAPAN - TUTUN pozisyonu alınmalıdır. Asansör ve balkonlardan uzak durulmalıdır.",
+              "tip": "Pencerelerden ve camlardan uzak durulmalıdır.",
+              "example": "Başımızı yastık veya kollarımızla korumalıyız."
+            },
+            {
+              "id": "fc_sos_u2_14",
+              "front": "Afet Çantası’nda neler bulunmalıdır?",
+              "back": "Su, bozulmayan konserve gıdalar, ilk yardım çantası, düdük, el feneri, yedek piller, battaniye, radyo ve önemli evrak fotokopileri.",
+              "tip": "Her an kolay ulaşılabilecek bir yerde tutulmalıdır.",
+              "example": "Enkaz altında ses duyurmak için düdük hayati önem taşır."
+            },
+            {
+              "id": "fc_sos_u2_15",
+              "front": "Heyelan (Toprak Kayması) en çok hangi bölgemizde görülür?",
+              "back": "Engebeli arazi yapısı, killi toprak ve bol yağış nedeniyle en çok Karadeniz Bölgesi’nde görülür.",
+              "tip": "Aşırı yağış alan dik yamaçlara dikkat!",
+              "example": "Rize ve Trabzon yaylalarında ilkbaharda sık yaşanır."
+            },
+            {
+              "id": "fc_sos_u2_16",
+              "front": "Erozyon nedir ve nasıl önlenir?",
+              "back": "Verimli tarım toprağının rüzgâr ve sularla süpürülmesidir. Ağaçlandırma yaparak ve bitki örtüsünü koruyarak önlenir.",
+              "tip": "Ağaç kökleri toprağı bir ağ gibi sımsıkı tutar.",
+              "example": "TEMA Vakfı erozyona karşı milyonlarca fidan dikmektedir."
+            },
+            {
+              "id": "fc_sos_u2_17",
+              "front": "Çığ afeti nerelerde görülür?",
+              "back": "Kar yağışının bol ve arazinin dik, dağlık olduğu yerlerde; özellikle Doğu Anadolu Bölgesi’nde görülür.",
+              "tip": "Yüksek ses ve titreşim kar kütlesini harekete geçirebilir.",
+              "example": "Hakkari ve Van’ın dağ yollarında kışın çığ riski yüksektir."
+            },
+            {
+              "id": "fc_sos_u2_18",
+              "front": "Sel felaketinin zararları nasıl azaltılır?",
+              "back": "Dere yataklarına ev ve bina yapılmamalı, akarsu kenarlarına bentler kurulmalı ve ormanlık alanlar korunmalıdır.",
+              "tip": "Su daima kendi yatağını arar.",
+              "example": "Yağmur suyu drenaj kanallarının temiz tutulması."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_2_13",
+              "left": "Karadeniz Bölgesi",
+              "right": "Heyelan (Toprak Kayması)"
+            },
+            {
+              "id": "m_sos_2_14",
+              "left": "Doğu Anadolu Bölgesi",
+              "right": "Çığ Afeti (Kar Kayması)"
+            },
+            {
+              "id": "m_sos_2_15",
+              "left": "Erozyonun Çözümü",
+              "right": "Ağaçlandırma Yapmak (TEMA)"
+            },
+            {
+              "id": "m_sos_2_16",
+              "left": "Deprem Anı Kuralı",
+              "right": "Çök - Kapan - Tutun"
+            },
+            {
+              "id": "m_sos_2_17",
+              "left": "Afet Çantası Parçası",
+              "right": "Düdük, El Feneri ve Su"
+            },
+            {
+              "id": "m_sos_2_18",
+              "left": "AFAD",
+              "right": "Afet ve Acil Durum Yönetimi"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_2_13",
+              "text": "Deprem anında hızla asansöre binip binayı terk etmeye çalışmalıyız.",
+              "isTrue": false,
+              "explanation": "Yanlış! Deprem anında asansörler elektrik kesintisiyle düşebilir veya sıkışabilir; asla kullanılmaz!"
+            },
+            {
+              "id": "tf_sos_2_14",
+              "text": "Evdeki büyük dolap, vitrin ve kitaplıkların duvara sabitlenmesi depremde hayat kurtarır.",
+              "isTrue": true,
+              "explanation": "Doğru! Deprem yaralanmalarının çoğu devrilen eşyalardan kaynaklanır."
+            },
+            {
+              "id": "tf_sos_2_15",
+              "text": "Heyelan tehlikesi en çok düz ve kurak ovalarda görülür.",
+              "isTrue": false,
+              "explanation": "Yanlış! Heyelan eğimli yamaçlarda ve bol yağış alan yerlerde (Karadeniz) görülür."
+            },
+            {
+              "id": "tf_sos_2_16",
+              "text": "Ağaç dikmek ve ormanları çoğaltmak toprağın erozyonla yok olmasını engeller.",
+              "isTrue": true,
+              "explanation": "Doğru! Ağaç kökleri toprağı süpürülmekten koruyan en doğal kalkandır."
+            },
+            {
+              "id": "tf_sos_2_17",
+              "text": "Afet çantasını gardırobun en arkasındaki kilitli sandığa saklamalıyız.",
+              "isTrue": false,
+              "explanation": "Yanlış! Afet çantası çıkış kapısına yakın ve anında ulaşılabilecek bir yerde durmalıdır."
+            },
+            {
+              "id": "tf_sos_2_18",
+              "text": "Dere yataklarına binalar yapmak sel felaketinin can ve mal kaybını artırır.",
+              "isTrue": true,
+              "explanation": "Doğru! Dere yatakları asla yerleşime açılmamalıdır."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_2_11",
+              "sentence": "Deprem anında sarsıntı geçene kadar uygulanması gereken temel pozisyon ___ dur.",
+              "options": [
+                "Çök-Kapan-Tutun",
+                "Koş-Atla-Kaç",
+                "Ayağa Kalk",
+                "Pencereye Koş"
+              ],
+              "correctWord": "Çök-Kapan-Tutun",
+              "hint": "Sağlam bir eşya yanında hedef küçültme."
+            },
+            {
+              "id": "fb_sos_2_12",
+              "sentence": "Bol yağış ve dik yamaçlar sebebiyle heyelan en fazla ___ Bölgesi’nde yaşanır.",
+              "options": [
+                "Karadeniz",
+                "Güneydoğu",
+                "İç Anadolu",
+                "Ege"
+              ],
+              "correctWord": "Karadeniz",
+              "hint": "Rize, Trabzon, Artvin kıyıları."
+            },
+            {
+              "id": "fb_sos_2_13",
+              "sentence": "Verimli toprakların rüzgâr ve su ile süpürülüp yok olmasına ___ denir.",
+              "options": [
+                "erozyon",
+                "deprem",
+                "çığ",
+                "tsunami"
+              ],
+              "correctWord": "erozyon",
+              "hint": "Toprak kaybı."
+            },
+            {
+              "id": "fb_sos_2_14",
+              "sentence": "Eğimli dağ yamaçlarında biriken büyük kar kütlelerinin kaymasına ___ denir.",
+              "options": [
+                "çığ",
+                "sel",
+                "hortum",
+                "kuraklık"
+              ],
+              "correctWord": "çığ",
+              "hint": "Kışın dik dağ yamaçlarında olur."
+            },
+            {
+              "id": "fb_sos_2_15",
+              "sentence": "Afet durumlarında arama, kurtarma ve çadır koordinasyonunu yöneten devlet kurumu ___ dır.",
+              "options": [
+                "AFAD",
+                "TÜİK",
+                "RTÜK",
+                "MEB"
+              ],
+              "correctWord": "AFAD",
+              "hint": "Afet ve Acil Durum Yönetimi Başkanlığı."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_2_11",
+              "question": "Deprem anında sınıfta bulunan bir öğrencinin yapması gereken EN DOĞRU davranış nedir?",
+              "options": [
+                "Sıranın yanına çöküp başını koruyarak sağlam bir yere tutunmak (Çök-Kapan-Tutun)",
+                "Hemen merdivenlere ve pencerelere doğru koşup çığlık atmak",
+                "Asansöre doğru koşup binmeye çalışmak",
+                "Sıranın üzerine çıkıp ayakta beklemek"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Hedef küçültüp başı koruma kuralı.",
+              "explanation": "Sarsıntı bitene kadar sıranın yanında Çök-Kapan-Tutun pozisyonunda baş korunmalıdır."
+            },
+            {
+              "id": "q_sos_2_12",
+              "question": "Aşağıdakilerden hangisi bir \"Afet ve Acil Durum Çantası\"nda bulunması gereken temel malzemelerden biri DEĞİLDİR?",
+              "options": [
+                "Oyun konsolu ve tablet bilgisayar",
+                "Düdük ve pilli el feneri",
+                "Şişelenmiş temiz içme suyu ve konserve",
+                "İlk yardım çantası ve acil ilaçlar"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Hayatta kalmak için zorunlu olmayan eşyayı bul.",
+              "explanation": "Afet çantası hayatta kalma ve temel ihtiyaçlar içindir; oyun konsolu bulunmaz."
+            },
+            {
+              "id": "q_sos_2_13",
+              "question": "Karadeniz Bölgesi’nde heyelan (toprak kayması) olaylarının diğer bölgelerimize göre çok daha fazla görülmesinin TEMEL SEBEBİ nedir?",
+              "options": [
+                "Arazinin çok dik-engebeli olması, bol yağış alması ve toprağın killi olması",
+                "Bölgede hiç ağaç bulunmaması",
+                "Bölgenin deniz seviyesinin altında yer alması",
+                "Bölgede hiç kar yağmaması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Eğim + Su + Killi Toprak formülünü hatırla.",
+              "explanation": "Karadeniz’in dik yamaçları aşırı yağmur suyuyla ağırlaşınca killi toprakla birlikte kayar."
+            },
+            {
+              "id": "q_sos_2_14",
+              "question": "TEMA Vakfı’nın \"Türkiye Çöl Olmasın!\" sloganıyla ülke genelinde milyonlarca fidan dikmesinin temel amacı hangi afeti önlemektir?",
+              "options": [
+                "Toprak erozyonunu önlemek",
+                "Depremin büyüklüğünü azaltmak",
+                "Güneş tutulmasını engellemek",
+                "Volkanik patlamaları durdurmak"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Toprağın rüzgarla süpürülmesini engeller.",
+              "explanation": "Ağaçlandırma toprağı kökleriyle tutarak erozyonla sürüklenmesini önler."
+            },
+            {
+              "id": "q_sos_2_15",
+              "question": "Bir yerleşim yerinde sel felaketinin can ve mal kaybına yol açmasını önlemek için alınabilecek EN ETKİLİ önlem nedir?",
+              "options": [
+                "Evleri dere yataklarının içine değil, güvenli yüksek yamaçlara inşa etmek",
+                "Akarsu kenarlarındaki tüm ağaçları kesmek",
+                "Yağmur yağarken şemsiye açmamak",
+                "Şehirdeki tüm yolları kapatmak"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Dere yataklarına yapılaşma yasağı.",
+              "explanation": "Dere yatakları su taşkınlarının doğal yoludur; buralara bina yapılmazsa can kaybı önlenir."
+            }
+          ]
+        },
+        {
+          "id": "sos_u2_t4",
+          "title": "Komşu Devletlerimiz ve Sınır Kapılarımız",
+          "kazanimCode": "SB.5.2.4",
+          "kazanimDesc": "Ülkemize kara sınırı olan komşu devletler ve sınır kapıları hakkında bilgi toplar, ticari ve kültürel ilişkileri kavrar.",
+          "summary": "\n• **Türkiye’nin Kara Komşuları (8 Ülke):**\n  1. **Yunanistan (Batı):** İpsala ve Pazarkule sınır kapıları.\n  2. **Bulgaristan (Kuzeybatı):** Kapıkule (Avrupa’ya açılan en işlek sınır kapımız) ve Hamzabeyli.\n  3. **Gürcistan (Kuzeydoğu):** Sarp Sınır Kapısı (Kimlikle geçiş yapılabilen kapımız).\n  4. **Ermenistan (Doğu):** Akyaka ve Alican sınır kapıları (Şu an kapalı).\n  5. **Azerbaycan / Nahçıvan (Doğu):** Dilucu Sınır Kapısı (**En kısa kara sınırımız**: ~18 km).\n  6. **İran (Doğu):** Gürbulak, Kapıköy ve Esendere sınır kapıları (**En eski sınırımız**: 1639 Kasr-ı Şirin Antlaşması ile çizilmiştir).\n  7. **Irak (Güneydoğu):** Habur Sınır Kapısı (Önemli petrol ve ticaret kapısı).\n  8. **Suriye (Güney):** Cilvegözü, Öncüpınar, Nusaybin (**En uzun kara sınırımız**: ~911 km).\n• **Sınır Kapılarının Önemi:** İhracat ve ithalatın yapıldığı, turizm ve dostluk köprüleridir.\n          ",
+          "keyConcepts": [
+            "Komşu Ülkeler",
+            "Sınır Kapısı",
+            "Kapıkule",
+            "Sarp",
+            "Habur",
+            "Gürbulak",
+            "Kasr-ı Şirin",
+            "İhracat"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u2_19",
+              "front": "Türkiye’nin en uzun ve en kısa kara sınırları hangi ülkelerledir?",
+              "back": "En uzun kara sınırımız: Suriye (~911 km). En kısa kara sınırımız: Azerbaycan / Nahçıvan (~18 km).",
+              "tip": "Suriye güneyde, Nahçıvan doğuda yer alır.",
+              "example": "Dilucu Sınır Kapısı Nahçıvan ile olan kapımızdır."
+            },
+            {
+              "id": "fc_sos_u2_20",
+              "front": "Kapıkule Sınır Kapısı nerede ve neden önemlidir?",
+              "back": "Edirne’de Bulgaristan sınırındadır. Türkiye’nin Avrupa’ya açılan en büyük ve en işlek sınır kapısıdır.",
+              "tip": "TIR ticareti ve gurbetçilerin geliş rotasıdır.",
+              "example": "Avrupa’ya giden ihracat mallarının çoğu Kapıkule’den geçer."
+            },
+            {
+              "id": "fc_sos_u2_21",
+              "front": "Türkiye’nin en eski kara sınırı hangi ülkeyledir?",
+              "back": "İran sınırımızdır. 1639 Kasr-ı Şirin Antlaşması ile belirlenmiş ve asırlardır neredeyse hiç değişmemiştir.",
+              "tip": "Zağros Dağları doğal sınır oluşturur.",
+              "example": "Gürbulak sınır kapısı İran ile bağlantımızı sağlar."
+            },
+            {
+              "id": "fc_sos_u2_22",
+              "front": "Gürcistan ile olan sınır kapımız hangisidir?",
+              "back": "Artvin Hopa’daki Sarp Sınır Kapısı’dır. Türk vatandaşları kimlik kartlarıyla Gürcistan’a geçebilmektedir.",
+              "tip": "Karadeniz sahil yolunun ucundadır.",
+              "example": "Kafkaslar ve Orta Asya ticaret yoludur."
+            },
+            {
+              "id": "fc_sos_u2_23",
+              "front": "Batıdaki sınır komşularımız hangileridir?",
+              "back": "Yunanistan (İpsala kapısı) ve Bulgaristan (Kapıkule kapısı).",
+              "tip": "Trakya sınırımızdadırlar.",
+              "example": "Meriç Nehri Yunanistan ile doğal sınırımızın bir bölümünü çizer."
+            },
+            {
+              "id": "fc_sos_u2_24",
+              "front": "Habur Sınır Kapısı hangi komşumuzla bağlantı kurar?",
+              "back": "Irak ile bağlantı kurar. Şırnak Silopi’de yer alır ve Ortadoğu ticaretinde çok büyük paya sahiptir.",
+              "tip": "Petrol tankerleri ve ticaret kamyonları.",
+              "example": "Güneydoğu Anadolu’nun en işlek kapısıdır."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_2_19",
+              "left": "Bulgaristan",
+              "right": "Kapıkule Sınır Kapısı"
+            },
+            {
+              "id": "m_sos_2_20",
+              "left": "Gürcistan",
+              "right": "Sarp Sınır Kapısı"
+            },
+            {
+              "id": "m_sos_2_21",
+              "left": "Nahçıvan (Azerbaycan)",
+              "right": "Dilucu Sınır Kapısı (En Kısa Sınır)"
+            },
+            {
+              "id": "m_sos_2_22",
+              "left": "İran",
+              "right": "Gürbulak Kapısı (En Eski Sınır)"
+            },
+            {
+              "id": "m_sos_2_23",
+              "left": "Irak",
+              "right": "Habur Sınır Kapısı"
+            },
+            {
+              "id": "m_sos_2_24",
+              "left": "Suriye",
+              "right": "Cilvegözü Kapısı (En Uzun Sınır)"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_2_19",
+              "text": "Türkiye’nin en uzun kara sınırı Bulgaristan iledir.",
+              "isTrue": false,
+              "explanation": "Yanlış! En uzun kara sınırımız Suriye ile (911 km), Bulgaristan ile değildir."
+            },
+            {
+              "id": "tf_sos_2_20",
+              "text": "Kapıkule Sınır Kapısı, Türkiye’nin Avrupa kıtasına açılan en işlek kara kapısıdır.",
+              "isTrue": true,
+              "explanation": "Doğru! Edirne’de yer alan Kapıkule Avrupa karayolu ticaretinin kalbidir."
+            },
+            {
+              "id": "tf_sos_2_21",
+              "text": "Türkiye’nin İran ile olan sınırı 1639 Kasr-ı Şirin Antlaşması’ndan beri değişmeyen en eski sınırımızdır.",
+              "isTrue": true,
+              "explanation": "Doğru! Yüzyıllardır geçerliliğini koruyan tarihi bir sınırdır."
+            },
+            {
+              "id": "tf_sos_2_22",
+              "text": "Sarp Sınır Kapısı Gürcistan ile aramızdaki geçiş kapısıdır.",
+              "isTrue": true,
+              "explanation": "Doğru! Artvin’de yer alan Sarp kapısından Gürcistan’a geçilir."
+            },
+            {
+              "id": "tf_sos_2_23",
+              "text": "Türkiye’nin hiçbir komşusuyla kara sınırı yoktur, her tarafı okyanusla çevrilidir.",
+              "isTrue": false,
+              "explanation": "Yanlış! Türkiye’nin 8 farklı ülke ile kara sınırı bulunmaktadır."
+            },
+            {
+              "id": "tf_sos_2_24",
+              "text": "Sınır kapıları ülkeler arasındaki ticaretin, turizmin ve kültürel bağların gelişmesini sağlar.",
+              "isTrue": true,
+              "explanation": "Doğru! Malların ve yolcuların güvenli giriş çıkışını sağlar."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_2_16",
+              "sentence": "Türkiye’nin en uzun kara sınırına sahip olduğu komşusu ___ dir.",
+              "options": [
+                "Suriye",
+                "Yunanistan",
+                "Gürcistan",
+                "İran"
+              ],
+              "correctWord": "Suriye",
+              "hint": "Yaklaşık 911 kilometre."
+            },
+            {
+              "id": "fb_sos_2_17",
+              "sentence": "Türkiye’nin Avrupa’ya açılan en büyük sınır kapısı Edirne’deki ___ Sınır Kapısı’dır.",
+              "options": [
+                "Kapıkule",
+                "Sarp",
+                "Habur",
+                "Dilucu"
+              ],
+              "correctWord": "Kapıkule",
+              "hint": "Bulgaristan sınır kapımız."
+            },
+            {
+              "id": "fb_sos_2_18",
+              "sentence": "Azerbaycan’a bağlı Nahçıvan Özerk Cumhuriyeti ile aramızdaki kapı ___ Sınır Kapısı’dır.",
+              "options": [
+                "Dilucu",
+                "İpsala",
+                "Kapıköy",
+                "Hamzabeyli"
+              ],
+              "correctWord": "Dilucu",
+              "hint": "En kısa sınırımız (18 km)."
+            },
+            {
+              "id": "fb_sos_2_19",
+              "sentence": "1639 Kasr-ı Şirin Antlaşması’ndan bu yana sınırımızın değişmediği en eski komşumuz ___ dır.",
+              "options": [
+                "İran",
+                "Irak",
+                "Yunanistan",
+                "Ermenistan"
+              ],
+              "correctWord": "İran",
+              "hint": "Doğu komşumuz."
+            },
+            {
+              "id": "fb_sos_2_20",
+              "sentence": "Artvin’de yer alan ve Gürcistan’a açılan sınır kapımız ___ dır.",
+              "options": [
+                "Sarp",
+                "Habur",
+                "Cilvegözü",
+                "Pazarkule"
+              ],
+              "correctWord": "Sarp",
+              "hint": "Doğu Karadeniz kapımız."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_2_16",
+              "question": "Türkiye’nin kara sınırları ile ilgili aşağıda verilen bilgilerden hangisi DOĞRUDUR?",
+              "options": [
+                "En uzun kara sınırımız Suriye ile, en kısa kara sınırımız Nahçıvan (Azerbaycan) iledir",
+                "En uzun sınırımız Yunanistan iledir",
+                "Türkiye’nin kara sınırı olan hiçbir komşusu yoktur",
+                "En eski sınırımız Bulgaristan ile çizilmiştir"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Suriye (911 km) ve Nahçıvan (18 km) bilgilerini hatırla.",
+              "explanation": "Suriye en uzun (911 km), Nahçıvan ise en kısa (18 km) kara sınırımızdır."
+            },
+            {
+              "id": "q_sos_2_17",
+              "question": "Tır şoförü olan Ahmet Bey, İstanbul’dan yüklediği tekstil ürünlerini karayolu ile Almanya’ya götürecektir. Ahmet Bey’in Türkiye’den çıkış yapacağı en işlek sınır kapısı hangisidir?",
+              "options": [
+                "Kapıkule Sınır Kapısı (Bulgaristan)",
+                "Habur Sınır Kapısı (Irak)",
+                "Sarp Sınır Kapısı (Gürcistan)",
+                "Gürbulak Sınır Kapısı (İran)"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Avrupa’ya açılan ana kapımız Edirne’dedir.",
+              "explanation": "Avrupa yönüne giden karayolu taşımacılığı Edirne Kapıkule’den yapılır."
+            },
+            {
+              "id": "q_sos_2_18",
+              "question": "1639 Kasr-ı Şirin Antlaşması ile çizilen ve asırlardır hemen hemen hiç değişmeyen en eski sınırımız hangi devletledir?",
+              "options": [
+                "İran",
+                "Yunanistan",
+                "Gürcistan",
+                "Bulgaristan"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Zağros dağları boyunca uzanan komşumuz.",
+              "explanation": "İran sınırımız 1639 Kasr-ı Şirin Antlaşması ile belirlenmiş en köklü sınırımızdır."
+            },
+            {
+              "id": "q_sos_2_19",
+              "question": "Aşağıdaki komşu devlet ve sınır kapısı eşleştirmelerinden hangisi YANLIŞTIR?",
+              "options": [
+                "Gürcistan — Habur Sınır Kapısı",
+                "Bulgaristan — Kapıkule Sınır Kapısı",
+                "Nahçıvan — Dilucu Sınır Kapısı",
+                "Yunanistan — İpsala Sınır Kapısı"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Habur Irak sınırındadır, Gürcistan sınırında Sarp vardır.",
+              "explanation": "Habur Sınır Kapısı Irak iledir; Gürcistan ile olan kapımız Sarp Sınır Kapısı’dır."
+            },
+            {
+              "id": "q_sos_2_20",
+              "question": "Sınır kapılarımızın açık olması ve komşularımızla barışçıl ilişkiler kurulması ülkemize en çok hangi alanda doğrudan katkı sağlar?",
+              "options": [
+                "Uluslararası ticaret, turizm ve ekonomik kalkınma",
+                "Hava sıcaklıklarının düşmesi",
+                "Depremlerin tamamen son bulması",
+                "Yağmur yağışlarının azalması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Komşularla ticaret ve ihracatın önemini düşün.",
+              "explanation": "Sınır kapıları ihracat, ithalat, lojistik ve turizm açısından ekonomik can damarlarıdır."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sos_u3",
+      "unitNumber": 3,
+      "title": "3. Öğrenme Alanı: Ortak Mirasımız",
+      "description": "Somut ve somut olmayan kültürel miras, ilk yerleşimler ve medeniyetlerin insanlığa katkıları",
+      "topics": [
+        {
+          "id": "sos_u3_t1",
+          "title": "Somut ve Somut Olmayan Kültürel Mirasımız",
+          "kazanimCode": "SB.5.3.1",
+          "kazanimDesc": "Yaşadığı ildeki somut ve somut olmayan kültürel miras ögelerinden hareketle ortak mirasın önemini kavrar.",
+          "summary": "\n• **Ortak Miras Nedir?:** İnsanlığın binlerce yıllık tarihi boyunca sonraki kuşaklara bıraktığı maddi ve manevi değerler bütünüdür.\n• **Somut Kültürel Miras:** Fiziksel olarak var olan, dokunulabilen ve gözle görülebilen mimari yapılar, sanat eserleri ve anıtlardır.\n  - Örnekler: Selimiye Camii (Edirne), Divriği Ulu Camii (Sivas), Nemrut Dağı Heykelleri (Adıyaman), Ani Ören Yeri (Kars), Diyarbakır Surları, Truva Antik Kenti (Çanakkale).\n• **Somut Olmayan Kültürel Miras:** Bireylerin veya toplulukların kültürel kimliklerinin bir parçası olarak gördükleri gelenekler, anlatımlar, bilgi ve becerilerdir.\n  - Örnekler: Meddahlık geleneği, Karagöz ve Hacivat gölge oyunu, Nevruz kutlamaları, Türk kahvesi kültürü, Ebru sanatı, Kırkpınar yağlı güreşleri, Dede Korkut hikâyeleri.\n• **UNESCO (Birleşmiş Milletler Eğitim, Bilim ve Kültür Örgütü):** Dünyadaki ortak mirasları tescilleyip koruyan uluslararası kuruluştur.\n          ",
+          "keyConcepts": [
+            "Ortak Miras",
+            "Somut Miras",
+            "Somut Olmayan Miras",
+            "UNESCO",
+            "Selimiye Camii",
+            "Ebru Sanatı"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u3_1",
+              "front": "Somut Kültürel Miras nedir?",
+              "back": "Geçmiş uygarlıklardan kalan cami, kale, köprü, saray ve antik kent gibi elle tutulup gözle görülebilen fiziksel eserlerdir.",
+              "tip": "Binalar, heykeller, saraylar.",
+              "example": "Edirne’deki Mimar Sinan eseri Selimiye Camii somut mirastır."
+            },
+            {
+              "id": "fc_sos_u3_2",
+              "front": "Somut Olmayan Kültürel Miras nedir?",
+              "back": "Fiziksel bir bina olmayıp; gelenekler, sözlü anlatımlar, törenler, el sanatları ve gösteri sanatları gibi yaşayan değerlerdir.",
+              "tip": "UNESCO İnsanlığın Somut Olmayan Kültürel Mirası Temsili Listesi.",
+              "example": "Ebru sanatı, Türk kahvesi geleneği, Karagöz gölge oyunu."
+            },
+            {
+              "id": "fc_sos_u3_3",
+              "front": "UNESCO’nun görevi nedir?",
+              "back": "Birleşmiş Milletler Eğitim, Bilim ve Kültür Örgütü; insanlığın ortak mirası olan doğal ve kültürel varlıkları korur ve gelecek nesillere aktarır.",
+              "tip": "Dünya Mirası Listesi hazırlar.",
+              "example": "Kapadokya ve Pamukkale UNESCO Dünya Mirası Listesi’ndedir."
+            },
+            {
+              "id": "fc_sos_u3_4",
+              "front": "Divriği Ulu Camii ve Darüşşifası nerededir ve neden ünlüdür?",
+              "back": "Sivas Divriği’dedir. 13. yüzyıldan kalan eşsiz taş işçiliği ve kapısındaki namaz kılan insan gölgesi silüetiyle UNESCO korumasındadır.",
+              "tip": "Taşın dantel gibi işlendiği başyapıttır.",
+              "example": "Anadolu Türk taş sanatının zirvesidir."
+            },
+            {
+              "id": "fc_sos_u3_5",
+              "front": "Nevruz Bayramı neyi simgeler?",
+              "back": "Baharın gelişini, doğanın uyanışını, bereketi ve kardeşliği simgeleyen köklü bir somut olmayan kültürel mirastır.",
+              "tip": "21 Mart’ta kutlanır.",
+              "example": "Ateş üzerinden atlamak ve bahar tohumları ekmek adettendir."
+            },
+            {
+              "id": "fc_sos_u3_6",
+              "front": "Ortak mirası korumak neden vatandaşlık görevidir?",
+              "back": "Çünkü bu eserler sadece bize değil, tüm insanlığa aittir; tahrip edilirse bir daha yerine konulamaz.",
+              "tip": "Tarihi eserlere yazı yazmamak ve zarar vermemek gerekir.",
+              "example": "Tarihi surlara sprey boyayla yazı yazmak ortak mirasa ihanettir."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_3_1",
+              "left": "Selimiye Camii",
+              "right": "Somut Kültürel Miras (Edirne)"
+            },
+            {
+              "id": "m_sos_3_2",
+              "left": "Ebru Sanatı",
+              "right": "Somut Olmayan Kültürel Miras"
+            },
+            {
+              "id": "m_sos_3_3",
+              "left": "Nemrut Dağı Heykelleri",
+              "right": "Somut Arkeolojik Miras (Adıyaman)"
+            },
+            {
+              "id": "m_sos_3_4",
+              "left": "Karagöz ve Hacivat",
+              "right": "Geleneksel Gölge Oyunu Mirası"
+            },
+            {
+              "id": "m_sos_3_5",
+              "left": "UNESCO",
+              "right": "Dünya Mirasını Koruyan Kuruluş"
+            },
+            {
+              "id": "m_sos_3_6",
+              "left": "Kırkpınar Yağlı Güreşleri",
+              "right": "Geleneksel Spor Mirasımız"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_3_1",
+              "text": "Camiler, kaleler ve antik şehirler somut kültürel miras örnekleridir.",
+              "isTrue": true,
+              "explanation": "Doğru! Elle tutulabilen ve gözle görülebilen fiziksel yapılardır."
+            },
+            {
+              "id": "tf_sos_3_2",
+              "text": "Türk kahvesi kültürü ve Ebru sanatı somut kültürel mirasa örnektir.",
+              "isTrue": false,
+              "explanation": "Yanlış! Kahve geleneği ve Ebru sanatı \"Somut Olmayan Kültürel Miras\" kapsamındadır."
+            },
+            {
+              "id": "tf_sos_3_3",
+              "text": "UNESCO, tüm dünyaya ait ortak miras eserlerini koruma altına alır.",
+              "isTrue": true,
+              "explanation": "Doğru! Birleşmiş Milletler’in kültür ve bilim örgütüdür."
+            },
+            {
+              "id": "tf_sos_3_4",
+              "text": "Tarihi eserleri korumak sadece müze müdürlerinin görevidir, çocukların sorumluluğu yoktur.",
+              "isTrue": false,
+              "explanation": "Yanlış! Ortak mirası korumak ve zarar vermemek her vatandaşın sorumluluğudur."
+            },
+            {
+              "id": "tf_sos_3_5",
+              "text": "Edirne’deki Selimiye Camii, Mimar Sinan’ın \"Ustalık Eserim\" dediği dünyaca ünlü şaheserdir.",
+              "isTrue": true,
+              "explanation": "Doğru! Mimar Sinan’ın mimarlık tarihindeki zirve eseridir."
+            },
+            {
+              "id": "tf_sos_3_6",
+              "text": "Somut olmayan miras ögeleri kuşaktan kuşağa sözlü ve uygulamalı olarak aktarılır.",
+              "isTrue": true,
+              "explanation": "Doğru! Yaşayan insan hazineleri ve ustalar vasıtasıyla nesilden nesile geçer."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_3_1",
+              "sentence": "Fiziksel olarak var olan kale, saray ve camilere ___ kültürel miras denir.",
+              "options": [
+                "somut",
+                "soyut",
+                "geçici",
+                "yapay"
+              ],
+              "correctWord": "somut",
+              "hint": "Dokunulabilen ve görülebilen."
+            },
+            {
+              "id": "fb_sos_3_2",
+              "sentence": "Ebru, Karagöz oyunu ve meddahlık gibi değerler ___ kültürel miras kapsamındadır.",
+              "options": [
+                "somut olmayan",
+                "askeri",
+                "arkeolojik",
+                "ticari"
+              ],
+              "correctWord": "somut olmayan",
+              "hint": "Uygulamalı ve yaşayan gelenekler."
+            },
+            {
+              "id": "fb_sos_3_3",
+              "sentence": "Dünya genelindeki ortak mirasları belirleyip koruma altına alan BM kuruluşu ___ dur.",
+              "options": [
+                "UNESCO",
+                "NATO",
+                "WHO",
+                "UNICEF"
+              ],
+              "correctWord": "UNESCO",
+              "hint": "Dünya Miras Listesi’ni oluşturur."
+            },
+            {
+              "id": "fb_sos_3_4",
+              "sentence": "Mimar Sinan’ın \"Ustalık Eserim\" dediği ve Edirne’de bulunan cami ___ Camii’dir.",
+              "options": [
+                "Selimiye",
+                "Sultanahmet",
+                "Ayasofya",
+                "Süleymaniye"
+              ],
+              "correctWord": "Selimiye",
+              "hint": "Dört minareli Edirne şaheseri."
+            },
+            {
+              "id": "fb_sos_3_5",
+              "sentence": "Baharın gelişini ve doğanın uyanışını müjdeleyen 21 Mart bayramı ___ dur.",
+              "options": [
+                "Nevruz",
+                "Hıdırellez",
+                "Kabotaj",
+                "Aşure"
+              ],
+              "correctWord": "Nevruz",
+              "hint": "Bahar bayramı."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_3_1",
+              "question": "Aşağıdakilerden hangisi \"Somut Olmayan Kültürel Miras\" örneklerinden biridir?",
+              "options": [
+                "Ebru sanatı ve Karagöz-Hacivat gölge oyunu",
+                "Diyarbakır Surları ve Hevsel Bahçeleri",
+                "Sivas Divriği Ulu Camii",
+                "Çanakkale Truva Antik Kenti"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Fiziksel bir bina olmayan, sanat ve geleneği düşün.",
+              "explanation": "Ebru ve Karagöz elle tutulur bir taş yapı değil; yaşayan sanatsal gelenektir (somut olmayan miras)."
+            },
+            {
+              "id": "q_sos_3_2",
+              "question": "Tarihi bir kaleyi gezen öğrencinin kale duvarına ismini kazıması nasıl bir davranıştır?",
+              "options": [
+                "Ortak mirasa zarar veren yanlış ve saygısızca bir davranış",
+                "Tarihi esere katkı sağlayan sanatsal bir eylem",
+                "Tarihçilere yardımcı olacak bilimsel bir keşif",
+                "Kalenin değerini artıran faydalı bir hareket"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Eserleri koruma bilincini düşün.",
+              "explanation": "Tarihi eserleri tahrip etmek ortak mirasa zarar verir ve yasal olarak suçtur."
+            },
+            {
+              "id": "q_sos_3_3",
+              "question": "UNESCO’nun \"Dünya Miras Listesi\" oluşturmasındaki temel hedefi nedir?",
+              "options": [
+                "Tüm insanlığa ait kültürel ve doğal zenginlikleri koruyup gelecek nesillere aktarmak",
+                "Bu yerleri satıp para kazanmak",
+                "Sadece zengin ülkelerin eserlerini sergilemek",
+                "Tarihi eserlerin etrafına alışveriş merkezleri kurmak"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Ortak mirasın gelecek kuşaklara aktarılması.",
+              "explanation": "UNESCO tüm insanlığın ortak hafızasını korumak için koruma programları yürütür."
+            },
+            {
+              "id": "q_sos_3_4",
+              "question": "Adıyaman sınırlarında bulunan, Kommagene Krallığı’ndan kalma devasa taş heykellerin ve güneşin doğuşunun izlendiği tarihi dağ hangisidir?",
+              "options": [
+                "Nemrut Dağı",
+                "Ağrı Dağı",
+                "Erciyes Dağı",
+                "Uludağ"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Devasa kral ve tanrı heykelleriyle ünlü UNESCO mirası.",
+              "explanation": "Adıyaman Nemrut Dağı dev heykelleriyle dünyaca ünlü bir somut arkeolojik mirastır."
+            },
+            {
+              "id": "q_sos_3_5",
+              "question": "Aşağıdakilerden hangisi kültürel miras ögelerimizin toplumumuza sağladığı en önemli faydadır?",
+              "options": [
+                "Tarih bilincimizi geliştirir, millet olma şuurunu ve aidiyet duygusunu güçlendirir",
+                "Sınavlarda çok soru çıkmasını sağlar",
+                "Şehirlerin daha kalabalık olmasına neden olur",
+                "İnsanların sadece tatil yapmasını sağlar"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Köklerimizden aldığımız güç ve bilinç.",
+              "explanation": "Kültürel miras geçmişimizle bağ kurmamızı, milli kimliğimizi korumamızı ve geleceğe güvenle bakmamızı sağlar."
+            }
+          ]
+        },
+        {
+          "id": "sos_u3_t2",
+          "title": "Anadolu’nun İlk Yerleşimleri: Göbeklitepe, Çatalhöyük, Çayönü",
+          "kazanimCode": "SB.5.3.2",
+          "kazanimDesc": "Anadolu’da ilk yerleşimleri kuran toplumların sosyal hayatlarına yönelik bakış açısı geliştirir.",
+          "summary": "\n• **Tarihin Sıfır Noktası: Göbeklitepe (Şanlıurfa):**\n  - Günümüzden yaklaşık 12.000 yıl öncesine aittir.\n  - İnsanlık tarihinin bilinen **en eski anıtsal tapınak merkezidir**.\n  - T biçimli devasa taş sütunlar üzerinde tilki, aslan, yılan ve boğa gibi hayvan kabartmaları bulunur.\n  - İnsanların tarımdan önce de inançları doğrultusunda bir araya gelip tapınak inşa ettiklerini kanıtlamıştır!\n• **İlk Şehir Yerleşimi: Çatalhöyük (Konya):**\n  - İnsanlık tarihinin **ilk şehir ve kasaba yerleşimidir**.\n  - Evler birbirine bitişik nizamda yapılmıştır; sokak yoktur!\n  - İnsanlar evlerine **çatılardan merdivenle** girip çıkmışlardır (vahşi hayvanlardan ve baskınlardan korunmak için).\n  - Duvarlara av sahneleri ve leopar resimleri çizmişlerdir.\n• **İlk Tarım ve Köy Yerleşimi: Çayönü (Diyarbakır):**\n  - Avcı-toplayıcılıktan **tarıma ve yerleşik köy hayatına** geçişin en önemli kanıtıdır.\n  - İlk kez buğday evcilleştirilmiş, koyun ve keçi beslenmeye başlanmıştır.\n          ",
+          "keyConcepts": [
+            "Göbeklitepe",
+            "Çatalhöyük",
+            "Çayönü",
+            "Avcı-Toplayıcı",
+            "Yerleşik Hayat",
+            "T biçimli Sütunlar",
+            "Tarım"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u3_7",
+              "front": "Göbeklitepe nerededir ve neden \"Tarihin Sıfır Noktası\" sayılır?",
+              "back": "Şanlıurfa’dadır. Yaklaşık 12.000 yıllık geçmişiyle dünyanın bilinen EN ESKİ inanç ve tapınak merkezidir.",
+              "tip": "Mısır piramitlerinden bile 7.500 yıl daha eskidir!",
+              "example": "T biçimli dev kireçtaşı sütunlar ve hayvan kabartmaları vardır."
+            },
+            {
+              "id": "fc_sos_u3_8",
+              "front": "Çatalhöyük evlerinin ilginç mimari özelliği nedir?",
+              "back": "Konya’da bulunan evler bitişik yapılmıştır, sokak yoktur. Giriş kapıları damda (çatıda) olup merdivenle girilmektedir.",
+              "tip": "Vahşi hayvanlardan ve düşmanlardan korunmak için tasarlanmıştır.",
+              "example": "Damlar aynı zamanda mahallenin sokakları olarak kullanılmıştır."
+            },
+            {
+              "id": "fc_sos_u3_9",
+              "front": "Diyarbakır Çayönü’nün tarihteki önemi nedir?",
+              "back": "Anadolu’da tarımın yapıldığı ve yerleşik köy hayatına geçildiği ilk yerleşim yerlerinden biridir.",
+              "tip": "Buğday ilk kez burada tarıma kazandırılmıştır.",
+              "example": "Yabani koyun ve keçiler evcilleştirilmiştir."
+            },
+            {
+              "id": "fc_sos_u3_10",
+              "front": "Avcı-toplayıcı yaşam tarzı ne demektir?",
+              "back": "İnsanların doğadaki hayvanları avlayarak ve yabani bitkileri toplayarak göçebe şekilde mağaralarda yaşadığı dönemdir.",
+              "tip": "Tarımla birlikte yerleşik hayata geçilmiştir.",
+              "example": "Mağara duvarlarına çizilen av sahneleri."
+            },
+            {
+              "id": "fc_sos_u3_11",
+              "front": "Göbeklitepe tarihteki hangi ezberi bozmuştur?",
+              "back": "\"Önce tarım ve yerleşme, sonra din doğdu\" teorisini çürütmüş; insanların önce inançları için tapınak yapıp bir araya geldiğini göstermiştir.",
+              "tip": "Arkeolog Klaus Schmidt tarafından ortaya çıkarılmıştır.",
+              "example": "Avcı-toplayıcı insanların dev sütunları taşıyıp işlediği kanıtlanmıştır."
+            },
+            {
+              "id": "fc_sos_u3_12",
+              "front": "Tarih öncesi dönem ne ile biter, Tarih Çağları ne ile başlar?",
+              "back": "YAZININ İCADI ile biter. Sümerlerin MÖ 3200 civarında çivi yazısını bulmasıyla Tarih Çağları başlamıştır.",
+              "tip": "Söz uçar, yazı kalır!",
+              "example": "Yazıdan önceki döneme Tarih Öncesi Çağlar denir."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_3_7",
+              "left": "Göbeklitepe (Şanlıurfa)",
+              "right": "Dünyanın En Eski Tapınak Merkezi"
+            },
+            {
+              "id": "m_sos_3_8",
+              "left": "Çatalhöyük (Konya)",
+              "right": "İlk Şehir Yerleşimi (Çatıdan Giriş)"
+            },
+            {
+              "id": "m_sos_3_9",
+              "left": "Çayönü (Diyarbakır)",
+              "right": "İlk Tarım ve Köy Hayatı (Buğday)"
+            },
+            {
+              "id": "m_sos_3_10",
+              "left": "T Biçimli Sütunlar",
+              "right": "Göbeklitepe Hayvan Kabartmaları"
+            },
+            {
+              "id": "m_sos_3_11",
+              "left": "Yazının İcadı (MÖ 3200)",
+              "right": "Tarih Çağlarının Başlangıcı"
+            },
+            {
+              "id": "m_sos_3_12",
+              "left": "Avcı ve Toplayıcı",
+              "right": "Tarım Öncesi Göçebe Yaşam"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_3_7",
+              "text": "Göbeklitepe, Şanlıurfa’da bulunan ve Mısır piramitlerinden bile daha eski olan ilk tapınaktır.",
+              "isTrue": true,
+              "explanation": "Doğru! Yaklaşık 12.000 yıllık tarihiyle arkeoloji dünyasını sarsmıştır."
+            },
+            {
+              "id": "tf_sos_3_8",
+              "text": "Çatalhöyük’te evlerin kapıları sokaktadır ve geniş caddeler bulunur.",
+              "isTrue": false,
+              "explanation": "Yanlış! Çatalhöyük’te sokak yoktur, evler bitişiktir ve girişler çatılardaki merdivenlerdendir."
+            },
+            {
+              "id": "tf_sos_3_9",
+              "text": "Diyarbakır Çayönü’nde insanlar ilk kez tarım yapmış ve yabani hayvanları evcilleştirmiştir.",
+              "isTrue": true,
+              "explanation": "Doğru! Anadolu’da üretime dayalı ilk köy yerleşimidir."
+            },
+            {
+              "id": "tf_sos_3_10",
+              "text": "Tarih çağları tekerleğin icadıyla başlamıştır.",
+              "isTrue": false,
+              "explanation": "Yanlış! Tarih çağları Sümerlerin yazıyı icat etmesiyle başlamıştır."
+            },
+            {
+              "id": "tf_sos_3_11",
+              "text": "Göbeklitepe’deki T biçimli sütunlar üzerinde aslan, tilki, yılan ve kuş kabartmaları vardır.",
+              "isTrue": true,
+              "explanation": "Doğru! Sütunlar dönemin hayvan ve inanç dünyasını yansıtır."
+            },
+            {
+              "id": "tf_sos_3_12",
+              "text": "Anadolu toprakları iklimi, su kaynakları ve verimli arazileriyle tarihin her döneminde yerleşim için cazip olmuştur.",
+              "isTrue": true,
+              "explanation": "Doğru! Bu yüzden Anadolu \"Medeniyetler Beşiği\" olarak adlandırılır."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_3_6",
+              "sentence": "Şanlıurfa’da bulunan ve insanlık tarihinin ilk tapınağı sayılan yerleşim ___ dir.",
+              "options": [
+                "Göbeklitepe",
+                "Çatalhöyük",
+                "Efes",
+                "Truva"
+              ],
+              "correctWord": "Göbeklitepe",
+              "hint": "Tarihin sıfır noktası."
+            },
+            {
+              "id": "fb_sos_3_7",
+              "sentence": "Konya’da bulunan, evlerine çatılardan girilen ilk şehir yerleşimi ___ tür.",
+              "options": [
+                "Çatalhöyük",
+                "Çayönü",
+                "Gordion",
+                "Sardes"
+              ],
+              "correctWord": "Çatalhöyük",
+              "hint": "Bitişik nizam evler ve sokaksız şehir."
+            },
+            {
+              "id": "fb_sos_3_8",
+              "sentence": "Diyarbakır’da yer alan ve ilk tarımsal üretimin yapıldığı köy yerleşimi ___ dür.",
+              "options": [
+                "Çayönü",
+                "Göbeklitepe",
+                "Hattuşa",
+                "Tuşpa"
+              ],
+              "correctWord": "Çayönü",
+              "hint": "İlk buğday tarımı."
+            },
+            {
+              "id": "fb_sos_3_9",
+              "sentence": "İnsanlık tarihinde yazının icadı ile ___ Çağları başlamıştır.",
+              "options": [
+                "Tarih",
+                "Taş",
+                "Maden",
+                "Buzul"
+              ],
+              "correctWord": "Tarih",
+              "hint": "Kayıtlı dönemin başlangıcı."
+            },
+            {
+              "id": "fb_sos_3_10",
+              "sentence": "İnsanların yerleşik hayata geçmesindeki en önemli etken ___ yapmaya başlamalarıdır.",
+              "options": [
+                "tarım",
+                "avcılık",
+                "savaş",
+                "seyahat"
+              ],
+              "correctWord": "tarım",
+              "hint": "Toprağı ekip biçmek su kenarında kalmayı gerektirdi."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_3_6",
+              "question": "Şanlıurfa yakınlarında keşfedilen ve \"Tarihin Sıfır Noktası\" kabul edilen Göbeklitepe’nin insanlık tarihi açısından EN ÖNEMLİ özelliği nedir?",
+              "options": [
+                "Bilinen en eski anıtsal tapınak ve ibadet merkezi olması",
+                "Dünyanın ilk modern üniversitesine ev sahipliği yapması",
+                "Matbaanın ilk kez burada icat edilmiş olması",
+                "İlk buharlı tren hattının buradan geçmesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "12.000 yıllık devasa dikilitaşlar ve inanç merkezi.",
+              "explanation": "Göbeklitepe 12.000 yıllık anıtsal tapınaklarıyla inancın yerleşik hayattan önce de var olduğunu kanıtlamıştır."
+            },
+            {
+              "id": "q_sos_3_7",
+              "question": "Konya Çatalhöyük’te evlerin birbirine bitişik inşa edilmesi ve kapılarının damda (çatıda) bulunmasının temel sebebi nedir?",
+              "options": [
+                "Vahşi hayvan saldırılarından ve düşman baskınlarından güvenli şekilde korunmak",
+                "İnsanların merdivenle tırmanmayı bir spor olarak görmesi",
+                "Evlerin kapısını yapacak ahşap malzemenin hiç bulunmaması",
+                "Pencerelerden içeriye rüzgar girmesini engellemek"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Tarih öncesi dönemde güvenlik ve savunma ihtiyacı.",
+              "explanation": "Sokaksız bitişik nizam ve çatıdan giriş sistemi dış tehlikelere ve vahşi hayvanlara karşı savunma amaçlıdır."
+            },
+            {
+              "id": "q_sos_3_8",
+              "question": "Diyarbakır Çayönü yerleşkesini kazan arkeologların buğday fosilleri, orak ve öğütme taşları bulması orada neyin yapıldığını KESİN olarak gösterir?",
+              "options": [
+                "Tarımsal üretim ve yerleşik hayat yapıldığını",
+                "Otomobil fabrikası kurulduğunu",
+                "Deniz ticaret filolarının bulunduğunu",
+                "Buzulların hiç erimediğini"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Orak, buğday ve öğütme taşları tarımın kanıtıdır.",
+              "explanation": "Buğday, orak ve tahıl öğütme taşları tarım yapıldığının ve yerleşik köy hayatının en somut kanıtıdır."
+            },
+            {
+              "id": "q_sos_3_9",
+              "question": "Tarih araştırmalarında \"Tarih Öncesi Dönemler\" ile \"Tarih Çağları\" arasındaki sınır çizgisi aşağıdakilerden hangisinin icadıyla çekilmiştir?",
+              "options": [
+                "Yazının icadı (MÖ 3200 Sümerler)",
+                "Tekerleğin bulunması",
+                "Ateşin kontrol altına alınması",
+                "Demir madeninin eritilmesi"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Yazılı belgelerin başlaması.",
+              "explanation": "Yazının bulunmasıyla olaylar kayıt altına alınmış ve Tarih Çağları başlamıştır."
+            },
+            {
+              "id": "q_sos_3_10",
+              "question": "Anadolu topraklarının tarihin ilk dönemlerinden itibaren sürekli yerleşim yeri seçilmesinin sebepleri arasında aşağıdakilerden hangisi YER ALMAZ?",
+              "options": [
+                "Bölgede sürekli şiddetli kutup buzul ikliminin yaşanması",
+                "İkliminin ılıman ve tarıma elverişli olması",
+                "Fırat, Dicle, Kızılırmak gibi zengin su kaynaklarına sahip olması",
+                "Kıtalararası önemli göç ve ticaret yolları üzerinde bulunması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Anadolu bir kutup bölgesi değildir.",
+              "explanation": "Anadolu ılıman iklimi, bereketli toprakları ve bol su kaynaklarıyla medeniyetlerin beşiği olmuştur."
+            }
+          ]
+        },
+        {
+          "id": "sos_u3_t3",
+          "title": "Mezopotamya ve Anadolu Medeniyetleri",
+          "kazanimCode": "SB.5.3.3",
+          "kazanimDesc": "Mezopotamya ve Anadolu medeniyetlerinin ortak mirasa katkılarını karşılaştırır, icat ve kanunlarını kavrar.",
+          "interactiveLab": {
+            "type": "sosyal-medeni-lab",
+            "title": "Medeniyetler & İcatlar Atlası 🏛️"
+          },
+          "summary": "\n• **Mezopotamya Medeniyetleri (Fırat ile Dicle Arası):**\n  1. **Sümerler:**\n     - **Çivi yazısını** icat ettiler (Tarih çağları başladı).\n     - **Tekerleği** ve **ay yılı esaslı takvimi** buldular.\n     - **Ziggurat** adı verilen 7 katlı tapınaklar yaptılar (alt kat depo, orta kat okul/ibadet, en üst kat gözlemevi/rasathane).\n  2. **Babiller:**\n     - Başkentleri Babil'dir. Kral **Hammurabi** kendi adıyla anılan sert ceza kanunlarını (kısasa kısas) yaptı.\n     - Dünyanın Yedi Harikası'ndan biri olan **Babil'in Asma Bahçeleri**ni ve Babil Kulesi'ni inşa ettiler.\n  3. **Asurlar:**\n     - Başkentleri Ninova'dır. Dünyanın **ilk kütüphanesini** kurdular.\n     - Ticaretle uğraştılar; Kayseri Kültepe'ye (Kaniş Karumu) gelerek **çivi yazısını Anadolu'ya öğrettiler**.\n• **Anadolu Medeniyetleri:**\n  1. **Hititler (Çorum/Hattuşa):**\n     - Mısırlılarla tarihin ilk yazılı barış antlaşması olan **Kadeş Antlaşması**nı imzaladılar.\n     - **Pankuş** adı verilen danışma meclisleri ve yetkili kraliçeleri (**Tavananna**) vardı.\n     - Tanrılarına hesap vermek için **Anal (yıllık)** yazarak tarafsız tarih yazıcılığını başlattılar.\n  2. **Frigler (Ankara/Gordion):**\n     - Tarıma büyük önem verdiler; saban kıran veya öküz öldürene ölüm cezası verdiler.\n     - **Fibula** (tarihin ilk çengelli iğnesi) ve **Tapates** (halı/kilim) ürettiler. Efsanevi kralları Midas'tır.\n  3. **Lidyalılar (Manisa/Sardes):**\n     - Takas usulüne son verip **parayı icat ettiler**.\n     - Mezopotamya'ya kadar uzanan **Kral Yolu** üzerinde ticaret yaparak zenginleştiler.\n  4. **Urartular (Van/Tuşpa):**\n     - Taş işçiliği ve madencilikte ustalaştılar.\n     - Günümüzde hâlâ kullanılan **Şamran (Menua) su kanalını** ve Van Kalesi'ni yaptılar.\n          ",
+          "keyConcepts": [
+            "Sümerler",
+            "Babiller",
+            "Asurlar",
+            "Hititler",
+            "Frigler",
+            "Lidyalılar",
+            "Urartular",
+            "Ziggurat",
+            "Fibula",
+            "Anal",
+            "Kadeş"
+          ],
+          "flashcards": [
+            {
+              "id": "fc_sos_u3_13",
+              "front": "Sümerlerin insanlık tarihine en büyük katkısı nedir?",
+              "back": "MÖ 3200’de çivi yazısını icat ederek Tarih Çağlarını başlatmaları, tekerleği ve ay yılı takvimini bulmalarıdır.",
+              "tip": "Yazı kil tabletler üzerine ucu sivri kamışlarla yazılırdı.",
+              "example": "Zigguratların en üst katında gökyüzünü inceleyip takvimi oluşturdular."
+            },
+            {
+              "id": "fc_sos_u3_14",
+              "front": "Anadolu’ya yazıyı kim, nasıl getirmiştir?",
+              "back": "Mezopotamya uygarlığı olan Asurlu tüccarlar, Kayseri Kültepe (Kaniş Karumu) pazar yerinde ticaret yaparken getirmiştir.",
+              "tip": "Böylece Anadolu’da da Tarih Çağları başlamıştır.",
+              "example": "Kültepe kil tabletleri Anadolu’nun ilk yazılı belgeleridir."
+            },
+            {
+              "id": "fc_sos_u3_15",
+              "front": "Hititlerin \"Anal\" (Yıllık) yazması neden önemlidir?",
+              "back": "Tanrılarına hesap vermek amacıyla zaferleri kadar yenilgilerini de dürüstçe yazmışlar ve ilk tarafsız tarih yazıcılığını başlatmışlardır.",
+              "tip": "Yalan yazmaktan korkmuşlardır.",
+              "example": "Kadeş Antlaşması da Hititler ile Mısırlılar arasında imzalanmıştır."
+            },
+            {
+              "id": "fc_sos_u3_16",
+              "front": "Lidyalıların parayı icat etmesi neyi değiştirdi?",
+              "back": "Zor ve hantal olan \"takas\" (mal takası) usulünü bitirmiş, ticareti kolaylaştırmış ve hızlandırmıştır.",
+              "tip": "Başkentleri Sardes (Manisa) idi.",
+              "example": "Kral Yolu üzerinden para ile ticaret yaptılar."
+            },
+            {
+              "id": "fc_sos_u3_17",
+              "front": "Friglerin hukuk kuralları neden tarıma odaklıydı?",
+              "back": "Temel geçim kaynakları tarım ve hayvancılık olduğu için saban kıran veya öküz öldüren kişiye en ağır ceza (ölüm) verilirdi.",
+              "tip": "Fibula (çengelli iğne) ve Tapates (kilim) Friglere aittir.",
+              "example": "Kralları Midas efsaneleriyle tanınır."
+            },
+            {
+              "id": "fc_sos_u3_18",
+              "front": "Urartuların günümüze ulaşan en büyük mühendislik eseri nedir?",
+              "back": "Başkentleri Tuşpa’da (Van) kayaları oyarak yaptıkları Şamran (Menua) sulama kanalı ve sağlam taş kalelerdir.",
+              "tip": "Şamran kanalı yaklaşık 2800 yıldır hâlâ akmaktadır!",
+              "example": "Taş işçiliği ve madencilikte rakipsizdiler."
+            }
+          ],
+          "matching": [
+            {
+              "id": "m_sos_3_13",
+              "left": "Sümerler",
+              "right": "Çivi Yazısı, Ziggurat ve Tekerlek"
+            },
+            {
+              "id": "m_sos_3_14",
+              "left": "Babiller",
+              "right": "Hammurabi Kanunları ve Asma Bahçeleri"
+            },
+            {
+              "id": "m_sos_3_15",
+              "left": "Asurlar",
+              "right": "Anadolu’ya Yazıyı Getiren Tüccarlar"
+            },
+            {
+              "id": "m_sos_3_16",
+              "left": "Hititler",
+              "right": "Kadeş Antlaşması ve Anal Yıllıkları"
+            },
+            {
+              "id": "m_sos_3_17",
+              "left": "Lidyalılar",
+              "right": "Paranın İcadı ve Kral Yolu"
+            },
+            {
+              "id": "m_sos_3_18",
+              "left": "Frigler",
+              "right": "Fibula (Çengelli İğne) ve Tarım Yasaları"
+            }
+          ],
+          "trueFalse": [
+            {
+              "id": "tf_sos_3_13",
+              "text": "Sümerler çivi yazısını bularak insanlık tarihinde yazılı dönemi başlatmıştır.",
+              "isTrue": true,
+              "explanation": "Doğru! Çivi yazısı Sümerlerin tüm insanlığa en büyük hediyesidir."
+            },
+            {
+              "id": "tf_sos_3_14",
+              "text": "Madeni parayı icat ederek takas usulüne son veren uygarlık Lidyalılardır.",
+              "isTrue": true,
+              "explanation": "Doğru! Manisa Sardes merkezli Lidyalılar parayı bulmuştur."
+            },
+            {
+              "id": "tf_sos_3_15",
+              "text": "Hititlerin Anal yıllıklarında yenilgilerini saklayıp sadece zaferlerini yazdıkları görülür.",
+              "isTrue": false,
+              "explanation": "Yanlış! Tanrılarına hesap verdikleri için hem zaferleri hem yenilgileri tarafsızca yazmışlardır."
+            },
+            {
+              "id": "tf_sos_3_16",
+              "text": "Asurlar ticaret yaparken çivi yazısını Kayseri Kültepe’ye taşıyarak Anadolu’ya yazıyı öğretmiştir.",
+              "isTrue": true,
+              "explanation": "Doğru! Asurlu tüccarlar Anadolu’da tarihi çağları başlatmıştır."
+            },
+            {
+              "id": "tf_sos_3_17",
+              "text": "Zigguratlar Sümerlerde sadece piramit mezar olarak kullanılmıştır.",
+              "isTrue": false,
+              "explanation": "Yanlış! Zigguratlar depo, okul, ibadethane ve en üst katı rasathane (gözlemevi) olan çok amaçlı binalardır."
+            },
+            {
+              "id": "tf_sos_3_18",
+              "text": "Friglerin çengelli iğneye \"Fibula\", dokudukları kilimlere \"Tapates\" adı verdikleri bilinmektedir.",
+              "isTrue": true,
+              "explanation": "Doğru! Dokumacılık ve maden işlemede çok ileri gitmişlerdir."
+            }
+          ],
+          "fillBlank": [
+            {
+              "id": "fb_sos_3_11",
+              "sentence": "Çivi yazısını icat ederek Tarih Çağlarını başlatan Mezopotamya uygarlığı ___ dir.",
+              "options": [
+                "Sümerler",
+                "Babiller",
+                "Hititler",
+                "Lidyalılar"
+              ],
+              "correctWord": "Sümerler",
+              "hint": "Ziggurat ve tekerleğin de mucidi."
+            },
+            {
+              "id": "fb_sos_3_12",
+              "sentence": "Ticarette takas usulüne son vererek madeni parayı icat eden Anadolu uygarlığı ___ dır.",
+              "options": [
+                "Lidyalılar",
+                "Frigler",
+                "Urartular",
+                "Asurlar"
+              ],
+              "correctWord": "Lidyalılar",
+              "hint": "Başkentleri Sardes (Manisa)."
+            },
+            {
+              "id": "fb_sos_3_13",
+              "sentence": "Hititlerin krallarının zafer ve yenilgilerini tarafsızca yazdıkları yıllıklara ___ adı verilir.",
+              "options": [
+                "Anal",
+                "Ziggurat",
+                "Fibula",
+                "Pankuş"
+              ],
+              "correctWord": "Anal",
+              "hint": "İlk tarafsız tarih günlüğü."
+            },
+            {
+              "id": "fb_sos_3_14",
+              "sentence": "Ticareti Anadolu’ya kadar taşıyarak çivi yazısını Kayseri Kültepe’ye getiren uygarlık ___ dır.",
+              "options": [
+                "Asurlar",
+                "Sümerler",
+                "Mısırlılar",
+                "İyonlar"
+              ],
+              "correctWord": "Asurlar",
+              "hint": "Başkenti Ninova olan kütüphaneci tüccarlar."
+            },
+            {
+              "id": "fb_sos_3_15",
+              "sentence": "Friglerin icat ettiği ve günümüzdeki çengelli iğnenin atası sayılan buluşa ___ denir.",
+              "options": [
+                "fibula",
+                "tapates",
+                "anal",
+                "para"
+              ],
+              "correctWord": "fibula",
+              "hint": "Tarihin ilk çengelli iğnesi."
+            }
+          ],
+          "quiz": [
+            {
+              "id": "q_sos_3_11",
+              "question": "Sümerlerin inşa ettiği 7 katlı Zigguratların en üst katını rasathane (gözlemevi) olarak kullanmaları onların hangi bilim dalında ilerlemesini sağlamıştır?",
+              "options": [
+                "Astronomi (Gök bilimi) ve Takvim hazırlama",
+                "Denizaltı mühendisliği",
+                "Nükleer tıp ve eczacılık",
+                "Uçak tasarımı ve havacılık"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Gece gökyüzünü, ayı ve yıldızları izlemek.",
+              "explanation": "Gök cisimlerini gözlemleyen Sümerler astronomide ilerleyerek Ay yılı takvimini icat etmişlerdir."
+            },
+            {
+              "id": "q_sos_3_12",
+              "question": "Kayseri Kültepe’de yapılan kazılarda Asurlu tüccarlara ait çivi yazılı kil tabletler bulunmuştur. Bu durum Anadolu tarihi açısından neyi ifade eder?",
+              "options": [
+                "Yazının ticaret yoluyla Anadolu’ya girdiğini ve Anadolu’da Tarih Çağlarının başladığını",
+                "Asurluların Anadolu’da hiç ticaret yapmadığını",
+                "Anadolu’da paranın icat edildiğini",
+                "Kayseri’de sadece tarım yapıldığını"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Yazının yayılmasında ticaretin köprü rolü.",
+              "explanation": "Asurlu tüccarlar Kaniş Karumu’nda ticaret yaparken yazıyı öğretmiş ve Anadolu’da yazılı tarihi başlatmıştır."
+            },
+            {
+              "id": "q_sos_3_13",
+              "question": "Lidyalıların parayı icat etmelerinin dünya ticaretine sağladığı EN BÜYÜK kolaylık nedir?",
+              "options": [
+                "Malların zor ve zahmetli takas (değiş-tokuş) edilmesi usulünü sona erdirmesi",
+                "Bütün savaşları tamamen durdurması",
+                "Dünyadaki tüm sınırların kalkması",
+                "Herkesin eşit miktarda paraya sahip olması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Buğday verip koyun alma zorluğunu hatırla.",
+              "explanation": "Para mal değişiminde ortak bir değer ölçüsü olmuş, takasın yarattığı zorlukları bitirmiştir."
+            },
+            {
+              "id": "q_sos_3_14",
+              "question": "Friglerde saban kıran veya öküz öldüren kişiye idam cezası verilmesi, Friglerin hangi alana hayati derecede önem verdiğini gösterir?",
+              "options": [
+                "Tarım ve hayvancılığı korumaya",
+                "Deniz ticaret filolarını büyütmeye",
+                "Piramit inşaatlarını hızlandırmaya",
+                "Uzay araştırmalarına kaynak aktarmaya"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Öküz ve saban tarımın temel araçlarıdır.",
+              "explanation": "Friglerin en büyük geçim kaynağı tarım olduğundan, tarım araçlarına zarar vermek en ağır suç sayılmıştır."
+            },
+            {
+              "id": "q_sos_3_15",
+              "question": "MÖ 1280’de Hititler ile Mısırlılar arasında imzalanan ve tarihteki ilk yazılı barış antlaşması kabul edilen metin hangisidir?",
+              "options": [
+                "Kadeş Antlaşması",
+                "Kasr-ı Şirin Antlaşması",
+                "Lozan Antlaşması",
+                "Ankara Antlaşması"
+              ],
+              "correctAnswerIndex": 0,
+              "hint": "Hitit Kralı ile Mısır Firavunu II. Ramses arasında imzalandı.",
+              "explanation": "Kadeş Antlaşması dünya tarihindeki ilk yazılı barış antlaşmasıdır."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
         {
       id: 'ingilizce',
       name: 'İngilizce (English)',

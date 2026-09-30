@@ -76,6 +76,19 @@ export const Dashboard = ({ onSelectSubject, onSelectDailyMission }) => {
       color: '#EA580C',
       xpReward: 50,
       isDone: !!completedActivities['de_u1_t1_pronunciation']
+    },
+    {
+      id: 'mission_6',
+      subjectId: 'sosyal',
+      unitId: 'sos_u1',
+      topicId: 'sos_u1_t1',
+      activityType: 'interactiveLab',
+      title: 'Sosyal Bilgiler: Resfebe Zeka Sandığı & Roller',
+      subjectName: 'Sosyal Bilgiler',
+      icon: '🌍',
+      color: '#D97706',
+      xpReward: 55,
+      isDone: !!completedActivities['sos_u1_t1_interactiveLab']
     }
   ];
 

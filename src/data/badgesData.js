@@ -91,6 +91,15 @@ export const BADGES = [
     checkUnlocked: (stats) => (stats.subjectActivities?.['ingilizce'] || 0) >= 2
   },
   {
+    id: 'social_explorer',
+    title: 'Sosyal Kaşif 🌍',
+    description: 'Sosyal Bilgiler dersinde en az 2 etkinlik veya Resfebe bulmacasını tamamladın!',
+    icon: '🌍',
+    color: '#D97706',
+    xpReward: 100,
+    checkUnlocked: (stats) => (stats.subjectActivities?.['sosyal'] || 0) >= 2
+  },
+  {
     id: 'xp_500',
     title: 'Maarif Yıldızı 🌟',
     description: 'Toplam 500 XP deneyim puanına ulaştın!',

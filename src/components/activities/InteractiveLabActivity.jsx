@@ -9,11 +9,15 @@ import { ForceDynamometerLab } from '../labs/ForceDynamometerLab';
 import { LightShadowLab } from '../labs/LightShadowLab';
 import { ElectricCircuitLab } from '../labs/ElectricCircuitLab';
 import { EnglishDialogueLab } from '../labs/EnglishDialogueLab';
+import { SosyalResfebeLab } from '../labs/SosyalResfebeLab';
 
 export const InteractiveLabActivity = ({ topic, subjectId, onFinish }) => {
   const labType = topic.interactiveLab?.type;
 
   switch (labType) {
+    case 'sosyal-resfebe-lab':
+    case 'sosyal-medeni-lab':
+      return <SosyalResfebeLab topic={topic} onFinish={onFinish} />;
     case 'english-dialogue-lab':
     case 'english-school-lab':
     case 'english-classroom-lab':
