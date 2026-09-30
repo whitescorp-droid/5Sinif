@@ -5,7 +5,7 @@ import { playSound } from '../../utils/soundEffects';
 import confetti from 'canvas-confetti';
 import { 
   Volume2, CheckCircle2, Award, RefreshCw, ChevronRight, 
-  MessageSquare, Compass, Sparkles, HelpCircle, Shuffle, Check, Play
+  MessageSquare, Compass, Sparkles, Shuffle
 } from 'lucide-react';
 
 export const EnglishDialogueLab = ({ topic, onFinish }) => {
@@ -93,9 +93,8 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
       title: 'Meeting a New Friend (Yeni Arkadaşla Tanışma)',
       context: 'Okulun ilk günü koridorda yeni bir öğrenciyle karşılaştın.',
       characterA: { name: 'Oliver', avatar: '👦', role: 'Student' },
-      characterB: { name: 'Sen', avatar: '🌟', role: 'You' },
       lines: [
-        { speaker: 'Oliver', text: 'Hello! I am Oliver. What is your name?', audioRate: 0.9 },
+        { speaker: 'Oliver', text: 'Hello! I am Oliver. What is your name?' },
         { 
           speaker: 'You', 
           prompt: 'Kendini nasıl tanıtırsın?',
@@ -105,7 +104,7 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
             { text: 'Goodbye, see you tomorrow.', isCorrect: false, feedback: 'Henüz yeni karşılaştınız, vedalaşma söylenmez.' }
           ]
         },
-        { speaker: 'Oliver', text: 'Nice to meet you too, Deniz! Where are you from?', audioRate: 0.9 },
+        { speaker: 'Oliver', text: 'Nice to meet you too, Deniz! Where are you from?' },
         {
           speaker: 'You',
           prompt: 'Nereli olduğunu belirt:',
@@ -122,9 +121,8 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
       title: 'In the Classroom: Asking for Help (Sınıfta İzin İsteme & Yardım)',
       context: 'Derste silgini unuttun ve yanındaki arkadaştan rica edeceksin.',
       characterA: { name: 'Emma', avatar: '👧', role: 'Classmate' },
-      characterB: { name: 'Sen', avatar: '🌟', role: 'You' },
       lines: [
-        { speaker: 'Emma', text: 'We need an eraser for this drawing.', audioRate: 0.9 },
+        { speaker: 'Emma', text: 'We need an eraser for this drawing.' },
         {
           speaker: 'You',
           prompt: 'Arkadaşından nazikçe silgisini ödünç iste:',
@@ -134,7 +132,7 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
             { text: 'I like playing football.', isCorrect: false, feedback: 'Konuyla ilgisiz bir cümle.' }
           ]
         },
-        { speaker: 'Emma', text: 'Sure, here you are!', audioRate: 0.9 },
+        { speaker: 'Emma', text: 'Sure, here you are!' },
         {
           speaker: 'You',
           prompt: 'Silgiyi aldıktan sonra ne söylersin?',
@@ -295,30 +293,26 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
   };
 
   return (
-    <div className="english-lab-container p-6 bg-slate-900/90 rounded-3xl border border-blue-500/30 text-white shadow-2xl">
-      {/* Lab Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-5 mb-6">
-        <div>
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-1">
-            <Sparkles size={16} /> 5. Sınıf Çoklu Yabancı Dil Maarif Modeli
+    <div className="lab-container">
+      {/* Header with Standard Lab Design */}
+      <div className="lab-header eng-lab-header">
+        <div className="lab-title-box">
+          <div className="lab-icon-badge">🇬🇧</div>
+          <div>
+            <h2 className="lab-main-title">
+              English Interactive Lab: School & Classroom Studio
+            </h2>
+            <p className="lab-subtitle">
+              Okul ve sınıf yaşamını sesli keşfet, İngilizce diyalog kur ve kelimeleri doğru sıraya dizerek pratik yap!
+            </p>
           </div>
-          <h2 className="text-2xl font-black flex items-center gap-3">
-            <span>🇬🇧 English Interactive Lab: School & Classroom Studio</span>
-          </h2>
-          <p className="text-slate-400 text-sm mt-1">
-            Okul ve sınıf yaşamını sesli keşfet, İngilizce diyalog kur ve kelimeleri doğru sıraya dizerek pratik yap!
-          </p>
         </div>
 
-        {/* Lab Navigation Sub-Tabs */}
-        <div className="flex items-center gap-2 bg-slate-800/80 p-1.5 rounded-2xl border border-slate-700">
+        {/* Subtabs Bar */}
+        <div className="lab-subtabs">
           <button
             onClick={() => { setActiveTab('explorer'); stopEnglishSpeech(); }}
-            className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${
-              activeTab === 'explorer' 
-                ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30' 
-                : 'text-slate-400 hover:text-white'
-            }`}
+            className={`lab-subtab-btn ${activeTab === 'explorer' ? 'active' : ''}`}
           >
             <Compass size={16} />
             <span>Okul Keşif İstasyonu</span>
@@ -330,11 +324,7 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
               stopEnglishSpeech();
               if (dialogueHistory.length === 0) handleStartDialogue();
             }}
-            className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${
-              activeTab === 'dialogue' 
-                ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/30' 
-                : 'text-slate-400 hover:text-white'
-            }`}
+            className={`lab-subtab-btn ${activeTab === 'dialogue' ? 'active' : ''}`}
           >
             <MessageSquare size={16} />
             <span>Canlı Diyalog Stüdyosu</span>
@@ -346,11 +336,7 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
               stopEnglishSpeech();
               if (placedWords.length === 0 && availableWords.length === 0) initScramble(0);
             }}
-            className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${
-              activeTab === 'scramble' 
-                ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30' 
-                : 'text-slate-400 hover:text-white'
-            }`}
+            className={`lab-subtab-btn ${activeTab === 'scramble' ? 'active' : ''}`}
           >
             <Shuffle size={16} />
             <span>Cümle Kurma Oyunu</span>
@@ -360,84 +346,80 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
 
       {/* TAB 1: SCHOOL EXPLORER */}
       {activeTab === 'explorer' && (
-        <div className="space-y-6">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           {/* Station Selector Bar */}
-          <div className="flex items-center gap-3 overflow-x-auto pb-2">
+          <div className="eng-station-selector">
             {stations.map((st, idx) => (
               <button
                 key={st.id}
                 onClick={() => { setSelectedStation(idx); stopEnglishSpeech(); }}
-                className={`flex items-center gap-2 px-4 py-3 rounded-2xl border transition-all flex-shrink-0 ${
-                  selectedStation === idx
-                    ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
-                    : 'bg-slate-800/60 border-slate-700/60 text-slate-400 hover:text-slate-200'
-                }`}
+                className={`eng-station-btn ${selectedStation === idx ? 'active' : ''}`}
               >
-                <span className="text-2xl">{st.icon}</span>
-                <div className="text-left">
-                  <div className="text-sm font-bold">{st.name}</div>
-                  <div className="text-xs text-slate-400">{st.titleTr}</div>
+                <span className="st-icon">{st.icon}</span>
+                <div>
+                  <div className="st-name">{st.name}</div>
+                  <div className="st-tr">{st.titleTr}</div>
                 </div>
               </button>
             ))}
           </div>
 
           {/* Active Station Card & Item Grid */}
-          <div className="bg-slate-800/40 border border-slate-700/60 rounded-3xl p-6">
-            <div className="flex items-center justify-between mb-5">
+          <div className="eng-station-card">
+            <div className="eng-station-header">
               <div>
-                <h3 className="text-xl font-bold flex items-center gap-2 text-blue-300">
+                <h3 className="eng-station-title">
                   <span>{stations[selectedStation].icon}</span>
                   <span>{stations[selectedStation].name}</span>
-                  <span className="text-sm text-slate-400 font-normal">({stations[selectedStation].titleTr})</span>
+                  <span style={{ fontSize: '14px', color: '#64748b', fontWeight: 'normal' }}>
+                    ({stations[selectedStation].titleTr})
+                  </span>
                 </h3>
-                <p className="text-slate-400 text-sm mt-1">{stations[selectedStation].description}</p>
+                <p className="eng-station-desc">{stations[selectedStation].description}</p>
               </div>
-              <div className="text-xs font-semibold text-blue-400 bg-blue-900/40 px-3 py-1.5 rounded-full border border-blue-800">
+              <div className="eng-audio-hint">
                 🔊 Nesneye tıklayarak doğal İngilizce sesini dinle!
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="eng-items-grid">
               {stations[selectedStation].items.map((item, idx) => {
                 const isPlaying = playingKey === `${selectedStation}_${idx}`;
                 return (
                   <div
                     key={idx}
-                    className={`bg-slate-800/80 border rounded-2xl p-4 transition-all hover:scale-[1.02] flex flex-col justify-between ${
-                      isPlaying ? 'border-blue-400 shadow-lg shadow-blue-500/20 ring-2 ring-blue-400/50' : 'border-slate-700 hover:border-slate-600'
-                    }`}
+                    className={`eng-item-card ${isPlaying ? 'playing' : ''}`}
                   >
                     <div>
-                      <div className="flex items-start justify-between gap-2 mb-2">
-                        <span className="text-lg font-black text-white">{item.en}</span>
+                      <div className="eng-item-top">
+                        <span className="eng-word-text">{item.en}</span>
                         <button
                           onClick={() => handlePlayWord(item.en, `${selectedStation}_${idx}`)}
-                          className="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-xl transition-all flex items-center gap-1 text-xs"
+                          className="eng-btn-listen"
                           title="Doğal Telaffuzu Dinle"
                         >
-                          <Volume2 size={16} />
+                          <Volume2 size={15} />
                           <span>Dinle</span>
                         </button>
                       </div>
 
-                      <div className="text-emerald-400 text-sm font-semibold mb-1">
+                      <div className="eng-tr-meaning">
                         {item.tr}
                       </div>
 
-                      <div className="text-slate-400 text-xs italic mb-3">
-                        Okunuşu: <span className="text-amber-300">[{item.phonetic}]</span>
+                      <div className="eng-phonetic-badge" style={{ marginTop: '4px' }}>
+                        Okunuşu: <span>[{item.phonetic}]</span>
                       </div>
                     </div>
 
-                    <div className="bg-slate-900/60 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between text-xs">
-                      <span className="text-slate-300">💬 {item.sentence}</span>
+                    <div className="eng-sentence-box">
+                      <span>💬 {item.sentence}</span>
                       <button
                         onClick={() => handlePlayWord(item.sentence, `sen_${selectedStation}_${idx}`)}
-                        className="text-blue-400 hover:text-blue-300 p-1"
+                        className="eng-btn-sentence-listen"
                         title="Cümleyi Dinle"
                       >
-                        <Volume2 size={14} />
+                        <Volume2 size={16} />
                       </button>
                     </div>
                   </div>
@@ -450,12 +432,12 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
 
       {/* TAB 2: LIVE DIALOGUE STUDIO */}
       {activeTab === 'dialogue' && (
-        <div className="space-y-6">
-          <div className="flex items-center justify-between bg-purple-900/30 border border-purple-700/50 p-4 rounded-2xl">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div className="eng-dialogue-meta-card">
             <div>
-              <div className="text-xs uppercase font-bold text-purple-300">İnteraktif Konuşma & Rol Oyunu</div>
-              <h3 className="text-lg font-bold text-white mt-0.5">{dialogues[currentDialogueIdx].title}</h3>
-              <p className="text-slate-300 text-xs mt-1">{dialogues[currentDialogueIdx].context}</p>
+              <div className="eng-dialogue-meta-tag">İnteraktif Konuşma & Rol Oyunu</div>
+              <h3 className="eng-dialogue-title">{dialogues[currentDialogueIdx].title}</h3>
+              <p className="eng-dialogue-context">{dialogues[currentDialogueIdx].context}</p>
             </div>
 
             <button
@@ -467,7 +449,7 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
                 setDialogueDone(false);
                 speakEnglish(dialogues[next].lines[0].text);
               }}
-              className="bg-purple-600 hover:bg-purple-500 text-white px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all"
+              className="eng-btn-switch-scenario"
             >
               <RefreshCw size={14} />
               <span>Diğer Senaryoya Geç</span>
@@ -475,39 +457,33 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
           </div>
 
           {/* Dialogue Conversation Stream */}
-          <div className="bg-slate-950/60 border border-slate-800 rounded-3xl p-6 min-h-[300px] flex flex-col justify-between space-y-4">
-            <div className="space-y-4">
+          <div className="eng-chat-window">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {dialogueHistory.map((item, idx) => {
                 const isYou = item.speaker === 'You';
                 return (
                   <div
                     key={idx}
-                    className={`flex items-start gap-3 ${isYou ? 'flex-row-reverse' : 'flex-row'}`}
+                    className={`eng-chat-row ${isYou ? 'user' : 'partner'}`}
                   >
-                    <div className="w-10 h-10 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-xl flex-shrink-0">
+                    <div className="eng-chat-avatar">
                       {isYou ? '🌟' : '👦'}
                     </div>
 
-                    <div
-                      className={`max-w-[80%] p-4 rounded-2xl text-sm relative ${
-                        isYou 
-                          ? 'bg-purple-600 text-white rounded-tr-none' 
-                          : 'bg-slate-800 text-slate-100 rounded-tl-none border border-slate-700'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between gap-4 mb-1">
-                        <span className="text-xs font-bold opacity-80">{item.speaker}</span>
+                    <div className="eng-chat-bubble">
+                      <div className="eng-chat-bubble-top">
+                        <span>{item.speaker}</span>
                         <button
                           onClick={() => speakEnglish(item.text)}
-                          className="hover:scale-110 transition-transform opacity-75 hover:opacity-100"
+                          style={{ cursor: 'pointer', opacity: 0.8 }}
                           title="Cümleyi Dinle"
                         >
                           <Volume2 size={16} />
                         </button>
                       </div>
-                      <p className="font-semibold text-base">{item.text}</p>
+                      <div className="eng-chat-bubble-text">{item.text}</div>
                       {item.feedback && (
-                        <div className="text-xs mt-2 pt-2 border-t border-purple-400/40 text-purple-200">
+                        <div className="eng-chat-feedback">
                           💡 {item.feedback}
                         </div>
                       )}
@@ -519,19 +495,19 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
 
             {/* User Choice Options */}
             {!dialogueDone && currentStep < dialogues[currentDialogueIdx].lines.length && (
-              <div className="bg-slate-900/90 border border-slate-700 p-5 rounded-2xl mt-4 animate-fadeIn">
-                <div className="text-sm font-bold text-amber-400 mb-3 flex items-center gap-2">
+              <div className="eng-options-picker">
+                <div className="eng-options-prompt">
                   <span>🎯 Sıra sende! Uygun İngilizce cevabı seç:</span>
                 </div>
-                <div className="space-y-2.5">
+                <div>
                   {dialogues[currentDialogueIdx].lines[currentStep].options.map((opt, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleChooseOption(opt)}
-                      className="w-full text-left p-3.5 rounded-xl bg-slate-800/80 hover:bg-purple-600/30 border border-slate-700 hover:border-purple-400 text-sm font-semibold transition-all flex items-center justify-between group"
+                      className="eng-option-btn"
                     >
                       <span>{opt.text}</span>
-                      <ChevronRight size={18} className="text-slate-500 group-hover:text-purple-300 transition-colors" />
+                      <ChevronRight size={18} style={{ color: '#94a3b8' }} />
                     </button>
                   ))}
                 </div>
@@ -540,15 +516,26 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
 
             {/* Dialogue Completed Celebration */}
             {dialogueDone && (
-              <div className="bg-emerald-950/40 border border-emerald-500/50 p-5 rounded-2xl text-center animate-fadeIn">
-                <Award size={40} className="mx-auto text-emerald-400 mb-2" />
-                <h4 className="text-lg font-bold text-emerald-300">Splendid! Diyaloğu Başarıyla Tamamladın! 🇬🇧</h4>
-                <p className="text-xs text-slate-300 mt-1">
-                  Doğal telaffuz ve doğru kalıplarla okul diyalog görevini bitirdin.
+              <div className="eng-dialogue-finish-card">
+                <Award size={44} style={{ color: '#059669', margin: '0 auto 6px auto' }} />
+                <h4 className="eng-dialogue-finish-title">Splendid! Diyaloğu Başarıyla Tamamladın! 🇬🇧</h4>
+                <p className="eng-dialogue-finish-desc">
+                  Doğal telaffuz ve doğru kalıplarla okul diyalog görevini bitirdin (+50 XP).
                 </p>
                 <button
                   onClick={handleStartDialogue}
-                  className="mt-3 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold inline-flex items-center gap-2"
+                  style={{
+                    marginTop: '12px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '8px 16px',
+                    background: '#059669',
+                    color: 'white',
+                    borderRadius: '8px',
+                    fontWeight: 700,
+                    fontSize: '13px'
+                  }}
                 >
                   <RefreshCw size={14} />
                   <span>Diyaloğu Yeniden Başlat</span>
@@ -561,41 +548,45 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
 
       {/* TAB 3: SENTENCE SCRAMBLE GAME */}
       {activeTab === 'scramble' && (
-        <div className="space-y-6">
-          <div className="bg-emerald-950/40 border border-emerald-700/50 p-4 rounded-2xl flex items-center justify-between">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div className="eng-scramble-meta">
             <div>
-              <div className="text-xs uppercase font-bold text-emerald-300">Cümle Sıralama & Gramer Laboratuvarı</div>
-              <h3 className="text-lg font-bold text-white mt-0.5">
+              <div style={{ fontSize: '11px', fontWeight: 800, color: '#047857', textTransform: 'uppercase' }}>
+                Cümle Sıralama & Gramer Laboratuvarı
+              </div>
+              <h3 style={{ fontSize: '17px', fontWeight: 800, color: '#064e3b', marginTop: '2px' }}>
                 Görev {currentScrambleIdx + 1} / {scrambleTasks.length}
               </h3>
-              <p className="text-slate-300 text-sm mt-1">
-                Hedef Türkçe Anlam: <strong className="text-amber-300">"{scrambleTasks[currentScrambleIdx].turkish}"</strong>
+              <p style={{ fontSize: '13px', color: '#065f46', marginTop: '4px' }}>
+                Hedef Türkçe Anlam: <strong style={{ color: '#0f172a' }}>"{scrambleTasks[currentScrambleIdx].turkish}"</strong>
               </p>
             </div>
-            <div className="text-xs font-bold text-emerald-400 bg-emerald-900/60 px-3 py-1.5 rounded-full border border-emerald-800">
+            <div style={{ fontSize: '12px', fontWeight: 700, background: '#a7f3d0', color: '#065f46', padding: '6px 14px', borderRadius: '9999px' }}>
               Tamamlanan: {scrambleCompletedCount} / {scrambleTasks.length}
             </div>
           </div>
 
           {/* Sentence Builder Drop Zone */}
-          <div className="bg-slate-950/70 border-2 border-dashed border-slate-700 rounded-3xl p-6 min-h-[140px] flex flex-col justify-center">
-            <div className="text-xs text-slate-500 font-semibold mb-3 uppercase tracking-wider text-center">
+          <div className={`eng-scramble-dropzone ${scrambleStatus === 'correct' ? 'success' : ''}`}>
+            <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>
               Aşağıdaki kelimelere dokunarak doğru cümle sırasını oluştur:
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-2.5 min-h-[50px]">
+            <div className="eng-placed-words-row">
               {placedWords.length === 0 ? (
-                <span className="text-slate-600 italic text-sm">Buraya kelimeler dizilecek...</span>
+                <span style={{ color: '#94a3b8', fontStyle: 'italic', fontSize: '14px' }}>
+                  Kelimeleri seçtiğinde burada yan yana dizilecek...
+                </span>
               ) : (
                 placedWords.map((word, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleRemovePlacedWord(word, idx)}
-                    className="bg-blue-600 hover:bg-red-600/80 text-white font-bold px-4 py-2 rounded-xl text-base shadow-lg transition-all animate-scaleUp group flex items-center gap-1.5"
+                    className="eng-placed-chip"
                     title="Kaldırmak için tıkla"
                   >
                     <span>{word}</span>
-                    <span className="text-xs opacity-60 group-hover:opacity-100">✕</span>
+                    <span style={{ fontSize: '12px', opacity: 0.7 }}>✕</span>
                   </button>
                 ))
               )}
@@ -603,28 +594,30 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
 
             {/* Validation Feedback */}
             {scrambleStatus === 'correct' && (
-              <div className="mt-4 p-3 rounded-xl bg-emerald-600/20 border border-emerald-500 text-emerald-300 text-center font-bold flex items-center justify-center gap-2 animate-fadeIn text-sm">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#059669', fontWeight: 800, fontSize: '14px', marginTop: '6px' }}>
                 <CheckCircle2 size={18} />
                 <span>Harika! Cümle kusursuz kuruldu!</span>
               </div>
             )}
 
             {scrambleStatus === 'wrong' && (
-              <div className="mt-4 p-3 rounded-xl bg-red-600/20 border border-red-500 text-red-300 text-center font-bold text-sm animate-fadeIn">
-                Sıralamada bir hata var. Kelimeleri geri alıp Türkçe anlama göre tekrar dizmeyi dene!
+              <div style={{ color: '#dc2626', fontWeight: 700, fontSize: '13px', marginTop: '6px' }}>
+                Sıralamada bir hata var. Kelimelerin üzerine tıklayarak geri al ve tekrar dene!
               </div>
             )}
           </div>
 
           {/* Available Word Bank */}
-          <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5">
-            <div className="text-xs text-slate-400 font-bold uppercase mb-3">Kullanılabilir Kelimeler:</div>
-            <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="eng-word-bank-card">
+            <div style={{ fontSize: '12px', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>
+              Kullanılabilir Kelimeler:
+            </div>
+            <div className="eng-word-bank-grid">
               {availableWords.map((word, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleWordClick(word, idx)}
-                  className="bg-slate-700 hover:bg-emerald-600 text-white font-bold px-5 py-2.5 rounded-xl text-base border border-slate-600 hover:border-emerald-400 shadow-md transition-all active:scale-95"
+                  className="eng-bank-word-btn"
                 >
                   {word}
                 </button>
@@ -633,10 +626,22 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
           </div>
 
           {/* Action Row */}
-          <div className="flex items-center justify-between pt-2">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <button
               onClick={() => initScramble(currentScrambleIdx)}
-              className="text-slate-400 hover:text-white text-xs font-bold flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 border border-slate-700"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '8px 14px',
+                background: 'white',
+                border: '1px solid #cbd5e1',
+                borderRadius: '8px',
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#475569',
+                cursor: 'pointer'
+              }}
             >
               <RefreshCw size={14} />
               <span>Sıfırla & Baştan Diz</span>
@@ -645,7 +650,19 @@ export const EnglishDialogueLab = ({ topic, onFinish }) => {
             {scrambleStatus === 'correct' && (
               <button
                 onClick={handleNextScramble}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 shadow-lg shadow-emerald-500/30 animate-pulse"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '10px 22px',
+                  background: '#059669',
+                  color: 'white',
+                  borderRadius: '10px',
+                  fontSize: '14px',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 14px rgba(5, 150, 105, 0.3)'
+                }}
               >
                 <span>{currentScrambleIdx + 1 < scrambleTasks.length ? 'Sonraki Cümleye Geç' : 'Laboratuvarı Tamamla! 🏆'}</span>
                 <ChevronRight size={18} />
