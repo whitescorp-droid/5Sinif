@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useGame } from '../context/GameContext';
 import { 
   Users, UserPlus, Award, Flame, KeyRound, Trash2, 
-  RefreshCw, CheckCircle2, Trophy, ArrowRight, Eye, LogOut, Sparkles
+  RefreshCw, CheckCircle2, Trophy, ArrowRight, Eye, LogOut, Sparkles, Cloud, Wifi
 } from 'lucide-react';
 import { playSound } from '../utils/soundEffects';
 
@@ -15,7 +15,8 @@ export const TeacherDashboard = ({ onPreviewStudentView }) => {
     deleteStudent, 
     resetStudentPin, 
     logout, 
-    soundEnabled 
+    soundEnabled,
+    isFirebaseConnected
   } = useGame();
 
   // Add student form state
@@ -88,7 +89,26 @@ export const TeacherDashboard = ({ onPreviewStudentView }) => {
           <div className="teacher-avatar-badge">👩‍🏫</div>
           <div>
             <h1 className="teacher-page-title">Öğretmen Masası & Sınıf Yönetimi</h1>
-            <p className="teacher-page-sub">5. Sınıf Maarif Modeli Öğrenci Takip Sistemi</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+              <p className="teacher-page-sub" style={{ margin: 0 }}>5. Sınıf Maarif Modeli Öğrenci Takip Sistemi</p>
+              <span 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  padding: '3px 10px',
+                  borderRadius: '20px',
+                  backgroundColor: isFirebaseConnected ? 'rgba(16, 185, 129, 0.15)' : 'rgba(245, 158, 11, 0.15)',
+                  color: isFirebaseConnected ? '#10b981' : '#f59e0b',
+                  border: isFirebaseConnected ? '1px solid rgba(16, 185, 129, 0.3)' : '1px solid rgba(245, 158, 11, 0.3)'
+                }}
+              >
+                <Cloud size={14} />
+                {isFirebaseConnected ? 'Firebase Canlı Eşitleme Aktif' : 'Yerel Hafıza Modu'}
+              </span>
+            </div>
           </div>
         </div>
 

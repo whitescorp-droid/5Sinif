@@ -1,6 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { BADGES } from '../data/badgesData';
 import { playSound } from '../utils/soundEffects';
+import { db } from '../firebase';
+import { 
+  collection, 
+  doc, 
+  onSnapshot, 
+  setDoc, 
+  updateDoc, 
+  deleteDoc, 
+  writeBatch 
+} from 'firebase/firestore';
 
 const GameContext = createContext();
 
@@ -89,7 +99,7 @@ const DEFAULT_STUDENTS = [
 ];
 
 export const GameProvider = ({ children }) => {
-  // Load students list
+  // Load initial students from localStorage
   const [students, setStudents] = useState(() => {
     try {
       const saved = localStorage.getItem(STUDENTS_STORAGE_KEY);
@@ -97,10 +107,13 @@ export const GameProvider = ({ children }) => {
         return JSON.parse(saved);
       }
     } catch (e) {
-      console.warn('Error loading students:', e);
+      console.warn('Error loading students from localStorage:', e);
     }
     return DEFAULT_STUDENTS;
   });
+
+  // Cloud connection status
+  const [isFirebaseConnected, setIsFirebaseConnected] = useState(false);
 
   // Teacher password
   const [teacherPassword, setTeacherPassword] = useState(() => {
@@ -111,13 +124,12 @@ export const GameProvider = ({ children }) => {
     }
   });
 
-  // Current logged in user: null | { role: 'student', ...studentData } | { role: 'teacher', name: 'Öğretmenim', avatar: '👩‍🏫' }
+  // Current logged in user: null | { role: 'student', ...studentData } | { role: 'teacher', name: 'Öğretmen Masası', avatar: '👩‍🏫' }
   const [currentUser, setCurrentUser] = useState(() => {
     try {
       const savedUser = localStorage.getItem(ACTIVE_USER_STORAGE_KEY);
       if (savedUser) {
-        const parsed = JSON.parse(savedUser);
-        return parsed;
+        return JSON.parse(savedUser);
       }
     } catch (e) {
       console.warn('Error loading active user session:', e);
@@ -129,12 +141,69 @@ export const GameProvider = ({ children }) => {
   const [newlyUnlockedBadge, setNewlyUnlockedBadge] = useState(null);
   const [levelUpInfo, setLevelUpInfo] = useState(null);
 
-  // Persist students to localStorage
+  // REALTIME FIRESTORE LISTENER
+  useEffect(() => {
+    let unsubscribe = () => {};
+    try {
+      const studentsCol = collection(db, 'students');
+      unsubscribe = onSnapshot(
+        studentsCol,
+        async (snapshot) => {
+          setIsFirebaseConnected(true);
+          if (snapshot.empty) {
+            console.log('Firebase Firestore students empty. Seeding default student roster...');
+            try {
+              const batch = writeBatch(db);
+              DEFAULT_STUDENTS.forEach((student) => {
+                const docRef = doc(db, 'students', student.id);
+                batch.set(docRef, student);
+              });
+              await batch.commit();
+            } catch (seedErr) {
+              console.warn('Seeding default students to Firestore failed:', seedErr);
+            }
+          } else {
+            const list = [];
+            snapshot.forEach((docSnap) => {
+              list.push({ id: docSnap.id, ...docSnap.data() });
+            });
+            // Sort by student number ascending
+            list.sort((a, b) => Number(a.studentNo || 0) - Number(b.studentNo || 0));
+            setStudents(list);
+
+            // Sync current active student with latest cloud state
+            setCurrentUser((prevUser) => {
+              if (prevUser && prevUser.role === 'student') {
+                const found = list.find((s) => s.id === prevUser.id);
+                if (found) {
+                  return { ...found, role: 'student' };
+                }
+              }
+              return prevUser;
+            });
+          }
+        },
+        (error) => {
+          console.warn('Firestore real-time subscription error (falling back to localStorage):', error);
+          setIsFirebaseConnected(false);
+        }
+      );
+    } catch (err) {
+      console.warn('Firebase initialization error, running in offline mode:', err);
+      setIsFirebaseConnected(false);
+    }
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  // Persist students to localStorage for offline cache
   useEffect(() => {
     try {
       localStorage.setItem(STUDENTS_STORAGE_KEY, JSON.stringify(students));
     } catch (e) {
-      console.warn('Error saving students:', e);
+      console.warn('Error saving students to localStorage:', e);
     }
   }, [students]);
 
@@ -195,10 +264,20 @@ export const GameProvider = ({ children }) => {
       lastActiveDate: today
     };
 
-    // Update student in list
+    // Update locally
     setStudents(prev => prev.map(s => s.id === student.id ? updatedStudent : s));
     setCurrentUser(updatedStudent);
     playSound('victory', soundEnabled);
+
+    // Sync to Firestore
+    try {
+      updateDoc(doc(db, 'students', student.id), {
+        streak: newStreak,
+        lastActiveDate: today
+      }).catch(err => console.warn('Could not sync streak to Firebase:', err));
+    } catch (e) {
+      console.warn('Firebase update error:', e);
+    }
 
     return { success: true, user: updatedStudent };
   };
@@ -224,7 +303,7 @@ export const GameProvider = ({ children }) => {
   };
 
   // TEACHER STUDENT MANAGEMENT METHODS
-  const addStudent = ({ name, studentNo, pin = '1234', avatar = '🦁' }) => {
+  const addStudent = async ({ name, studentNo, pin = '1234', avatar = '🦁' }) => {
     const cleanNo = String(studentNo).trim();
     if (!cleanNo || !name.trim()) {
       return { success: false, message: 'İsim ve Okul Numarası zorunludur.' };
@@ -255,29 +334,57 @@ export const GameProvider = ({ children }) => {
       }
     };
 
+    // Update locally
     setStudents(prev => [...prev, newStudent]);
     playSound('correct', soundEnabled);
+
+    // Sync to Firestore
+    try {
+      await setDoc(doc(db, 'students', newStudent.id), newStudent);
+    } catch (err) {
+      console.warn('Could not save new student to Firebase:', err);
+    }
+
     return { success: true, student: newStudent };
   };
 
-  const deleteStudent = (studentId) => {
+  const deleteStudent = async (studentId) => {
+    // Update locally
     setStudents(prev => prev.filter(s => s.id !== studentId));
     playSound('click', soundEnabled);
+
+    // Sync to Firestore
+    try {
+      await deleteDoc(doc(db, 'students', studentId));
+    } catch (err) {
+      console.warn('Could not delete student from Firebase:', err);
+    }
+
     return { success: true };
   };
 
-  const resetStudentPin = (studentId, newPin = '1234') => {
+  const resetStudentPin = async (studentId, newPin = '1234') => {
+    const cleanPin = String(newPin).trim();
+    // Update locally
     setStudents(prev => prev.map(s => {
       if (s.id === studentId) {
-        return { ...s, pin: String(newPin).trim() };
+        return { ...s, pin: cleanPin };
       }
       return s;
     }));
     playSound('correct', soundEnabled);
+
+    // Sync to Firestore
+    try {
+      await updateDoc(doc(db, 'students', studentId), { pin: cleanPin });
+    } catch (err) {
+      console.warn('Could not update PIN in Firebase:', err);
+    }
+
     return { success: true };
   };
 
-  const updateStudentProfile = (studentId, updates) => {
+  const updateStudentProfile = async (studentId, updates) => {
     setStudents(prev => prev.map(s => {
       if (s.id === studentId) {
         return { ...s, ...updates };
@@ -287,6 +394,12 @@ export const GameProvider = ({ children }) => {
 
     if (currentUser?.id === studentId) {
       setCurrentUser(prev => ({ ...prev, ...updates }));
+    }
+
+    try {
+      await setDoc(doc(db, 'students', studentId), updates, { merge: true });
+    } catch (err) {
+      console.warn('Could not update student profile in Firebase:', err);
     }
   };
 
@@ -368,9 +481,24 @@ export const GameProvider = ({ children }) => {
       stats: nextStats
     };
 
+    // Update local state immediately
     setCurrentUser(updatedUser);
-    // Update in students list
     setStudents(prev => prev.map(s => s.id === currentUser.id ? updatedUser : s));
+
+    // Sync to Firebase Firestore
+    try {
+      const studentDocRef = doc(db, 'students', currentUser.id);
+      setDoc(studentDocRef, {
+        xp: nextXp,
+        completedActivities: updatedUser.completedActivities,
+        unlockedBadgeIds: currentBadges,
+        stats: nextStats
+      }, { merge: true }).catch(err => {
+        console.warn('Firebase activity sync error:', err);
+      });
+    } catch (e) {
+      console.warn('Firebase doc sync failed:', e);
+    }
   };
 
   // Computed state for active student
@@ -388,6 +516,7 @@ export const GameProvider = ({ children }) => {
         // Auth state
         currentUser,
         students,
+        isFirebaseConnected,
         loginStudent,
         loginTeacher,
         logout,
