@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { GameProvider } from './context/GameContext';
+import React, { useState, useEffect } from 'react';
+import { GameProvider, useGame } from './context/GameContext';
 import { CURRICULUM_DATA } from './data/curriculumData';
 import { Header } from './components/Header';
 import { Dashboard } from './components/Dashboard';
@@ -8,10 +8,13 @@ import { TopicDetail } from './components/TopicDetail';
 import { ParentReportModal } from './components/ParentReportModal';
 import { AddContentGuideModal } from './components/AddContentGuideModal';
 import { CelebrationModal } from './components/CelebrationModal';
+import { LoginScreen } from './components/LoginScreen';
+import { TeacherDashboard } from './components/TeacherDashboard';
 import './App.css';
 
 function MainApp() {
-  const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'subject' | 'topic'
+  const { currentUser } = useGame();
+  const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'subject' | 'topic' | 'teacher'
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [selectedUnit, setSelectedUnit] = useState(null);
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -19,9 +22,27 @@ function MainApp() {
   const [isParentReportOpen, setIsParentReportOpen] = useState(false);
   const [isAddContentOpen, setIsAddContentOpen] = useState(false);
 
+  // Sync default view on user login
+  useEffect(() => {
+    if (currentUser?.role === 'teacher') {
+      setCurrentView('teacher');
+    } else {
+      setCurrentView('dashboard');
+    }
+  }, [currentUser?.role, currentUser?.id]);
+
+  // If user is not authenticated, render LoginScreen
+  if (!currentUser) {
+    return <LoginScreen />;
+  }
+
   // Navigation handlers
   const handleGoHome = () => {
-    setCurrentView('dashboard');
+    if (currentUser.role === 'teacher') {
+      setCurrentView('teacher');
+    } else {
+      setCurrentView('dashboard');
+    }
     setSelectedSubject(null);
     setSelectedUnit(null);
     setSelectedTopic(null);
@@ -65,11 +86,16 @@ function MainApp() {
         onOpenParentReport={() => setIsParentReportOpen(true)}
         onOpenAddContent={() => setIsAddContentOpen(true)}
         onGoHome={handleGoHome}
+        onOpenTeacherDashboard={() => setCurrentView('teacher')}
         currentView={currentView}
       />
 
       {/* Main Content Area */}
       <main className="main-content">
+        {currentView === 'teacher' && (
+          <TeacherDashboard onPreviewStudentView={() => setCurrentView('dashboard')} />
+        )}
+
         {currentView === 'dashboard' && (
           <Dashboard
             onSelectSubject={handleSelectSubject}

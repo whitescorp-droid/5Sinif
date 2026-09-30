@@ -4824,5 +4824,1022 @@
   transform: scale(0.96);
 }
 
+/* =========================================================================
+   LOGIN & WELCOME SCREEN (ÇOCUK VE ÖĞRETMEN GİRİŞİ)
+   ========================================================================= */
+
+.login-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: radial-gradient(circle at 50% 10%, #eff6ff 0%, #f8fafc 80%);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.login-bg-glow.glow-1 {
+  width: 400px;
+  height: 400px;
+  background: #bfdbfe;
+  top: -80px;
+  left: -80px;
+}
+
+.login-bg-glow.glow-2 {
+  width: 450px;
+  height: 450px;
+  background: #fde68a;
+  bottom: -100px;
+  right: -100px;
+}
+
+.login-main-card {
+  width: 100%;
+  max-width: 520px;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 28px;
+  padding: 36px 32px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  position: relative;
+  z-index: 10;
+}
+
+.login-hero-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-mascot-badge {
+  font-size: 48px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+  border: 2px solid #bfdbfe;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+  animation: floatMascot 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatMascot {
+  from { transform: translateY(0px) rotate(0deg); }
+  to { transform: translateY(-6px) rotate(2deg); }
+}
+
+.login-app-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.login-app-title .highlight-text {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-app-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Role Tabs */
+.login-role-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  margin-top: 20px;
+}
+
+.login-role-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-role-btn.active {
+  background: white;
+  color: #0f172a;
+  box-shadow: var(--shadow-sm);
+}
+
+.login-role-btn .role-icon {
+  font-size: 18px;
+}
+
+/* Quick Student Roster Selector */
+.quick-student-section {
+  margin-bottom: 20px;
+}
+
+.student-avatar-scroll-grid {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 6px 2px 10px 2px;
+  scrollbar-width: thin;
+}
+
+.student-avatar-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  min-width: 80px;
+}
+
+.student-avatar-tile:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+  background: white;
+}
+
+.student-avatar-tile.selected {
+  background: #eff6ff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.student-tile-avatar {
+  font-size: 26px;
+}
+
+.student-tile-name {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.student-tile-no {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+/* Form Fields */
+.login-inputs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.input-field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-field-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon .field-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.login-text-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.login-text-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.login-text-input.pin-input {
+  letter-spacing: 4px;
+  font-size: 18px;
+}
+
+.login-error-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.login-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  margin-top: 4px;
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35);
+}
+
+.login-submit-btn.btn-teacher {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+.login-submit-btn.btn-teacher:hover {
+  box-shadow: 0 12px 24px rgba(124, 58, 237, 0.35);
+}
+
+.login-hint-note {
+  font-size: 12px;
+  color: #64748b;
+  text-align: center;
+  background: #f8fafc;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e2e8f0;
+}
+
+.login-hint-note code {
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.teacher-login-intro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.teacher-shield-icon {
+  color: #7c3aed;
+  flex-shrink: 0;
+}
+
+.teacher-intro-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #4c1d95;
+}
+
+.teacher-intro-desc {
+  font-size: 12px;
+  color: #6d28d9;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* =========================================================================
+   TEACHER DASHBOARD (ÖĞRETMEN YÖNETİM MASASI)
+   ========================================================================= */
+
+.teacher-dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.teacher-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.teacher-brand-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.teacher-avatar-badge {
+  width: 52px;
+  height: 52px;
+  background: #f5f3ff;
+  border: 2px solid #ddd6fe;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.teacher-page-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.teacher-page-sub {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.teacher-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-preview-student {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-preview-student:hover {
+  background: #dbeafe;
+}
+
+.btn-teacher-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-teacher-logout:hover {
+  background: #fee2e2;
+}
+
+/* Overview Metrics */
+.teacher-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.teacher-metric-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.metric-icon-box.bg-blue { background: #3b82f6; }
+.metric-icon-box.bg-gold { background: #f59e0b; }
+.metric-icon-box.bg-purple { background: #8b5cf6; }
+.metric-icon-box.bg-green { background: #10b981; }
+
+.metric-number {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Teacher Main Grid */
+.teacher-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.teacher-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.teacher-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.teacher-card-header.flex-between {
+  justify-content: space-between;
+}
+
+.teacher-card-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Add Student Form */
+.add-student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  transition: all 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.avatar-pick-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.avatar-pick-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.avatar-pick-btn:hover {
+  border-color: #93c5fd;
+  transform: scale(1.1);
+}
+
+.avatar-pick-btn.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  transform: scale(1.08);
+}
+
+.btn-add-student-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 6px;
+}
+
+.btn-add-student-submit:hover {
+  background: #1d4ed8;
+}
+
+.form-feedback-pill {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-feedback-pill.success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.form-feedback-pill.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* Leaderboard */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.leaderboard-item:hover {
+  background: white;
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.leaderboard-item.rank-1 {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.leaderboard-rank {
+  font-size: 20px;
+  font-weight: 900;
+  min-width: 32px;
+}
+
+.leaderboard-avatar {
+  font-size: 24px;
+}
+
+.leaderboard-info {
+  flex: 1;
+}
+
+.leaderboard-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.leaderboard-sub {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.leaderboard-xp {
+  font-size: 14px;
+  font-weight: 800;
+  color: #d97706;
+}
+
+/* Roster Table */
+.roster-badge-info {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.roster-table-wrapper {
+  overflow-x: auto;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.roster-table th {
+  padding: 12px 16px;
+  font-weight: 800;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.roster-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.student-table-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-avatar {
+  font-size: 22px;
+}
+
+.table-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.badge-school-no {
+  display: inline-block;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.pin-display-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pin-display-cell code {
+  background: #e2e8f0;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 2px;
+}
+
+.btn-edit-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit-pin:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.inline-pin-edit {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pin-edit-input {
+  width: 60px;
+  padding: 4px 6px;
+  border: 1.5px solid #2563eb;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.btn-pin-save {
+  background: #10b981;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-pin-cancel {
+  background: #ef4444;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.table-xp-pill {
+  color: #d97706;
+  font-weight: 800;
+}
+
+.table-streak-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #ea580c;
+  font-weight: 700;
+}
+
+.table-acts-count {
+  font-weight: 700;
+  color: #059669;
+}
+
+.btn-delete-student {
+  color: #94a3b8;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete-student:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Header Logout Button */
+.header-logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-logout-btn:hover {
+  background: #fee2e2;
+  border-color: #f87171;
+}
+
+/* =========================================================================
+   ENHANCED MOBILE & TABLET RESPONSIVENESS (320px - 1024px)
+   ========================================================================= */
+
+@media (max-width: 1024px) {
+  .teacher-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Layout Padding */
+  .app-layout {
+    padding: 0;
+  }
+
+  .main-content {
+    padding: 16px 12px 32px 12px;
+  }
+
+  /* Header adjustments */
+  .header-inner {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .parent-report-btn span,
+  .guide-btn span {
+    display: none;
+  }
+
+  /* Dashboard Adjustments */
+  .welcome-banner {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .welcome-title {
+    font-size: 22px;
+  }
+
+  .welcome-subtitle {
+    font-size: 13px;
+  }
+
+  .subjects-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .subject-card {
+    padding: 18px 16px;
+  }
+
+  /* Activity Bar */
+  .activity-tabs-scroll {
+    gap: 6px;
+    padding-bottom: 6px;
+  }
+
+  .activity-tab-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Login Card */
+  .login-main-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .login-app-title {
+    font-size: 22px;
+  }
+
+  .input-group-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Teacher dashboard */
+  .teacher-top-bar {
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .teacher-top-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .teacher-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .teacher-metric-card {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .metric-number {
+    font-size: 18px;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login-role-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .login-submit-btn {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+}
+
+
 
 
