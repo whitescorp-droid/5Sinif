@@ -378,6 +378,11 @@ export const TeacherDashboard = ({ onPreviewStudentView }) => {
                       <span className="table-acts-count">
                         {std.stats?.completedActivitiesCount || Object.keys(std.completedActivities || {}).length} Etkinlik
                       </span>
+                      {std.masteredVocab?.length > 0 && (
+                        <div style={{ fontSize: '11px', color: '#0284c7', fontWeight: 600, marginTop: '2px' }}>
+                          🔤 {std.masteredVocab.length} Kelime
+                        </div>
+                      )}
                     </td>
 
                     <td className="text-right">

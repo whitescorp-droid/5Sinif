@@ -10,11 +10,12 @@ import { AddContentGuideModal } from './components/AddContentGuideModal';
 import { CelebrationModal } from './components/CelebrationModal';
 import { LoginScreen } from './components/LoginScreen';
 import { TeacherDashboard } from './components/TeacherDashboard';
+import { VocabularyHub } from './components/vocabulary/VocabularyHub';
 import './App.css';
 
 function MainApp() {
   const { currentUser } = useGame();
-  const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'subject' | 'topic' | 'teacher'
+  const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'subject' | 'topic' | 'teacher' | 'vocabulary'
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [selectedUnit, setSelectedUnit] = useState(null);
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -79,6 +80,14 @@ function MainApp() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleOpenVocabulary = () => {
+    setCurrentView('vocabulary');
+    setSelectedSubject(null);
+    setSelectedUnit(null);
+    setSelectedTopic(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="app-layout">
       {/* Header bar */}
@@ -87,6 +96,7 @@ function MainApp() {
         onOpenAddContent={() => setIsAddContentOpen(true)}
         onGoHome={handleGoHome}
         onOpenTeacherDashboard={() => setCurrentView('teacher')}
+        onOpenVocabulary={handleOpenVocabulary}
         currentView={currentView}
       />
 
@@ -96,10 +106,15 @@ function MainApp() {
           <TeacherDashboard onPreviewStudentView={() => setCurrentView('dashboard')} />
         )}
 
+        {currentView === 'vocabulary' && (
+          <VocabularyHub onBack={handleGoHome} />
+        )}
+
         {currentView === 'dashboard' && (
           <Dashboard
             onSelectSubject={handleSelectSubject}
             onSelectDailyMission={handleSelectDailyMission}
+            onOpenVocabulary={handleOpenVocabulary}
           />
         )}
 

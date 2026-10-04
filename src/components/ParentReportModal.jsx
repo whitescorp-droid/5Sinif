@@ -11,6 +11,7 @@ export const ParentReportModal = ({ isOpen, onClose }) => {
     streak, 
     levelInfo, 
     completedActivities, 
+    masteredVocab,
     stats,
     resetAllProgress,
     soundEnabled
@@ -101,6 +102,10 @@ export const ParentReportModal = ({ isOpen, onClose }) => {
               <div className="metric-card">
                 <span className="metric-val text-green">{Object.keys(completedActivities).length}</span>
                 <span className="metric-lbl">Tamamlanan Etkinlik</span>
+              </div>
+              <div className="metric-card">
+                <span className="metric-val" style={{ color: '#0284c7' }}>🔤 {masteredVocab?.length || 0}</span>
+                <span className="metric-lbl">Öğrenilen Kelime</span>
               </div>
             </div>
           </div>

@@ -5,8 +5,8 @@ import { BADGES } from '../data/badgesData';
 import { Sparkles, Flame, CheckCircle, ChevronRight, BookOpen, Award, ArrowUpRight, Zap } from 'lucide-react';
 import { playSound } from '../utils/soundEffects';
 
-export const Dashboard = ({ onSelectSubject, onSelectDailyMission }) => {
-  const { studentName, xp, streak, completedActivities, unlockedBadgeIds, soundEnabled } = useGame();
+export const Dashboard = ({ onSelectSubject, onSelectDailyMission, onOpenVocabulary }) => {
+  const { studentName, xp, streak, completedActivities, masteredVocab, unlockedBadgeIds, soundEnabled } = useGame();
 
   const subjects = CURRICULUM_DATA.subjects;
 
@@ -183,6 +183,46 @@ export const Dashboard = ({ onSelectSubject, onSelectDailyMission }) => {
           })}
         </div>
       </section>
+
+      {/* Word Skills Özel Kelime İstasyonu Banner */}
+      <div 
+        className="vocab-promo-banner" 
+        onClick={() => {
+          playSound('click', soundEnabled);
+          if (onOpenVocabulary) onOpenVocabulary();
+        }}
+        role="button"
+        tabIndex={0}
+      >
+        <div className="vocab-promo-badge">
+          <Sparkles size={16} />
+          <span>Özel Bölüm: Oxford Word Skills Modeli & Kelime Dünyası</span>
+        </div>
+        <div className="vocab-promo-content">
+          <div className="vocab-promo-icon">🇬🇧</div>
+          <div className="vocab-promo-text">
+            <h3 className="vocab-promo-title">Word Skills: İngilizce Kelime İstasyonu</h3>
+            <p className="vocab-promo-desc">
+              Kelimeleri tek tek ezberlemek yerine; temalarına göre gruplanmış, sesli telaffuzlu, örnek cümleli ve kalıplarıyla (collocations) öğren! 
+              Dinleme oyunları, harf bulmacaları ve 3D akıllı kartlarla kelime dağarcığını zirveye taşı.
+            </p>
+            <div className="vocab-promo-meta">
+              <span className="vocab-promo-tag">🔤 60+ Zengin Kelime</span>
+              <span className="vocab-promo-tag">🎧 Dinle & Eşleştir Oyunu</span>
+              <span className="vocab-promo-tag">✨ 3D Akıllı Kartlar</span>
+              <span className="vocab-promo-tag highlight">
+                +{masteredVocab?.length || 0} Kelime Öğrenildi ⭐
+              </span>
+            </div>
+          </div>
+          <div className="vocab-promo-action">
+            <button className="btn-explore-vocab">
+              <span>Hemen Başla</span>
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* 5. Sınıf Dersleri Grid */}
       <section className="dashboard-section">

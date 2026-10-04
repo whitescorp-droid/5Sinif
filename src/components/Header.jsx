@@ -3,7 +3,7 @@ import { useGame } from '../context/GameContext';
 import { Volume2, VolumeX, Flame, Award, BookOpen, User, HelpCircle, FileText, LogOut, ShieldCheck } from 'lucide-react';
 import { playSound } from '../utils/soundEffects';
 
-export const Header = ({ onOpenParentReport, onOpenAddContent, onGoHome, onOpenTeacherDashboard, currentView }) => {
+export const Header = ({ onOpenParentReport, onOpenAddContent, onGoHome, onOpenTeacherDashboard, onOpenVocabulary, currentView }) => {
   const {
     currentUser,
     logout,
@@ -119,6 +119,18 @@ export const Header = ({ onOpenParentReport, onOpenAddContent, onGoHome, onOpenT
           >
             {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
           </button>
+
+          {/* Word Skills Vocabulary Button */}
+          {!isTeacher && (
+            <button
+              onClick={onOpenVocabulary}
+              className={`parent-report-btn vocab-header-link ${currentView === 'vocabulary' ? 'active' : ''}`}
+              title="Word Skills İngilizce Kelime İstasyonu"
+            >
+              <BookOpen size={18} />
+              <span>Kelime Dünyası</span>
+            </button>
+          )}
 
           {/* Parent Report Button (Only for students) */}
           {!isTeacher && (

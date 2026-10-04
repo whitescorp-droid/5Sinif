@@ -116,5 +116,24 @@ export const BADGES = [
     color: '#6366F1',
     xpReward: 300,
     checkUnlocked: (stats) => (stats.xp || 0) >= 1000
+  },
+  {
+    id: 'vocab_explorer',
+    title: 'Word Skills Kaşifi 🔤',
+    description: 'Kelime Dünyasında en az 10 İngilizce kelime kartını başarıyla öğrendin!',
+    icon: '🔤',
+    color: '#06B6D4',
+    xpReward: 100,
+    checkUnlocked: (stats) => (stats.vocabLearnedCount || 0) >= 10
+  },
+  {
+    id: 'vocab_master',
+    title: 'Oxford Word Master 🎓',
+    description: 'Word Skills kelime havuzunda en az 30 kelimeyi tamamladın!',
+    icon: '🎓',
+    color: '#8B5CF6',
+    xpReward: 250,
+    checkUnlocked: (stats) => (stats.vocabLearnedCount || 0) >= 30
   }
 ];
+

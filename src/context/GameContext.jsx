@@ -501,11 +501,98 @@ export const GameProvider = ({ children }) => {
     }
   };
 
+  // Learn or toggle a Word Skills vocabulary word
+  const masterVocabWord = (wordId, xpEarned = 10) => {
+    if (!currentUser || currentUser.role !== 'student') return;
+
+    const currentMastered = currentUser.masteredVocab || [];
+    const isAlreadyMastered = currentMastered.includes(wordId);
+    
+    let nextMastered;
+    let earnedXp = 0;
+    if (isAlreadyMastered) {
+      nextMastered = currentMastered.filter(id => id !== wordId);
+    } else {
+      nextMastered = [...currentMastered, wordId];
+      earnedXp = xpEarned;
+    }
+
+    const prevXp = currentUser.xp || 0;
+    const nextXp = prevXp + earnedXp;
+
+    // Check level up if xp added
+    if (earnedXp > 0) {
+      const oldLvl = getLevelInfo(prevXp).level;
+      const newLvl = getLevelInfo(nextXp).level;
+      if (newLvl > oldLvl) {
+        setLevelUpInfo({ oldLevel: oldLvl, newLevel: newLvl, title: getLevelInfo(nextXp).title });
+        playSound('victory', soundEnabled);
+      } else {
+        playSound('correct', soundEnabled);
+      }
+    } else {
+      playSound('click', soundEnabled);
+    }
+
+    const currentStats = currentUser.stats || {};
+    const nextStats = {
+      ...currentStats,
+      vocabLearnedCount: nextMastered.length
+    };
+
+    // Check badges
+    const currentBadges = [...(currentUser.unlockedBadgeIds || [])];
+    const newlyUnlocked = [];
+
+    BADGES.forEach(badge => {
+      if (!currentBadges.includes(badge.id)) {
+        const statsForCheck = {
+          ...nextStats,
+          xp: nextXp,
+          streak: currentUser.streak || 1
+        };
+        if (badge.checkUnlocked(statsForCheck)) {
+          currentBadges.push(badge.id);
+          newlyUnlocked.push(badge);
+        }
+      }
+    });
+
+    if (newlyUnlocked.length > 0) {
+      setNewlyUnlockedBadge(newlyUnlocked[0]);
+      playSound('badge', soundEnabled);
+    }
+
+    const updatedUser = {
+      ...currentUser,
+      xp: nextXp,
+      masteredVocab: nextMastered,
+      unlockedBadgeIds: currentBadges,
+      stats: nextStats
+    };
+
+    setCurrentUser(updatedUser);
+    setStudents(prev => prev.map(s => s.id === currentUser.id ? updatedUser : s));
+
+    try {
+      const studentDocRef = doc(db, 'students', currentUser.id);
+      setDoc(studentDocRef, {
+        xp: nextXp,
+        masteredVocab: nextMastered,
+        unlockedBadgeIds: currentBadges,
+        stats: nextStats
+      }, { merge: true }).catch(err => console.warn('Firebase vocab sync error:', err));
+    } catch (e) {
+      console.warn('Firebase doc sync failed:', e);
+    }
+  };
+
   // Computed state for active student
   const studentName = currentUser?.name || 'Öğrenci';
   const xp = currentUser?.xp || 0;
   const streak = currentUser?.streak || 1;
   const completedActivities = currentUser?.completedActivities || {};
+  const masteredVocab = currentUser?.masteredVocab || [];
   const unlockedBadgeIds = currentUser?.unlockedBadgeIds || ['first_step'];
   const stats = currentUser?.stats || { completedActivitiesCount: 0, subjectActivities: {} };
   const levelInfo = getLevelInfo(xp);
@@ -530,14 +617,16 @@ export const GameProvider = ({ children }) => {
         xp,
         streak,
         completedActivities,
+        masteredVocab,
         unlockedBadgeIds,
         stats,
         levelInfo,
 
-        // Audio & Modals
+        // Audio & Modals & Actions
         soundEnabled,
         toggleSound,
         completeActivity,
+        masterVocabWord,
         newlyUnlockedBadge,
         setNewlyUnlockedBadge,
         levelUpInfo,
