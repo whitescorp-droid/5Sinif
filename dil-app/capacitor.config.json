@@ -1,0 +1,9 @@
+{
+  "appId": "com.maarif5.dilkulubu",
+  "appName": "Dil Kulübü 5",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dil Kulübü 5</string>
+    <string name="title_activity_main">Dil Kulübü 5</string>
+    <string name="package_name">com.maarif5.dilkulubu</string>
+    <string name="custom_url_scheme">com.maarif5.dilkulubu</string>
+</resources>
