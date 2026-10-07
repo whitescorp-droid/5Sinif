@@ -11,6 +11,7 @@
     "cap:open": "cap open android"
   },
   "dependencies": {
+    "@capacitor-community/text-to-speech": "^6.1.0",
     "canvas-confetti": "^1.9.4",
     "lucide-react": "^1.48.0",
     "react": "^19.2.8",

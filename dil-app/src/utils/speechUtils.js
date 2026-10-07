@@ -1,13 +1,15 @@
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
+import { Capacitor } from '@capacitor/core';
+
 // =========================================================================
-// SPEECH & PRONUNCIATION ENGINE (HYBRID ONLINE TTS + WEB SPEECH API)
-// Android WebView ve mobil cihazlarda ses çıkmama sorununu %100 çözen
-// çift katmanlı (Dual-Tier Fallback) ses ve telaffuz motoru.
+// UNIFIED SPEECH SYNTHESIS ENGINE
+// - Android APK: Native android.speech.tts.TextToSpeech (100% reliable hardware TTS)
+// - Web Browser: Synchronous Web Speech API with unpause & GC protection
 // =========================================================================
 
-let currentAudio = null;
 let activeUtterance = null;
 
-// Android WebView için ses ön yükleme
+// Initialize browser voices if available
 if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
   try {
     window.speechSynthesis.getVoices();
@@ -17,133 +19,18 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       };
     }
   } catch (e) {
-    console.debug('Voices init info:', e);
+    console.debug('Voices init ignored:', e);
   }
 }
 
 /**
- * 1. Katman: Çevrim içi yüksek kaliteli doğal insan sesi (Google TTS MP3)
- * Android WebView ve tüm mobil tarayıcılarda kesinlikle ses verir.
- */
-function playOnlineAudioTTS(cleanText, langCode, rate = 0.88, onEnd = null) {
-  try {
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio.src = '';
-      currentAudio = null;
-    }
-
-    const tl = langCode === 'de' ? 'de' : 'en';
-    const encoded = encodeURIComponent(cleanText);
-    const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${tl}&q=${encoded}`;
-
-    const audio = new Audio();
-    audio.src = audioUrl;
-    audio.playbackRate = rate < 0.80 ? 0.75 : 1.0;
-    currentAudio = audio;
-
-    let hasEnded = false;
-    const safeEnd = () => {
-      if (!hasEnded) {
-        hasEnded = true;
-        currentAudio = null;
-        if (onEnd) onEnd();
-      }
-    };
-
-    audio.onended = safeEnd;
-
-    audio.onerror = () => {
-      console.warn('Online audio stream failed, falling back to Web Speech API');
-      playWebSpeechAPI(cleanText, langCode, rate, safeEnd);
-    };
-
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise.catch((err) => {
-        console.warn('Audio play() blocked or failed, falling back to Web Speech API:', err);
-        playWebSpeechAPI(cleanText, langCode, rate, safeEnd);
-      });
-    }
-
-    return true;
-  } catch (err) {
-    console.warn('playOnlineAudioTTS exception, using Web Speech API:', err);
-    return false;
-  }
-}
-
-/**
- * 2. Katman: Cihazın yerel Web Speech API motoru
- * Android WebView ve Chromium için özel resume ve Garbage Collection korumalı.
- */
-function playWebSpeechAPI(cleanText, langCode, rate = 0.88, onEnd = null) {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    if (onEnd) onEnd();
-    return;
-  }
-
-  try {
-    // Android ses duraklatma (pause) kilidini kaldır
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-    }
-    window.speechSynthesis.cancel();
-
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.lang = langCode === 'de' ? 'de-DE' : 'en-US';
-    utterance.rate = rate;
-    utterance.pitch = 1.05;
-
-    // En uygun sesi seç (varsa)
-    const voices = window.speechSynthesis.getVoices();
-    if (voices && voices.length > 0) {
-      const match = voices.find(v =>
-        langCode === 'de' ? v.lang.startsWith('de') : v.lang.startsWith('en')
-      );
-      if (match) utterance.voice = match;
-    }
-
-    let hasEnded = false;
-    const safeEnd = () => {
-      if (!hasEnded) {
-        hasEnded = true;
-        activeUtterance = null;
-        window._activeUtterance = null;
-        if (onEnd) onEnd();
-      }
-    };
-
-    utterance.onend = safeEnd;
-    utterance.onerror = safeEnd;
-
-    // Android Chromium V8 Garbage Collector bug koruması
-    activeUtterance = utterance;
-    window._activeUtterance = utterance;
-
-    window.speechSynthesis.speak(utterance);
-
-    // Güvenlik zaman aşımı (Android'de onend tetiklenmeme ihtimaline karşı)
-    setTimeout(() => {
-      if (activeUtterance === utterance && !hasEnded) {
-        safeEnd();
-      }
-    }, Math.max(3000, cleanText.length * 200));
-
-  } catch (err) {
-    console.error('Web Speech API execution error:', err);
-    if (onEnd) onEnd();
-  }
-}
-
-/**
- * Tüm diller ve bileşenler için ortak ses çalma fonksiyonu
- * @param {string} text - Okunacak kelime veya cümle
+ * Speaks text in the chosen foreign language
+ * @param {string} text - Text to speak
  * @param {string} lang - 'english' | 'german' | 'en' | 'de'
- * @param {number|function} rateOrCb - Hız (örn: 0.88) veya bitiş callback'i
- * @param {function} [maybeCb] - Bitiş callback'i
+ * @param {number|function} [rateOrCb=0.88] - Rate (e.g. 0.88 or 0.70) or callback
+ * @param {function} [maybeCb=null] - Optional callback
  */
-export const speakWord = (text, lang = 'english', rateOrCb = 0.88, maybeCb = null) => {
+export const speakWord = async (text, lang = 'english', rateOrCb = 0.88, maybeCb = null) => {
   if (!text) {
     if (typeof rateOrCb === 'function') rateOrCb();
     else if (maybeCb) maybeCb();
@@ -160,18 +47,99 @@ export const speakWord = (text, lang = 'english', rateOrCb = 0.88, maybeCb = nul
     if (typeof maybeCb === 'function') onEnd = maybeCb;
   }
 
-  const langCode = lang === 'german' || lang === 'de' ? 'de' : 'en';
   const cleanText = text.replace(/[^\p{L}\p{N}\s.,?!'-]/gu, '').trim();
-
   if (!cleanText) {
     if (onEnd) onEnd();
     return;
   }
 
-  // Önce doğrudan ses veren MP3 Audio TTS'i dene, başarısız olursa yerel motora geç
-  const started = playOnlineAudioTTS(cleanText, langCode, rate, onEnd);
-  if (!started) {
-    playWebSpeechAPI(cleanText, langCode, rate, onEnd);
+  const langCode = (lang === 'german' || lang === 'de') ? 'de-DE' : 'en-US';
+
+  // 1. Android / iOS Native Platform (APK) -> Native TextToSpeech Engine
+  if (Capacitor.isNativePlatform()) {
+    try {
+      await TextToSpeech.stop();
+      await TextToSpeech.speak({
+        text: cleanText,
+        lang: langCode,
+        rate: rate < 0.80 ? 0.75 : 1.0,
+        pitch: 1.0,
+        volume: 1.0,
+        category: 'ambient',
+      });
+      if (onEnd) onEnd();
+      return;
+    } catch (err) {
+      console.warn('Native TextToSpeech call failed, falling back to Web Speech API:', err);
+    }
+  }
+
+  // 2. Web / Browser Platform -> Direct Web Speech API
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    try {
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      }
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+      }
+
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.lang = langCode;
+      utterance.rate = rate || 0.88;
+      utterance.pitch = 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      if (voices && voices.length > 0) {
+        const prefix = langCode.substring(0, 2);
+        const match = voices.find(v => v.lang && v.lang.toLowerCase().startsWith(prefix));
+        if (match) utterance.voice = match;
+      }
+
+      let ended = false;
+      const finish = () => {
+        if (!ended) {
+          ended = true;
+          activeUtterance = null;
+          window._activeUtterance = null;
+          if (onEnd) onEnd();
+        }
+      };
+
+      utterance.onend = finish;
+      utterance.onerror = (e) => {
+        console.warn('Web Speech utterance error:', e);
+        finish();
+      };
+
+      activeUtterance = utterance;
+      window._activeUtterance = utterance;
+
+      window.speechSynthesis.speak(utterance);
+
+      // Failsafe timeout in case onend doesn't fire
+      setTimeout(() => {
+        if (activeUtterance === utterance && !ended) {
+          finish();
+        }
+      }, Math.max(2500, cleanText.length * 150));
+      return;
+    } catch (err) {
+      console.error('Web Speech API execution error:', err);
+    }
+  }
+
+  if (onEnd) onEnd();
+};
+
+export const stopSpeech = async () => {
+  if (Capacitor.isNativePlatform()) {
+    try {
+      await TextToSpeech.stop();
+    } catch (e) {}
+  }
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
   }
 };
 
@@ -181,17 +149,6 @@ export const speakEnglish = (text, rate = 0.88, onEnd = null) => {
 
 export const speakGerman = (text, rate = 0.88, onEnd = null) => {
   speakWord(text, 'german', rate, onEnd);
-};
-
-export const stopSpeech = () => {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.src = '';
-    currentAudio = null;
-  }
-  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-  }
 };
 
 export const stopEnglishSpeech = stopSpeech;
