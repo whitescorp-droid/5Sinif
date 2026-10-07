@@ -5,9 +5,18 @@ import { useDil } from '../context/DilContext';
 import { speakWord } from '../utils/speechUtils';
 import { playSound } from '../utils/soundEffects';
 
+const getVocabularyData = () => {
+  try {
+    const cached = localStorage.getItem('dil_live_vocabulary');
+    if (cached) return JSON.parse(cached);
+  } catch (e) {}
+  return VOCABULARY_BY_LANG;
+};
+
 export const VocabularyView = () => {
   const { activeLang, listenedWords, markWordListened, soundEnabled } = useDil();
-  const categories = VOCABULARY_BY_LANG[activeLang] || [];
+  const allVocab = getVocabularyData();
+  const categories = allVocab[activeLang] || VOCABULARY_BY_LANG[activeLang] || [];
 
   const [selectedCatId, setSelectedCatId] = useState(categories[0]?.id || 'all');
   const [searchTerm, setSearchTerm] = useState('');

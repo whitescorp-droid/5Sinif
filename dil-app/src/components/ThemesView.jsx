@@ -4,9 +4,18 @@ import { LANGUAGES_DATA } from '../data/languagesCurriculum';
 import { useDil } from '../context/DilContext';
 import { playSound } from '../utils/soundEffects';
 
+const getCurriculumData = () => {
+  try {
+    const cached = localStorage.getItem('dil_live_curriculum');
+    if (cached) return JSON.parse(cached);
+  } catch (e) {}
+  return LANGUAGES_DATA;
+};
+
 export const ThemesView = ({ onSelectTopic }) => {
   const { activeLang, completedActivities, soundEnabled } = useDil();
-  const currentSubject = LANGUAGES_DATA[activeLang];
+  const allData = getCurriculumData();
+  const currentSubject = allData[activeLang] || LANGUAGES_DATA[activeLang];
 
   // Keep first unit open by default
   const [openUnits, setOpenUnits] = useState({

@@ -5,7 +5,7 @@ import { playSound } from '../utils/soundEffects';
 
 const AVATAR_OPTIONS = ['🚀', '🦁', '🐼', '🦊', '🦄', '⚽', '🎮', '🌟', '🐱', '🐬', '🏆', '🎯'];
 
-export const ProfileModal = ({ onClose }) => {
+export const ProfileModal = ({ onClose, onOpenUpdate }) => {
   const { studentName, setStudentName, studentAvatar, setStudentAvatar, soundEnabled } = useDil();
   const [nameInput, setNameInput] = useState(studentName);
   const [selectedAvatar, setSelectedAvatar] = useState(studentAvatar);
@@ -63,10 +63,23 @@ export const ProfileModal = ({ onClose }) => {
           />
         </div>
 
-        <div className="modal-footer">
+        <div className="modal-footer" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <button type="button" className="btn-save-profile" onClick={handleSave}>
             <Check size={18} /> Kaydet
           </button>
+
+          {onOpenUpdate && (
+            <button
+              type="button"
+              className="btn-open-update-profile"
+              onClick={() => {
+                onClose();
+                onOpenUpdate();
+              }}
+            >
+              🔄 Güncellemeleri Denetle (v1.1.0)
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -7,13 +7,16 @@ import { TopicDetailView } from './components/TopicDetailView';
 import { VocabularyView } from './components/VocabularyView';
 import { BadgesView } from './components/BadgesView';
 import { ProfileModal } from './components/ProfileModal';
+import { UpdateModal } from './components/UpdateModal';
 import './App.css';
 
 function MainDilApp() {
+  const { soundEnabled } = useDil();
   const [activeTab, setActiveTab] = useState('themes'); // 'themes' | 'vocabulary' | 'badges'
   const [selectedUnit, setSelectedUnit] = useState(null);
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isUpdateOpen, setIsUpdateOpen] = useState(false);
 
   const handleSelectTopic = (unit, topic) => {
     setSelectedUnit(unit);
@@ -40,7 +43,10 @@ function MainDilApp() {
     <div className="mobile-app-wrapper">
       <div className="mobile-phone-frame">
         {/* Sticky Header */}
-        <Header onOpenProfile={() => setIsProfileOpen(true)} />
+        <Header
+          onOpenProfile={() => setIsProfileOpen(true)}
+          onOpenUpdate={() => setIsUpdateOpen(true)}
+        />
 
         {/* Content Area */}
         <main className="mobile-main-content">
@@ -66,7 +72,18 @@ function MainDilApp() {
 
         {/* Profile Modal */}
         {isProfileOpen && (
-          <ProfileModal onClose={() => setIsProfileOpen(false)} />
+          <ProfileModal
+            onClose={() => setIsProfileOpen(false)}
+            onOpenUpdate={() => setIsUpdateOpen(true)}
+          />
+        )}
+
+        {/* Update Modal */}
+        {isUpdateOpen && (
+          <UpdateModal
+            onClose={() => setIsUpdateOpen(false)}
+            soundEnabled={soundEnabled}
+          />
         )}
       </div>
     </div>

@@ -1946,3 +1946,219 @@
 .btn-save-profile:active {
   transform: scale(0.97);
 }
+
+/* =========================================================================
+   UPDATE MODAL & BUTTONS
+   ========================================================================= */
+.update-trigger-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EFF6FF;
+  color: var(--primary-en);
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.update-trigger-btn:active {
+  transform: scale(0.92);
+  background: #DBEAFE;
+}
+
+.update-tab-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: #F1F5F9;
+  padding: 4px;
+  border-radius: var(--radius-md);
+  margin-top: 10px;
+}
+
+.update-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748B;
+  transition: all 0.2s;
+}
+
+.update-tab-btn.active {
+  background: white;
+  color: #0F172A;
+  box-shadow: var(--shadow-sm);
+}
+
+.update-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.version-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F8FAFC;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.info-label {
+  font-size: 12.5px;
+  color: #64748B;
+  font-weight: 700;
+}
+
+.version-tag {
+  font-size: 13.5px;
+  font-weight: 900;
+  color: var(--primary-en);
+  background: #EFF6FF;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.update-intro-text {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.4;
+  background: #F8FAFC;
+  padding: 12px;
+  border-radius: var(--radius-md);
+}
+
+.update-result-card {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.update-result-card.has-new {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+}
+
+.update-result-card.up-to-date {
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  color: #1E40AF;
+}
+
+.result-notes {
+  font-size: 12.5px;
+  color: #334155;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.result-date {
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.up-to-date-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+.up-to-date-view h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #065F46;
+}
+
+.up-to-date-view p {
+  font-size: 12.5px;
+  color: #334155;
+}
+
+.btn-check-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #F1F5F9;
+  color: #1E293B;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  font-weight: 800;
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+
+.btn-check-action:active {
+  transform: scale(0.97);
+  background: #E2E8F0;
+}
+
+.btn-download-apk {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #10B981;
+  color: white;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s;
+}
+
+.btn-download-apk:active {
+  transform: scale(0.97);
+}
+
+.btn-open-update-profile {
+  width: 100%;
+  background: #F1F5F9;
+  color: #475569;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.btn-open-update-profile:active {
+  transform: scale(0.98);
+  background: #E2E8F0;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+

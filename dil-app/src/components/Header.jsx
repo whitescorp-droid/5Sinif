@@ -1,9 +1,9 @@
 import React from 'react';
-import { Volume2, VolumeX, Flame, Star, Globe2 } from 'lucide-react';
+import { Volume2, VolumeX, Flame, Star, Globe2, RefreshCw } from 'lucide-react';
 import { useDil } from '../context/DilContext';
 import { playSound } from '../utils/soundEffects';
 
-export const Header = ({ onOpenProfile }) => {
+export const Header = ({ onOpenProfile, onOpenUpdate }) => {
   const {
     activeLang,
     setActiveLang,
@@ -58,6 +58,18 @@ export const Header = ({ onOpenProfile }) => {
             title={soundEnabled ? 'Sesi Kapat' : 'Sesi Aç'}
           >
             {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          </button>
+
+          <button
+            type="button"
+            className="update-trigger-btn"
+            onClick={() => {
+              playSound('click', soundEnabled);
+              if (onOpenUpdate) onOpenUpdate();
+            }}
+            title="Güncellemeleri Denetle"
+          >
+            <RefreshCw size={17} />
           </button>
         </div>
       </div>

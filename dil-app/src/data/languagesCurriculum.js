@@ -1,4 +1,4 @@
-// 5. Sınıf Yabancı Diller (İngilizce & Almanca) Müfredat ve Etkinlik Veritabanı
+// 5. Sınıf Yabancı Diller (İngilizce & Almanca) Zenginleştirilmiş Müfredat
 export const LANGUAGES_DATA = {
   "english": {
     "id": "ingilizce",
@@ -3183,116 +3183,85 @@ export const LANGUAGES_DATA = {
     "shortName": "Almanca",
     "icon": "🇩🇪",
     "color": "#EA580C",
-    "gradient": "linear-gradient(135deg, #F97316 0%, #C2410C 100%)",
+    "gradient": "linear-gradient(135deg, #EA580C 0%, #C2410C 100%)",
     "lightBg": "#FFF7ED",
-    "description": "Çoklu Yabancı Dil: Begrüßung, sich vorstellen, das Alphabet ve konuşma kalıpları",
+    "description": "Almanca tanışma, okul yaşamı, sayılar, aile, günlük rutinler ve hobiler",
     "units": [
       {
         "id": "de_u1",
         "unitNumber": 1,
-        "title": "Lektion 1: Ich und Du",
-        "description": "Selamlaşma, kendini tanıtma, hal-hatır sorma ve Almanca alfabe",
+        "title": "Lektion 1: Ich und Du (Tanışma & Selamlaşma)",
+        "description": "Almanca selamlaşma, vedalaşma, kendini tanıtma, hal hatır sorma ve alfabe.",
         "topics": [
           {
             "id": "de_u1_t1",
             "title": "Begrüßen und Verabschieden (Selamlaşma ve Vedalaşma)",
-            "kazanimCode": "DE.5.1.W2.1",
-            "kazanimDesc": "Almanca temel selamlaşma ve vedalaşma kalıplarını tanır, anlamına uygun kullanır ve sesli telaffuz eder.",
-            "summary": "\n• **Begrüßen (Selamlaşma):**\n  - **Hallo!:** Merhaba (Gün boyu samimi)\n  - **Guten Morgen!:** Günaydın (Sabah saatlerinde)\n  - **Guten Tag!:** İyi günler (Öğleden akşama kadar)\n  - **Guten Abend!:** İyi akşamlar\n• **Verabschieden (Vedalaşma):**\n  - **Tschüss!:** Hoşça kal / Güle güle (Samimi ve en yaygın vedalaşma)\n  - **Auf Wiedersehen!:** Görüşmek üzere / Tekrar görüşünceye dek (Resmî/Nezaket)\n  - **Bis bald!:** Yakında görüşürüz\n  - **Gute Nacht!:** İyi geceler (Yatarken söylenir, bu yüzden vedalaşma sayılır!)\n• **İpucu:** Almancada \"Gute Nacht\" ifadesinde \"Guten\" değil **\"Gute\"** denir!\n              ",
-            "keyConcepts": [
-              "Hallo",
-              "Guten Morgen",
-              "Guten Tag",
-              "Guten Abend",
-              "Gute Nacht",
-              "Tschüss",
-              "Auf Wiedersehen",
-              "Bis bald"
-            ],
+            "kazanimCode": "ALM.5.1.1",
+            "kazanimDesc": "Günün farklı saatlerinde uygun selamlaşma ve vedalaşma kalıplarını kullanır.",
+            "summary": "• **Guten Morgen:** Günaydın\\n• **Guten Tag:** İyi günler\\n• **Guten Abend:** İyi akşamlar\\n• **Gute Nacht:** İyi geceler\\n• **Tschüss:** Hoşça kal (Samimi)\\n• **Auf Wiedersehen:** Görüşmek üzere (Resmi)",
             "pronunciationPhrases": [
               {
                 "german": "Hallo!",
                 "turkish": "Merhaba!",
-                "phonetic": "Halo",
+                "phonetic": "Ha-lo!",
                 "category": "Begrüßung"
               },
               {
                 "german": "Guten Morgen!",
                 "turkish": "Günaydın!",
-                "phonetic": "Guten Morgen",
+                "phonetic": "Guutın mor-gın!",
                 "category": "Begrüßung"
               },
               {
                 "german": "Guten Tag!",
                 "turkish": "İyi günler!",
-                "phonetic": "Guten Tak",
+                "phonetic": "Guutın taak!",
                 "category": "Begrüßung"
               },
               {
                 "german": "Guten Abend!",
                 "turkish": "İyi akşamlar!",
-                "phonetic": "Guten Abınt",
+                "phonetic": "Guutın aabınt!",
                 "category": "Begrüßung"
               },
               {
                 "german": "Gute Nacht!",
                 "turkish": "İyi geceler!",
-                "phonetic": "Gute Naht",
+                "phonetic": "Guutı naht!",
                 "category": "Verabschiedung"
               },
               {
                 "german": "Tschüss!",
                 "turkish": "Hoşça kal! / Bay bay!",
-                "phonetic": "Çüüs",
+                "phonetic": "Çüüs!",
                 "category": "Verabschiedung"
               },
               {
                 "german": "Auf Wiedersehen!",
-                "turkish": "Yeniden görüşmek üzere!",
-                "phonetic": "Auf Viidırzeeın",
+                "turkish": "Görüşmek üzere!",
+                "phonetic": "Auf vii-dır-zee-ın!",
                 "category": "Verabschiedung"
               },
               {
                 "german": "Bis bald!",
                 "turkish": "Yakında görüşürüz!",
-                "phonetic": "Bis balt",
+                "phonetic": "Bis balt!",
                 "category": "Verabschiedung"
               }
             ],
             "flashcards": [
               {
-                "id": "fc_de_1",
-                "front": "Hallo!",
-                "back": "Merhaba!",
-                "tip": "Arkadaşlarına ve günün her saatinde rahatlıkla söyleyebilirsin.",
-                "example": "Hallo, Ali! Wie geht's?"
+                "id": "fc_de_u1_1",
+                "front": "Arkadaşına samimi bir şekilde 'Hoşça kal' derken ne kullanırsın?",
+                "back": "Tschüss! (Çüüs) denir. Öğretmene veya resmi ortamda ise 'Auf Wiedersehen' denir.",
+                "tip": "Tschüss samimi, Auf Wiedersehen resmi vedalaşmadır.",
+                "example": "Tschüss, Aylin! - Bis morgen!"
               },
               {
-                "id": "fc_de_2",
-                "front": "Guten Morgen!",
-                "back": "Günaydın!",
-                "tip": "Sabah saatlerinde kullanılır. (Morgen = Sabah)",
-                "example": "Guten Morgen, Frau Müller!"
-              },
-              {
-                "id": "fc_de_3",
-                "front": "Tschüss!",
-                "back": "Hoşça kal! / Güle güle!",
-                "tip": "Günlük hayatta arkadaşlara vedalaşırken en çok kullanılan ifadedir.",
-                "example": "Tschüss, bis morgen!"
-              },
-              {
-                "id": "fc_de_4",
-                "front": "Auf Wiedersehen!",
-                "back": "Tekrar görüşmek üzere! (Resmî vedalaşma)",
-                "tip": "Wieder = tekrar, sehen = görmek. \"Yeniden görüşene kadar\" demektir.",
-                "example": "Auf Wiedersehen, Herr Schmidt!"
-              },
-              {
-                "id": "fc_de_5",
-                "front": "Neden \"Guten Nacht\" değil de \"Gute Nacht\" denir?",
-                "back": "Çünkü \"Nacht\" (gece) kelimesinin artikeli \"die\" olduğu için sonuna -en değil -e gelir: Gute Nacht!",
-                "tip": "Yatmadan önce iyi geceler dilerken her zaman \"Gute Nacht\" deriz.",
+                "id": "fc_de_u1_2",
+                "front": "Neden 'Guten Morgen' denirken gece 'Gute Nacht' denir?",
+                "back": "Morgen kelimesinin artikeli der (Guten Morgen), Nacht kelimesinin artikeli die (Gute Nacht) olduğu içindir.",
+                "tip": "Uyumadan önce Gute Nacht denir.",
                 "example": "Gute Nacht, Mama!"
               }
             ],
@@ -3309,459 +3278,247 @@ export const LANGUAGES_DATA = {
               },
               {
                 "id": "m_de_3",
-                "left": "Auf Wiedersehen",
-                "right": "Yeniden görüşmek üzere"
+                "left": "Gute Nacht",
+                "right": "İyi geceler"
               },
               {
                 "id": "m_de_4",
-                "left": "Bis bald",
-                "right": "Yakında görüşürüz"
+                "left": "Tschüss",
+                "right": "Hoşça kal"
               },
               {
                 "id": "m_de_5",
-                "left": "Tschüss",
-                "right": "Hoşça kal"
+                "left": "Auf Wiedersehen",
+                "right": "Görüşmek üzere"
               }
             ],
             "trueFalse": [
               {
                 "id": "tf_de_1",
-                "text": "Almancada \"Gute Nacht\" sabah uyanıldığında günaydın anlamında kullanılır.",
+                "text": "Uyumaya giderken birisine 'Guten Morgen' denir.",
                 "isTrue": false,
-                "explanation": "Yanlış! \"Gute Nacht\" gece yatarken iyi geceler / hoşça kal anlamında söylenir. Sabah \"Guten Morgen\" denir."
+                "explanation": "Yanlış! Uyumaya giderken 'Gute Nacht' denir."
               },
               {
                 "id": "tf_de_2",
-                "text": "\"Tschüss!\" ifadesi arkadaşlar arasında samimi bir vedalaşma sözüdür.",
+                "text": "'Tschüss' ifadesi arkadaşlar arasında samimi bir vedalaşmadır.",
                 "isTrue": true,
-                "explanation": "Doğru! Türkçe karşılığı \"Hoşça kal / bay bay\" olup çok yaygın bir vedalaşmadır."
-              },
-              {
-                "id": "tf_de_3",
-                "text": "\"Bis bald\" ifadesi \"Yakında görüşürüz\" anlamına gelir.",
-                "isTrue": true,
-                "explanation": "Doğru! \"Bis\" = kadar/dek, \"bald\" = yakında demektir."
+                "explanation": "Doğru! Arkadaşlarımıza vedalaşırken 'Tschüss!' diyebiliriz."
               }
             ],
             "fillBlank": [
               {
                 "id": "fb_de_1",
-                "sentence": "Sabah okula geldiğinde öğretmenine \"Guten ___ !\" dersin.",
+                "sentence": "Sabah okula geldiğinde öğretmenine: 'Guten ___!' dersin.",
                 "options": [
                   "Morgen",
                   "Nacht",
-                  "Abend",
-                  "Tschüss"
-                ],
-                "correctWord": "Morgen",
-                "hint": "Sabah anlamına gelen sözcüğü seç."
-              },
-              {
-                "id": "fb_de_2",
-                "sentence": "Arkadaşından ayrılırken \"Görüşürüz\" demek için \"Bis ___ !\" diyebilirsin.",
-                "options": [
-                  "bald",
-                  "Guten",
-                  "Hallo",
-                  "Wer"
-                ],
-                "correctWord": "bald",
-                "hint": "\"Bis\" sözcüğünden sonra \"yakında\" anlamına gelen sözcük gelir."
-              },
-              {
-                "id": "fb_de_3",
-                "sentence": "Gece uyumadan önce ailemize \"___ Nacht!\" deriz.",
-                "options": [
-                  "Gute",
-                  "Guten",
-                  "Bis",
+                  "Tschüss",
                   "Hallo"
                 ],
-                "correctWord": "Gute",
-                "hint": "Nacht sözcüğü ile Guten değil Gute kullanılır."
+                "correctWord": "Morgen",
+                "hint": "Sabah vakti söylenen selamlama."
               }
             ],
             "quiz": [
               {
                 "id": "q_de_1",
-                "question": "Akşam saat 19:00'da karşılaştığın bir arkadaşına hangi Almanca selamı vermelisin?",
+                "question": "Aşağıdakilerden hangisi gün ortasında (öğlen vakti) kullanılan selamlaşmadır?",
                 "options": [
-                  "Guten Abend!",
-                  "Guten Morgen!",
-                  "Gute Nacht!",
-                  "Auf Wiedersehen!"
+                  "Guten Tag",
+                  "Gute Nacht",
+                  "Guten Morgen",
+                  "Tschüss"
                 ],
                 "correctAnswerIndex": 0,
-                "hint": "Abend = Akşam demektir.",
-                "explanation": "Akşam vakti selamlaşırken \"Guten Abend!\" (İyi akşamlar) denir."
-              },
-              {
-                "id": "q_de_2",
-                "question": "Aşağıdakilerden hangisi bir SELAMLAŞMA (Begrüßung) DEĞİLDİR, vedalaşmadır?",
-                "options": [
-                  "Auf Wiedersehen!",
-                  "Guten Morgen!",
-                  "Hallo!",
-                  "Guten Tag!"
-                ],
-                "correctAnswerIndex": 0,
-                "hint": "Ayrılırken tekrar görüşmek üzere derken hangisi söylenir?",
-                "explanation": "\"Auf Wiedersehen!\" vedalaşırken (ayrılırken) söylenir, diğerleri ise karşılaşınca selamlaşma ifadeleridir."
+                "hint": "İyi günler anlamına gelen ifade.",
+                "explanation": "'Guten Tag' gün ortasında 'İyi günler' anlamında kullanılır."
               }
             ]
           },
           {
             "id": "de_u1_t2",
             "title": "Sich vorstellen & Nach dem Befinden fragen (Tanışma & Hal Hatır)",
-            "kazanimCode": "DE.5.1.SP3.3",
-            "kazanimDesc": "Kendini ve adını ifade eder, karşısındakine adını ve durumunu (hal-hatır) sorup uygun cevap verir.",
-            "summary": "\n• **İsim Sorma ve Söyleme (Sich vorstellen):**\n  - **Wie heißt du?:** Senin adın ne?\n  - **Ich heiße Aylin.:** Benim adım Aylin.\n  - **Wer bist du?:** Sen kimsin?\n  - **Ich bin Can.:** Ben Can'ım.\n  - **Mein Name ist Jonas.:** Benim adım Jonas.\n• **Hal - Hatır Sorma (Nach dem Befinden fragen):**\n  - **Wie geht's?** veya **Wie geht es dir?:** Nasılsın?\n  - **Danke, gut!:** Teşekkürler, iyiyim!\n  - **Sehr gut! / Prima! / Super!:** Çok iyi! / Harika!\n  - **Es geht.:** Şöyle böyle / İdare eder.\n  - **Nicht so gut.:** Pek iyi değil.\n  - **Und dir?:** Ya sen? / Ya sana nasıl gidiyor?\n• **Kalıp:** \"Danke, gut! Und dir?\" (Teşekkürler, iyiyim! Ya sen?)\n              ",
-            "keyConcepts": [
-              "Wie heißt du?",
-              "Ich heiße",
-              "Wer bist du?",
-              "Ich bin",
-              "Wie geht es dir?",
-              "Danke gut",
-              "Und dir?"
-            ],
+            "kazanimCode": "ALM.5.1.2",
+            "kazanimDesc": "Adını söyler, karşısındakinin adını ve nasıl olduğunu sorar.",
+            "summary": "• **Wie heißt du?** (Adın ne?) -> **Ich heiße...**\\n• **Wie geht's?** (Nasılsın?) -> **Danke, gut!** (İyiyim!)\\n• **Und dir?** (Ya sen?)",
             "pronunciationPhrases": [
               {
                 "german": "Wie heißt du?",
                 "turkish": "Senin adın ne?",
                 "phonetic": "Vii hayst du?",
-                "category": "Frage"
+                "category": "Vorstellen"
               },
               {
-                "german": "Ich heiße Mehmet.",
-                "turkish": "Benim adım Mehmet.",
-                "phonetic": "İh hayse Mehmet.",
-                "category": "Antwort"
-              },
-              {
-                "german": "Wer bist du?",
-                "turkish": "Sen kimsin?",
-                "phonetic": "Ver bist du?",
-                "category": "Frage"
-              },
-              {
-                "german": "Ich bin Elif.",
-                "turkish": "Ben Elif.",
-                "phonetic": "İh bin Elif.",
-                "category": "Antwort"
+                "german": "Ich heiße Jonas.",
+                "turkish": "Benim adım Jonas.",
+                "phonetic": "İh hay-sı Yonas.",
+                "category": "Vorstellen"
               },
               {
                 "german": "Wie geht es dir?",
-                "turkish": "Nasılsın? (Nasıl gidiyor?)",
+                "turkish": "Nasılsın?",
                 "phonetic": "Vii geet es diir?",
                 "category": "Befinden"
               },
               {
-                "german": "Danke, gut!",
-                "turkish": "Teşekkürler, iyiyim!",
-                "phonetic": "Danke, gut!",
+                "german": "Danke, sehr gut!",
+                "turkish": "Teşekkürler, çok iyiyim!",
+                "phonetic": "Dankı, zeer guut!",
                 "category": "Befinden"
-              },
-              {
-                "german": "Sehr gut!",
-                "turkish": "Çok iyi! / Harika!",
-                "phonetic": "Zeer gut!",
-                "category": "Befinden"
-              },
-              {
-                "german": "Es geht.",
-                "turkish": "Şöyle böyle / İdare eder.",
-                "phonetic": "Es geet.",
-                "category": "Befinden"
-              },
-              {
-                "german": "Und dir?",
-                "turkish": "Ya sen? (Sana nasıl?)",
-                "phonetic": "Unt diir?",
-                "category": "Frage"
               }
             ],
             "flashcards": [
               {
-                "id": "fc_de_v1",
-                "front": "\"Wie heißt du?\" sorusuna nasıl cevap verilir?",
-                "back": "\"Ich heiße ...\" (Örn: Ich heiße Can.) veya \"Ich bin Can.\"",
-                "tip": "Almancada \"heißen\" fiili adlandırılmak/adı olmak demektir.",
-                "example": "— Wie heißt du? — Ich heiße Defne."
-              },
-              {
-                "id": "fc_de_v2",
-                "front": "\"Wie geht es dir?\" ne demektir?",
-                "back": "\"Nasılsın?\" (Nasıl gidiyor?) demektir.",
-                "tip": "Kısaca arkadaşlarına \"Wie geht's?\" şeklinde de sorabilirsin.",
-                "example": "— Wie geht's? — Danke, sehr gut!"
-              },
-              {
-                "id": "fc_de_v3",
-                "front": "Almancada \"Ve sen? / Ya sen nasılsın?\" nasıl denir?",
-                "back": "\"Und dir?\" denir.",
-                "tip": "Biri sana \"Danke gut!\" dediğinde nezaketen \"Und dir?\" diye sorarsın.",
-                "example": "Danke, gut! Und dir?"
-              },
-              {
-                "id": "fc_de_v4",
-                "front": "\"Wer bist du?\" ne demektir?",
-                "back": "\"Sen kimsin?\" demektir.",
-                "tip": "Cevap: \"Ich bin ...\" (Ben ...'yım)",
-                "example": "Ich bin Lukas."
+                "id": "fc_de_u1_3",
+                "front": "'Wie heißt du?' sorusuna nasıl yanıt verilir?",
+                "back": "'Ich heiße [İsim]' şeklinde yanıt verilir.",
+                "tip": "Heißen fiilinde Ich ile heiße olur.",
+                "example": "Ich heiße Mert."
               }
             ],
             "matching": [
               {
-                "id": "m_de_v1",
+                "id": "m_de_6",
                 "left": "Wie heißt du?",
-                "right": "Senin adın ne?"
+                "right": "Adın ne?"
               },
               {
-                "id": "m_de_v2",
-                "left": "Ich bin...",
-                "right": "Ben ...'yım"
+                "id": "m_de_7",
+                "left": "Ich heiße...",
+                "right": "Benim adım..."
               },
               {
-                "id": "m_de_v3",
+                "id": "m_de_8",
                 "left": "Wie geht es dir?",
                 "right": "Nasılsın?"
               },
               {
-                "id": "m_de_v4",
-                "left": "Danke, prima!",
-                "right": "Teşekkürler, harika!"
-              },
-              {
-                "id": "m_de_v5",
-                "left": "Es geht",
-                "right": "İdare eder / Şöyle böyle"
+                "id": "m_de_9",
+                "left": "Danke, gut!",
+                "right": "Teşekkürler, iyiyim!"
               }
             ],
             "trueFalse": [
               {
-                "id": "tf_de_v1",
-                "text": "\"Ich heiße Emre\" cümlesi \"Ben Emre'yim / Benim adım Emre\" demektir.",
-                "isTrue": true,
-                "explanation": "Doğru! \"heißen\" adı olmak demektir; \"Ich heiße Emre\" kendimizi tanıtırken kullanılır."
-              },
-              {
-                "id": "tf_de_v2",
-                "text": "\"Wie geht es dir?\" sorusuna \"Ich bin zehn Jahre alt\" şeklinde cevap verilir.",
+                "id": "tf_de_3",
+                "text": "'Wie heißt du?' sorusuna 'Danke, gut!' diye cevap verilir.",
                 "isTrue": false,
-                "explanation": "Yanlış! \"Wie geht es dir?\" hal-hatır sorar (Nasılsın?). Yaş cevabı verilemez; \"Danke, gut!\" denmelidir."
-              },
-              {
-                "id": "tf_de_v3",
-                "text": "Arkadaşımıza kısaca halini sormak için \"Wie geht's?\" diyebiliriz.",
-                "isTrue": true,
-                "explanation": "Doğru! \"Wie geht's?\", \"Wie geht es dir?\" ifadesinin günlük dildeki pratik kısaltmasıdır."
+                "explanation": "Yanlış! İsim söylenmelidir ('Ich heiße...')."
               }
             ],
             "fillBlank": [
               {
-                "id": "fb_de_v1",
-                "sentence": "— Wie heißt du? — ___ heiße Kerem.",
-                "options": [
-                  "Ich",
-                  "Du",
-                  "Wer",
-                  "Wie"
-                ],
-                "correctWord": "Ich",
-                "hint": "\"Ben\" anlamına gelen Almanca zamir."
-              },
-              {
-                "id": "fb_de_v2",
-                "sentence": "— Wie geht es dir? — ___, gut! Und dir?",
-                "options": [
-                  "Danke",
-                  "Hallo",
-                  "Tschüss",
-                  "Morgen"
-                ],
-                "correctWord": "Danke",
-                "hint": "Nezaket bildiren \"Teşekkürler\" sözcüğü."
-              }
-            ],
-            "quiz": [
-              {
-                "id": "q_de_v1",
-                "question": "Biri sana \"Wie geht es dir?\" diye sorduğunda en uygun cevap hangisidir?",
-                "options": [
-                  "Danke, sehr gut! Und dir?",
-                  "Ich heiße Markus.",
-                  "Auf Wiedersehen!",
-                  "Guten Morgen!"
-                ],
-                "correctAnswerIndex": 0,
-                "hint": "Hal-hatır sorusuna durumunu belirterek cevap vermelisin.",
-                "explanation": "\"Wie geht es dir?\" nasılsın demektir. \"Danke, sehr gut! Und dir?\" (Teşekkürler çok iyiyim, ya sen?) doğru cevaptır."
-              },
-              {
-                "id": "q_de_v2",
-                "question": "— Wer bist du? — ___ bin Mia.",
+                "id": "fb_de_3",
+                "sentence": "— Wie heißt du? — ___ heiße Can.",
                 "options": [
                   "Ich",
                   "Du",
                   "Er",
                   "Sie"
                 ],
+                "correctWord": "Ich",
+                "hint": "Ben zamiri."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_2",
+                "question": "'Wie geht es dir?' sorusuna en uygun cevap hangisidir?",
+                "options": [
+                  "Danke, sehr gut!",
+                  "Ich heiße Lukas.",
+                  "Auf Wiedersehen.",
+                  "Gute Nacht."
+                ],
                 "correctAnswerIndex": 0,
-                "hint": "Ben Mia'yım derken özne ne olmalıdır?",
-                "explanation": "\"bin\" fiili \"Ich\" (Ben) öznesiyle çekimlenir: \"Ich bin Mia.\""
+                "hint": "Hal hatır sorusu.",
+                "explanation": "'Danke, sehr gut!' (Teşekkürler, çok iyi) doğru cevaptır."
               }
             ]
           },
           {
             "id": "de_u1_t3",
             "title": "Das Alphabet und Buchstabieren (Almanca Alfabe & Harf Kodlama)",
-            "kazanimCode": "DE.5.1.P3.1",
-            "kazanimDesc": "Almanca alfabesindeki harfleri tanır, özel sesleri (ä, ö, ü, ß) telaffuz eder ve ismini harf harf kodlar (buchstabieren).",
-            "summary": "\n• Almanca alfabesinde standart Latin harflerine ek olarak **4 özel harf** vardır:\n  - **Ä / ä:** [e] sesine benzer (A-Umlaut) Örn: Äpfel\n  - **Ö / ö:** [ö] sesi (O-Umlaut) Örn: Öl, schön\n  - **Ü / ü:** [ü] sesi (U-Umlaut) Örn: Über, Schüler\n  - **ß:** \"Eszett\" veya \"Scharfes S\" (Çift s / keskin s sesi) Örn: heißen, Fußball\n• **Buchstabieren (Harf Harf Kodlama):**\n  - \"Wie schreibt man das?\" = Bu nasıl yazılır?\n  - \"Kannst du das buchstabieren?\" = Harf harf kodlar mısın?\n• Bazı Harflerin Almanca Okunuşları:\n  - **J:** [Yot] (Örn: Jonas -> [Yonas])\n  - **V:** [Fau] (f sesi verir! Örn: Vater -> [Fater])\n  - **W:** [Ve] (Örn: Wie -> [Vii])\n  - **Z:** [Tset] (ts sesi verir! Örn: Zug -> [Tsuk])\n  - **S:** Ünlü harften önce gelirse [Z] sesi verir! Örn: Sonne -> [Zonne]\n              ",
-            "keyConcepts": [
-              "Das Alphabet",
-              "Buchstabieren",
-              "Umlaut (ä, ö, ü)",
-              "Eszett (ß)",
-              "Wie schreibt man das?"
-            ],
+            "kazanimCode": "ALM.5.1.3",
+            "kazanimDesc": "Almanca alfabesindeki sesleri ve özel harfleri (ä, ö, ü, ß) telaffuz eder.",
+            "summary": "• **Umlaute:** Ä/ä, Ö/ö, Ü/ü\\n• **Eszett (ß):** Çift s sesini verir (heißen)\\n• **W:** 'V' gibi okunur.",
             "pronunciationPhrases": [
               {
-                "german": "Wie schreibt man das?",
-                "turkish": "Bu nasıl yazılır?",
-                "phonetic": "Vii şraypt man das?",
-                "category": "Buchstabieren"
-              },
-              {
-                "german": "Buchstabiere bitte!",
-                "turkish": "Lütfen harf harf kodla!",
-                "phonetic": "Buhştabiire bite!",
-                "category": "Buchstabieren"
-              },
-              {
-                "german": "Ä - A-Umlaut",
-                "turkish": "Ä harfi (e sesi verir)",
-                "phonetic": "E",
+                "german": "das Alphabet",
+                "turkish": "Alfabe",
+                "phonetic": "das al-fa-beet",
                 "category": "Alphabet"
               },
               {
-                "german": "Ö - O-Umlaut",
-                "turkish": "Ö harfi",
-                "phonetic": "Öö",
+                "german": "buchstabieren",
+                "turkish": "harf harf kodlamak",
+                "phonetic": "buh-şta-biirın",
                 "category": "Alphabet"
               },
               {
-                "german": "Ü - U-Umlaut",
-                "turkish": "Ü harfi",
-                "phonetic": "Üü",
-                "category": "Alphabet"
-              },
-              {
-                "german": "ß - Eszett",
-                "turkish": "ß (Keskin çift s sesi)",
-                "phonetic": "Es-tset",
-                "category": "Alphabet"
-              },
-              {
-                "german": "J wie Jonas",
-                "turkish": "J harfi (Yot olarak okunur)",
-                "phonetic": "Yot",
-                "category": "Alphabet"
-              },
-              {
-                "german": "V wie Vater",
-                "turkish": "V harfi (Fau olarak okunur ve f sesi verir)",
-                "phonetic": "Fau",
+                "german": "ä, ö, ü, ß",
+                "turkish": "Almanca Özel Harfler",
+                "phonetic": "E, Ö, Ü, Es-tset",
                 "category": "Alphabet"
               }
             ],
             "flashcards": [
               {
-                "id": "fc_de_a1",
-                "front": "Almancadaki \"ß\" harfine ne denir ve nasıl okunur?",
-                "back": "\"Eszett\" (veya Scharfes S) denir. Keskin \"s\" sesi verir.",
-                "tip": "\"heißen\" (adı olmak) veya \"Fußball\" (futbol) sözcüklerinde bulunur.",
-                "example": "Ich heiße..."
-              },
-              {
-                "id": "fc_de_a2",
-                "front": "Almancada \"V\" harfi kelime başında genellikle hangi sesi verir?",
-                "back": "\"F\" sesi verir! (Adı \"Fau\" dur)",
-                "tip": "Örn: \"Vater\" (baba) kelimesi [Fater] diye okunur.",
-                "example": "Vier (dört) kelimesi [Fiir] okunur."
-              },
-              {
-                "id": "fc_de_a3",
-                "front": "\"Wie schreibt man das?\" sorusu ne anlama gelir?",
-                "back": "\"Bu nasıl yazılır?\" anlamına gelir.",
-                "tip": "Bir kelimenin harflerini öğrenmek istediğinde bu soruyu sorarsın.",
-                "example": "Wie schreibt man das? — M-E-H-M-E-T"
+                "id": "fc_de_u1_5",
+                "front": "Almancada 'ß' harfi hangi sesi verir?",
+                "back": "Keskin çift 's' sesini verir (Örn: heißen).",
+                "tip": "Kelime başında asla bulunmaz.",
+                "example": "Ich heiße Max."
               }
             ],
             "matching": [
               {
-                "id": "m_de_a1",
-                "left": "ß",
-                "right": "Eszett (Scharfes S)"
+                "id": "m_de_11",
+                "left": "das Alphabet",
+                "right": "Alfabe"
               },
               {
-                "id": "m_de_a2",
-                "left": "J harfi",
-                "right": "Yot olarak okunur (Y sesi)"
-              },
-              {
-                "id": "m_de_a3",
-                "left": "V harfi",
-                "right": "Fau olarak okunur (F sesi)"
-              },
-              {
-                "id": "m_de_a4",
-                "left": "W harfi",
-                "right": "Ve olarak okunur"
+                "id": "m_de_12",
+                "left": "buchstabieren",
+                "right": "Harf harf kodlamak"
               }
             ],
             "trueFalse": [
               {
-                "id": "tf_de_a1",
-                "text": "Almancada Ä, Ö ve Ü harflerine \"Umlaut\" adı verilir.",
+                "id": "tf_de_4",
+                "text": "Almancada W harfi Türkçe V sesi gibi okunur.",
                 "isTrue": true,
-                "explanation": "Doğru! Noktalı harflere Almancada \"Umlaut\" (ses değişimi) denir."
-              },
-              {
-                "id": "tf_de_a2",
-                "text": "Almancada \"J\" harfi Türkçe \"C\" gibi okunur.",
-                "isTrue": false,
-                "explanation": "Yanlış! Almancada \"J\" harfi \"Yot\" olarak adlandırılır ve Türkçedeki \"Y\" sesini verir (Jonas -> Yonas)."
+                "explanation": "Doğru! Wie kelimesi vii diye okunur."
               }
             ],
             "fillBlank": [
               {
-                "id": "fb_de_a1",
-                "sentence": "Almancada keskin çift s sesini veren \"ß\" harfinin adı ___ dir.",
+                "id": "fb_de_4",
+                "sentence": "'heißen' kelimesindeki 'ß' harfine Almancada ___ denir.",
                 "options": [
                   "Eszett",
                   "Umlaut",
-                  "Yot",
-                  "Fau"
+                  "Vokal",
+                  "Konsonant"
                 ],
                 "correctWord": "Eszett",
-                "hint": "Scharfes S olarak da bilinir."
+                "hint": "Özel harfin adı."
               }
             ],
             "quiz": [
               {
-                "id": "q_de_a1",
-                "question": "Almanca bir kelimenin nasıl yazıldığını veya harflerini sormak için hangisi söylenir?",
+                "id": "q_de_3",
+                "question": "W harfi Almancada hangi sesle okunur?",
                 "options": [
-                  "Wie schreibt man das?",
-                  "Wie alt bist du?",
-                  "Woher kommst du?",
-                  "Guten Abend!"
+                  "V sesi",
+                  "Dabılyu sesi",
+                  "K sesi",
+                  "H sesi"
                 ],
                 "correctAnswerIndex": 0,
-                "hint": "\"schreiben\" yazmak fiilidir.",
-                "explanation": "\"Wie schreibt man das?\" (Bu nasıl yazılır?) doğru sorudur."
+                "hint": "Wie kelimesini hatırla.",
+                "explanation": "W harfi Almancada V sesiyle okunur."
               }
             ]
           }
@@ -3770,612 +3527,896 @@ export const LANGUAGES_DATA = {
       {
         "id": "de_u2",
         "unitNumber": 2,
-        "title": "Lektion 2: Das bin ich!",
-        "description": "Yaş ve sayılar (0-20), ülkeler ve diller, memleket (Herkunft) ve yaşanılan şehir (Wohnort)",
+        "title": "Lektion 2: Meine Schule & Zahlen (Okul ve Sayılar)",
+        "description": "Sınıf eşyaları, renkler, 0-50 arası sayılar, dersler ve haftanın günleri.",
         "topics": [
           {
             "id": "de_u2_t1",
-            "title": "Das Alter und Zahlen von 0 bis 20 (Yaş ve Sayılar)",
-            "kazanimCode": "DE.5.2.W2.1",
-            "kazanimDesc": "0'dan 20'ye kadar sayıları tanır, yaşını söyler ve başkalarına yaşını sorar.",
-            "summary": "\n• **0-12 Arası Temel Sayılar:**\n  - 0: null, 1: eins, 2: zwei, 3: drei, 4: vier, 5: fünf\n  - 6: sechs, 7: sieben, 8: acht, 9: neun, 10: zehn, 11: elf, 12: zwölf\n• **13-19 Arası Sayılar (Kural: Sayı + zehn):**\n  - 13: dreizehn, 14: vierzehn, 15: fünfzehn\n  - 16: **sechzehn** (⚠️ DİKKAT: sechs'teki 's' harfi düşer!)\n  - 17: **siebzehn** (⚠️ DİKKAT: sieben'deki '-en' eki düşer!)\n  - 18: achtzehn, 19: neunzehn, 20: **zwanzig**\n• **Yaş Sorma ve Söyleme (Das Alter):**\n  - **Wie alt bist du?:** Kaç yaşındasın?\n  - **Ich bin zehn Jahre alt.:** 10 yaşındayım.\n  - **Ich bin elf Jahre alt.:** 11 yaşındayım.\n  - Kısa cevap: *\"Ich bin zehn.\"* veya *\"Ich bin elf.\"*\n  - Başkası için: *\"Er ist zwölf Jahre alt.\"* (O erkek 12 yaşında), *\"Sie ist zehn Jahre alt.\"* (O kız 10 yaşında).\n              ",
-            "keyConcepts": [
-              "Zahlen (0-20)",
-              "Wie alt bist du?",
-              "Ich bin ... Jahre alt",
-              "sechzehn",
-              "siebzehn",
-              "zwanzig"
-            ],
+            "title": "Schulsachen & Farben (Sınıf Eşyaları ve Renkler)",
+            "kazanimCode": "ALM.5.2.1",
+            "kazanimDesc": "Sınıf eşyalarını artikelleriyle söyler ve renklerini belirtir.",
+            "summary": "• **der:** der Bleistift (kurşun kalem)\\n• **das:** das Buch (kitap), das Heft (defter)\\n• **die:** die Schultasche (çanta)\\n• **Farben:** rot (kırmızı), blau (mavi), gelb (sarı), grün (yeşil)",
             "pronunciationPhrases": [
               {
-                "german": "null, eins, zwei, drei",
-                "turkish": "0, 1, 2, 3",
-                "phonetic": "nul, ayns, tsvay, dray",
-                "category": "Zahlen 0-3"
+                "german": "das Buch",
+                "turkish": "kitap",
+                "phonetic": "das buuh",
+                "category": "Schulsachen"
               },
               {
-                "german": "vier, fünf, sechs, sieben",
-                "turkish": "4, 5, 6, 7",
-                "phonetic": "fiir, fünf, zeks, ziibın",
-                "category": "Zahlen 4-7"
+                "german": "das Heft",
+                "turkish": "defter",
+                "phonetic": "das heft",
+                "category": "Schulsachen"
               },
               {
-                "german": "acht, neun, zehn, elf, zwölf",
-                "turkish": "8, 9, 10, 11, 12",
-                "phonetic": "aht, noyn, tseen, elf, tsvölf",
-                "category": "Zahlen 8-12"
+                "german": "der Bleistift",
+                "turkish": "kurşun kalem",
+                "phonetic": "der blay-ştift",
+                "category": "Schulsachen"
               },
               {
-                "german": "dreizehn, vierzehn, fünfzehn",
-                "turkish": "13, 14, 15",
-                "phonetic": "dray-tseen, fiir-tseen, fünf-tseen",
-                "category": "Zahlen 13-15"
+                "german": "die Schultasche",
+                "turkish": "okul çantası",
+                "phonetic": "dii şuul-taşe",
+                "category": "Schulsachen"
               },
               {
-                "german": "sechzehn, siebzehn, zwanzig",
-                "turkish": "16, 17, 20 (Özel kural)",
-                "phonetic": "zeh-tseen, ziip-tseen, tsvantsig",
-                "category": "Zahlen 16-20"
-              },
-              {
-                "german": "Wie alt bist du?",
-                "turkish": "Kaç yaşındasın?",
-                "phonetic": "Vii alt bist du?",
-                "category": "Frage"
-              },
-              {
-                "german": "Ich bin zehn Jahre alt.",
-                "turkish": "On yaşındayım.",
-                "phonetic": "İh bin tseen yaare alt.",
-                "category": "Antwort"
-              },
-              {
-                "german": "Ich bin elf Jahre alt.",
-                "turkish": "On bir yaşındayım.",
-                "phonetic": "İh bin elf yaare alt.",
-                "category": "Antwort"
+                "german": "rot und blau",
+                "turkish": "kırmızı ve mavi",
+                "phonetic": "root unt blau",
+                "category": "Farben"
               }
             ],
             "flashcards": [
               {
-                "id": "fc_de2_1",
-                "front": "Almancada \"Wie alt bist du?\" ne demektir?",
-                "back": "\"Kaç yaşındasın?\" demektir.",
-                "tip": "alt = yaşlı/yaşında demektir. Cevap: \"Ich bin ... Jahre alt.\"",
-                "example": "— Wie alt bist du? — Ich bin elf Jahre alt."
-              },
-              {
-                "id": "fc_de2_2",
-                "front": "16 ve 17 sayılarının yazılışındaki özel kural nedir?",
-                "back": "16 için \"sechs\" kelimesindeki -s düşer: \"sechzehn\". 17 için \"sieben\" kelimesindeki -en düşer: \"siebzehn\" olur.",
-                "tip": "Asla \"sechszehn\" veya \"siebenzehn\" yazılmaz!",
-                "example": "16 = sechzehn, 17 = siebzehn"
-              },
-              {
-                "id": "fc_de2_3",
-                "front": "11 ve 12 sayılarının Almancası nedir?",
-                "back": "11 = elf, 12 = zwölf",
-                "tip": "İngilizcedeki eleven ve twelve gibi kendine özel sözcüklerdir.",
-                "example": "Ich bin zwölf Jahre alt."
-              },
-              {
-                "id": "fc_de2_4",
-                "front": "20 sayısı Almancada nasıl yazılır ve telaffuz edilir?",
-                "back": "\"zwanzig\" olarak yazılır, [tsvantsig] şeklinde okunur.",
-                "tip": "Sonundaki -ig eki genellikle yumuşak -ih / -ik gibi telaffuz edilir.",
-                "example": "zwanzig = 20"
+                "id": "fc_de_u2_1",
+                "front": "'das Buch' ile 'das Heft' farkı nedir?",
+                "back": "Buch = kitap, Heft = defterdir.",
+                "tip": "Her iki kelimenin artikeli de das'tır.",
+                "example": "Das Buch ist blau."
               }
             ],
             "matching": [
               {
-                "id": "m_de2_1",
+                "id": "m_de_14",
+                "left": "das Buch",
+                "right": "kitap"
+              },
+              {
+                "id": "m_de_15",
+                "left": "das Heft",
+                "right": "defter"
+              },
+              {
+                "id": "m_de_16",
+                "left": "der Bleistift",
+                "right": "kurşun kalem"
+              }
+            ],
+            "trueFalse": [
+              {
+                "id": "tf_de_5",
+                "text": "'Bleistift' kelimesi silgi demektir.",
+                "isTrue": false,
+                "explanation": "Yanlış! Bleistift kurşun kalemdir."
+              }
+            ],
+            "fillBlank": [
+              {
+                "id": "fb_de_5",
+                "sentence": "Yazı yazdığım defter: 'das ___ '",
+                "options": [
+                  "Heft",
+                  "Buch",
+                  "Tisch",
+                  "Stuhl"
+                ],
+                "correctWord": "Heft",
+                "hint": "Defter kelimesi."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_4",
+                "question": "'kurşun kalem' kelimesinin Almancası nedir?",
+                "options": [
+                  "der Bleistift",
+                  "das Buch",
+                  "die Schere",
+                  "das Heft"
+                ],
+                "correctAnswerIndex": 0,
+                "hint": "Stift kelimesi.",
+                "explanation": "'der Bleistift' kurşun kalemdir."
+              }
+            ]
+          },
+          {
+            "id": "de_u2_t2",
+            "title": "Zahlen von 0 bis 50 & Alter (Sayılar ve Yaş)",
+            "kazanimCode": "ALM.5.2.2",
+            "kazanimDesc": "Sayıları ve yaşını söyler.",
+            "summary": "• eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf...\\n• 'Wie alt bist du?' -> 'Ich bin zehn Jahre alt.'",
+            "pronunciationPhrases": [
+              {
+                "german": "eins, zwei, drei",
+                "turkish": "1, 2, 3",
+                "phonetic": "ayns, tsvay, dray",
+                "category": "Zahlen"
+              },
+              {
+                "german": "vier, fünf, sechs",
+                "turkish": "4, 5, 6",
+                "phonetic": "fiir, fünf, zeks",
+                "category": "Zahlen"
+              },
+              {
+                "german": "zehn, elf, zwölf",
+                "turkish": "10, 11, 12",
+                "phonetic": "tseen, elf, tsvölf",
+                "category": "Zahlen"
+              },
+              {
+                "german": "Ich bin zehn Jahre alt.",
+                "turkish": "Ben 10 yaşındayım.",
+                "phonetic": "İh bin tseen yaare alt.",
+                "category": "Alter"
+              }
+            ],
+            "flashcards": [
+              {
+                "id": "fc_de_u2_3",
+                "front": "'Wie alt bist du?' sorusuna 5. sınıf öğrencisi ne der?",
+                "back": "'Ich bin zehn (veya elf) Jahre alt.' der.",
+                "tip": "Zehn = 10, elf = 11.",
+                "example": "Ich bin zehn Jahre alt."
+              }
+            ],
+            "matching": [
+              {
+                "id": "m_de_19",
                 "left": "eins, zwei, drei",
                 "right": "1, 2, 3"
               },
               {
-                "id": "m_de2_2",
-                "left": "elf, zwölf",
-                "right": "11, 12"
+                "id": "m_de_21",
+                "left": "zehn",
+                "right": "10"
               },
               {
-                "id": "m_de2_3",
-                "left": "sechzehn",
-                "right": "16"
-              },
-              {
-                "id": "m_de2_4",
-                "left": "siebzehn",
-                "right": "17"
-              },
-              {
-                "id": "m_de2_5",
+                "id": "m_de_22",
                 "left": "zwanzig",
                 "right": "20"
               }
             ],
             "trueFalse": [
               {
-                "id": "tf_de2_1",
-                "text": "Almancada 16 sayısı \"sechszehn\" olarak yazılır.",
-                "isTrue": false,
-                "explanation": "Yanlış! Sechs kelimesindeki \"s\" harfi düşer ve doğru yazılışı \"sechzehn\" dir."
-              },
-              {
-                "id": "tf_de2_2",
-                "text": "\"Ich bin zehn Jahre alt\" cümlesi \"Ben 10 yaşındayım\" demektir.",
+                "id": "tf_de_7",
+                "text": "'zehn' sayısı 10 anlamına gelir.",
                 "isTrue": true,
-                "explanation": "Doğru! \"zehn\" 10 demektir ve \"Jahre alt\" yaşındayım ifadesidir."
-              },
-              {
-                "id": "tf_de2_3",
-                "text": "\"zwölf\" sayısı 11 anlamına gelir.",
-                "isTrue": false,
-                "explanation": "Yanlış! 11 = elf, 12 = zwölf'tir."
+                "explanation": "Doğru! Zehn = 10'dur."
               }
             ],
             "fillBlank": [
               {
-                "id": "fb_de2_1",
-                "sentence": "— Wie alt bist du? — Ich ___ elf Jahre alt.",
+                "id": "fb_de_6",
+                "sentence": "On yaşındayım: 'Ich bin ___ Jahre alt.'",
                 "options": [
-                  "bin",
-                  "bist",
-                  "ist",
-                  "heiße"
+                  "zehn",
+                  "zwei",
+                  "acht",
+                  "vier"
                 ],
-                "correctWord": "bin",
-                "hint": "\"Ich\" (Ben) öznesiyle sein fiilinin çekimi."
-              },
-              {
-                "id": "fb_de2_2",
-                "sentence": "14 sayısı Almancada \"___\" olarak yazılır.",
-                "options": [
-                  "vierzehn",
-                  "vierzig",
-                  "fünfzehn",
-                  "dreizehn"
-                ],
-                "correctWord": "vierzehn",
-                "hint": "vier (4) + zehn (10)"
-              },
-              {
-                "id": "fb_de2_3",
-                "sentence": "— Wie ___ bist du? — Ich bin zehn Jahre alt.",
-                "options": [
-                  "alt",
-                  "heißt",
-                  "woher",
-                  "wer"
-                ],
-                "correctWord": "alt",
-                "hint": "Yaş sorarken kullanılan sözcük."
+                "correctWord": "zehn",
+                "hint": "10 sayısı."
               }
             ],
             "quiz": [
               {
-                "id": "q_de2_1",
-                "question": "17 sayısının doğru Almanca yazılışı aşağıdakilerden hangisidir?",
+                "id": "q_de_5",
+                "question": "'Wie alt bist du?' sorusu ne anlama gelir?",
                 "options": [
-                  "siebzehn",
-                  "siebenzehn",
-                  "siebzig",
-                  "sechzehn"
+                  "Kaç yaşındasın?",
+                  "Adın ne?",
+                  "Nerelisin?",
+                  "Nasılsın?"
                 ],
                 "correctAnswerIndex": 0,
-                "hint": "sieben kelimesindeki -en eki düşer.",
-                "explanation": "17 sayısı kural olarak \"-en\" ekini atar ve \"siebzehn\" olarak yazılır."
-              },
-              {
-                "id": "q_de2_2",
-                "question": "Arkadaşının yaşını öğrenmek isteyen Selin hangi soruyu sormalıdır?",
-                "options": [
-                  "Wie alt bist du?",
-                  "Wie heißt du?",
-                  "Woher kommst du?",
-                  "Wie geht es dir?"
-                ],
-                "correctAnswerIndex": 0,
-                "hint": "Yaş sorma kalıbı.",
-                "explanation": "\"Wie alt bist du?\" kaç yaşındasın demektir."
-              },
-              {
-                "id": "q_de2_3",
-                "question": "Aşağıdaki sayı eşleştirmelerinden hangisi YANLIŞTIR?",
-                "options": [
-                  "zwölf = 11",
-                  "vierzehn = 14",
-                  "zwanzig = 20",
-                  "acht = 8"
-                ],
-                "correctAnswerIndex": 0,
-                "hint": "12 sayısını hatırla.",
-                "explanation": "zwölf 12 demektir, 11 sayısı ise \"elf\" tir."
-              }
-            ]
-          },
-          {
-            "id": "de_u2_t2",
-            "title": "Die Länder und die Sprachen (Ülkeler ve Diller)",
-            "kazanimCode": "DE.5.2.SP3.3",
-            "kazanimDesc": "Ülkeleri ve bu ülkelerde konuşulan dilleri tanır, hangi dilleri konuştuğunu ifade eder.",
-            "summary": "\n• **Ülkeler (Länder):**\n  - **Türkiye:** Türkiye\n  - **Deutschland:** Almanya\n  - **Österreich:** Avusturya (Başkenti Viyana - Almanca konuşulur!)\n  - **die Schweiz:** İsviçre (⚠️ Artikeli \"die\" olan ülkedir!)\n  - **England:** İngiltere\n  - **Spanien:** İspanya\n  - **Japan:** Japonya\n  - **Aserbaidschan:** Azerbaycan\n• **Diller (Sprachen):**\n  - **Türkisch:** Türkçe\n  - **Deutsch:** Almanca\n  - **Englisch:** İngilizce\n  - **Spanisch:** İspanyolca\n  - **Japanisch:** Japonca\n  - **Aserbaidschanisch:** Azerbaycan Türkçesi\n• **Dil Konuşma Kalıbı:**\n  - **Welche Sprachen sprichst du?:** Hangi dilleri konuşuyorsun?\n  - **Ich spreche Türkisch.:** Türkçe konuşuyorum.\n  - **Ich spreche Deutsch und Englisch.:** Almanca ve İngilizce konuşuyorum.\n  - Fiil: **sprechen** (konuşmak) -> *Ich spreche, du sprichst, er/sie spricht*.\n              ",
-            "keyConcepts": [
-              "Länder",
-              "Sprachen",
-              "Deutschland",
-              "Österreich",
-              "die Schweiz",
-              "sprechen",
-              "Ich spreche"
-            ],
-            "pronunciationPhrases": [
-              {
-                "german": "Deutschland - Deutsch",
-                "turkish": "Almanya - Almanca",
-                "phonetic": "Doyçlant - Doyç",
-                "category": "Land & Sprache"
-              },
-              {
-                "german": "Türkiye - Türkisch",
-                "turkish": "Türkiye - Türkçe",
-                "phonetic": "Türkaye - Türkiş",
-                "category": "Land & Sprache"
-              },
-              {
-                "german": "Österreich - Deutsch",
-                "turkish": "Avusturya - Almanca",
-                "phonetic": "Ööstırayh - Doyç",
-                "category": "Land & Sprache"
-              },
-              {
-                "german": "die Schweiz",
-                "turkish": "İsviçre",
-                "phonetic": "dii Şvayts",
-                "category": "Land"
-              },
-              {
-                "german": "England - Englisch",
-                "turkish": "İngiltere - İngilizce",
-                "phonetic": "Englant - Engliş",
-                "category": "Land & Sprache"
-              },
-              {
-                "german": "Spanien - Spanisch",
-                "turkish": "İspanya - İspanyolca",
-                "phonetic": "Şpaanyın - Şpaaniş",
-                "category": "Land & Sprache"
-              },
-              {
-                "german": "Welche Sprachen sprichst du?",
-                "turkish": "Hangi dilleri konuşuyorsun?",
-                "phonetic": "Velhe Şpraahın şprihst du?",
-                "category": "Frage"
-              },
-              {
-                "german": "Ich spreche Türkisch und Deutsch.",
-                "turkish": "Türkçe ve Almanca konuşuyorum.",
-                "phonetic": "İh şprehe Türkiş unt Doyç.",
-                "category": "Antwort"
-              }
-            ],
-            "flashcards": [
-              {
-                "id": "fc_de_l1",
-                "front": "Almanya dışında hangi ülkelerde resmî dil olarak Almanca konuşulur?",
-                "back": "Österreich (Avusturya) ve die Schweiz (İsviçre).",
-                "tip": "Österreich'ın başkenti Viyana'da da anadil Almancadır.",
-                "example": "In Österreich spricht man Deutsch."
-              },
-              {
-                "id": "fc_de_l2",
-                "front": "\"Ich spreche Deutsch\" ne demektir?",
-                "back": "\"Ben Almanca konuşuyorum\" demektir.",
-                "tip": "sprechen = konuşmak fiilidir (Ich spreche, du sprichst).",
-                "example": "Ich spreche Türkisch und Englisch."
-              },
-              {
-                "id": "fc_de_l3",
-                "front": "\"Welche Sprachen sprichst du?\" sorusu ne anlama gelir?",
-                "back": "\"Hangi dilleri konuşuyorsun?\" anlamına gelir.",
-                "tip": "Sprache = Dil, Sprachen = Diller demektir.",
-                "example": "— Welche Sprachen sprichst du? — Ich spreche Deutsch."
-              }
-            ],
-            "matching": [
-              {
-                "id": "m_de_l1",
-                "left": "Deutschland",
-                "right": "Deutsch"
-              },
-              {
-                "id": "m_de_l2",
-                "left": "Türkiye",
-                "right": "Türkisch"
-              },
-              {
-                "id": "m_de_l3",
-                "left": "England",
-                "right": "Englisch"
-              },
-              {
-                "id": "m_de_l4",
-                "left": "Spanien",
-                "right": "Spanisch"
-              },
-              {
-                "id": "m_de_l5",
-                "left": "Japan",
-                "right": "Japanisch"
-              }
-            ],
-            "trueFalse": [
-              {
-                "id": "tf_de_l1",
-                "text": "Avusturya'da (Österreich) resmî dil olarak Almanca (Deutsch) konuşulur.",
-                "isTrue": true,
-                "explanation": "Doğru! Avusturya ve İsviçre'nin önemli bir kısmında Almanca konuşulur."
-              },
-              {
-                "id": "tf_de_l2",
-                "text": "\"Ich sprechen Deutsch\" ifadesi dil bilgisi açısından tamamen doğrudur.",
-                "isTrue": false,
-                "explanation": "Yanlış! \"Ich\" öznesi için fiil \"-e\" alır: \"Ich spreche Deutsch\" olmalıdır."
-              }
-            ],
-            "fillBlank": [
-              {
-                "id": "fb_de_l1",
-                "sentence": "Ich komme aus Deutschland und ich spreche ___ .",
-                "options": [
-                  "Deutsch",
-                  "Türkisch",
-                  "Spanisch",
-                  "Japanisch"
-                ],
-                "correctWord": "Deutsch",
-                "hint": "Almanya'da konuşulan dil."
-              },
-              {
-                "id": "fb_de_l2",
-                "sentence": "— Welche Sprachen ___ du? — Ich spreche Englisch.",
-                "options": [
-                  "sprichst",
-                  "spreche",
-                  "bist",
-                  "heißt"
-                ],
-                "correctWord": "sprichst",
-                "hint": "\"du\" (sen) öznesi için sprechen fiilinin çekimi."
-              }
-            ],
-            "quiz": [
-              {
-                "id": "q_de_l1",
-                "question": "— Welche Sprachen sprichst du? — Ich spreche ___ und ___ .",
-                "options": [
-                  "Türkisch / Deutsch",
-                  "Türkiye / Deutschland",
-                  "Spanien / England",
-                  "Ankara / Berlin"
-                ],
-                "correctAnswerIndex": 0,
-                "hint": "Cümleye ülke veya şehir değil, dil isimleri gelmelidir.",
-                "explanation": "Türkisch ve Deutsch dil isimleridir. Diğerleri ülke veya şehir isimleridir."
-              },
-              {
-                "id": "q_de_l2",
-                "question": "Aşağıdaki ülke-dil eşleştirmelerinden hangisi DOĞRUDUR?",
-                "options": [
-                  "Spanien -> Spanisch",
-                  "Deutschland -> Englisch",
-                  "England -> Deutsch",
-                  "Türkiye -> Japanisch"
-                ],
-                "correctAnswerIndex": 0,
-                "hint": "İspanya ve İspanyolca eşleşmesini incele.",
-                "explanation": "İspanya (Spanien) ülkesinde İspanyolca (Spanisch) konuşulur."
+                "hint": "alt = yaş",
+                "explanation": "'Wie alt bist du?' kaç yaşındasın demektir."
               }
             ]
           },
           {
             "id": "de_u2_t3",
-            "title": "Die Herkunft und der Wohnort (Memleket ve Yaşanılan Şehir)",
-            "kazanimCode": "DE.5.2.G1.1",
-            "kazanimDesc": "Nereli olduğunu (köken/memleket) ve nerede ikamet ettiğini (şehir) söyler, başkalarına sorar.",
-            "summary": "\n• **Herkunft (Nereden geliyorsun? / Memleket):**\n  - **Woher kommst du?:** Nereden geliyorsun? (Nerelisin?)\n  - **Ich komme aus Türkiye.:** Türkiye'den geliyorum.\n  - **Ich komme aus Deutschland.:** Almanya'dan geliyorum.\n  - ⚠️ **Önemli İstisna:** İsviçre artikelli olduğu için *\"Ich komme aus der Schweiz\"* denir!\n• **Wohnort (Nerede yaşıyorsun? / İkamet):**\n  - **Wo wohnst du?:** Nerede oturuyorsun / yaşıyorsun?\n  - **Ich wohne in Ankara.:** Ankara'da oturuyorum.\n  - **Ich wohne in Berlin.:** Berlin'de oturuyorum.\n  - Şehirlerden önce **\"in\"** edatı kullanılır!\n• **Tekil Şahıs Zamirleri (Personalpronomen):**\n  - **ich:** ben (Ich wohne...)\n  - **du:** sen (Wo wohnst du?)\n  - **er:** o (erkek) -> *Er kommt aus Deutschland und wohnt in Hamburg.*\n  - **sie:** o (kız) -> *Sie kommt aus Türkiye und wohnt in Izmir.*\n• **Özet Kendini Tanıtma (Steckbrief):**\n  *\"Hallo! Das bin ich! Ich heiße Can. Ich bin elf Jahre alt. Ich komme aus Türkiye und ich wohne in Ankara. Ich spreche Türkisch ve Englisch.\"*\n              ",
-            "keyConcepts": [
-              "Woher kommst du?",
-              "Ich komme aus",
-              "Wo wohnst du?",
-              "Ich wohne in",
-              "er / sie",
-              "Steckbrief"
+            "title": "Schulfächer & Wochentage (Dersler ve Günler)",
+            "kazanimCode": "ALM.5.2.3",
+            "kazanimDesc": "Haftanın günlerini ve okul derslerini söyler.",
+            "summary": "• Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag\\n• 'Mein Lieblingsfach ist Mathe / Deutsch / Englisch.'",
+            "pronunciationPhrases": [
+              {
+                "german": "Montag und Dienstag",
+                "turkish": "Pazartesi ve Salı",
+                "phonetic": "Mon-taak unt Diins-taak",
+                "category": "Wochentage"
+              },
+              {
+                "german": "Samstag und Sonntag",
+                "turkish": "Cumartesi ve Pazar",
+                "phonetic": "Zams-taak unt Zon-taak",
+                "category": "Wochentage"
+              },
+              {
+                "german": "Mein Lieblingsfach ist Musik.",
+                "turkish": "En sevdiğim ders Müziktir.",
+                "phonetic": "Mayn liib-lings-fah ist Mu-ziik.",
+                "category": "Schulfächer"
+              }
             ],
+            "flashcards": [
+              {
+                "id": "fc_de_u2_4",
+                "front": "'Mein Lieblingsfach ist...' ne demektir?",
+                "back": "'En sevdiğim ders ...' anlamına gelir.",
+                "tip": "Lieblingsfach = favori ders.",
+                "example": "Mein Lieblingsfach ist Sport."
+              }
+            ],
+            "matching": [
+              {
+                "id": "m_de_24",
+                "left": "Montag",
+                "right": "Pazartesi"
+              },
+              {
+                "id": "m_de_25",
+                "left": "Freitag",
+                "right": "Cuma"
+              },
+              {
+                "id": "m_de_26",
+                "left": "Sonntag",
+                "right": "Pazar"
+              }
+            ],
+            "trueFalse": [
+              {
+                "id": "tf_de_8",
+                "text": "'Montag' Pazartesi günüdür.",
+                "isTrue": true,
+                "explanation": "Doğru! Montag haftanın ilk günüdür."
+              }
+            ],
+            "fillBlank": [
+              {
+                "id": "fb_de_7",
+                "sentence": "En sevdiğim ders: 'Mein ___ ist Englisch.'",
+                "options": [
+                  "Lieblingsfach",
+                  "Schule",
+                  "Name",
+                  "Tag"
+                ],
+                "correctWord": "Lieblingsfach",
+                "hint": "Favori ders kelimesi."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_6",
+                "question": "'Mein Lieblingsfach ist Mathe' cümlesinin anlamı nedir?",
+                "options": [
+                  "En sevdiğim ders Matematik.",
+                  "Matematik zordur.",
+                  "Bugün günlerden Pazartesi.",
+                  "Ben 10 yaşındayım."
+                ],
+                "correctAnswerIndex": 0,
+                "hint": "Mathe = Matematik",
+                "explanation": "'En sevdiğim ders Matematik' doğru çeviridir."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "de_u3",
+        "unitNumber": 3,
+        "title": "Lektion 3: Meine Familie & Freunde (Ailem ve Arkadaşlarım)",
+        "description": "Aile bireyleri, fiziksel özellikler, duygular ve hobiler.",
+        "topics": [
+          {
+            "id": "de_u3_t1",
+            "title": "Familienmitglieder (Aile Bireyleri)",
+            "kazanimCode": "ALM.5.3.1",
+            "kazanimDesc": "Aile üyelerini tanıtır (mein Vater, meine Mutter).",
+            "summary": "• mein Vater (babam), mein Bruder (erkek kardeşim)\\n• meine Mutter (annem), meine Schwester (kız kardeşim)\\n• mein Opa (dedem), meine Oma (büyükanne)",
+            "pronunciationPhrases": [
+              {
+                "german": "Wer ist das?",
+                "turkish": "Bu kim?",
+                "phonetic": "Veer ist das?",
+                "category": "Familie"
+              },
+              {
+                "german": "Das ist mein Vater.",
+                "turkish": "Bu benim babam.",
+                "phonetic": "Das ist mayn faa-tır.",
+                "category": "Familie"
+              },
+              {
+                "german": "Das ist meine Mutter.",
+                "turkish": "Bu benim annem.",
+                "phonetic": "Das ist may-nı mu-tır.",
+                "category": "Familie"
+              },
+              {
+                "german": "mein Bruder und meine Schwester",
+                "turkish": "erkek kardeşim ve kız kardeşim",
+                "phonetic": "mayn bruu-dır unt may-nı şves-tır",
+                "category": "Familie"
+              }
+            ],
+            "flashcards": [
+              {
+                "id": "fc_de_u3_1",
+                "front": "Babam ve annem derken sahiplik farkı nedir?",
+                "back": "Erkeklerde mein (mein Vater), kadınlarda meine (meine Mutter) denir.",
+                "tip": "Sonuna -e eklenir.",
+                "example": "mein Bruder / meine Schwester"
+              }
+            ],
+            "matching": [
+              {
+                "id": "m_de_28",
+                "left": "der Vater",
+                "right": "baba"
+              },
+              {
+                "id": "m_de_29",
+                "left": "die Mutter",
+                "right": "anne"
+              },
+              {
+                "id": "m_de_30",
+                "left": "der Bruder",
+                "right": "erkek kardeş"
+              },
+              {
+                "id": "m_de_31",
+                "left": "die Schwester",
+                "right": "kız kardeş"
+              }
+            ],
+            "trueFalse": [
+              {
+                "id": "tf_de_9",
+                "text": "'Oma' dede demektir.",
+                "isTrue": false,
+                "explanation": "Yanlış! Oma büyükanne, Opa dededir."
+              }
+            ],
+            "fillBlank": [
+              {
+                "id": "fb_de_8",
+                "sentence": "Kız kardeşi tanıtırken: 'Das ist ___ Schwester.'",
+                "options": [
+                  "meine",
+                  "mein",
+                  "dein",
+                  "er"
+                ],
+                "correctWord": "meine",
+                "hint": "Kadın sahiplik eki."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_7",
+                "question": "'Wer ist das?' ne demektir?",
+                "options": [
+                  "Bu kim?",
+                  "Nasılsın?",
+                  "Kaç yaşındasın?",
+                  "Adın ne?"
+                ],
+                "correctAnswerIndex": 0,
+                "hint": "Wer = kim",
+                "explanation": "'Wer ist das?' (Bu kim?) demektir."
+              }
+            ]
+          },
+          {
+            "id": "de_u3_t2",
+            "title": "Aussehen & Gefühle (Dış Görünüş ve Duygular)",
+            "kazanimCode": "ALM.5.3.2",
+            "kazanimDesc": "Dış görünüş ve duyguları belirtir (groß, klein, glücklich, müde).",
+            "summary": "• groß (uzun/büyük), klein (kısa/küçük)\\n• glücklich (mutlu), traurig (üzgün), müde (yorgun)\\n• blaue/braune Augen (mavi/kahverengi gözler)",
+            "pronunciationPhrases": [
+              {
+                "german": "Er ist groß.",
+                "turkish": "O (erkek) uzundur.",
+                "phonetic": "Er ist groos.",
+                "category": "Aussehen"
+              },
+              {
+                "german": "Sie ist klein.",
+                "turkish": "O (kız) kısadır.",
+                "phonetic": "Zii ist klayn.",
+                "category": "Aussehen"
+              },
+              {
+                "german": "Ich bin glücklich!",
+                "turkish": "Mutluyum!",
+                "phonetic": "İh bin glük-lih!",
+                "category": "Gefühle"
+              },
+              {
+                "german": "Ich bin müde.",
+                "turkish": "Yorgunum.",
+                "phonetic": "İh bin müü-dı.",
+                "category": "Gefühle"
+              }
+            ],
+            "flashcards": [
+              {
+                "id": "fc_de_u3_2",
+                "front": "'glücklich' ve 'traurig' anlamları nedir?",
+                "back": "glücklich = mutlu, traurig = üzgün demektir.",
+                "tip": "Birbirinin zıttıdır.",
+                "example": "Ich bin sehr glücklich!"
+              }
+            ],
+            "matching": [
+              {
+                "id": "m_de_33",
+                "left": "groß",
+                "right": "uzun / büyük"
+              },
+              {
+                "id": "m_de_34",
+                "left": "klein",
+                "right": "kısa / küçük"
+              },
+              {
+                "id": "m_de_35",
+                "left": "glücklich",
+                "right": "mutlu"
+              },
+              {
+                "id": "m_de_36",
+                "left": "müde",
+                "right": "yorgun"
+              }
+            ],
+            "trueFalse": [
+              {
+                "id": "tf_de_10",
+                "text": "'müde' kelimesi enerjik ve neşeli demektir.",
+                "isTrue": false,
+                "explanation": "Yanlış! Müde 'yorgun' demektir."
+              }
+            ],
+            "fillBlank": [
+              {
+                "id": "fb_de_9",
+                "sentence": "Çok mutluyum: 'Ich bin ___!'",
+                "options": [
+                  "glücklich",
+                  "traurig",
+                  "klein",
+                  "rot"
+                ],
+                "correctWord": "glücklich",
+                "hint": "Mutlu kelimesi."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_8",
+                "question": "'Er ist groß' ne anlama gelir?",
+                "options": [
+                  "O (erkek) uzundur.",
+                  "O kızdır.",
+                  "O yorgundur.",
+                  "Ben mutluyum."
+                ],
+                "correctAnswerIndex": 0,
+                "hint": "groß = uzun/büyük",
+                "explanation": "'Er ist groß' O uzundur demektir."
+              }
+            ]
+          },
+          {
+            "id": "de_u3_t3",
+            "title": "Hobbys & Freizeit (Hobiler ve Boş Zaman)",
+            "kazanimCode": "ALM.5.3.3",
+            "kazanimDesc": "Hobilerini ve severek yaptıklarını (gern) ifade eder.",
+            "summary": "• Fußball spielen (futbol oynamak)\\n• Musik hören (müzik dinlemek)\\n• Bücher lesen (kitap okumak)\\n• 'Ich spiele gern Fußball.' (Severek futbol oynarım.)",
+            "pronunciationPhrases": [
+              {
+                "german": "Was ist dein Hobby?",
+                "turkish": "Senin hobin nedir?",
+                "phonetic": "Vas ist dayn ho-bi?",
+                "category": "Hobbys"
+              },
+              {
+                "german": "Mein Hobby ist Fußball.",
+                "turkish": "Benim hobim futboldur.",
+                "phonetic": "Mayn ho-bi ist fuus-bal.",
+                "category": "Hobbys"
+              },
+              {
+                "german": "Ich höre gern Musik.",
+                "turkish": "Severek müzik dinlerim.",
+                "phonetic": "İh höö-rı gern mu-ziik.",
+                "category": "Hobbys"
+              },
+              {
+                "german": "schwimmen und lesen",
+                "turkish": "yüzmek ve okumak",
+                "phonetic": "şvim-mın unt lee-zın",
+                "category": "Freizeit"
+              }
+            ],
+            "flashcards": [
+              {
+                "id": "fc_de_u3_3",
+                "front": "Almancada severek yaptığın bir şeyi nasıl söylersin?",
+                "back": "Fiilden sonra 'gern' eklenir: 'Ich schwimme gern.'",
+                "tip": "gern = severek / hoşlanarak.",
+                "example": "Ich spiele gern Gitarre."
+              }
+            ],
+            "matching": [
+              {
+                "id": "m_de_37",
+                "left": "Fußball spielen",
+                "right": "futbol oynamak"
+              },
+              {
+                "id": "m_de_38",
+                "left": "Musik hören",
+                "right": "müzik dinlemek"
+              },
+              {
+                "id": "m_de_39",
+                "left": "schwimmen",
+                "right": "yüzmek"
+              }
+            ],
+            "trueFalse": [
+              {
+                "id": "tf_de_11",
+                "text": "'schwimmen' yüzmek demektir.",
+                "isTrue": true,
+                "explanation": "Doğru! Schwimmen yüzmektir."
+              }
+            ],
+            "fillBlank": [
+              {
+                "id": "fb_de_10",
+                "sentence": "Severek müzik dinlerim: 'Ich ___ gern Musik.'",
+                "options": [
+                  "höre",
+                  "spiele",
+                  "gehe",
+                  "bin"
+                ],
+                "correctWord": "höre",
+                "hint": "Dinlemek fiili."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_9",
+                "question": "'Ich spiele gern Fußball' ne demektir?",
+                "options": [
+                  "Severek futbol oynarım.",
+                  "Futbolu sevmem.",
+                  "Topum mavidir.",
+                  "Okula gidiyorum."
+                ],
+                "correctAnswerIndex": 0,
+                "hint": "Fußball = futbol",
+                "explanation": "'Severek futbol oynarım' doğru çeviridir."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "de_u4",
+        "unitNumber": 4,
+        "title": "Lektion 4: Mein Alltag & Essen (Günlük Yaşam ve Beslenme)",
+        "description": "Yiyecek ve içecekler, rutinler, saatler, ülkeler ve diller.",
+        "topics": [
+          {
+            "id": "de_u4_t1",
+            "title": "Essen und Trinken (Yiyecekler ve İçecekler)",
+            "kazanimCode": "ALM.5.4.1",
+            "kazanimDesc": "Temel yiyecek ve içecekleri söyler; sevdiği şeyleri belirtir.",
+            "summary": "• der Apfel (elma), die Banane (muz), das Brot (ekmek), der Käse (peynir)\\n• das Wasser (su), die Milch (süt), der Tee (çay)\\n• 'Ich habe Hunger.' (Açım) / 'Ich habe Durst.' (Susadım)",
+            "pronunciationPhrases": [
+              {
+                "german": "Guten Appetit!",
+                "turkish": "Afiyet olsun!",
+                "phonetic": "Guutın a-pe-tiit!",
+                "category": "Essen"
+              },
+              {
+                "german": "Ich habe Hunger.",
+                "turkish": "Açım / Karnım aç.",
+                "phonetic": "İh haa-bı hung-ır.",
+                "category": "Essen"
+              },
+              {
+                "german": "Ich habe Durst.",
+                "turkish": "Susadım.",
+                "phonetic": "İh haa-bı durst.",
+                "category": "Trinken"
+              },
+              {
+                "german": "das Brot und das Wasser",
+                "turkish": "ekmek ve su",
+                "phonetic": "das broot unt das va-sır",
+                "category": "Essen"
+              }
+            ],
+            "flashcards": [
+              {
+                "id": "fc_de_u4_1",
+                "front": "'Hunger' ile 'Durst' farkı nedir?",
+                "back": "Hunger = açlık (yemek istenir), Durst = susuzluk (su istenir).",
+                "tip": "Ich habe Hunger / Ich habe Durst.",
+                "example": "Ich habe Durst, ich trinke Wasser."
+              }
+            ],
+            "matching": [
+              {
+                "id": "m_de_41",
+                "left": "das Brot",
+                "right": "ekmek"
+              },
+              {
+                "id": "m_de_42",
+                "left": "das Wasser",
+                "right": "su"
+              },
+              {
+                "id": "m_de_43",
+                "left": "der Apfel",
+                "right": "elma"
+              },
+              {
+                "id": "m_de_45",
+                "left": "Guten Appetit",
+                "right": "Afiyet olsun"
+              }
+            ],
+            "trueFalse": [
+              {
+                "id": "tf_de_12",
+                "text": "'Wasser' çay demektir.",
+                "isTrue": false,
+                "explanation": "Yanlış! Wasser su, Tee çaydır."
+              }
+            ],
+            "fillBlank": [
+              {
+                "id": "fb_de_11",
+                "sentence": "Yemekte: '___ Appetit!' (Afiyet olsun).",
+                "options": [
+                  "Guten",
+                  "Gute",
+                  "Danke",
+                  "Hallo"
+                ],
+                "correctWord": "Guten",
+                "hint": "Afiyet olsun ifadesi."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_10",
+                "question": "Susayan biri ne der?",
+                "options": [
+                  "Ich habe Durst.",
+                  "Ich habe Hunger.",
+                  "Ich heiße Wasser.",
+                  "Guten Morgen."
+                ],
+                "correctAnswerIndex": 0,
+                "hint": "Durst = susuzluk",
+                "explanation": "'Ich habe Durst' susadım demektir."
+              }
+            ]
+          },
+          {
+            "id": "de_u4_t2",
+            "title": "Tagesablauf & Uhrzeiten (Günlük Rutinler ve Saatler)",
+            "kazanimCode": "ALM.5.4.2",
+            "kazanimDesc": "Saatleri ve günlük rutin eylemleri söyler.",
+            "summary": "• aufstehen (kalkmak), frühstücken (kahvaltı), zur Schule gehen (okula gitmek)\\n• 'Wie spät ist es?' -> 'Es ist acht Uhr.'",
+            "pronunciationPhrases": [
+              {
+                "german": "Wie spät ist es?",
+                "turkish": "Saat kaç?",
+                "phonetic": "Vii şpeet ist es?",
+                "category": "Uhrzeit"
+              },
+              {
+                "german": "Es ist acht Uhr.",
+                "turkish": "Saat sekiz.",
+                "phonetic": "Es ist aht uur.",
+                "category": "Uhrzeit"
+              },
+              {
+                "german": "Ich gehe zur Schule.",
+                "turkish": "Okula gidiyorum.",
+                "phonetic": "İh gee-ı tsur şuulı.",
+                "category": "Tagesablauf"
+              }
+            ],
+            "flashcards": [
+              {
+                "id": "fc_de_u4_2",
+                "front": "'Wie spät ist es?' ne anlama gelir?",
+                "back": "'Saat kaç?' anlamına gelir. 'Es ist ... Uhr' ile cevap verilir.",
+                "tip": "Uhr = saat.",
+                "example": "Es ist neun Uhr."
+              }
+            ],
+            "matching": [
+              {
+                "id": "m_de_46",
+                "left": "Wie spät ist es?",
+                "right": "Saat kaç?"
+              },
+              {
+                "id": "m_de_47",
+                "left": "Es ist acht Uhr",
+                "right": "Saat sekiz"
+              }
+            ],
+            "trueFalse": [
+              {
+                "id": "tf_de_13",
+                "text": "'Uhr' kelimesi saat anlamına gelir.",
+                "isTrue": true,
+                "explanation": "Doğru! Es ist zehn Uhr = Saat 10'dur."
+              }
+            ],
+            "fillBlank": [
+              {
+                "id": "fb_de_12",
+                "sentence": "Saat kaç? -> 'Wie ___ ist es?'",
+                "options": [
+                  "spät",
+                  "alt",
+                  "gut",
+                  "neu"
+                ],
+                "correctWord": "spät",
+                "hint": "Saat sorma kalıbı."
+              }
+            ],
+            "quiz": [
+              {
+                "id": "q_de_11",
+                "question": "Saat 9 olduğunu belirtmek için ne denir?",
+                "options": [
+                  "Es ist neun Uhr.",
+                  "Ich bin neun.",
+                  "Mein Name ist neun.",
+                  "Gute Nacht."
+                ],
+                "correctAnswerIndex": 0,
+                "hint": "neun = 9, Uhr = saat",
+                "explanation": "'Es ist neun Uhr' saat 9 demektir."
+              }
+            ]
+          },
+          {
+            "id": "de_u4_t3",
+            "title": "Länder, Sprachen & Wohnort (Ülkeler, Diller ve Şehirler)",
+            "kazanimCode": "ALM.5.4.3",
+            "kazanimDesc": "Nereli olduğunu ve hangi dilleri konuştuğunu anlatır.",
+            "summary": "• 'Woher kommst du?' -> 'Ich komme aus Türkiye / Deutschland.'\\n• 'Wo wohnst du?' -> 'Ich wohne in Ankara / Berlin.'\\n• 'Ich spreche Deutsch ve Türkisch.'",
             "pronunciationPhrases": [
               {
                 "german": "Woher kommst du?",
-                "turkish": "Nereden geliyorsun? (Nerelisin?)",
+                "turkish": "Nerelisin?",
                 "phonetic": "Vo-heer komst du?",
                 "category": "Herkunft"
               },
               {
                 "german": "Ich komme aus Türkiye.",
                 "turkish": "Türkiye'den geliyorum.",
-                "phonetic": "İh kome aus Türkaye.",
-                "category": "Herkunft"
-              },
-              {
-                "german": "Ich komme aus Deutschland.",
-                "turkish": "Almanya'dan geliyorum.",
-                "phonetic": "İh kome aus Doyçlant.",
-                "category": "Herkunft"
-              },
-              {
-                "german": "Ich komme aus der Schweiz.",
-                "turkish": "İsviçre'den geliyorum. (der Schweiz)",
-                "phonetic": "İh kome aus der Şvayts.",
+                "phonetic": "İh ko-mı aus Türkaye.",
                 "category": "Herkunft"
               },
               {
                 "german": "Wo wohnst du?",
-                "turkish": "Nerede yaşıyorsun / oturuyorsun?",
+                "turkish": "Nerede yaşıyorsun?",
                 "phonetic": "Voo vonst du?",
                 "category": "Wohnort"
               },
               {
                 "german": "Ich wohne in Ankara.",
                 "turkish": "Ankara'da oturuyorum.",
-                "phonetic": "İh voone in Ankara.",
+                "phonetic": "İh voo-nı in Ankara.",
                 "category": "Wohnort"
               },
               {
-                "german": "Ich wohne in Berlin.",
-                "turkish": "Berlin'de oturuyorum.",
-                "phonetic": "İh voone in Berliin.",
-                "category": "Wohnort"
-              },
-              {
-                "german": "Das bin ich!",
-                "turkish": "İşte bu benim!",
-                "phonetic": "Das bin ih!",
-                "category": "Steckbrief"
+                "german": "Ich spreche Deutsch.",
+                "turkish": "Almanca konuşuyorum.",
+                "phonetic": "İh şpre-hı Doyç.",
+                "category": "Sprachen"
               }
             ],
             "flashcards": [
               {
-                "id": "fc_de_w1",
-                "front": "\"Woher kommst du?\" ile \"Wo wohnst du?\" arasındaki fark nedir?",
-                "back": "\"Woher kommst du?\" memleketini/ülkeni sorar (Ich komme aus...). \"Wo wohnst du?\" ise şu an yaşadığın şehri sorar (Ich wohne in...).",
-                "tip": "Woher = nereden (aus), Wo = nerede (in).",
-                "example": "Ich komme aus Deutschland, aber ich wohne in Istanbul."
-              },
-              {
-                "id": "fc_de_w2",
-                "front": "Neden \"aus Schweiz\" değil de \"aus der Schweiz\" denir?",
-                "back": "Çünkü Schweiz (İsviçre) kelimesinin artikeli \"die\" dir ve \"aus\" edatından sonra \"der\" haline dönüşür.",
-                "tip": "Türkiye ve Deutschland artikelsiz kullanılırken, İsviçre için \"aus der Schweiz\" denir.",
-                "example": "Er kommt aus der Schweiz."
-              },
-              {
-                "id": "fc_de_w3",
-                "front": "Almancada \"O (erkek)\" ve \"O (kız)\" zamirleri nelerdir?",
-                "back": "Er = O (erkek), Sie = O (kız/kadın)",
-                "tip": "Er kommt aus Berlin. Sie wohnt in Ankara.",
-                "example": "Er ist zehn Jahre alt. Sie ist elf Jahre alt."
+                "id": "fc_de_u4_3",
+                "front": "'Woher kommst du?' ile 'Wo wohnst du?' farkı nedir?",
+                "back": "Woher kommst du = Ülke/memleket sorar (aus). Wo wohnst du = Yaşanılan şehri sorar (in).",
+                "tip": "aus Türkiye, in Berlin.",
+                "example": "Ich komme aus Türkiye, ich wohne in Ankara."
               }
             ],
             "matching": [
               {
-                "id": "m_de_w1",
+                "id": "m_de_50",
                 "left": "Woher kommst du?",
                 "right": "Nereden geliyorsun?"
               },
               {
-                "id": "m_de_w2",
+                "id": "m_de_51",
                 "left": "Ich komme aus...",
                 "right": "...den geliyorum"
               },
               {
-                "id": "m_de_w3",
+                "id": "m_de_52",
                 "left": "Wo wohnst du?",
                 "right": "Nerede oturuyorsun?"
-              },
-              {
-                "id": "m_de_w4",
-                "left": "Ich wohne in...",
-                "right": "...de oturuyorum"
-              },
-              {
-                "id": "m_de_w5",
-                "left": "Das bin ich!",
-                "right": "Bu benim!"
               }
             ],
             "trueFalse": [
               {
-                "id": "tf_de_w1",
-                "text": "\"Wo wohnst du?\" sorusuna \"Ich komme aus Deutschland\" diye cevap verilmelidir.",
-                "isTrue": false,
-                "explanation": "Yanlış! \"Wo wohnst du?\" nerede oturuyorsun demektir; \"Ich wohne in...\" şeklinde cevap verilmelidir."
-              },
-              {
-                "id": "tf_de_w2",
-                "text": "Şehir isimlerinden önce \"in\" edatı kullanılır (Örn: in Ankara, in Berlin).",
+                "id": "tf_de_14",
+                "text": "Şehir söylerken 'in' edatı kullanılır (in Ankara).",
                 "isTrue": true,
-                "explanation": "Doğru! Şehirde ikamet belirtirken \"in\" kullanılır: \"Ich wohne in Izmir.\""
-              },
-              {
-                "id": "tf_de_w3",
-                "text": "Almancada \"er\" erkekler için \"o\", \"sie\" ise kızlar için \"o\" anlamına gelir.",
-                "isTrue": true,
-                "explanation": "Doğru! Er = erkek (he), Sie = kız (she) zamiridir."
+                "explanation": "Doğru! Şehirlerde in kullanılır."
               }
             ],
             "fillBlank": [
               {
-                "id": "fb_de_w1",
-                "sentence": "— Woher kommst du? — Ich komme ___ Türkiye.",
+                "id": "fb_de_13",
+                "sentence": "Türkiye'den geliyorum: 'Ich komme ___ Türkiye.'",
                 "options": [
                   "aus",
                   "in",
-                  "wo",
-                  "und"
+                  "von",
+                  "nach"
                 ],
                 "correctWord": "aus",
-                "hint": "-den/-dan çıkma anlamı katan edat."
-              },
-              {
-                "id": "fb_de_w2",
-                "sentence": "— Wo wohnst du? — Ich wohne ___ Berlin.",
-                "options": [
-                  "in",
-                  "aus",
-                  "nach",
-                  "von"
-                ],
-                "correctWord": "in",
-                "hint": "Şehirde bulunma anlamı katan edat."
-              },
-              {
-                "id": "fb_de_w3",
-                "sentence": "Lukas bir erkektir. Onun için \"___ kommt aus Deutschland\" deriz.",
-                "options": [
-                  "Er",
-                  "Sie",
-                  "Ich",
-                  "Du"
-                ],
-                "correctWord": "Er",
-                "hint": "Erkekler için kullanılan 3. tekil şahıs zamiri."
+                "hint": "-den anlamı katan edat."
               }
             ],
             "quiz": [
               {
-                "id": "q_de_w1",
-                "question": "— Woher kommst du? — ___ .",
+                "id": "q_de_12",
+                "question": "'Almanca konuşuyorum' diyen biri ne söyler?",
                 "options": [
-                  "Ich komme aus Deutschland.",
-                  "Ich wohne in Berlin.",
-                  "Ich bin elf Jahre alt.",
-                  "Ich heiße Jonas."
+                  "Ich spreche Deutsch.",
+                  "Ich trinke Deutsch.",
+                  "Ich bin Deutsch.",
+                  "Guten Tag."
                 ],
                 "correctAnswerIndex": 0,
-                "hint": "Woher (Nereden) sorusuna uygun cevabı seç.",
-                "explanation": "\"Woher kommst du?\" sorusuna \"Ich komme aus...\" ile nereden gelindiği belirtilerek cevap verilir."
-              },
-              {
-                "id": "q_de_w2",
-                "question": "Aşağıdaki kendini tanıtma (Steckbrief) cümlelerinden hangisi dil bilgisi açısından HATALIDIR?",
-                "options": [
-                  "Ich komme in Deutschland.",
-                  "Ich heiße Aylin.",
-                  "Ich bin zehn Jahre alt.",
-                  "Ich wohne in Ankara."
-                ],
-                "correctAnswerIndex": 0,
-                "hint": "komme fiili \"in\" ile mi kullanılır, \"aus\" ile mi?",
-                "explanation": "\"Ich komme in Deutschland\" hatalıdır. Doğrusu \"Ich komme AUS Deutschland\" olmalıdır."
+                "hint": "sprechen = konuşmak",
+                "explanation": "'Ich spreche Deutsch' Almanca konuşuyorum demektir."
               }
             ]
           }

@@ -12,6 +12,8 @@ jobs:
   build:
     name: Build Android APK
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
@@ -59,3 +61,21 @@ jobs:
           name: DilKulubu-5Sinif-Debug-APK
           path: dil-app/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 14
+
+      - name: Publish to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        with:
+          tag_name: v1.1.0
+          name: "Dil Kulübü 5 - v1.1.0 (Otomatik APK Dağıtımı)"
+          body: |
+            🎓 **Dil Kulübü 5 (İngilizce & Almanca) Mobil APK**
+            
+            ### 🌟 Bu Sürümdeki Yenilikler (v1.1.0)
+            - 🇩🇪 **Almanca Müfredatı Genişletildi:** 4 Ünite, 12 Konu (Okul, Sayılar, Aile, Hobiler, Yiyecekler)
+            - 🔤 **Kelime Dünyası Tamamlandı:** 12 Kategoride 120 Sesli ve Örnek Cümleli Kelime Kartı
+            - 🔄 **Uygulama İçi Güncelleme:** GitHub Releases üzerinden tek tıkla APK güncelleme ve Canlı İçerik (OTA) senkronizasyonu
+            - 🗣️ **Yerel Donanımsal Ses:** Cihazın yerel ses motoruyla tam uyumlu net telaffuz
+          files: dil-app/android/app/build/outputs/apk/debug/app-debug.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
