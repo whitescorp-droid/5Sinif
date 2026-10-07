@@ -21,7 +21,7 @@ export const PronunciationPlayer = ({ phrases, activeLang, onComplete, soundEnab
   const handleSpeak = (rate = 0.88) => {
     setIsSpeaking(true);
     playSound('click', soundEnabled);
-    speakWord(targetText, activeLang, () => {
+    speakWord(targetText, activeLang, rate, () => {
       setIsSpeaking(false);
     });
     setPracticedItems(prev => ({ ...prev, [currentIndex]: true }));
