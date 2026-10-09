@@ -9,6 +9,7 @@ import { MatchingPlayer } from './activities/MatchingPlayer';
 import { TrueFalsePlayer } from './activities/TrueFalsePlayer';
 import { FillBlankPlayer } from './activities/FillBlankPlayer';
 import { QuizPlayer } from './activities/QuizPlayer';
+import { TopicSummaryCard } from './TopicSummaryCard';
 
 export const TopicDetailView = ({ unit, topic, onBack }) => {
   const { activeLang, completedActivities, markActivityComplete, soundEnabled } = useDil();
@@ -178,43 +179,7 @@ export const TopicDetailView = ({ unit, topic, onBack }) => {
       ) : (
         <div className="activities-selection-grid">
           {/* Mobile-Friendly Topic & Spotlight Card */}
-          {(topic.summary || (topic.keyConcepts && topic.keyConcepts.length > 0)) && (
-            <div className="topic-summary-mobile-card">
-              <div className="topic-summary-mobile-header">
-                <BookOpen size={18} />
-                <span>Konu Notları & Spotlight İpuçları</span>
-              </div>
-
-              {topic.summary && (
-                <div 
-                  className="topic-summary-mobile-body"
-                  dangerouslySetInnerHTML={{
-                    __html: topic.summary
-                      .replace(/\n/g, '<br/>')
-                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                      .replace(/###\s*(.*)/g, '<h4 class="summary-subheading">$1</h4>')
-                      .replace(/💡\s*<strong>Spotlight:<\/strong>\s*(.*?)(?=(<br\/>|$))/g, '<div class="summary-spotlight-box">💡 <strong>Spotlight:</strong> $1</div>')
-                  }}
-                />
-              )}
-
-              {topic.keyConcepts && topic.keyConcepts.length > 0 && (
-                <div className="topic-vocab-bank">
-                  <div className="topic-vocab-bank-title">
-                    <Sparkles size={14} />
-                    <span>Hedef Kelime Bankası ({topic.keyConcepts.length})</span>
-                  </div>
-                  <div className="topic-vocab-chips">
-                    {topic.keyConcepts.map((concept, cIdx) => (
-                      <span key={cIdx} className="topic-vocab-chip">
-                        {concept}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
+          <TopicSummaryCard topic={topic} activeLang={activeLang} />
 
           <div className="choose-activity-intro">
             <Sparkles size={20} className="sparkle-gold" />

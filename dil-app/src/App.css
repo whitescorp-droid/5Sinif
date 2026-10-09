@@ -7,18 +7,29 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background-color: #0F172A;
+  width: 100%;
+  background-color: var(--bg-app);
 }
 
 .mobile-phone-frame {
   width: 100%;
-  max-width: 480px;
+  max-width: 100%;
   min-height: 100vh;
   background-color: var(--bg-app);
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 1280px) {
+  .mobile-app-wrapper {
+    background-color: #0F172A;
+  }
+  .mobile-phone-frame {
+    max-width: 960px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+  }
 }
 
 /* =========================================================================
@@ -2177,124 +2188,371 @@
   box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.35);
 }
 
+/* =========================================================================
+   TOPIC SUMMARY CARD & LANDSCAPE MODE STYLES
+   ========================================================================= */
 .topic-summary-mobile-card {
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   border: 1px solid #E2E8F0;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   padding: 16px;
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .topic-summary-mobile-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 800;
-  color: #0369A1;
+  gap: 10px;
   border-bottom: 1px solid #F1F5F9;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
-.topic-summary-mobile-header svg {
+.header-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #E0F2FE;
   color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.topic-summary-mobile-body {
+.header-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-title-main {
   font-size: 14px;
-  line-height: 1.65;
-  color: #334155;
-  word-break: break-word;
-}
-
-.topic-summary-mobile-body strong {
-  color: #0F172A;
-  font-weight: 700;
-}
-
-.summary-subheading {
-  font-size: 14.5px;
   font-weight: 800;
   color: #0F172A;
-  margin: 12px 0 6px 0;
+}
+
+.header-subtitle-tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #0284C7;
+}
+
+/* Sections List */
+.topic-summary-sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary-section-box {
+  background: #F8FAFC;
+  border-radius: var(--radius-md);
+  border: 1px solid #E2E8F0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0369A1;
+}
+
+.section-bullet {
+  color: #0284C7;
+  font-size: 8px;
+}
+
+.section-title-text {
+  text-transform: capitalize;
+}
+
+/* Inline Word Pairs Grid (Whiteboard / Tahta) */
+.summary-inline-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 8px;
+}
+
+.summary-word-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.summary-word-card:active {
+  transform: scale(0.96);
+  background: #F0F9FF;
+}
+
+.summary-word-card.playing {
+  border-color: #0284C7;
+  background: #E0F2FE;
+}
+
+.word-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.word-card-en {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.word-speak-icon {
+  color: #0284C7;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.word-card-tr {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+/* Definition Rows Table (tick -> işaretlemek) */
+.summary-items-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-def-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+
+.summary-def-row:active {
+  transform: scale(0.98);
+  background: #F0F9FF;
+}
+
+.summary-def-row.playing {
+  border-color: #0284C7;
+  background: #E0F2FE;
+}
+
+.def-term-col {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: #0284C7;
+  flex-shrink: 0;
+  min-width: 100px;
+}
+
+.def-speak-icon {
+  opacity: 0.6;
+}
+
+.def-arrow {
+  color: #94A3B8;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.def-mean-col {
+  flex: 1;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.summary-raw-line {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+  padding: 4px 6px;
+}
+
+.summary-raw-line strong {
+  color: #0F172A;
+}
+
+.arrow-sym {
+  color: #0284C7;
+  font-weight: 800;
+  margin: 0 4px;
+}
+
+/* Spotlight Card */
+.summary-spotlight-card {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  border: 1px solid #FDE68A;
+  border-left: 4px solid #F59E0B;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spotlight-badge-header {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.summary-subheading:first-child {
-  margin-top: 0;
+.spotlight-bulb-icon {
+  font-size: 16px;
 }
 
-.summary-spotlight-box {
-  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
-  border-left: 4px solid #F59E0B;
-  border-radius: 8px;
-  padding: 10px 12px;
-  margin: 10px 0;
-  font-size: 13px;
-  line-height: 1.55;
-  color: #78350F;
-}
-
-.summary-spotlight-box strong {
+.spotlight-title-text {
+  font-size: 11.5px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
   color: #92400E;
 }
 
+.spotlight-body-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #78350F;
+}
+
+.spotlight-body-text strong {
+  color: #451A03;
+}
+
+/* Vocabulary Bank Chips/Grid */
 .topic-vocab-bank {
   background: #F8FAFC;
   border-radius: var(--radius-md);
   border: 1px dashed #CBD5E1;
   padding: 12px;
-  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .topic-vocab-bank-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #64748B;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  color: #475569;
 }
 
-.topic-vocab-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.topic-vocab-chip {
-  display: inline-flex;
-  align-items: center;
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 20px;
-  padding: 4px 10px;
-  font-size: 12.5px;
-  font-weight: 600;
+.sparkle-icon {
   color: #0284C7;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
 
-.topic-visual-card {
-  background: #FFFFFF;
-  border-radius: var(--radius-lg);
-  border: 1px solid #E2E8F0;
-  box-shadow: var(--shadow-sm);
-  padding: 14px;
-  margin-bottom: 16px;
+.topic-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+  gap: 6px;
+}
+
+.topic-vocab-btn {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  text-align: left;
+}
+
+.topic-vocab-btn:active {
+  transform: scale(0.96);
+  background: #F0F9FF;
+}
+
+.topic-vocab-btn.playing {
+  border-color: #0284C7;
+  background: #E0F2FE;
+}
+
+.vocab-word-text {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0284C7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vocab-volume-icon {
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+/* =========================================================================
+   YATAY (LANDSCAPE) MOD UYUMU
+   ========================================================================= */
+@media (orientation: landscape) {
+  .mobile-phone-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .mobile-main-content {
+    padding: 12px 20px 30px;
+  }
+
+  .activities-selection-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .topic-summary-mobile-card {
+    margin-bottom: 0;
+  }
+
+  .activity-cards-list {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .summary-inline-vocab-grid {
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  }
+
+  .topic-vocab-grid {
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  }
 }
 
 
