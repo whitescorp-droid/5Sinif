@@ -125,18 +125,6 @@ export const TopicDetail = ({ subject, unit, topic, onBack, onGoHome }) => {
           </div>
         )}
 
-        {/* Visual Illustration if available */}
-        {topic.visualImage && (
-          <div className="topic-visual-illustration-box" style={{ margin: '14px 0' }}>
-            <img 
-              src={topic.visualImage} 
-              alt={topic.title} 
-              className="topic-visual-full-img"
-              style={{ maxHeight: '420px', width: '100%', objectFit: 'contain', borderRadius: '12px', border: '1px solid #CBD5E1', background: '#F8FAFC' }}
-            />
-          </div>
-        )}
-
         {/* Collapsible Topic Summary */}
         <div className="topic-summary-accordion">
           <button

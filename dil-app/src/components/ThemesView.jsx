@@ -7,8 +7,16 @@ import { playSound } from '../utils/soundEffects';
 const getCurriculumData = () => {
   try {
     const cached = localStorage.getItem('dil_live_curriculum');
-    if (cached) return JSON.parse(cached);
-  } catch (e) {}
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (parsed?.oxford?.units?.length >= 18) {
+        return parsed;
+      }
+      localStorage.removeItem('dil_live_curriculum');
+    }
+  } catch (e) {
+    try { localStorage.removeItem('dil_live_curriculum'); } catch (_) {}
+  }
   return LANGUAGES_DATA;
 };
 

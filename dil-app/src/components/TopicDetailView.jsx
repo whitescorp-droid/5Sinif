@@ -177,21 +177,42 @@ export const TopicDetailView = ({ unit, topic, onBack }) => {
         </div>
       ) : (
         <div className="activities-selection-grid">
-          {/* Visual Book Image Card */}
-          {topic.visualImage && (
-            <div className="topic-visual-card">
-              <div className="topic-visual-header">
+          {/* Mobile-Friendly Topic & Spotlight Card */}
+          {(topic.summary || (topic.keyConcepts && topic.keyConcepts.length > 0)) && (
+            <div className="topic-summary-mobile-card">
+              <div className="topic-summary-mobile-header">
                 <BookOpen size={18} />
-                <span>Kitap Görseli & Sayfa Şeması</span>
+                <span>Konu Notları & Spotlight İpuçları</span>
               </div>
-              <div className="topic-visual-img-box">
-                <img
-                  src={topic.visualImage}
-                  alt={topic.title}
-                  className="topic-visual-img"
-                  loading="lazy"
+
+              {topic.summary && (
+                <div 
+                  className="topic-summary-mobile-body"
+                  dangerouslySetInnerHTML={{
+                    __html: topic.summary
+                      .replace(/\n/g, '<br/>')
+                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                      .replace(/###\s*(.*)/g, '<h4 class="summary-subheading">$1</h4>')
+                      .replace(/💡\s*<strong>Spotlight:<\/strong>\s*(.*?)(?=(<br\/>|$))/g, '<div class="summary-spotlight-box">💡 <strong>Spotlight:</strong> $1</div>')
+                  }}
                 />
-              </div>
+              )}
+
+              {topic.keyConcepts && topic.keyConcepts.length > 0 && (
+                <div className="topic-vocab-bank">
+                  <div className="topic-vocab-bank-title">
+                    <Sparkles size={14} />
+                    <span>Hedef Kelime Bankası ({topic.keyConcepts.length})</span>
+                  </div>
+                  <div className="topic-vocab-chips">
+                    {topic.keyConcepts.map((concept, cIdx) => (
+                      <span key={cIdx} className="topic-vocab-chip">
+                        {concept}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
