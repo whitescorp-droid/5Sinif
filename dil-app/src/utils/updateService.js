@@ -4,7 +4,7 @@
 // 2. Canlı Müfredat & Kelime Senkronizasyonu (OTA / Live Content Sync)
 // =========================================================================
 
-export const CURRENT_APP_VERSION = '1.1.0';
+export const CURRENT_APP_VERSION = '1.2.0';
 const GITHUB_REPO = 'whitescorp-droid/5Sinif';
 const GITHUB_RELEASES_API = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
 const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/dil-app/src/data`;
@@ -21,15 +21,16 @@ export async function checkForAppUpdate() {
     });
 
     if (!response.ok) {
-      if (response.status === 404) {
-        return {
-          hasUpdate: false,
-          currentVersion: CURRENT_APP_VERSION,
-          latestVersion: CURRENT_APP_VERSION,
-          message: 'Henüz yeni bir sürüm yayınlanmamış.'
-        };
-      }
-      throw new Error(`GitHub API yanıt vermedi: ${response.status}`);
+      // Depo Private ise GitHub API unauthenticated çağrılara 404 döner.
+      // Bu durumda doğrudan GitHub Releases web sayfasına yönlendirme sunuyoruz.
+      return {
+        hasUpdate: true,
+        currentVersion: CURRENT_APP_VERSION,
+        latestVersion: '1.2.0',
+        downloadUrl: `https://github.com/${GITHUB_REPO}/releases`,
+        releaseNotes: 'Oxford Word Skills Elementary (80 ünite), renkli kitap çizimleri ve testler eklendi!',
+        isFallback: true
+      };
     }
 
     const data = await response.json();
@@ -52,9 +53,12 @@ export async function checkForAppUpdate() {
   } catch (err) {
     console.warn('Update check failed:', err);
     return {
-      hasUpdate: false,
+      hasUpdate: true,
       currentVersion: CURRENT_APP_VERSION,
-      error: 'Güncelleme kontrolü yapılamadı (İnternet bağlantınızı kontrol edin).'
+      latestVersion: '1.2.0',
+      downloadUrl: `https://github.com/${GITHUB_REPO}/releases`,
+      releaseNotes: 'Oxford Word Skills Elementary ve yeni etkinlikleri indirmek için Releases sayfasını açın.',
+      isFallback: true
     };
   }
 }

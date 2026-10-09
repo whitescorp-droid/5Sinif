@@ -62,20 +62,28 @@ jobs:
           path: dil-app/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 14
 
+      - name: Extract App Version
+        id: app_version
+        run: |
+          VERSION=$(node -p "require('./dil-app/package.json').version")
+          echo "tag=v${VERSION}" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
       - name: Publish to GitHub Releases
         uses: softprops/action-gh-release@v2
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         with:
-          tag_name: v1.1.0
-          name: "Dil Kulübü 5 - v1.1.0 (Otomatik APK Dağıtımı)"
+          tag_name: ${{ steps.app_version.outputs.tag }}
+          name: "Dil Kulübü 5 - ${{ steps.app_version.outputs.tag }} (Oxford Word Skills & Otomatik APK Dağıtımı)"
           body: |
-            🎓 **Dil Kulübü 5 (İngilizce & Almanca) Mobil APK**
+            🎓 **Dil Kulübü 5 (İngilizce, Oxford Word Skills & Almanca) Mobil APK**
             
-            ### 🌟 Bu Sürümdeki Yenilikler (v1.1.0)
-            - 🇩🇪 **Almanca Müfredatı Genişletildi:** 4 Ünite, 12 Konu (Okul, Sayılar, Aile, Hobiler, Yiyecekler)
-            - 🔤 **Kelime Dünyası Tamamlandı:** 12 Kategoride 120 Sesli ve Örnek Cümleli Kelime Kartı
-            - 🔄 **Uygulama İçi Güncelleme:** GitHub Releases üzerinden tek tıkla APK güncelleme ve Canlı İçerik (OTA) senkronizasyonu
-            - 🗣️ **Yerel Donanımsal Ses:** Cihazın yerel ses motoruyla tam uyumlu net telaffuz
+            ### 🌟 Bu Sürümdeki Yenilikler (${{ steps.app_version.outputs.tag }})
+            - 📚 **Oxford Word Skills (Elementary) Entegre Edildi:** 80 tematik ünite, orijinal kitap çizimleri, Spotlight kuralları ve cevap anahtarlı etkinlikler!
+            - 🖼️ **Görsel Konu Panoları:** Sınıf eşyaları, insan anatomisi, günlük rutinler, giysiler, meyve/sebze, ulaşım ve mutfak eşyaları.
+            - 🗣️ **Sesli Telaffuz & 3D Kartlar:** Tüm yeni Oxford kelimeleri için sesli okuma ve interaktif çalışma kartları.
+            - ⚡ **Hızlı D/Y, Eşleştirme & Quiz:** Resmi Answer Key ile doğrulanmış soru setleri.
+            - 🔄 **Uygulama İçi Güncelleme:** Otomatik sürüm denetimi ve APK indirme.
           files: dil-app/android/app/build/outputs/apk/debug/app-debug.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
