@@ -58,7 +58,7 @@ jobs:
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: DilKulubu-5Sinif-Debug-APK
+          name: Mingo-Debug-APK
           path: dil-app/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 14
 
@@ -74,16 +74,16 @@ jobs:
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         with:
           tag_name: ${{ steps.app_version.outputs.tag }}
-          name: "Dil Kulübü 5 - ${{ steps.app_version.outputs.tag }} (Oxford Word Skills & Otomatik APK Dağıtımı)"
+          name: "Mingo - ${{ steps.app_version.outputs.tag }} (Yeni Logo, Kalıcı İmza & 100 Oxford Ünitesi)"
           body: |
-            🎓 **Dil Kulübü 5 (İngilizce, Oxford Word Skills & Almanca) Mobil APK**
+            🦉 **Mingo (Yabancı Dil Öğrenme - İngilizce, Oxford Word Skills & Almanca) Mobil APK**
             
             ### 🌟 Bu Sürümdeki Yenilikler (${{ steps.app_version.outputs.tag }})
-            - 📚 **Oxford Word Skills (Elementary) Entegre Edildi:** 80 tematik ünite, orijinal kitap çizimleri, Spotlight kuralları ve cevap anahtarlı etkinlikler!
-            - 🖼️ **Görsel Konu Panoları:** Sınıf eşyaları, insan anatomisi, günlük rutinler, giysiler, meyve/sebze, ulaşım ve mutfak eşyaları.
-            - 🗣️ **Sesli Telaffuz & 3D Kartlar:** Tüm yeni Oxford kelimeleri için sesli okuma ve interaktif çalışma kartları.
-            - ⚡ **Hızlı D/Y, Eşleştirme & Quiz:** Resmi Answer Key ile doğrulanmış soru setleri.
-            - 🔄 **Uygulama İçi Güncelleme:** Otomatik sürüm denetimi ve APK indirme.
+            - 🦉 **Yeni İsim & Logo:** Uygulama ismi "Mingo" olarak güncellendi ve baykuş maskot logosu entegre edildi.
+            - 🔑 **Kalıcı İmza (Keystore):** Artık her yeni sürümde eski uygulamayı silmek zorunda kalmadan, doğrudan üzerine tek dokunuşla güncelleme kurulabilir!
+            - 📚 **100 Eksiksiz Oxford Ünitesi:** 18 Modül ve 1'den 100'e kadar tüm üniteler ardışık olarak hazır.
+            - 📱 **Tam Ekran Yatay (Landscape) Desteği:** Telefonu yan çevirdiğinizde ekranı tam kaplayan 2 sütunlu modern görünüm.
+            - 🗣️ **Sesli Dokun-Dinle:** Notlardaki tüm kelimelere dokunarak yerel İngilizce telaffuzu dinleme.
           files: dil-app/android/app/build/outputs/apk/debug/app-debug.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

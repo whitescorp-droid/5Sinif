@@ -4,7 +4,7 @@
 // 2. Canlı Müfredat & Kelime Senkronizasyonu (OTA / Live Content Sync)
 // =========================================================================
 
-export const CURRENT_APP_VERSION = '1.3.1';
+export const CURRENT_APP_VERSION = '1.4.0';
 const GITHUB_REPO = 'whitescorp-droid/5Sinif';
 const GITHUB_RELEASES_API = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
 const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/dil-app/src/data`;

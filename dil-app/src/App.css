@@ -53,6 +53,37 @@
   margin-bottom: 10px;
 }
 
+.header-brand-user-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 3px 10px 3px 5px;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.mingo-logo-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mingo-title-text {
+  font-size: 14px;
+  font-weight: 900;
+  color: #0284C7;
+  letter-spacing: -0.3px;
+}
+
 .user-pill-btn {
   display: flex;
   align-items: center;

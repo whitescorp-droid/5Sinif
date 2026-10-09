@@ -7,8 +7,8 @@ android {
         applicationId "com.maarif5.dilkulubu"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "1.3.1"
+        versionCode 5
+        versionName "1.4.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -16,8 +16,26 @@ android {
             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
-    buildTypes {
+    signingConfigs {
+        debug {
+            storeFile file('mingo-app.keystore')
+            storePassword 'mingo123'
+            keyAlias 'mingo'
+            keyPassword 'mingo123'
+        }
         release {
+            storeFile file('mingo-app.keystore')
+            storePassword 'mingo123'
+            keyAlias 'mingo'
+            keyPassword 'mingo123'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

@@ -30,15 +30,22 @@ export const Header = ({ onOpenProfile, onOpenUpdate }) => {
     <header className="mobile-header">
       {/* Top row: Profile & stats */}
       <div className="header-top-row">
-        <button
-          type="button"
-          className="user-pill-btn"
-          onClick={onOpenProfile}
-          title="Profili Düzenle"
-        >
-          <span className="user-avatar-emoji">{studentAvatar}</span>
-          <span className="user-display-name">{studentName}</span>
-        </button>
+        <div className="header-brand-user-group">
+          <div className="header-brand-badge">
+            <img src="/favicon.png" alt="Mingo" className="mingo-logo-img" />
+            <span className="mingo-title-text">Mingo</span>
+          </div>
+
+          <button
+            type="button"
+            className="user-pill-btn"
+            onClick={onOpenProfile}
+            title="Profili Düzenle"
+          >
+            <span className="user-avatar-emoji">{studentAvatar}</span>
+            <span className="user-display-name">{studentName}</span>
+          </button>
+        </div>
 
         <div className="header-stats-group">
           <div className="stat-capsule streak">
