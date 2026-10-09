@@ -177,6 +177,24 @@ export const TopicDetailView = ({ unit, topic, onBack }) => {
         </div>
       ) : (
         <div className="activities-selection-grid">
+          {/* Visual Book Image Card */}
+          {topic.visualImage && (
+            <div className="topic-visual-card">
+              <div className="topic-visual-header">
+                <BookOpen size={18} />
+                <span>Kitap Görseli & Sayfa Şeması</span>
+              </div>
+              <div className="topic-visual-img-box">
+                <img
+                  src={topic.visualImage}
+                  alt={topic.title}
+                  className="topic-visual-img"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          )}
+
           <div className="choose-activity-intro">
             <Sparkles size={20} className="sparkle-gold" />
             <span>Bir etkinlik seç ve yıldızları topla!</span>

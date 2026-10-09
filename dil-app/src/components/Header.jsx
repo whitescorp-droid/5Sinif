@@ -87,6 +87,15 @@ export const Header = ({ onOpenProfile, onOpenUpdate }) => {
 
         <button
           type="button"
+          className={`lang-tab-btn ${activeLang === 'oxford' ? 'active-oxford' : ''}`}
+          onClick={() => handleLangToggle('oxford')}
+        >
+          <span className="lang-flag">📚</span>
+          <span className="lang-text">Oxford Skills</span>
+        </button>
+
+        <button
+          type="button"
           className={`lang-tab-btn ${activeLang === 'german' ? 'active-de' : ''}`}
           onClick={() => handleLangToggle('german')}
         >

@@ -52,15 +52,17 @@ export const ThemesView = ({ onSelectTopic }) => {
   return (
     <div className="themes-view-container">
       {/* Subject Hero Card */}
-      <div className={`subject-hero-banner ${activeLang === 'german' ? 'hero-de' : 'hero-en'}`}>
+      <div className={`subject-hero-banner ${activeLang === 'german' ? 'hero-de' : activeLang === 'oxford' ? 'hero-oxford' : 'hero-en'}`}>
         <div className="hero-text-content">
           <div className="hero-badge-pill">
-            <Sparkles size={16} /> MEB 5. Sınıf Maarif Modeli
+            <Sparkles size={16} /> {activeLang === 'oxford' ? 'Oxford University Press' : 'MEB 5. Sınıf Maarif Modeli'}
           </div>
           <h1 className="hero-title">{currentSubject.name}</h1>
           <p className="hero-subtitle">
             {activeLang === 'german'
               ? 'Selamlaşma, kendini tanıtma, sayılar ve günlük yaşam!'
+              : activeLang === 'oxford'
+              ? 'Canlı kitap çizimleri, Spotlight kuralları ve cevap anahtarlı etkinlikler!'
               : 'School life, classroom, personality ve aile temalarıyla dilini geliştir!'}
           </p>
         </div>

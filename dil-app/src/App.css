@@ -2162,3 +2162,63 @@
   to { transform: rotate(360deg); }
 }
 
+/* ========================================================
+   OXFORD WORD SKILLS STYLES
+   ======================================================== */
+.lang-tab-btn.active-oxford {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+}
+
+.subject-hero-banner.hero-oxford {
+  background: linear-gradient(135deg, #0284C7 0%, #075985 100%);
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.35);
+}
+
+.topic-visual-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid #E2E8F0;
+  box-shadow: var(--shadow-sm);
+  padding: 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topic-visual-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0369A1;
+}
+
+.topic-visual-img-box {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topic-visual-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  transition: transform 0.3s ease;
+}
+
+.topic-visual-img:hover {
+  transform: scale(1.02);
+}
+
+

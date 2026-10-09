@@ -1,5 +1,8 @@
-// 5. Sınıf Yabancı Diller (İngilizce & Almanca) Zenginleştirilmiş Müfredat
+// 5. Sınıf Yabancı Diller (İngilizce & Almanca & Oxford Word Skills) Zenginleştirilmiş Müfredat
+import { OXFORD_DATA } from './oxfordCurriculum';
+
 export const LANGUAGES_DATA = {
+  "oxford": OXFORD_DATA,
   "english": {
     "id": "ingilizce",
     "name": "İngilizce (English)",

@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 *.code-workspace
+
+# Large PDF & temporary extracts (>100MB exceeds GitHub push limit)
+Oxford_Word_Skills_Elementary.pdf
+oxford_pages/

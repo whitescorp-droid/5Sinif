@@ -4,8 +4,13 @@
 // Bu dosya modüler yapıdadır. Yeni dersler, üniteler, TYMM kazanımları ve
 // öğrenci çalışma kitabı soruları buraya doğrudan eklenebilir.
 
+import { OXFORD_DATA } from './oxfordCurriculum';
+
 export const CURRICULUM_DATA = {
+  // Oxford Word Skills Elementary
+
   subjects: [
+    OXFORD_DATA,
     {
       id: 'matematik',
       name: 'Matematik',
