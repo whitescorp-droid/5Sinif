@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Sparkles, Backpack, Compass, MessageCircle, Volume2, Bot, Award, CheckCircle } from 'lucide-react';
+import { Sparkles, Backpack, Compass, MessageCircle, Volume2, Bot, Award, CheckCircle, Maximize, Minimize } from 'lucide-react';
 
 export default function HUD({
   stars,
@@ -16,6 +16,40 @@ export default function HUD({
   const joystickRef = useRef(null);
   const [touchActive, setTouchActive] = useState(false);
   const [touchPos, setTouchPos] = useState({ x: 0, y: 0 });
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleFsChange = () => {
+      setIsFullscreen(!!(document.fullscreenElement || document.webkitFullscreenElement));
+    };
+    document.addEventListener('fullscreenchange', handleFsChange);
+    document.addEventListener('webkitfullscreenchange', handleFsChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFsChange);
+      document.removeEventListener('webkitfullscreenchange', handleFsChange);
+    };
+  }, []);
+
+  const toggleFullscreen = () => {
+    try {
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        const el = document.documentElement;
+        if (el.requestFullscreen) {
+          el.requestFullscreen();
+        } else if (el.webkitRequestFullscreen) {
+          el.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    } catch (e) {
+      console.warn('Fullscreen error:', e);
+    }
+  };
 
   // Touch joystick handling for mobile
   const handleTouchStart = (e) => {
@@ -106,6 +140,22 @@ export default function HUD({
             <Bot className="w-5 h-5 text-emerald-300" />
             <span className="hidden sm:inline text-xs font-bold text-white ml-1">AI Coach</span>
           </button>
+
+          {/* Fullscreen Button */}
+          <button
+            className="hud-action-btn fullscreen-btn"
+            title={isFullscreen ? 'Tam Ekrandan Çık' : 'Tam Ekran Modu'}
+            onClick={toggleFullscreen}
+          >
+            {isFullscreen ? (
+              <Minimize className="w-5 h-5 text-amber-300" />
+            ) : (
+              <Maximize className="w-5 h-5 text-amber-300" />
+            )}
+            <span className="hidden sm:inline text-xs font-bold text-white ml-1">
+              {isFullscreen ? 'Küçült' : 'Tam Ekran'}
+            </span>
+          </button>
         </div>
       </div>
 
@@ -131,6 +181,7 @@ export default function HUD({
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
         >
           <div
             className="joystick-thumb"

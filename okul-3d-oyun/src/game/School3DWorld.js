@@ -825,9 +825,49 @@ export class School3DWorld {
       this.renderer.setSize(width, height);
     };
 
+    // Touch swipe camera/steering on right half of screen
+    let touchStartX = 0;
+    this.onTouchStart = (e) => {
+      for (let i = 0; i < e.touches.length; i++) {
+        const touch = e.touches[i];
+        if (touch.clientX > window.innerWidth / 2) {
+          touchStartX = touch.clientX;
+          break;
+        }
+      }
+    };
+
+    this.onTouchMove = (e) => {
+      for (let i = 0; i < e.touches.length; i++) {
+        const touch = e.touches[i];
+        if (touch.clientX > window.innerWidth / 2 && touchStartX > 0) {
+          const deltaX = touch.clientX - touchStartX;
+          touchStartX = touch.clientX;
+          if (this.player) {
+            this.player.rotation.y -= deltaX * 0.005;
+          }
+          break;
+        }
+      }
+    };
+
+    this.onTouchEnd = (e) => {
+      let rightTouchFound = false;
+      for (let i = 0; i < e.touches.length; i++) {
+        if (e.touches[i].clientX > window.innerWidth / 2) {
+          rightTouchFound = true;
+          break;
+        }
+      }
+      if (!rightTouchFound) touchStartX = 0;
+    };
+
     window.addEventListener('keydown', this.onKeyDown);
     window.addEventListener('keyup', this.onKeyUp);
     window.addEventListener('resize', this.onResize);
+    window.addEventListener('touchstart', this.onTouchStart, { passive: true });
+    window.addEventListener('touchmove', this.onTouchMove, { passive: true });
+    window.addEventListener('touchend', this.onTouchEnd, { passive: true });
   }
 
   setMobileInput(x, y) {
@@ -877,12 +917,38 @@ export class School3DWorld {
       isMoving = true;
     }
 
-    // Incorporate mobile touch joystick
-    if (Math.abs(this.mobileInput.x) > 0.1 || Math.abs(this.mobileInput.y) > 0.1) {
-      const joyAngle = Math.atan2(this.mobileInput.x, -this.mobileInput.y);
-      this.player.rotation.y = joyAngle;
-      moveDir = Math.min(1.0, Math.hypot(this.mobileInput.x, this.mobileInput.y));
-      isMoving = true;
+    // Incorporate mobile touch joystick (Doğal ve akıcı kontroller)
+    const joyX = this.mobileInput.x;
+    const joyY = this.mobileInput.y;
+    const joyDist = Math.hypot(joyX, joyY);
+
+    let isMobileSprint = false;
+
+    if (joyDist > 0.08) {
+      // 1. Yatay eksen (joyX): Direksiyon gibi pürüzsüz dönüş (Sağa itince sağa, sola itince sola)
+      if (Math.abs(joyX) > 0.08) {
+        this.player.rotation.y -= joyX * (turnSpeed * 1.35) * delta;
+      }
+
+      // 2. Dikey eksen (joyY): İleri / Geri hareket (Yukarı itince İleri, Aşağı çekince Geri)
+      if (joyY < -0.1) {
+        // İleri hareket gücü
+        moveDir += -joyY;
+        isMoving = true;
+      } else if (joyY > 0.12) {
+        // Geri adım
+        moveDir -= joyY * 0.65;
+        isMoving = true;
+      } else if (Math.abs(joyX) > 0.2) {
+        // Sadece yana basıldığında hafif adım atarak akıcı dönüş
+        moveDir += 0.3;
+        isMoving = true;
+      }
+
+      // Joystick en uca itildiğinde (joyDist > 0.85) otomatik hızlı koşu
+      if (joyDist > 0.85 && joyY < -0.35) {
+        isMobileSprint = true;
+      }
     }
 
     if (isMoving) {
@@ -890,8 +956,9 @@ export class School3DWorld {
       const forwardX = Math.sin(this.player.rotation.y);
       const forwardZ = Math.cos(this.player.rotation.y);
 
-      // Sprint desteği (Shift tuşu) veya normal akıcı yürüme hızı
-      const baseSpeed = this.keys.sprint ? 6.5 : this.playerSpeed;
+      // Sprint desteği (Shift tuşu veya mobilde tam itme)
+      const isSprinting = this.keys.sprint || isMobileSprint;
+      const baseSpeed = isSprinting ? 6.5 : this.playerSpeed;
       const currentSpeed = baseSpeed * moveDir;
       const nextX = this.player.position.x + forwardX * currentSpeed * delta;
       const nextZ = this.player.position.z + forwardZ * currentSpeed * delta;
@@ -901,7 +968,7 @@ export class School3DWorld {
       if (nextZ >= -16 && nextZ <= 21) this.player.position.z = nextZ;
 
       // Walking animation synchronized to speed
-      const animSpeed = this.keys.sprint ? 11 : 8.5;
+      const animSpeed = isSprinting ? 11 : 8.5;
       this.walkCycle += delta * animSpeed;
       const legAngle = Math.sin(this.walkCycle) * 0.55;
       this.leftLeg.rotation.x = legAngle;
@@ -1058,6 +1125,9 @@ export class School3DWorld {
     window.removeEventListener('keydown', this.onKeyDown);
     window.removeEventListener('keyup', this.onKeyUp);
     window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('touchstart', this.onTouchStart);
+    window.removeEventListener('touchmove', this.onTouchMove);
+    window.removeEventListener('touchend', this.onTouchEnd);
 
     if (this.renderer && this.renderer.domElement && this.renderer.domElement.parentNode) {
       this.renderer.domElement.parentNode.removeChild(this.renderer.domElement);
