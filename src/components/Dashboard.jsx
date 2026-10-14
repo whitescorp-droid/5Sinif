@@ -224,6 +224,49 @@ export const Dashboard = ({ onSelectSubject, onSelectDailyMission, onOpenVocabul
         </div>
       </div>
 
+      {/* 3D Okul Macera Oyunu Özel Kartı */}
+      <div 
+        className="vocab-promo-card game-promo-card"
+        onClick={() => window.open('/oyun/', '_self')}
+        role="button"
+        tabIndex={0}
+        style={{
+          background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98))',
+          borderColor: 'rgba(56, 189, 248, 0.35)',
+          boxShadow: '0 8px 30px rgba(14, 165, 233, 0.15)',
+          marginTop: '1rem',
+          cursor: 'pointer'
+        }}
+      >
+        <div className="vocab-promo-badge" style={{ background: 'linear-gradient(90deg, #0284c7, #38bdf8)' }}>
+          <Sparkles size={16} />
+          <span>Yeni 3D Deneyim: Açık Dünya Okul Keşfi & AI İngilizce Koçu</span>
+        </div>
+        <div className="vocab-promo-content">
+          <div className="vocab-promo-icon" style={{ background: 'rgba(14, 165, 233, 0.15)', border: '1px solid rgba(56, 189, 248, 0.3)' }}>🏫</div>
+          <div className="vocab-promo-text">
+            <h3 className="vocab-promo-title" style={{ color: '#38bdf8' }}>School Quest 3D: İngilizce Okul Macera Oyunu</h3>
+            <p className="vocab-promo-desc">
+              Okulu ve sınıfları özgürce 3 boyutlu gez, görevleri topla, NPC'lerle İngilizce diyalog kur ve yapay zeka koçu Gemini ile konuşarak pratik yap!
+            </p>
+            <div className="vocab-promo-meta">
+              <span className="vocab-promo-tag" style={{ borderColor: 'rgba(56, 189, 248, 0.3)' }}>🎮 3 Boyutlu Açık Dünya</span>
+              <span className="vocab-promo-tag" style={{ borderColor: 'rgba(56, 189, 248, 0.3)' }}>💬 İngilizce Görevler</span>
+              <span className="vocab-promo-tag" style={{ borderColor: 'rgba(56, 189, 248, 0.3)' }}>🤖 Gemini AI Koçu</span>
+              <span className="vocab-promo-tag highlight" style={{ background: 'linear-gradient(90deg, #0284c7, #0ea5e9)' }}>
+                📱 Telefon & Masaüstü Uyumlu
+              </span>
+            </div>
+          </div>
+          <div className="vocab-promo-action">
+            <button className="btn-explore-vocab" style={{ background: 'linear-gradient(135deg, #0284c7, #0ea5e9)' }}>
+              <span>Oyunu Başlat</span>
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* 5. Sınıf Dersleri Grid */}
       <section className="dashboard-section">
         <div className="section-header-row">

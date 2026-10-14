@@ -6,11 +6,16 @@
   "scripts": {
     "dev": "vite",
     "dev:dil": "npm run dev --prefix dil-app",
-    "build": "vite build",
+    "dev:oyun": "npm run dev --prefix okul-3d-oyun",
+    "build": "vite build && npm run build --prefix okul-3d-oyun",
     "build:dil": "npm run build --prefix dil-app",
+    "build:oyun": "npm run build --prefix okul-3d-oyun",
     "lint": "oxlint",
     "preview": "vite preview"
   },
+  "workspaces": [
+    "okul-3d-oyun"
+  ],
   "dependencies": {
     "canvas-confetti": "^1.9.4",
     "firebase": "^12.19.0",
