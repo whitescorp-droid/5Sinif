@@ -8,7 +8,7 @@ export default function DialogueModal({
   onClose,
   onCompleteQuest
 }) {
-  const [showTurkish, setShowTurkish] = useState(false);
+  const [showTurkish, setShowTurkish] = useState(true); // 5. sınıf öğrencileri için Türkçe ipucu varsayılan açık
   const [currentStep, setCurrentStep] = useState('main'); // 'main' | 'followup' | 'completed'
   const [selectedOption, setSelectedOption] = useState(null);
   const [feedback, setFeedback] = useState(null);
@@ -100,26 +100,26 @@ export default function DialogueModal({
     <div className="modal-backdrop">
       <div className="dialogue-card">
         {/* Header */}
-        <div className="dialogue-header" style={{ borderColor: npc.color || '#3b82f6' }}>
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">{npc.avatarEmoji}</span>
+        <div className="dialogue-header" style={{ borderColor: npc.color || '#38bdf8' }}>
+          <div className="flex items-center gap-2.5">
+            <span className="text-2xl">{npc.avatarEmoji}</span>
             <div>
-              <h3 className="text-lg font-bold text-white">{npc.name}</h3>
-              <span className="text-xs text-blue-300 font-medium">{npc.zoneName}</span>
+              <h3 className="text-base font-bold text-white leading-tight">{npc.name}</h3>
+              <span className="text-[11px] text-sky-300 font-semibold">{npc.zoneName}</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <button
               className={`lang-toggle-btn ${showTurkish ? 'active' : ''}`}
               onClick={() => setShowTurkish(!showTurkish)}
-              title="Türkçe Çeviri"
+              title="Türkçe Çeviri Aç/Kapat"
             >
-              <Languages className="w-4 h-4" />
-              <span className="text-xs font-semibold">TR</span>
+              <Languages className="w-3.5 h-3.5" />
+              <span className="text-[11px] font-bold">TR</span>
             </button>
-            <button className="close-btn" onClick={onClose}>
-              <X className="w-5 h-5 text-gray-300" />
+            <button className="close-btn" onClick={onClose} title="Kapat">
+              <X className="w-4 h-4 text-gray-300" />
             </button>
           </div>
         </div>
@@ -131,22 +131,22 @@ export default function DialogueModal({
               {/* NPC Speech Bubble */}
               <div className="npc-bubble">
                 <div className="flex items-start justify-between gap-2">
-                  <p className="text-white text-base md:text-lg font-medium leading-relaxed">
+                  <p className="npc-speech-text">
                     "{currentSpeakerText}"
                   </p>
                   <button
-                    className="audio-play-btn"
+                    className="audio-play-btn shrink-0"
                     onClick={() => speakEnglish(currentSpeakerText)}
                     title="Sesli Dinle"
                   >
-                    <Volume2 className="w-5 h-5 text-blue-300" />
+                    <Volume2 className="w-4 h-4 text-sky-300" />
                   </button>
                 </div>
 
                 {showTurkish && (
-                  <p className="text-sm text-yellow-200 mt-2 italic border-t border-white/10 pt-2">
-                    {currentTurkishText}
-                  </p>
+                  <div className="turkish-hint-box">
+                    <span>🇹🇷 {currentTurkishText}</span>
+                  </div>
                 )}
               </div>
 
@@ -161,9 +161,9 @@ export default function DialogueModal({
               {feedback && (
                 <div className={`feedback-alert ${feedback.type}`}>
                   {feedback.type === 'success' ? (
-                    <CheckCircle className="w-5 h-5 shrink-0" />
+                    <CheckCircle className="w-4 h-4 shrink-0" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 shrink-0" />
+                    <AlertCircle className="w-4 h-4 shrink-0" />
                   )}
                   <span>{feedback.text}</span>
                 </div>
@@ -171,21 +171,21 @@ export default function DialogueModal({
 
               {/* Multiple Choice Options */}
               <div className="options-container">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs uppercase font-bold text-blue-200 tracking-wider">
-                    Senin Cevabın (Your Response):
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-[11px] uppercase font-extrabold text-sky-200 tracking-wider">
+                    Cevabını Seç:
                   </span>
                   <button
                     className={`mic-btn ${isListening ? 'listening' : ''}`}
                     onClick={handleMicSpeak}
                     title="Mikrofonla İngilizce Cevap Ver"
                   >
-                    <Mic className="w-4 h-4" />
-                    <span className="text-xs font-bold">{isListening ? 'Dinliyor...' : 'Sesle Cevap Ver'}</span>
+                    <Mic className="w-3.5 h-3.5" />
+                    <span className="text-[11px] font-bold">{isListening ? 'Dinliyor...' : 'Sesle Cevap'}</span>
                   </button>
                 </div>
 
-                <div className="grid gap-2">
+                <div className="grid gap-1.5">
                   {currentOptions.map((opt, idx) => (
                     <button
                       key={idx}
@@ -193,9 +193,9 @@ export default function DialogueModal({
                       onClick={() => handleOptionSelect(opt)}
                     >
                       <span className="opt-letter">{String.fromCharCode(65 + idx)}</span>
-                      <span className="text-left font-medium text-white flex-1">{opt.text}</span>
+                      <span className="opt-text">{opt.text}</span>
                       <Volume2
-                        className="w-4 h-4 text-gray-400 hover:text-white shrink-0"
+                        className="w-3.5 h-3.5 text-slate-400 hover:text-white shrink-0 ml-1"
                         onClick={(e) => {
                           e.stopPropagation();
                           speakEnglish(opt.text);

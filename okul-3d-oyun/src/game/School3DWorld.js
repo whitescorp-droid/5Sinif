@@ -69,8 +69,10 @@ export class School3DWorld {
     this.scene.background = new THREE.Color('#87CEEB'); // Sky blue
     this.scene.fog = new THREE.FogExp2('#87CEEB', 0.02);
 
-    // 2. Camera
-    this.camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 150);
+    // 2. Camera (Geniş açı ile karakterin ekranı kaplamasını önle)
+    const isMobile = width < 768 || width < height;
+    const initialFov = isMobile ? 65 : 55;
+    this.camera = new THREE.PerspectiveCamera(initialFov, width / height, 0.1, 150);
     this.camera.position.set(0, 7, 18);
 
     // 3. Renderer
@@ -820,6 +822,8 @@ export class School3DWorld {
     this.onResize = () => {
       const width = this.container.clientWidth || window.innerWidth;
       const height = this.container.clientHeight || window.innerHeight;
+      const isMobile = width < 768 || width < height;
+      this.camera.fov = isMobile ? 65 : 55;
       this.camera.aspect = width / height;
       this.camera.updateProjectionMatrix();
       this.renderer.setSize(width, height);
@@ -996,11 +1000,12 @@ export class School3DWorld {
       }
     }
 
-    // Dynamic Indoor/Outdoor Adaptive Camera
+    // Dynamic Indoor/Outdoor Adaptive Camera (Karakterin ekranı kaplamasını engelleyen mesafe)
     const isIndoor = this.player.position.z <= 1.0;
-    const targetHeight = isIndoor ? 1.75 : 3.8;
-    const targetDistance = isIndoor ? 2.6 : 5.8;
-    const lookAtHeight = isIndoor ? 1.35 : 1.2;
+    const isMobile = window.innerWidth < 768;
+    const targetHeight = isIndoor ? 1.85 : (isMobile ? 3.4 : 3.8);
+    const targetDistance = isIndoor ? (isMobile ? 3.6 : 3.3) : (isMobile ? 6.6 : 5.8);
+    const lookAtHeight = isIndoor ? 0.95 : 0.9;
 
     const angle = this.player.rotation.y;
     // Position camera behind the player according to where they are facing

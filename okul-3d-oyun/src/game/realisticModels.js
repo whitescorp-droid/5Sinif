@@ -20,6 +20,7 @@ export function createRealisticCharacter({
   hasBackpack = false
 }) {
   const root = new THREE.Group();
+  root.scale.set(0.72, 0.72, 0.72); // Karakter boyutunu dengeli ve kompakt hale getir
 
   const skinMat = new THREE.MeshStandardMaterial({
     color: skinColor,
