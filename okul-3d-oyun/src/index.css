@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   -webkit-tap-highlight-color: transparent;
+  color: #ffffff;
 }
 
 body, html {
@@ -13,7 +14,25 @@ body, html {
   height: 100%;
   overflow: hidden;
   background-color: #0f172a;
+  color: #ffffff;
 }
+
+/* Core Layout & Color Helpers */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.shrink-0 { flex-shrink: 0; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.min-w-0 { min-width: 0; }
+.text-white { color: #ffffff !important; }
+.text-slate-200 { color: #e2e8f0 !important; }
+.text-gray-300 { color: #cbd5e1 !important; }
+.text-sky-300 { color: #7dd3fc !important; }
+.text-blue-300 { color: #93c5fd !important; }
+.text-yellow-300 { color: #fde047 !important; }
+.text-emerald-300 { color: #6ee7b7 !important; }
 
 #root {
   width: 100%;
