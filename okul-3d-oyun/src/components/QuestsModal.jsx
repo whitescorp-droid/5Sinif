@@ -1,56 +1,67 @@
 import React from 'react';
-import { X, CheckCircle2, Circle, Sparkles, MapPin } from 'lucide-react';
+import { X, CheckCircle2, Target, Sparkles, MapPin, Award } from 'lucide-react';
 
 export default function QuestsModal({ quests = [], onClose }) {
   const completedCount = quests.filter(q => q.completed).length;
 
   return (
     <div className="modal-backdrop">
-      <div className="modal-card max-w-lg">
+      <div className="modal-card quest-modal-card">
         {/* Header */}
         <div className="modal-header">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center">
-              <Sparkles className="w-6 h-6 text-blue-400" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-blue-500/25 border border-blue-400/50 flex items-center justify-center shrink-0">
+              <Sparkles className="w-5 h-5 text-amber-300" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">Theme 1: School Life Görevleri</h3>
-              <span className="text-xs text-blue-300">
-                {completedCount} / {quests.length} Görev Tamamlandı
+              <h3 className="text-base sm:text-lg font-extrabold text-white leading-tight">
+                School Life Görevleri
+              </h3>
+              <span className="text-xs text-sky-300 font-bold">
+                {completedCount} / {quests.length} Görev Tamamlandı ⭐
               </span>
             </div>
           </div>
-          <button className="close-btn" onClick={onClose}>
-            <X className="w-5 h-5 text-gray-300" />
+          <button className="close-btn" onClick={onClose} title="Kapat">
+            <X className="w-4 h-4 text-gray-300" />
           </button>
         </div>
 
         {/* Quest List */}
-        <div className="p-6 max-h-96 overflow-y-auto grid gap-3">
-          {quests.map((quest) => (
+        <div className="quest-list-body">
+          {quests.map((quest, idx) => (
             <div
               key={quest.id}
               className={`quest-item-card ${quest.completed ? 'completed' : 'active'}`}
             >
-              <div className="flex items-start gap-3">
-                {quest.completed ? (
-                  <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0 mt-0.5" />
-                ) : (
-                  <Circle className="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
-                )}
-                <div>
-                  <h4 className={`font-bold text-base ${quest.completed ? 'text-emerald-300 line-through' : 'text-white'}`}>
+              <div className="flex items-start gap-2.5">
+                <div className="quest-status-icon shrink-0 mt-0.5">
+                  {quest.completed ? (
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                  ) : (
+                    <div className="quest-num-badge">{idx + 1}</div>
+                  )}
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <h4 className={`quest-card-title ${quest.completed ? 'completed' : ''}`}>
                     {quest.title}
                   </h4>
-                  <p className="text-xs text-gray-300 mt-1 leading-relaxed">{quest.description}</p>
-                  <div className="flex items-center gap-2 mt-2">
+                  <p className="quest-card-desc">{quest.description}</p>
+
+                  <div className="quest-meta-row">
                     <span className="location-pill">
-                      <MapPin className="w-3 h-3 inline mr-1" />
+                      <MapPin className="w-3 h-3 inline mr-1 text-sky-400" />
                       {quest.targetZone}
                     </span>
                     <span className="stars-pill">
-                      ⭐ +{quest.stars} Yıldız
+                      ⭐ +{quest.stars} XP
                     </span>
+                    {quest.completed && (
+                      <span className="status-done-pill">
+                        ✓ Başarıldı
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

@@ -240,6 +240,140 @@ body, html {
   color: #ef4444;
 }
 
+/* Quests & Inventory Modals */
+.quest-modal-card {
+  width: 94%;
+  max-width: 28rem;
+  background: rgba(15, 23, 42, 0.96);
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 25px rgba(14, 165, 233, 0.2);
+  overflow: hidden;
+  animation: scaleUp 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.quest-list-body {
+  padding: 0.85rem 1rem 1rem;
+  max-height: 72vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* Quest Item Card */
+.quest-item-card {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1.5px solid rgba(148, 163, 184, 0.25);
+  border-radius: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.quest-item-card.active {
+  border-color: rgba(56, 189, 248, 0.45);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+}
+
+.quest-item-card.completed {
+  background: rgba(6, 78, 59, 0.35);
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.quest-num-badge {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.4rem;
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4);
+}
+
+.quest-card-title {
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.quest-card-title.completed {
+  color: #6ee7b7;
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+
+.quest-card-desc {
+  color: #f1f5f9;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 0.25rem;
+}
+
+.quest-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.location-pill {
+  background: rgba(14, 165, 233, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.stars-pill {
+  background: rgba(234, 179, 8, 0.2);
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  color: #fef08a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.status-done-pill {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  color: #6ee7b7;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+}
+
+/* Inventory Item Card */
+.inventory-item-card {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1.5px solid rgba(236, 72, 153, 0.35);
+  border-radius: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.inventory-item-card:hover {
+  border-color: rgba(244, 114, 182, 0.6);
+  background: rgba(51, 65, 85, 0.95);
+}
+
 /* Dialogue Card (Kompakt ve Yüksek Okunabilirlik) */
 .dialogue-card {
   width: 92%;
@@ -788,4 +922,55 @@ body, html {
 
 .animate-bounce-subtle {
   animation: bounceSubtle 1.8s infinite ease-in-out;
+}
+
+/* Mobile HUD & Modal Optimizations */
+@media (max-width: 640px) {
+  .hud-overlay {
+    padding: 0.5rem;
+  }
+  .hud-top-bar {
+    gap: 0.35rem;
+  }
+  .hud-zone-pill {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    gap: 0.35rem;
+  }
+  .hud-zone-pill span {
+    font-size: 0.75rem;
+  }
+  .hud-quest-pill {
+    padding: 0.3rem 0.6rem;
+    max-width: 140px;
+  }
+  .hud-stars-pill {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    gap: 0.35rem;
+  }
+  .hud-action-btn {
+    width: 2.15rem;
+    height: 2.15rem;
+    padding: 0;
+    justify-content: center;
+    border-radius: 0.55rem;
+  }
+  .quest-modal-card {
+    width: 95%;
+    max-width: 23rem;
+  }
+  .quest-list-body {
+    padding: 0.65rem 0.75rem;
+    max-height: 68vh;
+  }
+  .quest-item-card {
+    padding: 0.65rem 0.75rem;
+  }
+  .quest-card-title {
+    font-size: 0.85rem;
+  }
+  .quest-card-desc {
+    font-size: 0.78rem;
+  }
 }
